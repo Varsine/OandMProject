@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+
+  h1 {
+    font-size: 220px;
+    color: #333;
+    margin-top: -100px;
+  }
+}

@@ -1,0 +1,11 @@
+:global {
+  .container {
+    max-width: 1341px;
+    margin: 0 auto;
+
+    @media (max-width: 1381px) {
+      max-width: 100%;
+      margin: 0 20px;
+    }
+  }
+}

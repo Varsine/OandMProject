@@ -1,0 +1,11 @@
+{
+  "name": "shelllogix-create-next-app",
+  "short_name": "shelllogix-create-next",
+  "description": "Shelllogix Boilerplate",
+  "theme_color": "#20a0e4",
+  "background_color": "#20a0e4",
+  "display": "standalone",
+  "Scope": "/",
+  "start_url": "/",
+  "splash_pages": null
+}
