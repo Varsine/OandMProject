@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
+import { HeaderContainer, FooterContainer } from 'containers/index';
+
 const HelmetLayout = (props) => {
   const { children, title, metaDescription } = props;
 
@@ -13,7 +15,9 @@ const HelmetLayout = (props) => {
           <meta name="description" content={metaDescription} />
         )}
       </Head>
+      <HeaderContainer />
       {children}
+      <FooterContainer />
     </>
   );
 };

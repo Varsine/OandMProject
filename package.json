@@ -22,6 +22,7 @@
     }
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.19",
     "@next/bundle-analyzer": "^9.3.6",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
