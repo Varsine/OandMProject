@@ -16,7 +16,7 @@ const HomeContainer = () => {
         keyboardScrolling={false}
         // onLeave={onLeave}
         fitToSection={false}
-        fixedElements=""
+        fixedElements="#canvas"
         render={() => (
           <ReactFullPage.Wrapper>{renderFullPages}</ReactFullPage.Wrapper>
         )}
