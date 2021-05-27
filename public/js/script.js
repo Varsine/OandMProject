@@ -7,34 +7,34 @@
 var canvas = {
   elem: document.getElementById('canvas'),
 
-  _resize: function() {
+  _resize: function () {
     this.width = this.elem.width = this.elem.offsetWidth;
     this.height = this.elem.height = this.elem.offsetHeight;
     this.resize && this.resize();
   },
 
-  init: function() {
+  init: function () {
     var ctx = this.elem.getContext('2d');
     window.addEventListener('resize', this._resize.bind(this), false);
     this._resize();
     return ctx;
   },
 
-  setCursor: function(type) {
+  setCursor: function (type) {
     if (type !== this.cursor) {
       this.cursor = type;
       this.elem.style.cursor = type;
     }
   },
 
-  pointer: function() {
+  pointer: function () {
     var pointer = {
       x: 0,
       y: 0,
       isDown: false,
     };
 
-    pointer.move = function(e) {
+    pointer.move = function (e) {
       var touchMode = e.targetTouches,
         pointer;
       if (touchMode) {
@@ -45,7 +45,7 @@ var canvas = {
       this.y = pointer.clientY;
     };
 
-    pointer.bind = function(elem, events, fn) {
+    pointer.bind = function (elem, events, fn) {
       for (let i = 0, e = events.split(','); i < e.length; i++) {
         let canvasa = document.querySelectorAll(
           '.canvas__working, .header__content',
@@ -59,7 +59,7 @@ var canvas = {
     pointer.bind(
       document.getElementById('fullpage'),
       'mousemove,touchmove',
-      function(e) {
+      function (e) {
         this.move(e);
       },
     );
@@ -67,7 +67,7 @@ var canvas = {
     pointer.bind(
       document.getElementById('fullpage'),
       'mousedown,touchstart',
-      function(e) {
+      function (e) {
         this.move(e);
         this.isDown = true;
         this.down && this.down();
@@ -77,7 +77,7 @@ var canvas = {
     pointer.bind(
       document.getElementById('header'),
       'mouseup,touchend,touchcancel',
-      function(e) {
+      function (e) {
         e.preventDefault();
         this.isDown = false;
         this.up && this.up();
@@ -98,67 +98,67 @@ function Vector(x, y) {
   this.y = y || 0.0;
 }
 
-Vector.prototype.set = function(x, y) {
+Vector.prototype.set = function (x, y) {
   this.x = x;
   this.y = y;
   return this;
 };
 
-Vector.prototype.copy = function(v) {
+Vector.prototype.copy = function (v) {
   this.x = v.x;
   this.y = v.y;
   return this;
 };
 
-Vector.prototype.sub = function(v1, v2) {
+Vector.prototype.sub = function (v1, v2) {
   this.x = v1.x - v2.x;
   this.y = v1.y - v2.y;
   return this;
 };
 
-Vector.prototype.selfSub = function(v) {
+Vector.prototype.selfSub = function (v) {
   this.x -= v.x;
   this.y -= v.y;
   return this;
 };
 
-Vector.prototype.mult = function(v, f) {
+Vector.prototype.mult = function (v, f) {
   this.x = v.x * f;
   this.y = v.y * f;
   return this;
 };
 
-Vector.prototype.selfMult = function(f) {
+Vector.prototype.selfMult = function (f) {
   this.x *= f;
   this.y *= f;
   return this;
 };
 
-Vector.prototype.div = function(v, f) {
+Vector.prototype.div = function (v, f) {
   this.x = v.x / f;
   this.y = v.y / f;
   return this;
 };
 
-Vector.prototype.selfDiv = function(f) {
+Vector.prototype.selfDiv = function (f) {
   this.x /= f;
   this.y /= f;
   return this;
 };
 
-Vector.prototype.add = function(v1, v2) {
+Vector.prototype.add = function (v1, v2) {
   this.x = v1.x + v2.x;
   this.y = v1.y + v2.y;
   return this;
 };
 
-Vector.prototype.selfAdd = function(v) {
+Vector.prototype.selfAdd = function (v) {
   this.x += v.x;
   this.y += v.y;
   return this;
 };
 
-Vector.prototype.limit = function(maxLength) {
+Vector.prototype.limit = function (maxLength) {
   var lengthSquared = this.x * this.x + this.y * this.y;
   if (lengthSquared > maxLength * maxLength && lengthSquared > 0) {
     var ratio = maxLength / Math.sqrt(lengthSquared);
@@ -168,15 +168,15 @@ Vector.prototype.limit = function(maxLength) {
   return this;
 };
 
-Vector.prototype.dist2 = function(v) {
+Vector.prototype.dist2 = function (v) {
   return (this.x - v.x) * (this.x - v.x) + (this.y - v.y) * (this.y - v.y);
 };
 
-Vector.prototype.mag2 = function() {
+Vector.prototype.mag2 = function () {
   return this.x * this.x + this.y * this.y;
 };
 
-~(function() {
+~(function () {
   'use strict';
 
   // setup
@@ -194,7 +194,7 @@ Vector.prototype.mag2 = function() {
     window.innerWidth || 0,
   );
 
-  window.onresize = function() {
+  window.onresize = function () {
     if (widthViewport <= 575) {
       count = 15;
     }
@@ -226,7 +226,7 @@ Vector.prototype.mag2 = function() {
 
   // circle update
 
-  Circle.prototype.update = function() {
+  Circle.prototype.update = function () {
     this.acc.set(0, 0);
 
     if (this.locked && this.parent === null) {
@@ -262,7 +262,7 @@ Vector.prototype.mag2 = function() {
 
   // circle render
 
-  Circle.prototype.render = function() {
+  Circle.prototype.render = function () {
     ctx.beginPath();
 
     if (this.pos.dist2(pointer) < this.rad2) {
@@ -344,7 +344,7 @@ Vector.prototype.mag2 = function() {
 
   // canvas resize event function
 
-  canvas.resize = function() {
+  canvas.resize = function () {
     // radius
     maxRad = Math.round(Math.sqrt(Math.min(this.width, this.height)) * 5);
     // vignette
@@ -370,7 +370,7 @@ Vector.prototype.mag2 = function() {
 
   // pointer down event
 
-  pointer.down = function() {
+  pointer.down = function () {
     // Look for a circle the mouse is in, then lock that circle to the mouse
     for (var i = 0; i < count; i++) {
       // If the circles are close...
@@ -385,7 +385,7 @@ Vector.prototype.mag2 = function() {
 
   // pointer up event
 
-  pointer.up = function() {
+  pointer.up = function () {
     // User is no-longer dragging
     for (var i = 0; i < count; i++) {
       circles[i].offset.set(0, 0);
@@ -481,7 +481,7 @@ if (window.Pieces) {
         },
       });
     };
-    
+
     document
       .querySelector('.left__menu__mode')
       .addEventListener('click', (ev) => {
@@ -492,4 +492,3 @@ if (window.Pieces) {
       );
   }, 1000);
 }
-

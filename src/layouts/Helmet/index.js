@@ -18,6 +18,7 @@ const HelmetLayout = (props) => {
       <HeaderContainer />
       {children}
       <FooterContainer />
+      <canvas id="canvas" />
     </>
   );
 };

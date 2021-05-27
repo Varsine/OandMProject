@@ -1,0 +1,9 @@
+.wrapper {
+  @extend %flex-align;
+}
+
+.index {
+  @extend %open-sans-24;
+  margin-left: 16px;
+  color: $white-20;
+}

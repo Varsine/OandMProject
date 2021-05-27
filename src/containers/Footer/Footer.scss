@@ -6,3 +6,9 @@
   position: fixed;
   background: rgba(0, 0, 0, 0.6);
 }
+
+.container {
+  height: 100%;
+  padding: 0 50px;
+  @extend %flex-between;
+}
