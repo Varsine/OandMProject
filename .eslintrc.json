@@ -14,7 +14,7 @@
           ["~", "./"],
           ["hooks", "./src/hooks"],
           ["utils", "./src/utils"],
-          ["store", "./src/store"],
+          ["slices", "./src/slices"],
           ["public", "./public"],
           ["routes", "./src/routes"],
           ["styles", "./src/styles"],

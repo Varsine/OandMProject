@@ -8,5 +8,5 @@ export { default as OurWorks } from './OurWorks';
 export { default as NextLink } from './NextLink';
 export { default as NextImage } from './NextImage';
 export { default as HowWeWork } from './HowWeWork';
-export { default as ModeSwitch } from './ModeSwitch';
+export { default as IconHover } from './IconHover';
 export { default as JoinOurTeam } from './JoinOurTeam';

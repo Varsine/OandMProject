@@ -10,8 +10,8 @@
       "context/*": ["src/context/*"],
       "styles/*": ["src/styles/*"],
       "routes/*": ["src/routes/*"],
+      "slices/*": ["src/slices/*"],
       "utils/*": ["src/utils/*"],
-      "store/*": ["src/store/*"],
       "hooks/*": ["src/hooks/*"],
       "public/*": ["public/*"],
       "~/*": ["/*"]

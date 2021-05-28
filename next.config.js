@@ -80,9 +80,9 @@ const nextConfig = withPlugins(
     },
     webpack: (config, { dev }) => {
       config.resolve.alias['~'] = path.join(__dirname, '/');
-      config.resolve.alias.store = path.join(__dirname, 'src/store');
       config.resolve.alias.utils = path.join(__dirname, 'src/utils');
       config.resolve.alias.hooks = path.join(__dirname, 'src/hooks');
+      config.resolve.alias.slices = path.join(__dirname, 'src/slices');
       config.resolve.alias.routes = path.join(__dirname, 'src/routes');
       config.resolve.alias.styles = path.join(__dirname, 'src/styles');
       config.resolve.alias.layouts = path.join(__dirname, 'src/layouts');

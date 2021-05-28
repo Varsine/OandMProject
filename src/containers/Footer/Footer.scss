@@ -12,3 +12,7 @@
   padding: 0 50px;
   @extend %flex-between;
 }
+
+.links {
+  @extend %flex-center;
+}

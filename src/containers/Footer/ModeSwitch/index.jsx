@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './ModeSwitch.scss';
 
-import { MoonIcon, SunIcon } from '../../icons';
+import { SunIcon } from '../../../icons';
 
 const ModeSwitch = () => {
   return (

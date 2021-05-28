@@ -1,16 +1,15 @@
-import { createStore } from 'redux';
-import thunkMiddleware from 'redux-thunk';
 import { createWrapper } from 'next-redux-wrapper';
+import { configureStore } from '@reduxjs/toolkit';
 
-import reducers from './reducer';
-import createMiddleware from './middleware';
+import reducer from './reducer';
 
-const middleware = createMiddleware(thunkMiddleware);
-
-export const store = createStore(reducers, middleware);
+const store = configureStore({
+  reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+});
 
 const makeStore = () => store;
 
-const configureStore = createWrapper(makeStore);
+export const wrapper = createWrapper(makeStore);
 
-export default configureStore;
+export default wrapper;

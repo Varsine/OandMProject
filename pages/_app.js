@@ -8,7 +8,7 @@ import NextNprogress from 'nextjs-progressbar';
 import 'styles/index.global.scss';
 
 import { I18nContext } from 'context/index';
-import { configureStore } from 'libraries/index';
+import { wrapper } from 'libraries/index';
 
 import ErrorPage from './404';
 
@@ -48,6 +48,6 @@ MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
 };
 
-export default configureStore.withRedux(
+export default wrapper.withRedux(
   withError(ErrorPage)(appWithTranslation(withTranslation('common')(MyApp))),
 );
