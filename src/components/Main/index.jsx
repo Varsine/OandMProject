@@ -2,10 +2,15 @@ import React from 'react';
 
 import styles from './Main.scss';
 
+import { LogoLargeIcon } from '../../icons';
+
 const Main = () => {
   return (
-    <section className="section">
-      <div className={styles.wrapper}>Main</div>
+    <section id="header" className="section">
+      <div className="canvas__working" />
+      <div className={styles.wrapper}>
+        <LogoLargeIcon />
+      </div>
     </section>
   );
 };

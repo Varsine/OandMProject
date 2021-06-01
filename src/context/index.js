@@ -1,1 +1,1 @@
-export { default as I18nContext } from './I18n';
+export { default as FullPageContext } from './FullPage';

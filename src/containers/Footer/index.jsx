@@ -1,4 +1,5 @@
 import React from 'react';
+import usePortal from 'react-useportal';
 
 import { IconHover } from 'components/index';
 
@@ -9,22 +10,26 @@ import SocialLinks from './SocialLinks';
 import { MessengerIcon, MessengerHoverIcon } from '../../icons';
 
 const Footer = () => {
+  const { Portal } = usePortal();
+
   return (
-    <footer className={styles.wrapper}>
-      <div className={styles.container}>
-        <ModeSwitch />
-        <SocialLinks />
-        <IconHover
-          isLink={false}
-          icon={<MessengerIcon />}
-          iconHover={<MessengerHoverIcon />}
-          anchorProps={{
-            target: '_blank',
-            'aria-label': 'messenger',
-          }}
-        />
-      </div>
-    </footer>
+    <Portal>
+      <footer className={styles.wrapper}>
+        <div className={styles.container}>
+          <ModeSwitch />
+          <SocialLinks />
+          <IconHover
+            isLink={false}
+            icon={<MessengerIcon />}
+            iconHover={<MessengerHoverIcon />}
+            anchorProps={{
+              target: '_blank',
+              'aria-label': 'messenger',
+            }}
+          />
+        </div>
+      </footer>
+    </Portal>
   );
 };
 

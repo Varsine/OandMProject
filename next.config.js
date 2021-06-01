@@ -12,7 +12,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const withOptimizedImages = require('next-optimized-images');
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const { nextI18NextRewrites } = require('next-i18next/rewrites');
 
 const localeSubpaths = {};
 
@@ -71,7 +70,6 @@ const nextConfig = withPlugins(
     withOptimizedImages,
   ],
   {
-    rewrites: async () => nextI18NextRewrites(localeSubpaths),
     publicRuntimeConfig: {
       localeSubpaths,
     },

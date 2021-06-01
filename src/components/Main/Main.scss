@@ -1,4 +1,10 @@
 .wrapper {
   height: 100%;
   @extend %flex-center;
+
+  svg {
+    path:first-child {
+      fill: $text-color;
+    }
+  }
 }

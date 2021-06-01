@@ -1,9 +1,13 @@
 .wrapper {
   @extend %flex-align;
+  // position: fixed;
+  // left: 0;
+  // bottom: 0;
+  // z-index: 20;
 }
 
 .index {
   @extend %open-sans-24;
   margin-left: 16px;
-  color: $white-20;
+  color: $text-color;
 }

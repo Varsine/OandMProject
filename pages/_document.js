@@ -12,7 +12,6 @@ export default class extends Document {
         <body>
           <Main />
           <NextScript />
-          <script src="/js/script.js" />
         </body>
       </Html>
     );

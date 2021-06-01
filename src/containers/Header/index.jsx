@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import usePortal from 'react-useportal';
 
-import { paths } from 'routes/index';
-import { NextLink } from 'components/index';
+import { FullPageContext } from 'context/index';
 
 import Menu from './Menu';
 import styles from './Header.scss';
 
-// import { LogoIcon, MenuIcon } from '../../icons';
 import { LogoIcon } from '../../icons';
 
 const Header = () => {
+  const { Portal } = usePortal();
+  const { moveToSection } = useContext(FullPageContext);
+
+  const moveToSectionTop = () => {
+    moveToSection.moveTo(1);
+  };
+
   return (
-    <header className={styles.wrapper}>
-      <div className={styles.container}>
-        <NextLink to={paths.home} className={styles.logo}>
-          <LogoIcon />
-        </NextLink>
-        <Menu />
-      </div>
-    </header>
+    <Portal>
+      <header className={styles.wrapper}>
+        <div className={styles.container}>
+          <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
+          <Menu />
+        </div>
+      </header>
+    </Portal>
   );
 };
 

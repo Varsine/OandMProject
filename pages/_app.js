@@ -7,14 +7,12 @@ import NextNprogress from 'nextjs-progressbar';
 
 import 'styles/index.global.scss';
 
-import { I18nContext } from 'context/index';
 import { wrapper } from 'libraries/index';
+import { useDarkMode } from 'hooks/index';
 
 import ErrorPage from './404';
 
-import { appWithTranslation, withTranslation } from '../i18n';
-
-const MyApp = ({ Component, pageProps, t }) => {
+const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     Router.events.on('routeChangeComplete', () => {
       window.scroll({
@@ -25,15 +23,17 @@ const MyApp = ({ Component, pageProps, t }) => {
     });
   }, []);
 
+  useDarkMode();
+
   return (
-    <I18nContext.Provider value={t}>
+    <>
       <NextNprogress
         height="4"
         color="#094067"
         options={{ showSpinner: false }}
       />
       <Component {...pageProps} />
-    </I18nContext.Provider>
+    </>
   );
 };
 
@@ -43,11 +43,8 @@ MyApp.getInitialProps = async (appContext) => {
 };
 
 MyApp.propTypes = {
-  t: PropTypes.func.isRequired,
   pageProps: PropTypes.object.isRequired,
   Component: PropTypes.elementType.isRequired,
 };
 
-export default wrapper.withRedux(
-  withError(ErrorPage)(appWithTranslation(withTranslation('common')(MyApp))),
-);
+export default wrapper.withRedux(withError(ErrorPage)(MyApp));

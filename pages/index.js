@@ -9,8 +9,4 @@ const HomePage = () => (
   </HelmetLayout>
 );
 
-HomePage.getInitialProps = async () => {
-  return {};
-};
-
 export default HomePage;

@@ -3,6 +3,9 @@ $black: #000;
 $black-10: #00000099;
 $black-20: #1d1d1d;
 $black-30: #1a1a1a;
+$black-40: rgba(0, 0, 0, 0.6);
+
+$gray: #c4c4c4;
 
 $white: #fff;
 $white-10: rgba(234, 241, 250, 0.6);
@@ -11,3 +14,9 @@ $white-100: #f5f5f5;
 
 $liner-red: linear-gradient(339.44deg, #da4638 5.68%, #ff3623 85.94%);
 $liner-blue: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+
+//mode
+
+$bg-color: var(--bgColor);
+$header-bg: var(--headerBg);
+$text-color: var(--textColor);

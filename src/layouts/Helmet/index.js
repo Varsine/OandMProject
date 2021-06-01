@@ -2,26 +2,19 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-import { HeaderContainer, FooterContainer } from 'containers/index';
+import { IS_SERVER } from 'constants/index';
 
-const HelmetLayout = (props) => {
-  const { children, title, metaDescription } = props;
-
-  return (
-    <>
-      <Head>
-        {title && <title>{title}</title>}
-        {metaDescription && (
-          <meta name="description" content={metaDescription} />
-        )}
-      </Head>
-      <HeaderContainer />
-      {children}
-      <FooterContainer />
-      <canvas id="canvas" />
-    </>
-  );
-};
+const HelmetLayout = ({ children, title, metaDescription }) => (
+  <>
+    <Head>
+      {title && <title>{title}</title>}
+      {metaDescription && <meta name="description" content={metaDescription} />}
+      {!IS_SERVER && <script src="/js/script.js" />}
+    </Head>
+    {children}
+    {!IS_SERVER && <canvas id="canvas" />}
+  </>
+);
 
 HelmetLayout.defaultProps = {
   title: '',

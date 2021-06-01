@@ -17,6 +17,10 @@ const mainSections = [
   },
   {
     id: shortid.generate(),
+    component: AboutUs,
+  },
+  {
+    id: shortid.generate(),
     component: HowWeWork,
   },
   {
@@ -27,10 +31,7 @@ const mainSections = [
     id: shortid.generate(),
     component: OurTeam,
   },
-  {
-    id: shortid.generate(),
-    component: AboutUs,
-  },
+
   {
     id: shortid.generate(),
     component: JoinOurTeam,
