@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import usePortal from 'react-useportal';
 
+import { Menu } from 'components/index';
 import { FullPageContext } from 'context/index';
 
-import Menu from './Menu';
 import styles from './Header.scss';
 
 import { LogoIcon } from '../../icons';

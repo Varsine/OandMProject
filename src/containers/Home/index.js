@@ -18,23 +18,21 @@ const HomeContainer = () => {
   };
 
   return (
-    <main>
-      <ReactFullPage
-        navigation={false}
-        scrollingSpeed={1300}
-        keyboardScrolling={false}
-        onLeave={changeActiveStep}
-        fitToSection={false}
-        fixedElements="#canvas"
-        render={({ fullpageApi }) => (
-          <ReactFullPage.Wrapper>
-            <FullPageLayout fullpageApi={fullpageApi}>
-              {renderFullPages}
-            </FullPageLayout>
-          </ReactFullPage.Wrapper>
-        )}
-      />
-    </main>
+    <ReactFullPage
+      navigation={false}
+      scrollingSpeed={1300}
+      keyboardScrolling={false}
+      onLeave={changeActiveStep}
+      fitToSection={false}
+      fixedElements="#canvas"
+      render={({ fullpageApi }) => (
+        <ReactFullPage.Wrapper>
+          <FullPageLayout fullpageApi={fullpageApi}>
+            {renderFullPages}
+          </FullPageLayout>
+        </ReactFullPage.Wrapper>
+      )}
+    />
   );
 };
 

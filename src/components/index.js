@@ -1,6 +1,8 @@
 export { default as Map } from './Map';
 export { default as Main } from './Main';
+export { default as Menu } from './Menu';
 export { default as Input } from './Input';
+export { default as Mouse } from './Mouse';
 export { default as Button } from './Button';
 export { default as AboutUs } from './AboutUs';
 export { default as OurTeam } from './OurTeam';

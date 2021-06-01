@@ -17,11 +17,11 @@ const mainSections = [
   },
   {
     id: shortid.generate(),
-    component: AboutUs,
+    component: HowWeWork,
   },
   {
     id: shortid.generate(),
-    component: HowWeWork,
+    component: AboutUs,
   },
   {
     id: shortid.generate(),
