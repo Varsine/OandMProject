@@ -6,6 +6,12 @@ $tablet-l: 992px;
 $desktop: 1024px;
 $wide: 1200px;
 
+//variables
+$bg-color: var(--bgColor);
+$header-bg: var(--headerBg);
+$text-color: var(--textColor);
+$team-image: var(--teamImage);
+
 // @extend
 %flex-center {
   display: flex;

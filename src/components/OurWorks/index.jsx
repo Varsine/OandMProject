@@ -5,6 +5,7 @@ import styles from './OurWorks.scss';
 const OurWorks = () => {
   return (
     <section className="section">
+      <div className="canvas__working" />
       <div className={styles.wrapper}>OurWorks</div>
     </section>
   );

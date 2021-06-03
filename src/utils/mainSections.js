@@ -13,6 +13,10 @@ import {
 const mainSections = [
   {
     id: shortid.generate(),
+    component: OurTeam,
+  },
+  {
+    id: shortid.generate(),
     component: Main,
   },
   {
@@ -27,11 +31,6 @@ const mainSections = [
     id: shortid.generate(),
     component: OurWorks,
   },
-  {
-    id: shortid.generate(),
-    component: OurTeam,
-  },
-
   {
     id: shortid.generate(),
     component: JoinOurTeam,

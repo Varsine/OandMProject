@@ -1,9 +1,3 @@
-:root {
-  --bgColor: #1d1d1d;
-  --headerBg: rgba(0, 0, 0, 0.6);
-  --textColor: #f1f2f2;
-}
-
 :global {
   .container {
     max-width: 1341px;
@@ -13,6 +7,10 @@
       max-width: 100%;
       margin: 0 20px;
     }
+  }
+
+  #fullpage {
+    z-index: 2;
   }
 
   #canvas {

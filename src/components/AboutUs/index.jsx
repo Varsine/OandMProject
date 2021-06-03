@@ -21,6 +21,7 @@ const AboutUs = () => {
   return (
     <section className="section">
       <div className={styles.wrapper}>
+        <div className="canvas__working" />
         <div className={styles.info}>
           <h2 className={styles.info__title}>About Us</h2>
           <h4 className={styles.info__subtitle}>

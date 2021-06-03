@@ -1,4 +1,78 @@
 .wrapper {
   height: 100%;
   @extend %flex-center;
+  flex-direction: column;
+}
+
+.arrows {
+  @extend %flex-center;
+
+  &__left {
+    transform: rotate(180deg);
+  }
+
+  &__right {
+    z-index: 1;
+  }
+}
+
+.section {
+  // height: 456px;
+  border-radius: 20px;
+  z-index: 10;
+  @extend %flex-center;
+}
+
+.banner {
+  width: 468px;
+  height: 616px;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: none;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background: #1a1a1a;
+
+  &__item {
+    width: 39px;
+    height: 44px;
+    background-size: 472px;
+
+    &_active {
+      animation: animate 0.75s ease-in-out forwards;
+    }
+
+    &:nth-child(even) {
+      animation: animate 1s ease-in-out forwards;
+    }
+
+    &:nth-child(7n + 3) {
+      animation: animate 2.5s ease-in-out forwards;
+    }
+
+    &:nth-child(7n + 7) {
+      animation: animate 1.5s ease-in-out forwards;
+    }
+
+    @keyframes animate {
+      0% {
+        opacity: 0;
+        transform: scale(0) translateY(1000px);
+      }
+      50% {
+        opacity: 1;
+        background-image: $team-image;
+      }
+      100% {
+        opacity: 1;
+        background-image: $team-image;
+        transform: scale(1) translateY(0);
+      }
+    }
+  }
+}
+
+.info {
+  margin-left: 40px;
 }

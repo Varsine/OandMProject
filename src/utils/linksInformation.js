@@ -16,7 +16,7 @@ import {
 const linksInformation = [
   {
     id: shortid.generate(),
-    url: 'https://www.facebook.com/ShellLogixLLC/',
+    url: 'https://www.facebook.com/ShellLogixLLC',
     icon: <FbIcon />,
     iconHover: <FbHoverIcon />,
     ariaLabel: 'facebook',
