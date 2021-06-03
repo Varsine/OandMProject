@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
 
-import noop from 'utils/noop';
+import { noop } from 'utils/index';
 
 const NextLink = ({
   to,

@@ -13,15 +13,7 @@ import {
 const mainSections = [
   {
     id: shortid.generate(),
-    component: OurTeam,
-  },
-  {
-    id: shortid.generate(),
     component: Main,
-  },
-  {
-    id: shortid.generate(),
-    component: HowWeWork,
   },
   {
     id: shortid.generate(),
@@ -29,7 +21,15 @@ const mainSections = [
   },
   {
     id: shortid.generate(),
+    component: HowWeWork,
+  },
+  {
+    id: shortid.generate(),
     component: OurWorks,
+  },
+  {
+    id: shortid.generate(),
+    component: OurTeam,
   },
   {
     id: shortid.generate(),

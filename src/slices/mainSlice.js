@@ -6,6 +6,7 @@ export const mainSlice = createSlice({
   initialState: {
     activeIndex: 1,
     isNightMode: true,
+    teamSliderIndex: 0,
   },
 
   reducers: {
@@ -17,10 +18,15 @@ export const mainSlice = createSlice({
       // eslint-disable-next-line no-param-reassign
       state.activeIndex = payload;
     },
+    changeTeamSliderIndex: (state, { payload }) => {
+      // eslint-disable-next-line no-param-reassign
+      state.teamSliderIndex = payload;
+    },
   },
 });
 
-export const { modeToggler, changeIndex } = mainSlice.actions;
+export const { modeToggler, changeIndex, changeTeamSliderIndex } =
+  mainSlice.actions;
 export default mainSlice.reducer;
 
 // selectors
@@ -35,4 +41,9 @@ export const modeSelector = createSelector(
 export const activeIndexSelector = createSelector(
   selectState,
   (state) => state.activeIndex,
+);
+
+export const teamSliderIndexSelector = createSelector(
+  selectState,
+  (state) => state.teamSliderIndex,
 );

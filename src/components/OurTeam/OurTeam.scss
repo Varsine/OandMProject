@@ -4,8 +4,15 @@
   flex-direction: column;
 }
 
+.title {
+  @extend %open-sans-48;
+  text-decoration: underline;
+  padding: 40px 0 24px;
+}
+
 .arrows {
   @extend %flex-center;
+  margin-top: 69px;
 
   &__left {
     transform: rotate(180deg);
@@ -17,9 +24,6 @@
 }
 
 .section {
-  // height: 456px;
-  border-radius: 20px;
-  z-index: 10;
   @extend %flex-center;
 }
 
@@ -28,11 +32,12 @@
   height: 616px;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 20px;
+  background: $bg-color;
   background-image: none;
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: 0 0;
-  background: #1a1a1a;
 
   &__item {
     width: 39px;
@@ -40,22 +45,54 @@
     background-size: 472px;
 
     &_active {
-      animation: animate 0.75s ease-in-out forwards;
+      animation-name: teamAnimateBottom;
+      animation-duration: 0.75s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
     }
 
     &:nth-child(even) {
-      animation: animate 1s ease-in-out forwards;
+      animation-name: teamAnimateBottom;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
     }
 
     &:nth-child(7n + 3) {
-      animation: animate 2.5s ease-in-out forwards;
+      animation-name: teamAnimateBottom;
+      animation-duration: 2.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
     }
 
     &:nth-child(7n + 7) {
-      animation: animate 1.5s ease-in-out forwards;
+      animation-name: teamAnimateBottom;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
     }
 
-    @keyframes animate {
+    &:nth-of-type(1) {
+      overflow: hidden;
+      border-radius: 20px 0 0 0;
+    }
+
+    &:nth-of-type(12) {
+      overflow: hidden;
+      border-radius: 0 20px 0 0;
+    }
+
+    &:nth-of-type(157) {
+      overflow: hidden;
+      border-radius: 0 0 0 20px;
+    }
+
+    &:nth-of-type(168) {
+      overflow: hidden;
+      border-radius: 0 0 20px 0;
+    }
+
+    @keyframes teamAnimateBottom {
       0% {
         opacity: 0;
         transform: scale(0) translateY(1000px);
@@ -70,9 +107,72 @@
         transform: scale(1) translateY(0);
       }
     }
+
+    // @keyframes teamAnimateTop {
+    //   0% {
+    //     opacity: 0;
+    //     transform: scale(0) translateY(-1000px);
+    //   }
+    //   50% {
+    //     opacity: 1;
+    //     background-image: $team-image;
+    //   }
+    //   100% {
+    //     opacity: 1;
+    //     background-image: $team-image;
+    //     transform: scale(1) translateY(0);
+    //   }
+    // }
+
+    // @keyframes teamAnimateLeft {
+    //   0% {
+    //     opacity: 0;
+    //     transform: scale(0) translateY(1000px) translateX(-1000px);
+    //   }
+    //   50% {
+    //     opacity: 1;
+    //     background-image: $team-image;
+    //   }
+    //   100% {
+    //     opacity: 1;
+    //     background-image: $team-image;
+    //     transform: scale(1) translateY(0) translateX(0);
+    //   }
+    // }
+
+    // @keyframes teamAnimateRight {
+    //   0% {
+    //     opacity: 0;
+    //     transform: scale(0) translateY(1000px) translateX(1000px);
+    //   }
+    //   50% {
+    //     opacity: 1;
+    //     background-image: $team-image;
+    //   }
+    //   100% {
+    //     opacity: 1;
+    //     background-image: $team-image;
+    //     transform: scale(1) translateY(0) translateX(0);
+    //   }
+    // }
   }
 }
 
 .info {
-  margin-left: 40px;
+  color: $text-color;
+  max-width: 432px;
+  margin-left: 48px;
+
+  &__title {
+    @extend %open-sans-32;
+  }
+
+  &__subtitle {
+    @extend %open-sans-24;
+    padding: 8px 0 16px;
+  }
+
+  &__text {
+    @extend %open-sans-18;
+  }
 }

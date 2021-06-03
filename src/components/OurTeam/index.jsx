@@ -1,35 +1,92 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { teamCard } from 'utils/index';
+import {
+  modeSelector,
+  activeIndexSelector,
+  changeTeamSliderIndex,
+  teamSliderIndexSelector,
+} from 'slices/mainSlice';
 
 import Slide from './Slide/index';
 import styles from './OurTeam.scss';
 
-import { ArrowIcon } from '../../icons';
+import { ArrowIcon, ArrowGdtIcon } from '../../icons';
 
 const OurTeam = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const dispatch = useDispatch();
+  const [activeIndex, setActiveIndex] = useState(1000);
+  const isDarkMode = useSelector(modeSelector);
+  const activeSectionIndex = useSelector(activeIndexSelector);
+  const activeTeamSliderIndex = useSelector(teamSliderIndexSelector);
+  const isShow = activeSectionIndex === 5;
+
+  useEffect(() => {
+    setActiveIndex(isShow ? activeTeamSliderIndex : 1000);
+  }, [activeSectionIndex]);
 
   const incrementSlideHandler = () => {
-    setActiveIndex(activeIndex + 1);
+    if (activeIndex === teamCard.length - 1) {
+      setActiveIndex(0);
+      dispatch(changeTeamSliderIndex(0));
+    } else {
+      setActiveIndex(activeIndex + 1);
+      dispatch(changeTeamSliderIndex(activeIndex + 1));
+    }
   };
 
   const decrementSlideHandler = () => {
-    setActiveIndex(activeIndex - 1);
+    if (activeIndex === 0) {
+      setActiveIndex(teamCard.length - 1);
+      dispatch(changeTeamSliderIndex(teamCard.length - 1));
+    } else {
+      setActiveIndex(activeIndex - 1);
+      dispatch(changeTeamSliderIndex(activeIndex - 1));
+    }
   };
+
+  const renderteamCards = teamCard.map(
+    (item, index) =>
+      activeIndex === index && (
+        <Slide
+          // eslint-disable-next-line react/no-array-index-key
+          key={`slide ${index}`}
+          activeIndex={activeIndex}
+          isDarkMode={isDarkMode}
+        />
+      ),
+  );
 
   return (
     <section className="section">
       <div className="canvas__working" />
       <div className={styles.wrapper}>
-        <Slide activeIndex={activeIndex} />
+        <h2 className={styles.title}>Our Team</h2>
+        {renderteamCards}
         <div className={styles.arrows}>
-          <ArrowIcon
-            className={styles.arrows__left}
-            onClick={decrementSlideHandler}
-          />
-          <ArrowIcon
-            className={styles.arrows__right}
-            onClick={incrementSlideHandler}
-          />
+          {isDarkMode ? (
+            <ArrowIcon
+              className={styles.arrows__left}
+              onClick={decrementSlideHandler}
+            />
+          ) : (
+            <ArrowGdtIcon
+              className={styles.arrows__left}
+              onClick={decrementSlideHandler}
+            />
+          )}
+          {isDarkMode ? (
+            <ArrowIcon
+              className={styles.arrows__right}
+              onClick={incrementSlideHandler}
+            />
+          ) : (
+            <ArrowGdtIcon
+              className={styles.arrows__right}
+              onClick={incrementSlideHandler}
+            />
+          )}
         </div>
       </div>
     </section>

@@ -60,15 +60,16 @@ const Banner = ({ index, isAnimate }) => {
       setXposition(index - 144);
       setYposition(12);
     }
-    // if (index > 155 && index <= 167) {
-    //   setXposition(index - 156);
-    //   setYposition(13);
-    // }
+    if (index > 155 && index <= 167) {
+      setXposition(index - 156);
+      setYposition(13);
+    }
   }, [index]);
 
   return (
     <div
       style={{
+        // animationName: animPosition,
         animationDelay: `${(index + 1) * 0.02}s`,
         backgroundPosition: `${calculateXposition} ${calculateYposition}`,
       }}

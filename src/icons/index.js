@@ -8,6 +8,7 @@ export { default as MenuIcon } from './Menu';
 export { default as MoonIcon } from './Moon';
 export { default as MouseIcon } from './Mouse';
 export { default as ArrowIcon } from './arrow.svg';
+export { default as ArrowGdtIcon } from './arrow-gdt.svg';
 export { default as AboutUsIcon } from './AboutUs';
 export { default as LogoLargeIcon } from './logoLarge.svg';
 export { default as MouseLightIcon } from './MouseLight';

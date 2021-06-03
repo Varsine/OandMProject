@@ -1,55 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { teamCard } from 'utils/index';
+import { teamCard, addCssVariables } from 'utils/index';
 
 import Banner from './Banner';
 
 import styles from '../OurTeam.scss';
 
-const Slide = ({ activeIndex }) => {
+const Slide = ({ activeIndex, isDarkMode }) => {
   const [isAnimate, setIsAnimate] = useState(false);
-  const { text, image, title, subtitle } = teamCard[activeIndex];
+  const { text, image, imageLight, animPosition, title, subtitle } =
+    teamCard[activeIndex];
+  const photoByMode = isDarkMode ? image : imageLight;
 
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      `--teamImage`,
-      `${teamCard[0].image}`,
-    );
+    addCssVariables('teamImage', photoByMode);
     setIsAnimate(true);
-  }, []);
-
-  useEffect(() => {
-    if (activeIndex > 0) {
-      setIsAnimate(false);
-      document.documentElement.style.setProperty(`--teamImage`, `'sdssdsdds'`);
-
-      setTimeout(
-        () =>
-          document.documentElement.style.setProperty(`--teamImage`, `${image}`),
-        setIsAnimate(true),
-        2000,
-      );
-    }
-  }, [activeIndex]);
+  }, [isDarkMode]);
 
   const renderBannerList = Array.from(Array(168), (el, index) => {
-    return <Banner key={index} index={index} isAnimate={isAnimate} />;
+    return (
+      <Banner
+        key={index}
+        index={index}
+        isAnimate={isAnimate}
+        animPosition={animPosition}
+      />
+    );
   });
 
   return (
     <div className={styles.section}>
       <div className={styles.banner}>{renderBannerList}</div>
       <div className={styles.info}>
-        <h3>{title}</h3>
-        <h4>{subtitle}</h4>
-        <p>{text}</p>
+        <h3 className={styles.info__title}>{title}</h3>
+        <h4 className={styles.info__subtitle}>{subtitle}</h4>
+        <p className={styles.info__text}>{text}</p>
       </div>
     </div>
   );
 };
 
 Slide.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired,
   activeIndex: PropTypes.number.isRequired,
 };
 
