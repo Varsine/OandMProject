@@ -1,5 +1,24 @@
 .wrapper {
-  position: fixed;
-  bottom: 80px;
-  left: calc(50% - 20px);
+  @extend %flex-center;
+  margin-left: 16px;
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.top {
+  margin-top: -4px;
+  margin-right: 8px;
+}
+
+.bottom {
+  transform: rotate(180deg);
+  margin-top: 5px;
+
+  &_skt {
+    width: 32px;
+    height: 32px;
+  }
 }

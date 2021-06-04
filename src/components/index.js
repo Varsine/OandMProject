@@ -1,4 +1,5 @@
 export { default as Map } from './Map';
+export { default as Chat } from './Chat';
 export { default as Main } from './Main';
 export { default as Menu } from './Menu';
 export { default as Input } from './Input';

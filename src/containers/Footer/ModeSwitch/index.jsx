@@ -6,10 +6,11 @@ import {
   modeSelector,
   activeIndexSelector,
 } from 'slices/mainSlice';
+import { Mouse, IconHover } from 'components/index';
 
 import styles from './ModeSwitch.scss';
 
-import { SunIcon, MoonIcon } from '../../../icons';
+import { SunIcon, MoonIcon, SunHoverIcon, MoonHoverIcon } from '../../../icons';
 
 const ModeSwitch = () => {
   const dispatch = useDispatch();
@@ -23,15 +24,28 @@ const ModeSwitch = () => {
   return (
     <div className={styles.wrapper}>
       {isDarkMode ? (
-        <SunIcon
+        <IconHover
+          isLink={false}
+          icon={<SunIcon />}
+          iconHover={<SunHoverIcon />}
           onClick={modeToggleHandler}
-          className="test"
-          aria-label="light mode"
+          anchorProps={{
+            'aria-label': 'light mode',
+          }}
         />
       ) : (
-        <MoonIcon onClick={modeToggleHandler} aria-label="dark mode" />
+        <IconHover
+          isLink={false}
+          icon={<MoonIcon />}
+          iconHover={<MoonHoverIcon />}
+          onClick={modeToggleHandler}
+          anchorProps={{
+            'aria-label': 'dark mode',
+          }}
+        />
       )}
       <h3 className={styles.index}>0{activeIndex}</h3>
+      <Mouse />
     </div>
   );
 };

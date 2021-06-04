@@ -1,4 +1,49 @@
 .wrapper {
   height: 100%;
-  @extend %flex-center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 80px 0 60px;
+
+  &__info {
+    padding: 0 16px 0 50px;
+
+    &_title {
+      @extend %open-sans-48;
+    }
+
+    &_subtitle {
+      padding: 16px 0;
+      max-width: 615px;
+      @extend %open-sans-24;
+    }
+
+    &_text {
+      max-width: 768px;
+      @extend %open-sans-18;
+    }
+
+    &_join {
+      width: 100%;
+      color: $text-color;
+      padding: 18px 0;
+      position: relative;
+      max-width: 201px;
+      margin-top: 32px;
+      text-align: center;
+      transition: ease-in 0.3s;
+      background: $liner-blue;
+      border-radius: 50px;
+      @extend %open-sans-16;
+
+      &:hover {
+        background: $liner-blue-hover;
+      }
+    }
+  }
+
+  &__photos {
+    background: #333;
+    height: 100%;
+  }
 }

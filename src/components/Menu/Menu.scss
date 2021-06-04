@@ -24,8 +24,38 @@
   &__item {
     transition: 0.5s;
 
+    &:hover {
+      svg {
+        &:first-child {
+          display: none;
+        }
+      }
+
+      svg {
+        &:last-child {
+          display: block;
+        }
+      }
+    }
+
+    svg:last-child {
+      display: none;
+    }
+
     &_active {
-      background: red;
+      &:hover {
+        svg {
+          &:first-child {
+            display: block;
+          }
+        }
+
+        svg {
+          &:last-child {
+            display: none;
+          }
+        }
+      }
     }
 
     &:nth-child(3) {

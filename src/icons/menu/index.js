@@ -1,0 +1,11 @@
+export { default as TeamIcon } from './Team';
+export { default as HomeIcon } from './Home';
+export { default as MenuIcon } from './Menu';
+export { default as CloseIcon } from './Close';
+export { default as AboutUsIcon } from './AboutUs';
+export { default as HomeHoverIcon } from './HomeHover';
+export { default as HomeLightIcon } from './HomeLight';
+export { default as TeamLightIcon } from './TeamLight';
+export { default as TeamHoverIcon } from './TeamHover';
+export { default as AboutUsHoverIcon } from './AboutUsHover';
+export { default as AboutUsLightIcon } from './AboutUsLight';

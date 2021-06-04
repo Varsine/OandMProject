@@ -1,21 +1,37 @@
 import shortid from 'shortid';
 
-import { HomeIcon, AboutUsIcon, TeamIcon } from '../icons';
+import {
+  HomeIcon,
+  TeamIcon,
+  AboutUsIcon,
+  HomeHoverIcon,
+  HomeLightIcon,
+  TeamLightIcon,
+  TeamHoverIcon,
+  AboutUsHoverIcon,
+  AboutUsLightIcon,
+} from '../icons';
 
 const menuLinks = [
   {
     id: shortid.generate(),
-    svg: HomeIcon,
+    icon: HomeIcon,
+    iconLight: HomeLightIcon,
+    iconHover: HomeHoverIcon,
     sectionIndex: 1,
   },
   {
     id: shortid.generate(),
-    svg: AboutUsIcon,
+    icon: AboutUsIcon,
+    iconLight: AboutUsLightIcon,
+    iconHover: AboutUsHoverIcon,
     sectionIndex: 3,
   },
   {
     id: shortid.generate(),
-    svg: TeamIcon,
+    icon: TeamIcon,
+    iconLight: TeamLightIcon,
+    iconHover: TeamHoverIcon,
     sectionIndex: 5,
   },
 ];

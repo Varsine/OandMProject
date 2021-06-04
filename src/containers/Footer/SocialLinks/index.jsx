@@ -13,6 +13,7 @@ const SocialLinks = () => {
         url={url}
         icon={icon}
         iconHover={iconHover}
+        className={styles.links__item}
         anchorProps={{
           target: '_blank',
           'aria-label': ariaLabel,

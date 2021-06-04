@@ -1,7 +1,6 @@
 .wrapper {
   position: relative;
   height: 33px;
-  margin-right: 24px;
 
   &:hover {
     .wrapper__item {
@@ -45,10 +44,6 @@
         }
       }
     }
-  }
-
-  &:last-child {
-    margin-right: 0;
   }
 
   &__item {

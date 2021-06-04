@@ -3,11 +3,13 @@ import shortid from 'shortid';
 import {
   FbIcon,
   GmailIcon,
+  Instagram,
   FbHoverIcon,
   TwitterIcon,
   TelegramIcon,
   LinkedinIcon,
   GmailHoverIcon,
+  InstagramHover,
   TwitterHoverIcon,
   TelegramHoverIcon,
   LinkedinHoverIcon,
@@ -41,6 +43,13 @@ const linksInformation = [
     icon: <TelegramIcon />,
     iconHover: <TelegramHoverIcon />,
     ariaLabel: 'telegram',
+  },
+  {
+    id: shortid.generate(),
+    url: 'https://www.instagram.com/shelllogixllc',
+    icon: <Instagram />,
+    iconHover: <InstagramHover />,
+    ariaLabel: 'instagram',
   },
   {
     id: shortid.generate(),
