@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { teamCard, addCssVariables } from 'utils/index';
+import { teamCards, addCssVariables } from 'utils/index';
 
 import Banner from './Banner';
 
@@ -10,7 +10,7 @@ import styles from '../OurTeam.scss';
 const Slide = ({ activeIndex, isDarkMode }) => {
   const [isAnimate, setIsAnimate] = useState(false);
   const { text, image, imageLight, animPosition, title, subtitle } =
-    teamCard[activeIndex];
+    teamCards[activeIndex];
   const photoByMode = isDarkMode ? image : imageLight;
 
   useEffect(() => {

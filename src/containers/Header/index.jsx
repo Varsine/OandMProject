@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import usePortal from 'react-useportal';
 
-import { Menu } from 'components/index';
+import { paths } from 'routes/index';
+import { Menu, NextLink } from 'components/index';
 import { FullPageContext } from 'context/index';
 
 import styles from './Header.scss';
 
 import { LogoIcon } from '../../icons';
 
-const Header = () => {
+const Header = ({ isOnePage }) => {
   const { Portal } = usePortal();
   const { moveToSection } = useContext(FullPageContext);
 
@@ -20,12 +22,22 @@ const Header = () => {
     <Portal>
       <header className={styles.wrapper}>
         <div className={styles.container}>
-          <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
-          <Menu />
+          {!isOnePage ? (
+            <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
+          ) : (
+            <NextLink to={paths.home}>
+              <LogoIcon aria-label="logo" />
+            </NextLink>
+          )}
+          {!isOnePage && <Menu />}
         </div>
       </header>
     </Portal>
   );
+};
+
+Header.propTypes = {
+  isOnePage: PropTypes.bool.isRequired,
 };
 
 export default Header;

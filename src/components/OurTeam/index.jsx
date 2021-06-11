@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { teamCard } from 'utils/index';
+import { teamCards } from 'utils/index';
 import {
   modeSelector,
   activeIndexSelector,
@@ -27,7 +27,7 @@ const OurTeam = () => {
   }, [activeSectionIndex]);
 
   const incrementSlideHandler = () => {
-    if (activeIndex === teamCard.length - 1) {
+    if (activeIndex === teamCards.length - 1) {
       setActiveIndex(0);
       dispatch(changeTeamSliderIndex(0));
     } else {
@@ -38,15 +38,15 @@ const OurTeam = () => {
 
   const decrementSlideHandler = () => {
     if (activeIndex === 0) {
-      setActiveIndex(teamCard.length - 1);
-      dispatch(changeTeamSliderIndex(teamCard.length - 1));
+      setActiveIndex(teamCards.length - 1);
+      dispatch(changeTeamSliderIndex(teamCards.length - 1));
     } else {
       setActiveIndex(activeIndex - 1);
       dispatch(changeTeamSliderIndex(activeIndex - 1));
     }
   };
 
-  const renderteamCards = teamCard.map(
+  const renderteamCards = teamCards.map(
     (item, index) =>
       activeIndex === index && (
         <Slide

@@ -20,13 +20,6 @@ var canvas = {
     return ctx;
   },
 
-  setCursor: function (type) {
-    if (type !== this.cursor) {
-      this.cursor = type;
-      this.elem.style.cursor = type;
-    }
-  },
-
   pointer: function () {
     var pointer = {
       x: 0,
@@ -319,15 +312,6 @@ Vector.prototype.mag2 = function () {
     for (var i = 0; i < count; i++) {
       circles[i].update();
       circles[i].render();
-    }
-
-    // cursor
-
-    if (dragging) {
-      canvas.setCursor('move');
-    } else {
-      if (pointer.over) canvas.setCursor('pointer');
-      else canvas.setCursor('default');
     }
 
     // vignette

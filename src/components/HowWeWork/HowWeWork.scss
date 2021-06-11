@@ -1,4 +1,259 @@
+:root {
+  --delay: 0ms;
+  --path: path(
+    'M1 190C18 172 35.5 160.402 52 142.853C52 142.853 76.5 112.853 102.5 94.3538C127.479 76.5807 143.124 66.1214 172.5 57.3534C199.981 49.151 216.814 44.5594 245 49.8538C266.318 53.8582 279.538 57.7291 296 71.8538C310.509 84.303 316 97.3534 323.5 112.354C333.025 131.404 341.168 148.183 357.5 161.853C372.462 174.377 378.548 176.828 398 178.354C423.5 180.353 440 174.353 461.5 162.354C484.35 149.601 495.195 138.662 514.5 121.354C589.5 39.8535 575.5 55.3536 623.5 23.8535C653 11.3532 721.17 5.58942 754.5 2.8535C791.188 -0.158007 812.5 -0.647123 849 10.3532C886.284 21.5897 913.116 34.0815 932.5 67.8538C941.384 83.3315 944.913 93.5786 946.5 111.354C949 139.354 946.5 136.678 946.5 162.354C946.5 185.354 943.5 205.354 958.5 238.354C973.5 271.354 1023.49 282.852 1051.5 262.354C1133.5 202.354 1157.5 202.354 1157.5 202.354C1157.5 202.354 1177.34 199.818 1190 198.5C1203.23 197.122 1223 196 1223 196'
+  );
+  --pathHD: path(
+    'M1.5 105.5L49 69.5C49 69.5 66.042 55.9295 78.8213 46.8446C91.0987 38.1165 98.7883 32.9801 113.227 28.6743C126.734 24.6462 135.008 22.3913 148.861 24.9914C159.339 26.9578 165.837 28.8588 173.928 35.7952C181.06 41.9088 183.759 48.3177 187.445 55.6842C192.127 65.0395 196.129 73.2791 204.156 79.9926C211.51 86.1428 214.502 87.3467 224.063 88.0957C236.596 89.0777 244.706 86.1312 255.273 80.2384C266.504 73.9755 271.835 68.6036 281.323 60.1039C295.577 47.3355 302.626 39.76 319.416 29.1654C333.424 20.3259 337.43 18.293 352.347 11.9775C366.846 5.83874 382.904 3.25379 399.286 1.91022C417.318 0.431321 427.794 0.191123 445.734 5.59321C464.059 11.1113 477.247 17.2458 486.775 33.8309C491.141 41.4317 492.876 46.4639 493.656 55.1931C494.885 68.9433 493.41 77.9418 493.41 90.551C493.41 101.846 500.537 117.07 514.545 122.717C528.553 128.365 528.763 128.31 545.756 129.838C570.331 132.048 609.5 116.5 609.5 116.5L648 103'
+  );
+  --pathHD2: path(
+    'M35 46.5L45.5 37L58.5 29.5L71.2227 22.9747L83.9453 16.9495C83.9453 16.9495 192.445 -35.5504 273.444 49.9495C345.444 125.95 318.944 229.949 318.944 229.949L302.944 276.949C302.944 276.949 273.941 261.046 253.944 254.449C221.446 243.728 136.444 205.449 60.4444 272.949C-36.674 359.207 14.4441 452.449 14.4441 452.449L29 499'
+  );
+  --pathHD3: path(
+    'M30.7116 34.8116C30.7116 34.8116 159.212 -47.5458 246.212 44.8092C310.914 113.494 286.711 207.309 286.711 207.309L272.245 249.644C272.245 249.644 246.181 235.271 228.212 229.309C199.007 219.62 118.712 182.311 47.7115 252.812C-43.2882 343.17 26.7116 432.809 26.7116 432.809'
+  );
+}
+
 .wrapper {
-  height: 100%;
-  @extend %flex-center;
+  height: 100vh;
+  padding: 80px 0 60px;
+  flex-direction: column;
+  @extend %flex-align;
+}
+
+.title {
+  padding: 24px 0 72px;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  @extend %open-sans-48;
+}
+
+.animation {
+  width: 100%;
+  height: 504px;
+  margin: 0 auto;
+  display: flex;
+  max-width: 1320px;
+  justify-content: space-between;
+
+  &__item {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background: $white-10;
+    border-radius: 50px;
+    backdrop-filter: blur(20px);
+    @extend %flex-center;
+
+    &_light {
+      border: 1px solid $liner-blue;
+    }
+  }
+
+  &__path {
+    top: -136px;
+    left: 100px;
+    position: absolute;
+
+    &_icon {
+      path {
+        stroke: $white;
+      }
+    }
+  }
+
+  &__rocket {
+    top: 278px;
+    width: 100px;
+    height: 100px;
+    background: $liner-blue;
+    backdrop-filter: blur(20px);
+  }
+
+  &__clock {
+    top: 116px;
+
+    &_isAnimate {
+      animation: stepColor;
+      animation-delay: 4.5s;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+  }
+
+  &__hands {
+    top: 288px;
+
+    &_isAnimate {
+      animation: stepColor;
+      animation-delay: 8.5s;
+      animation-duration: 0.4s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    &_icons {
+      position: relative;
+
+      &_left {
+        z-index: 2;
+        position: absolute;
+      }
+
+      &_right {
+        z-index: 1;
+      }
+    }
+  }
+
+  svg {
+    cursor: default;
+  }
+}
+
+.rocket {
+  left: 51px;
+  top: -140px;
+  position: absolute;
+  offset-path: var(--path);
+  offset-rotate: auto 49deg;
+
+  &__animation {
+    animation: rocket 10s ease-in-out var(--delay);
+
+    @keyframes rocket {
+      0% {
+        offset-distance: 0%;
+      }
+      100% {
+        offset-distance: 100%;
+      }
+    }
+  }
+
+  &__light {
+    left: 51px;
+    top: -140px;
+    position: absolute;
+    offset-path: var(--path);
+    offset-rotate: auto 49deg;
+    display: none;
+
+    &_active {
+      display: block;
+    }
+
+    &_animation {
+      animation: rocketLight 10s ease-in-out var(--delay);
+
+      @keyframes rocketLight {
+        0% {
+          offset-distance: 0%;
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        100% {
+          offset-distance: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.clock {
+  path {
+    animation: clockColor;
+    animation-delay: 5s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+
+    @keyframes clockColor {
+      to {
+        fill: $white;
+      }
+    }
+
+    &:nth-child(2) {
+      animation: clock;
+      animation-delay: 5s;
+      transform-origin: center;
+      animation-duration: 0.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: 10;
+
+      @keyframes clock {
+        to {
+          transform: rotate(359deg);
+        }
+      }
+    }
+
+    &:nth-child(11) {
+      animation: clock;
+      animation-delay: 5s;
+      transform-origin: center;
+      animation-duration: 0.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: 10;
+
+      @keyframes clock {
+        to {
+          transform: rotate(359deg);
+        }
+      }
+    }
+  }
+}
+
+.isAnimate {
+  &__left {
+    animation: lefthand;
+    animation-delay: 8.5s;
+    animation-duration: 0.4s;
+    animation-direction: alternate;
+    animation-timing-function: initial;
+    animation-iteration-count: 4;
+
+    @keyframes lefthand {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(-20deg);
+      }
+    }
+  }
+
+  &__right {
+    animation: righthand;
+    animation-delay: 8.5s;
+    animation-duration: 0.4s;
+    animation-direction: alternate;
+    animation-timing-function: initial;
+    animation-iteration-count: 4;
+
+    @keyframes righthand {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(10deg);
+      }
+    }
+  }
+}
+
+@keyframes stepColor {
+  from {
+    background: $white-10;
+  }
+  to {
+    background: $liner-blue;
+  }
 }

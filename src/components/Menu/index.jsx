@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
@@ -8,10 +8,12 @@ import { modeSelector, activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './Menu.scss';
 
+import Input from '../Input';
 import { MenuIcon, CloseIcon } from '../../icons';
 
 const Menu = () => {
   const htmlFor = 'menu-open';
+  const [isOpen, setIsOpen] = useState(false);
   const isDarkMode = useSelector(modeSelector);
   const activeIndex = useSelector(activeIndexSelector);
   const { moveToSection } = useContext(FullPageContext);
@@ -19,6 +21,14 @@ const Menu = () => {
   const mobeToSectionHandler = (index) => {
     moveToSection.moveTo(index);
   };
+
+  const toggleChangeHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [activeIndex]);
 
   const renderMenuLinks = menuLinks.map((item) => {
     const isActive = activeIndex === item.sectionIndex;
@@ -46,11 +56,13 @@ const Menu = () => {
 
   return (
     <div className={styles.wrapper}>
-      <input
+      <Input
         id={htmlFor}
         type="checkbox"
         href="#"
         name={htmlFor}
+        checked={isOpen}
+        onChange={toggleChangeHandler}
         className={styles.wrapper__open}
       />
       <label className={styles.wrapper__open_button} htmlFor={htmlFor}>

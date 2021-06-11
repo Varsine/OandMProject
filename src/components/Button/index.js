@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 
 import { noop } from 'utils/index';
 
-const FlexButton = ({ onClick, className, children, ...rest }) => (
-  <button {...rest} type="button" onClick={onClick} className={className}>
+const Button = ({ onClick, className, children, ...rest }) => (
+  <button type="button" onClick={onClick} className={className} {...rest}>
     {children}
   </button>
 );
 
-FlexButton.propTypes = {
+Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   children: PropTypes.any.isRequired,
 };
 
-FlexButton.defaultProps = {
+Button.defaultProps = {
   className: '',
   onClick: noop,
 };
 
-export default FlexButton;
+export default Button;

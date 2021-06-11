@@ -3,6 +3,7 @@ import shortid from 'shortid';
 import {
   Map,
   Main,
+  Apply,
   AboutUs,
   OurTeam,
   OurWorks,
@@ -10,7 +11,7 @@ import {
   JoinOurTeam,
 } from 'components/index';
 
-const mainSections = [
+export const mainSections = [
   {
     id: shortid.generate(),
     component: Main,
@@ -41,4 +42,16 @@ const mainSections = [
   },
 ];
 
-export default mainSections;
+export const applySections = [
+  {
+    id: shortid.generate(),
+    component: Apply,
+  },
+];
+
+export const errorSection = [
+  {
+    id: shortid.generate(),
+    component: Main,
+  },
+];

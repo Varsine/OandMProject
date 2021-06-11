@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -12,7 +13,7 @@ import styles from './ModeSwitch.scss';
 
 import { SunIcon, MoonIcon, SunHoverIcon, MoonHoverIcon } from '../../../icons';
 
-const ModeSwitch = () => {
+const ModeSwitch = ({ isOnePage }) => {
   const dispatch = useDispatch();
   const isDarkMode = useSelector(modeSelector);
   const activeIndex = useSelector(activeIndexSelector);
@@ -45,9 +46,13 @@ const ModeSwitch = () => {
         />
       )}
       <h3 className={styles.index}>0{activeIndex}</h3>
-      <Mouse />
+      {!isOnePage && <Mouse />}
     </div>
   );
+};
+
+ModeSwitch.propTypes = {
+  isOnePage: PropTypes.bool.isRequired,
 };
 
 export default ModeSwitch;

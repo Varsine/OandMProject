@@ -7,10 +7,12 @@ $desktop: 1024px;
 $wide: 1200px;
 
 //variables
+$field-bg: var(--fieldBg);
 $bg-color: var(--bgColor);
 $header-bg: var(--headerBg);
 $text-color: var(--textColor);
 $team-image: var(--teamImage);
+$field-bg-active: var(--fieldBgActive);
 // $team-animPosition: var(--ashxatiAra);
 
 // @extend
@@ -29,6 +31,18 @@ $team-image: var(--teamImage);
 %flex-align {
   display: flex;
   align-items: center;
+}
+
+%button-gradient {
+  width: 100%;
+  height: 58px;
+  color: $text-color;
+  border: none;
+  position: relative;
+  background: $liner-blue;
+  font-weight: 600;
+  border-radius: 50px;
+  @extend %open-sans-16;
 }
 
 %skeleton-animation {

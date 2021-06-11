@@ -25,7 +25,7 @@ const menuLinks = [
     icon: AboutUsIcon,
     iconLight: AboutUsLightIcon,
     iconHover: AboutUsHoverIcon,
-    sectionIndex: 3,
+    sectionIndex: 2,
   },
   {
     id: shortid.generate(),

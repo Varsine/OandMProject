@@ -3,17 +3,18 @@ import PropTypes from 'prop-types';
 
 import { noop } from 'utils/index';
 
-const FlexInput = ({ type, className, placeholder, onChange, value }) => (
+const Input = ({ type, className, placeholder, onChange, value, ...rest }) => (
   <input
     type={type}
     value={value}
     onChange={onChange}
     className={className}
     placeholder={placeholder}
+    {...rest}
   />
 );
 
-FlexInput.propTypes = {
+Input.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
@@ -21,7 +22,7 @@ FlexInput.propTypes = {
   placeholder: PropTypes.string,
 };
 
-FlexInput.defaultProps = {
+Input.defaultProps = {
   type: 'text',
   value: '',
   onChange: noop,
@@ -29,4 +30,4 @@ FlexInput.defaultProps = {
   placeholder: 'Введите название',
 };
 
-export default FlexInput;
+export default Input;

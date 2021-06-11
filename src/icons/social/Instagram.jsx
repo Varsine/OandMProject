@@ -15,9 +15,17 @@ const Instagram = () => (
       rx="4.1"
       stroke="#F1F2F2"
       strokeWidth="1.8"
+      id="instagram1"
     />
-    <circle cx="16" cy="16" r="3.6" stroke="#F1F2F2" strokeWidth="1.8" />
-    <circle cx="20.5001" cy="10.6" r="0.9" fill="#F1F2F2" />
+    <circle
+      cx="16"
+      cy="16"
+      r="3.6"
+      stroke="#F1F2F2"
+      strokeWidth="1.8"
+      id="instagram2"
+    />
+    <circle cx="20.5001" cy="10.6" r="0.9" fill="#F1F2F2" id="instagram3" />
     <defs>
       <linearGradient
         id="instagram0_linear"
