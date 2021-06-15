@@ -1,8 +1,10 @@
 .text {
   width: 100%;
+  min-height: 105px;
 
   &__change {
     width: 100%;
+    color: $text-color;
     height: 50px;
     border: none;
     padding: 0 24px;
@@ -34,6 +36,7 @@
 }
 
 .dropdown {
+  min-height: 105px;
   user-select: none;
 
   &__header {
@@ -49,8 +52,14 @@
     @extend %flex-between;
 
     &_active {
-      border-radius: 32px 32px 0 0;
       background: $field-bg-active;
+      border-radius: 32px 32px 0 0;
+    }
+
+    &_icon {
+      path {
+        stroke: #eaf1fa;
+      }
     }
 
     svg {
@@ -103,5 +112,9 @@
 
   &__checked {
     display: none;
+  }
+
+  &__wrapper {
+    min-height: 105px;
   }
 }

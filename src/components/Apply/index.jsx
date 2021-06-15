@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
+
+import { dropdownList } from 'utils/index';
 
 import styles from './Apply.scss';
 import Success from './Success';
@@ -10,10 +13,30 @@ import Button from '../Button';
 import { StepIcon } from '../../icons';
 
 const Apply = () => {
+  const [jobType, setJobType] = useState({
+    text: dropdownList[0].text,
+    jobIndex: 0,
+  });
   const [activeIndex, setIsActiveIndex] = useState(1);
+
+  const { register, formState, handleSubmit } = useForm({
+    mode: 'onChange',
+  });
+
+  const submitValueHandler = (values) => {
+    if (activeIndex === 1) {
+      setIsActiveIndex(2);
+    }
+
+    console.log(values);
+  };
 
   const editActiveStep = (step) => {
     setIsActiveIndex(step);
+  };
+
+  const changejobType = (job) => {
+    setJobType(job);
   };
 
   return (
@@ -30,7 +53,7 @@ const Apply = () => {
               <Button
                 onClick={() => editActiveStep(1)}
                 className={classNames(styles.steps__item, {
-                  [styles.steps__item_active]: activeIndex === 1,
+                  [styles.steps__item_active]: activeIndex >= 1,
                 })}
               >
                 1
@@ -45,8 +68,19 @@ const Apply = () => {
                 2
               </Button>
             </div>
-            {activeIndex === 1 && <StepOne />}
-            {activeIndex === 2 && <StepTwo />}
+            <form onSubmit={handleSubmit(submitValueHandler)}>
+              {activeIndex === 1 && (
+                <StepOne
+                  jobType={jobType}
+                  register={register}
+                  formState={formState}
+                  changejobType={changejobType}
+                />
+              )}
+              {activeIndex === 2 && (
+                <StepTwo formState={formState} register={register} />
+              )}
+            </form>
           </div>
         )}
       </div>

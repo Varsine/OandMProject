@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const mainSlice = createSlice({
   name: 'main',
   initialState: {
+    cvInfo: {},
     activeIndex: 1,
     isNightMode: true,
     teamSliderIndex: 0,

@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import { worksCards } from 'utils/index';
+// import { worksCards } from 'utils/index';
 
 import styles from './OurWorks.scss';
 
@@ -14,21 +14,21 @@ const OurWorks = () => {
     },
   };
 
-  const setting = {
-    arrows: false,
-    showDots: true,
-    infinite: true,
-    autoPlay: false,
-    draggable: false,
-    responsive,
-    slidesToSlide: 1,
-    keyBoardControl: true,
-    ssr: typeof window === 'undefined',
-  };
+  // const setting = {
+  //   arrows: false,
+  //   showDots: true,
+  //   infinite: true,
+  //   autoPlay: false,
+  //   draggable: false,
+  //   responsive,
+  //   slidesToSlide: 1,
+  //   keyBoardControl: true,
+  //   ssr: typeof window === 'undefined',
+  // };
 
-  const renderCarouselList = worksCards.map(({ id, title }) => (
-    <div key={id}>{title}</div>
-  ));
+  // const renderCarouselList = worksCards.map(({ id, title }) => (
+  //   <div key={id}>{title}</div>
+  // ));
 
   return (
     <section className="section">
