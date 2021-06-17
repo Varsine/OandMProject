@@ -1,46 +1,35 @@
 import React from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import Slider from 'react-slick';
 
-// import { worksCards } from 'utils/index';
+import { worksCards } from 'utils/index';
 
+import Slide from './Slide';
 import styles from './OurWorks.scss';
+import NextArrow from './NextArrow';
+import PrevArrow from './PrevArrow';
 
 const OurWorks = () => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 10000, min: 0 },
-      items: 1,
-    },
+  const settings = {
+    fade: true,
+    dots: false,
+    speed: 700,
+    infinite: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    className: styles.slider,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
-  // const setting = {
-  //   arrows: false,
-  //   showDots: true,
-  //   infinite: true,
-  //   autoPlay: false,
-  //   draggable: false,
-  //   responsive,
-  //   slidesToSlide: 1,
-  //   keyBoardControl: true,
-  //   ssr: typeof window === 'undefined',
-  // };
-
-  // const renderCarouselList = worksCards.map(({ id, title }) => (
-  //   <div key={id}>{title}</div>
-  // ));
+  const renderSlides = worksCards.map((item) => (
+    <Slide key={item.id} data={item} />
+  ));
 
   return (
     <section className="section">
       <div className="canvas__working" />
       <div className={styles.wrapper}>
-        <Carousel responsive={responsive}>
-          <div>s</div>
-          <div>s</div>
-          <div>s</div>
-          <div>s</div>
-          <div>s</div>
-        </Carousel>
+        <Slider {...settings}>{renderSlides}</Slider>
       </div>
     </section>
   );

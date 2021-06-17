@@ -13,6 +13,8 @@
     z-index: 2;
   }
 
+  //canvas
+
   #canvas {
     width: 100%;
     height: 100vh;
@@ -39,6 +41,30 @@
     iframe {
       right: 11px;
       bottom: 81px;
+    }
+  }
+
+  //map
+
+  #map {
+    height: 61vh;
+    position: relative;
+    z-index: 5;
+  }
+
+  //our works slider
+  .slick {
+    &-track {
+      display: flex;
+    }
+
+    &-slide {
+      width: 100%;
+      pointer-events: none;
+    }
+
+    &-active {
+      pointer-events: auto;
     }
   }
 }

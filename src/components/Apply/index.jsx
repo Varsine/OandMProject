@@ -19,7 +19,7 @@ const Apply = () => {
   });
   const [activeIndex, setIsActiveIndex] = useState(1);
 
-  const { register, formState, handleSubmit } = useForm({
+  const { control, register, formState, handleSubmit } = useForm({
     mode: 'onChange',
   });
 
@@ -28,6 +28,7 @@ const Apply = () => {
       setIsActiveIndex(2);
     }
 
+    // eslint-disable-next-line no-console
     console.log(values);
   };
 
@@ -60,6 +61,7 @@ const Apply = () => {
               </Button>
               <StepIcon />
               <Button
+                disabled={activeIndex === 1}
                 onClick={() => editActiveStep(2)}
                 className={classNames(styles.steps__item, {
                   [styles.steps__item_active]: activeIndex === 2,
@@ -78,7 +80,11 @@ const Apply = () => {
                 />
               )}
               {activeIndex === 2 && (
-                <StepTwo formState={formState} register={register} />
+                <StepTwo
+                  control={control}
+                  formState={formState}
+                  register={register}
+                />
               )}
             </form>
           </div>

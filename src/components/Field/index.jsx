@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
+// import { Controller, useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+// import FileUploader from 'react-firebase-file-uploader';
 
 import { dropdownList, noop } from 'utils/index';
 import { useOutsideClick } from 'hooks/index';
@@ -72,6 +74,23 @@ const Field = ({
           <FileIcon />
         </label>
         <p className={styles.message}>{message}</p>
+        {/* <Controller
+          name={name}
+          control={control}
+          render={({ field }) => (
+            <FileUploader
+              accept="image/*"
+              name="avatar"
+              randomizeFilename
+              {...field}
+              // storageRef={firebase.storage().ref('images')}
+              // onUploadStart={this.handleUploadStart}
+              // onUploadError={this.handleUploadError}
+              // onUploadSuccess={this.handleUploadSuccess}
+              // onProgress={this.handleProgress}
+            />
+          )}
+        /> */}
       </div>
     );
   }

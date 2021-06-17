@@ -1,4 +1,50 @@
 .wrapper {
-  height: 100%;
-  @extend %flex-center;
+  background: $map-bg;
+
+  &__layout {
+    width: 100vw;
+    height: 100vh;
+    padding: 80px 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &_container {
+      height: 80%;
+    }
+
+    &_info {
+      display: flex;
+      padding-bottom: 8px;
+
+      // @media (max-width: 400px) {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   padding: 0 15px;
+      // }
+
+      &_title {
+        padding: 11px 0 4px;
+        @extend %open-sans-12;
+      }
+
+      &_text {
+        color: $text-color;
+        font-weight: 600;
+        @extend %open-sans-14;
+      }
+
+      &_address {
+        padding: 0 98px 0 16px;
+
+        @media (max-width: 400px) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-top: calc(110px + 56px);
+  }
 }
