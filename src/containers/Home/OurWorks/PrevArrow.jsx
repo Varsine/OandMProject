@@ -7,26 +7,26 @@ import { modeSelector } from 'slices/mainSlice';
 
 import styles from './OurWorks.scss';
 
-import { ArrowIcon, ArrowGdtIcon } from '../../icons';
+import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
 
-const NextArrow = ({ onClick }) => {
+const PrevArrow = ({ onClick }) => {
   const isDarkMode = useSelector(modeSelector);
 
   return isDarkMode ? (
     <ArrowIcon
       onClick={onClick}
-      className={classNames(styles.arrow, styles.arrow__next)}
+      className={classNames(styles.arrow, styles.arrow__prev)}
     />
   ) : (
     <ArrowGdtIcon
       onClick={onClick}
-      className={classNames(styles.arrow, styles.arrow__next)}
+      className={classNames(styles.arrow, styles.arrow__prev)}
     />
   );
 };
 
-NextArrow.propTypes = {
+PrevArrow.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-export default NextArrow;
+export default PrevArrow;

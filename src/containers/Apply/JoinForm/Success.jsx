@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { paths } from 'routes/';
+import { NextLink } from 'components/index';
+import { paths } from 'routes/index';
 
 import styles from './Apply.scss';
 
-import NextLink from '../NextLink';
-import { SuccessIcon } from '../../icons';
+import { SuccessIcon } from '../../../icons';
 
 const Success = () => (
   <div className={styles.success}>

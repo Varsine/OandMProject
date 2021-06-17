@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Main.scss';
 
-import { LogoLargeIcon } from '../../icons';
+import { LogoLargeIcon } from '../../../icons';
 
 const Main = () => {
   return (

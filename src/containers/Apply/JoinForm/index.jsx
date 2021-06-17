@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
 
+import { Button } from 'components/index';
 import { dropdownList } from 'utils/index';
 
 import styles from './Apply.scss';
@@ -9,10 +10,9 @@ import Success from './Success';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 
-import Button from '../Button';
-import { StepIcon } from '../../icons';
+import { StepIcon } from '../../../icons';
 
-const Apply = () => {
+const JoinForm = () => {
   const [jobType, setJobType] = useState({
     text: dropdownList[0].text,
     jobIndex: 0,
@@ -94,4 +94,4 @@ const Apply = () => {
   );
 };
 
-export default Apply;
+export default JoinForm;

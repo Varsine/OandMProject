@@ -15,7 +15,7 @@ import {
   HandsRightIcon,
   ClockLightIcon,
   // RocketLightIcon,
-} from '../../icons';
+} from '../../../icons';
 
 const HowWeWork = () => {
   const isDarkMode = useSelector(modeSelector);

@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './OurWorks.scss';
+import { NextImage, NextLink } from 'components/index';
 
-import NextImage from '../NextImage';
-import NextLink from '../NextLink';
+import styles from './OurWorks.scss';
 
 const Slide = ({ data }) => {
   const { src, title, subtitle, text, link, href } = data;

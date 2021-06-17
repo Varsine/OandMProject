@@ -12,7 +12,7 @@ import {
 import Slide from './Slide/index';
 import styles from './OurTeam.scss';
 
-import { ArrowIcon, ArrowGdtIcon } from '../../icons';
+import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
 
 const OurTeam = () => {
   const dispatch = useDispatch();

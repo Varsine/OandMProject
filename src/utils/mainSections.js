@@ -3,13 +3,13 @@ import shortid from 'shortid';
 import {
   Map,
   Main,
-  Apply,
   AboutUs,
   OurTeam,
   OurWorks,
   HowWeWork,
   JoinOurTeam,
-} from 'components/index';
+} from 'containers/Home';
+import { JoinForm } from 'containers/Apply';
 
 export const mainSections = [
   {
@@ -45,7 +45,7 @@ export const mainSections = [
 export const applySections = [
   {
     id: shortid.generate(),
-    component: Apply,
+    component: JoinForm,
   },
 ];
 
