@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
@@ -6,6 +7,7 @@ import { NextImage, Button } from 'components/index';
 import { aboutUsList } from 'utils/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
+// eslint-disable-next-line no-unused-vars
 import Item from './Item';
 import styles from './AboutUs.scss';
 
