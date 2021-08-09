@@ -1,13 +1,10 @@
 .wrapper {
+  min-width: 168px;
   @extend %flex-align;
-  // position: fixed;
-  // left: 0;
-  // bottom: 0;
-  // z-index: 20;
 }
 
 .index {
-  @extend %open-sans-24;
-  margin-left: 16px;
   font-weight: 700;
+  margin-left: 16px;
+  @extend %open-sans-24;
 }

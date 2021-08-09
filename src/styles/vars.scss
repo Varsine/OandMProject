@@ -6,16 +6,6 @@ $tablet-l: 992px;
 $desktop: 1024px;
 $wide: 1200px;
 
-//variables
-$map-bg: var(--mapBg);
-$field-bg: var(--fieldBg);
-$bg-color: var(--bgColor);
-$header-bg: var(--headerBg);
-$text-color: var(--textColor);
-$team-image: var(--teamImage);
-$btn-disabled: var(--btnDisabdled);
-$field-bg-active: var(--fieldBgActive);
-
 // @extend
 %flex-center {
   display: flex;

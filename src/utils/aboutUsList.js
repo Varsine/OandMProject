@@ -3,10 +3,6 @@ import shortid from 'shortid';
 const aboutUsList = [
   {
     id: shortid.generate(),
-    url: '/images/aboutUs/1.png',
-  },
-  {
-    id: shortid.generate(),
     url: '/images/aboutUs/2.png',
   },
   {
@@ -16,6 +12,10 @@ const aboutUsList = [
   {
     id: shortid.generate(),
     url: '/images/aboutUs/4.png',
+  },
+  {
+    id: shortid.generate(),
+    url: '/images/aboutUs/1.png',
   },
   {
     id: shortid.generate(),
