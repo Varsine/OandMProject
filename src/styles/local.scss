@@ -85,6 +85,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  cursor: url('../icons/cursor.svg'), auto;
 }
 
 article,
@@ -117,6 +118,7 @@ table {
   outline: none !important;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  cursor: url('../icons/cursor.svg'), auto;
 }
 
 input {
@@ -153,4 +155,5 @@ body {
   padding: 0;
   background: $bg-color;
   color: $text-color;
+  // cursor: url('../icons/cursor.svg'), auto;
 }

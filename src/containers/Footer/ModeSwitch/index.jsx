@@ -19,6 +19,7 @@ const ModeSwitch = ({ isOnePage }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
   const modeToggleHandler = () => {
+    window.localStorage.setItem('isDarkMode', isDarkMode);
     dispatch(modeToggler());
   };
 
@@ -26,6 +27,7 @@ const ModeSwitch = ({ isOnePage }) => {
     <div className={styles.wrapper}>
       {isDarkMode ? (
         <IconHover
+          id="siteMode"
           isLink={false}
           icon={<SunIcon />}
           iconHover={<SunHoverIcon />}
@@ -36,6 +38,7 @@ const ModeSwitch = ({ isOnePage }) => {
         />
       ) : (
         <IconHover
+          id="siteMode"
           isLink={false}
           icon={<MoonIcon />}
           iconHover={<MoonHoverIcon />}
