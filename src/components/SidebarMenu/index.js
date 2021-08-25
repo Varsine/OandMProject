@@ -19,6 +19,7 @@ const SidebarMenu = () => {
   const mobeToSectionHandler = (index) => {
     moveToSection.moveTo(index);
   };
+
   const selectedLinks = useMemo(() => {
     const activeI = activeIndex - 1;
 
@@ -56,6 +57,7 @@ const SidebarMenu = () => {
     const wrapperClasses = classNames(styles.wrapper__item, {
       [styles.wrapper__item_active]: isActive,
     });
+
     return (
       <div
         role="button"
@@ -67,6 +69,7 @@ const SidebarMenu = () => {
       </div>
     );
   });
+
   return (
     <Portal>
       <div className={styles.wrapper}>{renderMenuLinks}</div>

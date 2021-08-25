@@ -52,6 +52,7 @@ const Header = () => {
   const moveToSectionTop = () => {
     moveToSection.moveTo(1);
   };
+
   return (
     <Portal>
       <header className={styles.wrapper}>
