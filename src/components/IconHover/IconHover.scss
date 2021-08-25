@@ -1,26 +1,49 @@
 .wrapper {
   position: relative;
-  height: 33px;
 
   &:hover {
+    &__item_hovered{
+      svg{
+        rect{
+          fill: unset;
+        }
+      }
+    }
+
     .wrapper__item {
       transition: ease-in 0.2s;
 
-      svg {
-        width: 36px;
-        height: 36px;
-
-        path {
-          &:nth-child(2) {
-            fill: unset;
+      &:first-child{
+        svg {
+          width: 36px;
+          height: 36px;
+  
+          path {
+            &:nth-child(2) {
+              fill: unset;
+            }
+  
+            &:nth-child(4) {
+              fill: unset;
+            }
+  
+            &:nth-child(5) {
+              fill: unset;
+            }
           }
 
-          &:nth-child(4) {
-            fill: unset;
+          rect{
+           opacity: 0;
           }
 
-          &:nth-child(5) {
-            fill: unset;
+          circle{
+            &:nth-child(3) {
+            display: none;
+            }
+
+            &:nth-child(4) {
+            display: none;
+           }
           }
         }
       }
@@ -49,11 +72,17 @@
   &__item {
     width: 36px;
     height: 36px;
+    @extend %flex-center;
     transition: ease-in 0.3s;
+    
+    @include breakpoint(mobile){
+      width: 32px;
+      height: 32px;
+    }
 
     svg {
-      width: 33px;
-      height: 33px;
+      width: 32px;
+      height: 32px;
     }
 
     &:last-child {

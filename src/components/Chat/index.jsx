@@ -1,21 +1,20 @@
 import React from 'react';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 
-import { IS_SERVER } from 'constants/index';
+// import MessengerCustomerChat from 'react-messenger-customer-chat';
+import styles from './Chat.scss';
 
-import IconHover from '../IconHover';
-import { MessengerIcon, MessengerHoverIcon } from '../../icons';
+import { ChatIcon } from '../../icons';
 
 const Chat = () => {
-  const openChatHandler = () => {
-    if (!IS_SERVER) {
-      window.FB.CustomerChat.show(true);
-    }
-  };
+  // const openChatHandler = () => {
+  //   if (!IS_SERVER) {
+  //     window.FB.CustomerChat.show(true);
+  //   }
+  // };
 
   return (
-    <div>
-      <MessengerCustomerChat pageId="559202877917881" appId="198907471868804" />
+    <div className={styles.wrapper}>
+      {/* <MessengerCustomerChat pageId="559202877917881" appId="198907471868804" />
       <IconHover
         icon={<MessengerIcon />}
         isLink={false}
@@ -24,7 +23,8 @@ const Chat = () => {
         anchorProps={{
           'aria-label': 'messenger chat',
         }}
-      />
+      /> */}
+      <ChatIcon />
     </div>
   );
 };

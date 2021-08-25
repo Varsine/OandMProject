@@ -1,6 +1,10 @@
 .wrapper {
   @extend %flex-center;
   margin-left: 16px;
+  
+  @include breakpoint(tablet){
+    display: none;
+  }
 
   svg {
     width: 32px;
