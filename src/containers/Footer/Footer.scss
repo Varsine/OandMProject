@@ -7,16 +7,16 @@
   background: $header-bg;
   backdrop-filter: blur(20px);
 
-  @include breakpoint(tablet){
+  @include breakpoint(tablet) {
     height: 50px;
   }
 
-  &__arrow_icon{
-     transform: rotateY(180deg);
-     margin-left: 8px;
+  &__arrow_icon {
+    transform: rotateY(180deg);
+    margin-left: 8px;
   }
 
-  &__arrow_block{
+  &__arrow_block {
     display: flex;
     align-items: center;
   }
@@ -27,17 +27,17 @@
   padding: 0 50px;
   @extend %flex-between;
 
-  @include breakpoint(tablet){
+  @include breakpoint(tablet) {
     padding: 0 16px;
   }
 }
 
-.container_opened_icon{
+.container_opened_icon {
   padding: 0 0 0 16px;
 
-  @include breakpoint(mobile){
-   justify-content: center
-  }  
+  @include breakpoint(mobile) {
+    justify-content: center;
+  }
 }
 
 .links {
@@ -45,7 +45,7 @@
   &__item {
     margin-right: 23px;
 
-    @include breakpoint(tablet){
+    @include breakpoint(tablet) {
       margin-right: 12px;
     }
 

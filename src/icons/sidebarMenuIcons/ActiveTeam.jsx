@@ -1,4 +1,4 @@
-const ActiveTeam = () => (
+const ActiveTeamIcon = () => (
   <svg
     width="64"
     height="64"
@@ -91,4 +91,4 @@ const ActiveTeam = () => (
     </defs>
   </svg>
 );
-export default ActiveTeam;
+export default ActiveTeamIcon;

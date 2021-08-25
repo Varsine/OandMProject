@@ -1,4 +1,4 @@
-const ActivePartners = () => (
+const ActivePartnersIcon = () => (
   <svg
     width="64"
     height="64"
@@ -100,4 +100,4 @@ const ActivePartners = () => (
   </svg>
 );
 
-export default ActivePartners;
+export default ActivePartnersIcon;

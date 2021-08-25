@@ -7,8 +7,8 @@
   background: $header-bg;
   backdrop-filter: blur(20px);
 
-  @include breakpoint(tablet-m){
-   height: 64px;
+  @include breakpoint(tablet-m) {
+    height: 64px;
   }
 }
 
@@ -17,7 +17,7 @@
   padding: 0 50px;
   @extend %flex-between;
 
-  @include breakpoint(tablet-m){
+  @include breakpoint(tablet-m) {
     padding: 0 16px;
   }
 }
@@ -25,23 +25,22 @@
 .logo {
   @extend %flex-align;
 
-  svg{
+  svg {
     width: 164px;
     height: 64px;
 
-    @include breakpoint(tablet){
+    @include breakpoint(tablet) {
       width: 128px;
       height: 50px;
     }
   }
 }
-.icon{
-  // @extend %flex-align;
+.icon {
   display: none;
-  @include breakpoint(tablet){
-    display:flex ;
+  @include breakpoint(tablet) {
+    display: flex;
   }
-  svg{
+  svg {
     width: 50px;
     height: 50px;
   }

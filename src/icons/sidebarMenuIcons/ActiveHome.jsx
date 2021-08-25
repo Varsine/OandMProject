@@ -1,4 +1,4 @@
-const ActiveHome = () => (
+const ActiveHomeIcon = () => (
   <svg
     width="64"
     height="64"
@@ -70,4 +70,4 @@ const ActiveHome = () => (
   </svg>
 );
 
-export default ActiveHome;
+export default ActiveHomeIcon;

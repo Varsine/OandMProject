@@ -1,4 +1,4 @@
-const ActiveIndustry = () => (
+const ActiveIndustryIcon = () => (
   <svg
     width="64"
     height="64"
@@ -80,4 +80,4 @@ const ActiveIndustry = () => (
   </svg>
 );
 
-export default ActiveIndustry;
+export default ActiveIndustryIcon;

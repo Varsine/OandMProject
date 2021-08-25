@@ -1,4 +1,4 @@
-const ActiveReview = () => (
+const ActiveReviewIcon = () => (
   <svg
     width="64"
     height="64"
@@ -79,4 +79,4 @@ const ActiveReview = () => (
     </defs>
   </svg>
 );
-export default ActiveReview;
+export default ActiveReviewIcon;

@@ -1,4 +1,4 @@
-const ActiveMap = () => (
+const ActiveMapIcon = () => (
   <svg
     width="64"
     height="64"
@@ -80,4 +80,4 @@ const ActiveMap = () => (
   </svg>
 );
 
-export default ActiveMap;
+export default ActiveMapIcon;

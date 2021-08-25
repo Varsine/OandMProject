@@ -1,4 +1,4 @@
-const activeWeWork = () => (
+const ActiveWeWorkIcon = () => (
   <svg
     width="64"
     height="64"
@@ -119,4 +119,4 @@ const activeWeWork = () => (
     </defs>
   </svg>
 );
-export default activeWeWork;
+export default ActiveWeWorkIcon;

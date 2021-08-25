@@ -1,4 +1,4 @@
-const ActivePortfolio = () => (
+const ActivePortfolioIcon = () => (
   <svg
     width="64"
     height="64"
@@ -87,4 +87,4 @@ const ActivePortfolio = () => (
     </defs>
   </svg>
 );
-export default ActivePortfolio;
+export default ActivePortfolioIcon;

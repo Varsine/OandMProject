@@ -1,4 +1,4 @@
-const ActiveStack = () => (
+const ActiveStackIcon = () => (
   <svg
     width="64"
     height="64"
@@ -83,4 +83,4 @@ const ActiveStack = () => (
     </defs>
   </svg>
 );
-export default ActiveStack;
+export default ActiveStackIcon;

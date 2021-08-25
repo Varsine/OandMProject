@@ -1,4 +1,4 @@
-const ActiveInformation = () => (
+const ActiveInformationIcon = () => (
   <svg
     width="64"
     height="64"
@@ -70,4 +70,4 @@ const ActiveInformation = () => (
   </svg>
 );
 
-export default ActiveInformation;
+export default ActiveInformationIcon;

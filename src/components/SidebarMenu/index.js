@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 import { menuLinks } from 'utils/index';
-import FullPageContext from 'context/FullPage';
+import { FullPageContext } from 'context/index';
 import { activeIndexSelector, modeSelector } from 'slices/mainSlice';
 
 import styles from './SidebarMenu.scss';
@@ -49,21 +49,18 @@ const SidebarMenu = () => {
   }, [activeIndex, menuLinks]);
 
   const renderMenuLinks = selectedLinks.map((item) => {
+    const iconHover = <item.iconHover />;
     const isActive = activeIndex === item.sectionIndex;
-    const isIconActive = isActive ? <item.iconHover /> : <item.icon />;
-    const isIconLightActive = isActive ? (
-      <item.iconHover />
-    ) : (
-      <item.iconLight />
-    );
-
+    const isIconActive = isActive ? iconHover : <item.icon />;
+    const isIconLightActive = isActive ? iconHover : <item.iconLight />;
+    const wrapperClasses = classNames(styles.wrapper__item, {
+      [styles.wrapper__item_active]: isActive,
+    });
     return (
       <div
         role="button"
         key={item.id}
-        className={classNames(styles.wrapper__item, {
-          [styles.wrapper__item_active]: isActive,
-        })}
+        className={wrapperClasses}
         onClick={() => mobeToSectionHandler(item.sectionIndex)}
       >
         {!isDarkMode ? isIconActive : isIconLightActive}
