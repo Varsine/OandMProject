@@ -15,4 +15,4 @@ export { default as ArrowGdtIcon } from './arrow-gdt.svg';
 export { default as MoonHoverIcon } from './MoonHover';
 export { default as LogoLargeIcon } from './logoLarge.svg';
 export { default as MouseLightIcon } from './MouseLight';
-export { default as HowWeWorkIcon } from './HowWeWork';
+export { default as HowWeWorkAnimation } from './HowWeWork';

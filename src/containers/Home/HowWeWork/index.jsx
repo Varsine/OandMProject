@@ -11,7 +11,7 @@ import styles from './HowWeWork.scss';
 import {
   PathIcon,
   ClockIcon,
-  HowWeWorkIcon,
+  HowWeWorkAnimation,
   // RocketIcon,
   HandsLeftIcon,
   HandsRightIcon,
@@ -30,7 +30,7 @@ const HowWeWork = () => {
       <div className={styles.wrapper}>
         <h2 className={styles.title}>How We Work</h2>
         <div className={styles.animation}>
-          <HowWeWorkIcon />
+          <HowWeWorkAnimation />
         </div>
         <div />
       </div>
