@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import { IconHover } from 'components/index';
 import { linksInformation } from 'utils/index';
@@ -14,7 +13,7 @@ const SocialLinks = () => {
         url={url}
         icon={icon}
         iconHover={iconHover}
-        className={classNames(styles.links__item)}
+        className={styles.links__item}
         anchorProps={{
           target: '_blank',
           'aria-label': ariaLabel,
@@ -22,7 +21,6 @@ const SocialLinks = () => {
       />
     ),
   );
-
   return <div className={styles.links}>{renderSocialLinks}</div>;
 };
 

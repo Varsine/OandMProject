@@ -1,5 +1,3 @@
-export { default as TeamIcon } from './Team';
-export { default as HomeIcon } from './Home';
 export { default as MenuIcon } from './Menu';
 export { default as CloseIcon } from './Close';
 export { default as AboutUsIcon } from './AboutUs';
