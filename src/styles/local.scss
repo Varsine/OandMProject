@@ -116,7 +116,6 @@ table {
 
 * {
   outline: none !important;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: url('../icons/cursor.svg'), auto;
 }
@@ -155,5 +154,4 @@ body {
   padding: 0;
   background: $bg-color;
   color: $text-color;
-  // cursor: url('../icons/cursor.svg'), auto;
 }

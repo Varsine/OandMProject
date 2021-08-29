@@ -19,7 +19,6 @@ const ModeSwitch = ({ isOnePage }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
   const modeToggleHandler = () => {
-    window.localStorage.setItem('isDarkMode', isDarkMode);
     dispatch(modeToggler());
   };
 
