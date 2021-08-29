@@ -147,21 +147,25 @@
   &_one {
     top: 0;
     left: 9%;
+    z-index: 1;
     animation: blockOneAnimation 1s alternate linear;
   }
   &_two {
     top: 12%;
     right: 0;
+    z-index: 2;
     animation: blockTwoAnimation 1s alternate linear;
   }
   &_three {
     right: 12%;
     bottom: 0;
+    z-index: 3;
     animation: blockThreeAnimation 1s alternate linear;
   }
   &_four {
     left: 0;
     bottom: 13.5%;
+    z-index: 4;
     animation: blockFourAnimation 1s alternate linear;
   }
 }

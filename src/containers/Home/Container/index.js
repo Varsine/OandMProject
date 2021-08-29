@@ -24,7 +24,6 @@ const HomeContainer = () => {
       keyboardScrolling={false}
       onLeave={changeActiveStep}
       fitToSection={false}
-      // autoScrolling={false}
       fixedElements="#canvas"
       render={({ fullpageApi }) => (
         <ReactFullPage.Wrapper>

@@ -17,21 +17,23 @@ const AboutUs = () => {
     styles.block_three,
     styles.block_four,
   ];
-  const imges = {
+  const images = {
     imgOne: '/images/aboutUs/2.png',
     imgTwo: '/images/aboutUs/3.png',
     imgThree: '/images/aboutUs/4.png',
     imgFour: '/images/aboutUs/5.png',
   };
+
   const [isAnimate] = useState(false);
   const [infoId, setInfoId] = useState(0);
   const [isShow, setIsShow] = useState(false);
-  const [imgList, setImgList] = useState(imges);
+  const [imgList, setImgList] = useState(images);
   const [activeItemImg, setActiveItemImg] = useState('/images/aboutUs/1.png');
   const [imgAnimationClasses, setImgAnimationClasses] = useState(
     imgAnimationClassList,
   );
-  const { title, subTitle, paragraf } = aboutUsInfoList[infoId];
+
+  const { title, subTitle, paragraph } = aboutUsInfoList[infoId];
   const { imgOne, imgTwo, imgThree, imgFour } = imgList;
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const AboutUs = () => {
     setTimeout(() => {
       setActiveItemImg('/images/aboutUs/1.png');
       setInfoId(0);
-      setImgList(imges);
+      setImgList(images);
     }, 500);
   }, [isOpen]);
 
@@ -54,13 +56,11 @@ const AboutUs = () => {
   const handlerImg = (currImg, idx) => {
     const imgArray = Object.keys(imgList);
     const keyImg = imgArray[idx];
-    setImgList({
-      ...imgList,
-      [keyImg]: activeItemImg,
-    });
-    setActiveItemImg(currImg);
     const patt = /[1-9]/g;
     const filterNum = currImg.match(patt);
+
+    setImgList((prevImgList) => ({ ...prevImgList, [keyImg]: activeItemImg }));
+    setActiveItemImg(currImg);
     setInfoId(filterNum);
     setIsShow(true);
     setTimeout(() => {
@@ -77,13 +77,12 @@ const AboutUs = () => {
         >
           <h2 className={styles.info__title}>{title}</h2>
           <h4 className={styles.info__subtitle}>{subTitle}</h4>
-          <p className={styles.info__text}>{paragraf}</p>
+          <p className={styles.info__text}>{paragraph}</p>
         </div>
         <div className={styles.animation}>
           <div className={styles.photos}>
             <Button
-              style={{ zIndex: 1 }}
-              onClick={() => editActiveItemHandler(1)}
+              onClick={editActiveItemHandler}
               disabled={isAnimate}
               className={classNames(
                 styles.photos__item,
@@ -98,8 +97,7 @@ const AboutUs = () => {
               />
             </Button>
             <Button
-              style={{ zIndex: 2 }}
-              onClick={() => editActiveItemHandler(2)}
+              onClick={editActiveItemHandler}
               disabled={isAnimate}
               className={classNames(
                 styles.photos__item,
@@ -114,8 +112,7 @@ const AboutUs = () => {
               />
             </Button>
             <Button
-              style={{ zIndex: 3 }}
-              onClick={() => editActiveItemHandler(3)}
+              onClick={editActiveItemHandler}
               disabled={isAnimate}
               className={classNames(
                 styles.photos__item,
@@ -130,8 +127,7 @@ const AboutUs = () => {
               />
             </Button>
             <Button
-              style={{ zIndex: 4 }}
-              onClick={() => editActiveItemHandler(4)}
+              onClick={editActiveItemHandler}
               disabled={isAnimate}
               className={classNames(
                 styles.photos__item,
@@ -146,7 +142,6 @@ const AboutUs = () => {
               />
             </Button>
             <div
-              style={{ zIndex: 1 }}
               className={classNames(styles.photos__item, {
                 [styles.photos__item_show]: isShow,
               })}
