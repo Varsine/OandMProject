@@ -7,6 +7,7 @@ export const THEMES = {
     textColor: '#f1f2f2',
     btnDisabdled: 'rgba(207, 229, 255, 0.6)',
     fieldBgActive: 'linear-gradient(180deg, #5041b7 0%, #4e47ba 100%)',
+    logoBottomColor: 'rgba(241, 242, 242, 1)',
   },
   light: {
     mapBg: '#e9f1f9',
@@ -16,5 +17,6 @@ export const THEMES = {
     textColor: '#1d1d1d',
     btnDisabdled: '#ECE9FF',
     fieldBgActive: '#ECE9FF',
+    logoBottomColor: 'rgba(29, 29, 29, 1)',
   },
 };

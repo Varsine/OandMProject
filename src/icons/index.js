@@ -16,5 +16,7 @@ export { default as SuccessIcon } from './Success';
 export { default as SunHoverIcon } from './SunHover';
 export { default as ArrowGdtIcon } from './arrow-gdt.svg';
 export { default as MoonHoverIcon } from './MoonHover';
+export { default as LogoAnimaIcon } from './LogoAnimaIcon';
 export { default as LogoLargeIcon } from './logoLarge.svg';
 export { default as MouseLightIcon } from './MouseLight';
+export { default as LogoMoveBallIcon } from './LogoMoveBallIcon';
