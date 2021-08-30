@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { SidebarMenu } from 'components/index';
 import { FullPageContext } from 'context/index';
 import { HeaderContainer, FooterContainer } from 'containers/index';
 
 const FullPageLayout = ({ children, fullpageApi, isOnePage }) => (
   <FullPageContext.Provider value={{ moveToSection: fullpageApi }}>
-    <HeaderContainer isOnePage={isOnePage} />
+    <HeaderContainer />
     {children}
+    <SidebarMenu />
     <FooterContainer isOnePage={isOnePage} />
   </FullPageContext.Provider>
 );
