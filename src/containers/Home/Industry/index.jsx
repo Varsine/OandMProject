@@ -7,11 +7,13 @@ import styles from './Industry.scss';
 import {
   IndustyTwoIcon,
   IndustyThreeIcon,
-  IndustyOneIcon,
+  IndustyFirstIcon,
 } from '../../../icons';
 
 const Industry = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const { text, title } = industry[activeIndex];
   // const renderIndustryList = industry.map(({icon})=>)
   const handlerChangeActiveItem = (idx) => {
     setActiveIndex(idx);
@@ -21,8 +23,7 @@ const Industry = () => {
       <div className="canvas__working" />
       <div className={styles.wrapper}>
         <div className={styles.wrapper__menu}>
-          <IndustyOneIcon />
-          {/* <IndustyOneIcon onClick={() => handlerChangeActiveItem(0)} /> */}
+          <IndustyFirstIcon onClick={() => handlerChangeActiveItem(0)} />
           <IndustyTwoIcon
             className={styles.wrapper__menu__crypto}
             onClick={() => handlerChangeActiveItem(1)}
@@ -33,9 +34,9 @@ const Industry = () => {
           anima
           <div className={styles.wrapper__active_item__info}>
             <h1 className={styles.wrapper__active_item__info__title}>
-              {industry[activeIndex].title}
+              {title}
             </h1>
-            <p>{industry[activeIndex].text}</p>
+            <p>{text}</p>
           </div>
         </div>
       </div>

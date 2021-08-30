@@ -1,6 +1,8 @@
 .wrapper {
-  @extend %flex-between;
-  padding: 14% 21% 18%;
+  @extend %flex-center;
+  height: 100%;
+  z-index: 999;
+
   &__menu {
     max-width: 327px;
     width: 100%;
