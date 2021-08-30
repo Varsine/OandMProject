@@ -9,6 +9,7 @@ import styles from './IconHover.scss';
 import NextLink from '../NextLink';
 
 const IconHover = ({
+  id,
   url,
   icon,
   isLink,
@@ -18,6 +19,7 @@ const IconHover = ({
   anchorProps,
 }) => (
   <div
+    id={id}
     role="button"
     className={classNames(styles.wrapper, className)}
     onClick={onClick}
@@ -53,6 +55,7 @@ const IconHover = ({
 );
 
 IconHover.propTypes = {
+  id: PropTypes.string,
   url: PropTypes.string,
   icon: PropTypes.node.isRequired,
   isLink: PropTypes.bool,
@@ -63,6 +66,7 @@ IconHover.propTypes = {
 };
 
 IconHover.defaultProps = {
+  id: '',
   url: '',
   isLink: true,
   onClick: noop,
