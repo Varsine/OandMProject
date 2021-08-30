@@ -18,3 +18,6 @@ export { default as ArrowGdtIcon } from './arrow-gdt.svg';
 export { default as MoonHoverIcon } from './MoonHover';
 export { default as LogoLargeIcon } from './logoLarge.svg';
 export { default as MouseLightIcon } from './MouseLight';
+export { default as IndustyOneIcon } from './Industries-1.svg';
+export { default as IndustyTwoIcon } from './Industries-2.svg';
+export { default as IndustyThreeIcon } from './Industries-3.svg';

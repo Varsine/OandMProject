@@ -1,0 +1,25 @@
+.wrapper {
+  @extend %flex-between;
+  padding: 14% 21% 18%;
+  &__menu {
+    max-width: 327px;
+    width: 100%;
+
+    &__crypto {
+      margin: 56px 0;
+    }
+  }
+
+  &__active_item {
+    &__info {
+      @extend %open-sans-18;
+      max-width: 615px;
+      width: 100%;
+      color: $text-color;
+
+      &__title {
+        @extend %open-sans-24;
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import {
   AboutUs,
   OurTeam,
   OurWorks,
+  Industry,
   HowWeWork,
   JoinOurTeam,
 } from 'containers/Home';
@@ -23,6 +24,10 @@ export const mainSections = [
   {
     id: shortid.generate(),
     component: HowWeWork,
+  },
+  {
+    id: shortid.generate(),
+    component: Industry,
   },
   {
     id: shortid.generate(),
