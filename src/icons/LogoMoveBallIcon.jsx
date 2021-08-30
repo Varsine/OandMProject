@@ -1,11 +1,11 @@
-const LogoMoveBallIcon = ({ ...rest }) => (
+const LogoMoveBallIcon = (props) => (
   <svg
     width="1920"
     height="1080"
     viewBox="0 11 1920 1080"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    {...rest}
+    {...props}
   >
     <rect width="77" height="77" rx="38.5" fill="url(#paint0_linear)" />
     <defs>

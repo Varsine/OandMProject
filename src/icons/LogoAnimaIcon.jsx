@@ -1,4 +1,5 @@
-// eslint-disable-next-line react/prop-types
+import PropTypes from 'prop-types';
+
 const LogoAnimaIcon = ({ stopColor, ...rest }) => (
   <svg
     width="100vw"
@@ -261,5 +262,13 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
     </defs>
   </svg>
 );
+
+LogoAnimaIcon.propTypes = {
+  stopColor: PropTypes.string,
+};
+
+LogoAnimaIcon.defaultProps = {
+  stopColor: '',
+};
 
 export default LogoAnimaIcon;
