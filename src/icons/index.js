@@ -1,10 +1,10 @@
 export * from './menu';
 export * from './social';
 export * from './howWeWork';
-export * from './sidebarMenuIcons';
+export * from './sidebarcons';
 
 export { default as SunIcon } from './Sun';
-export { default as ChatIcon } from './Chat';
+export { default as ChatIcon } from './Chat.svg';
 export { default as FileIcon } from './File';
 export { default as LogoIcon } from './Logo';
 export { default as MoonIcon } from './Moon';
@@ -13,6 +13,7 @@ export { default as CrossIcon } from './cross.svg';
 export { default as MouseIcon } from './Mouse';
 export { default as ArrowIcon } from './arrow.svg';
 export { default as SuccessIcon } from './Success';
+export { default as ChatDarkIcon } from './chatdark';
 export { default as SunHoverIcon } from './SunHover';
 export { default as ArrowGdtIcon } from './arrow-gdt.svg';
 export { default as MoonHoverIcon } from './MoonHover';

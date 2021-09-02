@@ -1,11 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
+import { modeSelector } from 'slices/mainSlice';
 
 // import MessengerCustomerChat from 'react-messenger-customer-chat';
 import styles from './Chat.scss';
 
-import { ChatIcon } from '../../icons';
+import { ChatIcon, ChatDarkIcon } from '../../icons';
 
 const Chat = () => {
+  const isDarkMode = useSelector(modeSelector);
+
   // const openChatHandler = () => {
   //   if (!IS_SERVER) {
   //     window.FB.CustomerChat.show(true);
@@ -24,7 +29,7 @@ const Chat = () => {
           'aria-label': 'messenger chat',
         }}
       /> */}
-      <ChatIcon />
+      {isDarkMode ? <ChatDarkIcon /> : <ChatIcon />}
     </div>
   );
 };
