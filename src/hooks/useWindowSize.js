@@ -27,7 +27,7 @@ const useWindowSize = () => {
 
   const isMobile = windowSize.width < 577;
   const isTablet = windowSize.width >= 577 && windowSize.width <= 768;
-  const isSaleListTablet = windowSize.width >= 768;
+  const isSaleListTablet = windowSize.width > 768;
   const isLargeTablet = windowSize.width > 768 && windowSize.width <= 1024;
   const isDesktop = windowSize.width > 1024;
   const windowWidth = windowSize.width;

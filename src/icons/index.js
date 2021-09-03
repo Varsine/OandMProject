@@ -1,6 +1,6 @@
 export * from './menu';
 export * from './social';
-export * from './howWeWork';
+// export * from './howWeWork';
 export * from './sidebarMenuIcons';
 
 export { default as SunIcon } from './Sun';
@@ -18,4 +18,3 @@ export { default as ArrowGdtIcon } from './arrow-gdt.svg';
 export { default as MoonHoverIcon } from './MoonHover';
 export { default as LogoLargeIcon } from './logoLarge.svg';
 export { default as MouseLightIcon } from './MouseLight';
-export { default as HowWeWorkAnimation } from './HowWeWork';
