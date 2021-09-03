@@ -19,23 +19,24 @@ const Main = () => {
     });
   }, []);
 
+  const showAnimation = isActive ? (
+    <>
+      <LogoMoveBallIcon className={styles.wrapper__ball} />
+      <LogoAnimaIcon
+        className={styles.wrapper__logo}
+        stopColor={isDarkMode ? '#fff' : '#333'}
+      />
+    </>
+  ) : (
+    <LogoAnimaIcon className={styles.wrapper__logo_ball} />
+  );
+
+  const renderAnimation = isAnimate && showAnimation;
+
   return (
     <section id="header" className="section">
       <div className="canvas__working" />
-      <div className={styles.wrapper}>
-        {isAnimate &&
-          (isActive ? (
-            <>
-              <LogoMoveBallIcon className={styles.wrapper__ball} />
-              <LogoAnimaIcon
-                className={styles.wrapper__logo}
-                stopColor={isDarkMode ? '#fff' : '#333'}
-              />
-            </>
-          ) : (
-            <LogoAnimaIcon className={styles.wrapper__logo_ball} />
-          ))}
-      </div>
+      <div className={styles.wrapper}>{renderAnimation}</div>
     </section>
   );
 };

@@ -11,27 +11,9 @@ import { ChatIcon, ChatDarkIcon } from '../../icons';
 const Chat = () => {
   const isDarkMode = useSelector(modeSelector);
 
-  // const openChatHandler = () => {
-  //   if (!IS_SERVER) {
-  //     window.FB.CustomerChat.show(true);
-  //   }
-  // };
+  const currentIcon = isDarkMode ? <ChatDarkIcon /> : <ChatIcon />;
 
-  return (
-    <div className={styles.wrapper}>
-      {/* <MessengerCustomerChat pageId="559202877917881" appId="198907471868804" />
-      <IconHover
-        icon={<MessengerIcon />}
-        isLink={false}
-        onClick={openChatHandler}
-        iconHover={<MessengerHoverIcon />}
-        anchorProps={{
-          'aria-label': 'messenger chat',
-        }}
-      /> */}
-      {isDarkMode ? <ChatDarkIcon /> : <ChatIcon />}
-    </div>
-  );
+  return <div className={styles.wrapper}>{currentIcon}</div>;
 };
 
 export default Chat;
