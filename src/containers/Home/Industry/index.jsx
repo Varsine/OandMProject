@@ -12,16 +12,16 @@ import {
 
 const Industry = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
   const { text, title } = industry[activeIndex];
-  // const renderIndustryList = industry.map(({icon})=>)
+
   const handlerChangeActiveItem = (idx) => {
     setActiveIndex(idx);
   };
+
   return (
     <section className="section">
-      <div className="canvas__working" />
       <div className={styles.wrapper}>
+        <div className="canvas__working" />
         <div className={styles.wrapper__menu}>
           <IndustyFirstIcon onClick={() => handlerChangeActiveItem(0)} />
           <IndustyTwoIcon
