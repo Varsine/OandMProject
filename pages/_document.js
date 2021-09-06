@@ -12,6 +12,7 @@ export default class extends Document {
         <body>
           <Main />
           <NextScript />
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" />
         </body>
       </Html>
     );
