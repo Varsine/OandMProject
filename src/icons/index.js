@@ -1,7 +1,6 @@
 export * from './menu';
 export * from './social';
-export * from './howWeWork';
-export * from './sidebarcons';
+export * from './sidebaricons';
 
 export { default as SunIcon } from './Sun';
 export { default as ChatIcon } from './Chat.svg';
