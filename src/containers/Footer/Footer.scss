@@ -14,6 +14,12 @@
   &__arrow_icon {
     transform: rotateY(180deg);
     margin-left: 8px;
+
+    &_dark {
+      path {
+        stroke: $white-20;
+      }
+    }
   }
 
   &__arrow_block {
@@ -42,6 +48,8 @@
 
 .links {
   @extend %flex-center;
+  width: 100%;
+
   &__item {
     margin-right: 23px;
 

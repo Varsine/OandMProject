@@ -60,12 +60,12 @@ const AboutUs = () => {
     const filterNum = currImg.match(patt);
 
     setImgList((prevImgList) => ({ ...prevImgList, [keyImg]: activeItemImg }));
-    setActiveItemImg(currImg);
-    setInfoId(filterNum);
     setIsShow(true);
     setTimeout(() => {
+      setActiveItemImg(currImg);
+      setInfoId(filterNum);
       setIsShow(false);
-    }, 1000);
+    }, 500);
   };
 
   return (

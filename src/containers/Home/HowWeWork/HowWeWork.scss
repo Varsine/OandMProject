@@ -1,22 +1,37 @@
-:root {
-  --delay: 0ms;
-  --path: path(
-    'M1 190C18 172 35.5 160.402 52 142.853C52 142.853 76.5 112.853 102.5 94.3538C127.479 76.5807 143.124 66.1214 172.5 57.3534C199.981 49.151 216.814 44.5594 245 49.8538C266.318 53.8582 279.538 57.7291 296 71.8538C310.509 84.303 316 97.3534 323.5 112.354C333.025 131.404 341.168 148.183 357.5 161.853C372.462 174.377 378.548 176.828 398 178.354C423.5 180.353 440 174.353 461.5 162.354C484.35 149.601 495.195 138.662 514.5 121.354C589.5 39.8535 575.5 55.3536 623.5 23.8535C653 11.3532 721.17 5.58942 754.5 2.8535C791.188 -0.158007 812.5 -0.647123 849 10.3532C886.284 21.5897 913.116 34.0815 932.5 67.8538C941.384 83.3315 944.913 93.5786 946.5 111.354C949 139.354 946.5 136.678 946.5 162.354C946.5 185.354 943.5 205.354 958.5 238.354C973.5 271.354 1023.49 282.852 1051.5 262.354C1133.5 202.354 1157.5 202.354 1157.5 202.354C1157.5 202.354 1177.34 199.818 1190 198.5C1203.23 197.122 1223 196 1223 196'
-  );
-  --pathHD: path(
-    'M1.5 105.5L49 69.5C49 69.5 66.042 55.9295 78.8213 46.8446C91.0987 38.1165 98.7883 32.9801 113.227 28.6743C126.734 24.6462 135.008 22.3913 148.861 24.9914C159.339 26.9578 165.837 28.8588 173.928 35.7952C181.06 41.9088 183.759 48.3177 187.445 55.6842C192.127 65.0395 196.129 73.2791 204.156 79.9926C211.51 86.1428 214.502 87.3467 224.063 88.0957C236.596 89.0777 244.706 86.1312 255.273 80.2384C266.504 73.9755 271.835 68.6036 281.323 60.1039C295.577 47.3355 302.626 39.76 319.416 29.1654C333.424 20.3259 337.43 18.293 352.347 11.9775C366.846 5.83874 382.904 3.25379 399.286 1.91022C417.318 0.431321 427.794 0.191123 445.734 5.59321C464.059 11.1113 477.247 17.2458 486.775 33.8309C491.141 41.4317 492.876 46.4639 493.656 55.1931C494.885 68.9433 493.41 77.9418 493.41 90.551C493.41 101.846 500.537 117.07 514.545 122.717C528.553 128.365 528.763 128.31 545.756 129.838C570.331 132.048 609.5 116.5 609.5 116.5L648 103'
-  );
-  --pathHD2: path(
-    'M35 46.5L45.5 37L58.5 29.5L71.2227 22.9747L83.9453 16.9495C83.9453 16.9495 192.445 -35.5504 273.444 49.9495C345.444 125.95 318.944 229.949 318.944 229.949L302.944 276.949C302.944 276.949 273.941 261.046 253.944 254.449C221.446 243.728 136.444 205.449 60.4444 272.949C-36.674 359.207 14.4441 452.449 14.4441 452.449L29 499'
-  );
-  --pathHD3: path(
-    'M30.7116 34.8116C30.7116 34.8116 159.212 -47.5458 246.212 44.8092C310.914 113.494 286.711 207.309 286.711 207.309L272.245 249.644C272.245 249.644 246.181 235.271 228.212 229.309C199.007 219.62 118.712 182.311 47.7115 252.812C-43.2882 343.17 26.7116 432.809 26.7116 432.809'
-  );
-}
-
 .wrapper {
   @extend %flex-align;
   flex-direction: column;
+
+  @include breakpoint(tablet) {
+    padding: 64px 0 50px;
+    justify-content: center;
+  }
+
+  @include breakpoint(tablet-m) {
+    height: 100vh;
+    justify-content: start;
+  }
+}
+
+.svg {
+  width: 288px;
+  height: 693px;
+}
+
+.container {
+  max-width: 1341px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 1381px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 576) {
+    max-width: 100%;
+    padding: 0 16px;
+  }
 }
 
 .title {
@@ -25,218 +40,332 @@
   text-align: center;
   user-select: none;
   @extend %open-sans-48;
+
+  @include breakpoint(tablet-m) {
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 600;
+    padding: 0;
+  }
 }
 
 .animation {
-  width: 100%;
-  height: 504px;
-  margin: 0 auto;
-  display: flex;
-  max-width: 1320px;
-  justify-content: space-between;
+  margin: 0 79px 0 30px;
+  min-height: 504px;
+  @extend %flex-center;
+  position: relative;
 
-  &__item {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    background: $white-10;
-    border-radius: 50px;
-    backdrop-filter: blur(20px);
-    @extend %flex-center;
-
-    &_light {
-      border: 1px solid $liner-blue;
-    }
+  @include breakpoint(tablet) {
+    min-height: 415px;
+    margin: 0;
   }
 
-  &__path {
-    top: -136px;
-    left: 100px;
+  @include breakpoint(tablet-m) {
+    max-width: 668px;
+  }
+
+  &__text_tree,
+  &__text_two,
+  &__text_one {
+    text-align: center;
     position: absolute;
-
-    &_icon {
-      path {
-        stroke: $white;
-      }
-    }
-  }
-
-  &__rocket {
-    top: 278px;
-    width: 100px;
+    @extend %open-sans-18;
     height: 100px;
-    background: $liner-blue;
-    backdrop-filter: blur(20px);
-  }
 
-  &__clock {
-    top: 116px;
+    @include breakpoint(tablet-l) {
+      height: 88px;
+      font-size: 16px;
+      line-height: 22px;
+    }
 
-    &_isAnimate {
-      animation: stepColor;
-      animation-delay: 4.5s;
-      animation-duration: 0.5s;
-      animation-fill-mode: forwards;
-      animation-timing-function: linear;
+    @include breakpoint(tablet-m) {
+      height: 76px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 19px;
     }
   }
 
-  &__hands {
-    top: 288px;
+  &__text_one {
+    bottom: 10px;
+    left: 0;
+    max-width: 333px;
+    width: 100%;
 
-    &_isAnimate {
-      animation: stepColor;
-      animation-delay: 8.5s;
-      animation-duration: 0.4s;
-      animation-fill-mode: forwards;
-      animation-timing-function: linear;
+    @include breakpoint(tablet-l) {
+      max-width: 250px;
     }
 
-    &_icons {
-      position: relative;
+    @include breakpoint(tablet) {
+      text-align: left;
+      left: 0;
+    }
 
-      &_left {
-        z-index: 2;
-        position: absolute;
-      }
-
-      &_right {
-        z-index: 1;
-      }
+    @include breakpoint(tablet-m) {
+      bottom: 0;
+      top: 160px;
     }
   }
 
-  svg {
-    cursor: default;
+  &__text_two {
+    top: 0px;
+    max-width: 334px;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+      max-width: 297px;
+    }
+
+    @include breakpoint(tablet-m) {
+      max-width: 250px;
+      top: 380px;
+      right: 0;
+      text-align: right;
+    }
+  }
+
+  &__text_tree {
+    bottom: 0px;
+    right: 0;
+    max-width: 290px;
+    width: 100%;
+
+    @include breakpoint(tablet-l) {
+      max-width: 250px;
+    }
+
+    @include breakpoint(tablet) {
+      text-align: right;
+      right: 0;
+    }
+
+    @include breakpoint(tablet-m) {
+      left: 0;
+      bottom: 10px;
+      text-align: unset;
+    }
   }
 }
 
 .rocket {
-  left: 51px;
-  top: -140px;
-  position: absolute;
-  offset-path: var(--path);
-  offset-rotate: auto 49deg;
+  transform-origin: center center;
+  transform-box: fill-box;
+  offset-rotate: auto 45deg;
+  animation: move 8.5s linear 2s 1;
+  offset-path: path(
+    'M159 329.853C210 276.853 234.5 251.853 260.5 233.354C285.479 215.581 301.124 205.121 330.5 196.353C357.981 188.151 374.814 183.559 403 188.854C424.318 192.858 437.538 196.729 454 210.854C468.509 223.303 474 236.353 481.5 251.354C491.025 270.404 499.168 287.183 515.5 300.853C530.462 313.377 536.548 315.828 556 317.354C581.5 319.353 598 313.353 619.5 301.354C642.35 288.601 653.195 277.662 672.5 260.354C747.5 178.854 733.5 194.354 781.5 162.854C811 150.353 879.17 144.589 912.5 141.853C949.188 138.842 970.5 138.353 1007 149.353C1044.28 160.59 1071.12 173.081 1090.5 206.854C1099.38 222.331 1102.91 232.579 1104.5 250.354C1107 278.354 1104.5 275.678 1104.5 301.354C1104.5 324.354 1101.5 344.354 1116.5 377.354C1131.5 410.354 1181.49 421.852 1209.5 401.354C1291.5 341.354 1315.5 341.354 1315.5 340.354'
+  );
 
-  &__animation {
-    animation: rocket 10s ease-in-out var(--delay);
+  &_path {
+    offset-path: path(
+      'M52.4998 98.7016C91.4998 55.7016 135.182 14.523 172.5 23.2016C323 58.2017 238 325.5 238 325.5C238 325.5 37 262.5 25.5001 379C22.504 409.352 47.0001 492.5 47.0001 492.5'
+    );
+  }
 
-    @keyframes rocket {
+  &__move {
+    path {
+      &:nth-child(1) {
+        fill: url(#paint0_linear);
+      }
+
+      &:nth-child(2) {
+        fill: url(#paint1_linear);
+      }
+
+      &:nth-child(3) {
+        fill: url(#paint2_linear);
+      }
+
+      &:nth-child(4) {
+        fill: url(#paint3_linear);
+      }
+
+      &:nth-child(5) {
+        fill: url(#paint4_linear);
+      }
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  98% {
+    offset-rotate: auto 45deg;
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+.light_circle {
+  animation: lightMode;
+  animation-delay: 2.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+
+  @keyframes lightMode {
+    to {
+      fill: url(#paint0_linear);
+    }
+  }
+}
+
+.clockAnimation {
+  path {
+    &:nth-child(1) {
+      animation: clockColor;
+      animation-delay: 6s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+
+      @keyframes clockColor {
+        to {
+          fill: url(#paint0_linear);
+          fill-opacity: 1;
+        }
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(10),
+    &:nth-child(11),
+    &:nth-child(12),
+    &:nth-child(13) {
+      animation: whiteBorder;
+      animation-delay: 6s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+
+      @keyframes whiteBorder {
+        to {
+          fill: $white;
+        }
+      }
+    }
+
+    &:last-child {
+      animation: unsetborder;
+      animation-delay: 6s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+
+      @keyframes unsetborder {
+        to {
+          fill: unset;
+        }
+      }
+    }
+  }
+
+  &__arrow {
+    transform-origin: -25% -25%;
+    transform-box: fill-box;
+    animation: clockrotate 0.3s linear 6s 5;
+    animation-fill-mode: forwards;
+    offset-distance: 0%;
+    offset-path: path(
+      'M769.998 168.488C768.807 168.488 767.81 167.667 767.523 166.562L767.523 166.56L767.52 166.547C767.517 166.536 767.514 166.52 767.509 166.499C767.5 166.458 767.488 166.4 767.477 166.334C767.453 166.201 767.43 166.042 767.43 165.921C767.43 165.8 767.453 165.641 767.477 165.508C767.488 165.442 767.5 165.384 767.509 165.343C767.514 165.322 767.517 165.306 767.52 165.294L767.523 165.281L767.523 165.278C767.757 164.383 768.457 163.681 769.353 163.447L769.353 163.447L769.366 163.445L769.414 163.437C769.456 163.431 769.514 163.422 769.58 163.414C769.714 163.396 769.875 163.38 769.998 163.38C770.122 163.38 770.283 163.396 770.417 163.414C770.483 163.422 770.541 163.431 770.582 163.437L770.631 163.445L770.644 163.447L770.644 163.447C771.746 163.735 772.565 164.73 772.565 165.921C772.565 167.336 771.414 168.488 769.998 168.488Z'
+    );
+
+    @keyframes clockrotate {
       0% {
         offset-distance: 0%;
+        fill: white;
       }
       100% {
         offset-distance: 100%;
+        fill: white;
       }
     }
   }
 
-  &__light {
-    left: 51px;
-    top: -140px;
-    position: absolute;
-    offset-path: var(--path);
-    offset-rotate: auto 49deg;
-    display: none;
-
-    &_active {
-      display: block;
-    }
-
-    &_animation {
-      animation: rocketLight 10s ease-in-out var(--delay);
-
-      @keyframes rocketLight {
-        0% {
-          offset-distance: 0%;
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        100% {
-          offset-distance: 100%;
-          opacity: 1;
-        }
-      }
-    }
-  }
-}
-
-.clock {
-  path {
-    animation: clockColor;
-    animation-delay: 5s;
-    animation-duration: 0.5s;
+  &__arrow_larg {
+    transform-origin: 50% 0;
+    transform-box: fill-box;
+    animation: clockrotatelarg 0.3s linear 6s 5;
     animation-fill-mode: forwards;
-    animation-timing-function: linear;
+    offset-distance: 0%;
+    offset-path: path(
+      'M769.998 168.488C768.807 168.488 767.81 167.667 767.523 166.562L767.523 166.56L767.52 166.547C767.517 166.536 767.514 166.52 767.509 166.499C767.5 166.458 767.488 166.4 767.477 166.334C767.453 166.201 767.43 166.042 767.43 165.921C767.43 165.8 767.453 165.641 767.477 165.508C767.488 165.442 767.5 165.384 767.509 165.343C767.514 165.322 767.517 165.306 767.52 165.294L767.523 165.281L767.523 165.278C767.757 164.383 768.457 163.681 769.353 163.447L769.353 163.447L769.366 163.445L769.414 163.437C769.456 163.431 769.514 163.422 769.58 163.414C769.714 163.396 769.875 163.38 769.998 163.38C770.122 163.38 770.283 163.396 770.417 163.414C770.483 163.422 770.541 163.431 770.582 163.437L770.631 163.445L770.644 163.447L770.644 163.447C771.746 163.735 772.565 164.73 772.565 165.921C772.565 167.336 771.414 168.488 769.998 168.488Z'
+    );
 
-    @keyframes clockColor {
-      to {
-        fill: $white;
+    @keyframes clockrotatelarg {
+      0% {
+        offset-distance: 0%;
+        fill: white;
       }
-    }
-
-    &:nth-child(2) {
-      animation: clock;
-      animation-delay: 5s;
-      transform-origin: center;
-      animation-duration: 0.5s;
-      animation-timing-function: linear;
-      animation-iteration-count: 10;
-
-      @keyframes clock {
-        to {
-          transform: rotate(359deg);
-        }
-      }
-    }
-
-    &:nth-child(11) {
-      animation: clock;
-      animation-delay: 5s;
-      transform-origin: center;
-      animation-duration: 0.5s;
-      animation-timing-function: linear;
-      animation-iteration-count: 10;
-
-      @keyframes clock {
-        to {
-          transform: rotate(359deg);
-        }
+      100% {
+        offset-distance: 100%;
+        fill: white;
       }
     }
   }
 }
 
-.isAnimate {
+.hands {
+  path {
+    &:nth-child(1) {
+      animation: handsbg;
+      animation-delay: 10.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+
+      @keyframes handsbg {
+        to {
+          fill: url(#paint0_linear);
+          fill-opacity: 1;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      animation: handscolor;
+      animation-delay: 10.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+
+      @keyframes handscolor {
+        to {
+          fill: $white;
+        }
+      }
+    }
+
+    &:last-child {
+      animation: handsborderunset;
+      animation-delay: 10.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: initial;
+
+      @keyframes handsborderunset {
+        to {
+          fill: unset;
+        }
+      }
+    }
+  }
+
   &__left {
+    transform-box: fill-box;
+    transform-origin: center;
     animation: lefthand;
-    animation-delay: 8.5s;
-    animation-duration: 0.4s;
+    animation-delay: 10.5s;
+    animation-duration: 0.5s;
     animation-direction: alternate;
-    animation-timing-function: initial;
     animation-iteration-count: 4;
 
     @keyframes lefthand {
-      from {
-        transform: rotate(0);
-      }
-      to {
-        transform: rotate(-20deg);
-      }
-    }
-  }
-
-  &__right {
-    animation: righthand;
-    animation-delay: 8.5s;
-    animation-duration: 0.4s;
-    animation-direction: alternate;
-    animation-timing-function: initial;
-    animation-iteration-count: 4;
-
-    @keyframes righthand {
       from {
         transform: rotate(0);
       }
@@ -245,13 +374,23 @@
       }
     }
   }
-}
 
-@keyframes stepColor {
-  from {
-    background: $white-10;
-  }
-  to {
-    background: $liner-blue;
+  &__right {
+    transform-origin: center;
+    animation: righthand;
+    animation-delay: 10.5s;
+    transform-box: fill-box;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: 4;
+
+    @keyframes righthand {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(-10deg);
+      }
+    }
   }
 }
