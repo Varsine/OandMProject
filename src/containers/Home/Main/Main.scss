@@ -23,11 +23,6 @@
       position: absolute;
       width: 0;
       height: 0;
-      offset-distance: 0%;
-      animation: move-ball 5s ease-in-out;
-      offset-path: path(
-        'M-3 335C-3 335 48.3211 235.261 105.5 198C282.166 82.8734 269.784 578.512 480.5 586.5C673.636 593.821 863.966 294.763 1053 254.5C1229.5 216.906 1562.25 316.886 1510.5 586.5C1474.68 773.124 1309.56 848.944 1122 879.5C848.968 923.981 270.559 674.253 476 489C562.5 411 704.5 411 704.5 411H740'
-      );
     }
   }
 
@@ -40,6 +35,22 @@
       height: 112px;
     }
 
+    &_ball {
+      @include breakpoint(tablet) {
+        height: 190px;
+      }
+
+      @include breakpoint(tablet-m) {
+        height: 112px;
+      }
+
+      rect {
+        &:nth-of-type(2) {
+          animation: ball 0s linear forwards;
+        }
+      }
+    }
+
     rect {
       &:nth-of-type(1) {
         stroke-dasharray: 300;
@@ -49,7 +60,6 @@
       }
 
       &:nth-of-type(2) {
-        transform: translate(50 80);
         animation: ball 6s linear forwards;
       }
     }
@@ -106,44 +116,10 @@
       &:nth-of-type(10) {
         stroke-dasharray: 800;
         stroke-dashoffset: 800;
-        animation: draw 3.5s linear forwards;
-        animation-direction: reverse;
-        animation-delay: 4.5s;
+        animation: dash 3.5s linear forwards;
+        animation-delay: 5s;
       }
     }
-  }
-}
-
-@keyframes move-ball {
-  0% {
-    width: 35px;
-    height: 35px;
-    offset-distance: 0%;
-  }
-  10% {
-    width: 77px;
-    height: 77px;
-  }
-  30% {
-    width: 77px;
-    height: 77px;
-  }
-  40% {
-    width: 39px;
-    height: 39px;
-  }
-  50% {
-    width: 35px;
-    height: 35px;
-  }
-  94% {
-    opacity: 1;
-  }
-  100% {
-    width: 35px;
-    height: 35px;
-    opacity: 0;
-    offset-distance: 100%;
   }
 }
 
@@ -166,23 +142,14 @@
     height: 35px;
   }
   86% {
-    x: 710;
-    width: 80px;
+    x: 700;
+    width: 85px;
     height: 35px;
   }
   100% {
     x: 740;
     width: 35px;
     height: 35px;
-  }
-}
-
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -800;
   }
 }
 

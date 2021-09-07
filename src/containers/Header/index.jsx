@@ -10,13 +10,17 @@ import styles from './Header.scss';
 
 import {
   LogoIcon,
-  ActiveTeamIcon,
-  ActiveHomeIcon,
-  ActiveWeWorkIcon,
-  ActiveIndustryIcon,
-  ActivePortfolioIcon,
-  ActiveTeamMembersIcon,
-  ActiveInformationIcon,
+  Section10ActiveIcon,
+  Section11ActiveIcon,
+  Section4ActiveIcon,
+  Section5ActiveIcon,
+  Section6ActiveIcon,
+  Section7ActiveIcon,
+  Section8ActiveIcon,
+  Section9ActiveIcon,
+  SectionOneActiveIcon,
+  SectionThreeActiveIcon,
+  SectionTwoActiveIcon,
 } from '../../icons';
 
 const Header = () => {
@@ -27,25 +31,37 @@ const Header = () => {
   const memoizedUpdateActiveIcon = useCallback(() => {
     switch (activeIndex) {
       case 2: {
-        return <ActiveInformationIcon />;
+        return <SectionTwoActiveIcon />;
       }
       case 3: {
-        return <ActiveWeWorkIcon />;
+        return <SectionThreeActiveIcon />;
       }
       case 4: {
-        return <ActiveIndustryIcon />;
+        return <Section4ActiveIcon />;
       }
       case 5: {
-        return <ActivePortfolioIcon />;
+        return <Section5ActiveIcon />;
       }
       case 6: {
-        return <ActiveTeamIcon />;
+        return <Section6ActiveIcon />;
       }
       case 7: {
-        return <ActiveTeamMembersIcon />;
+        return <Section7ActiveIcon />;
+      }
+      case 8: {
+        return <Section8ActiveIcon />;
+      }
+      case 9: {
+        return <Section9ActiveIcon />;
+      }
+      case 10: {
+        return <Section10ActiveIcon />;
+      }
+      case 11: {
+        return <Section11ActiveIcon />;
       }
       default:
-        return <ActiveHomeIcon />;
+        return <SectionOneActiveIcon />;
     }
   }, [activeIndex]);
 
