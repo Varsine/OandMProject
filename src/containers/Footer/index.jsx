@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import usePortal from 'react-useportal';
 import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 
 import { Chat } from 'components/index';
+import { modeSelector } from 'slices/mainSlice';
 import { useWindowSize } from 'hooks/index';
 
 import styles from './Footer.scss';
@@ -14,6 +16,7 @@ import SocialLinks from './SocialLinks';
 import { ArrowGdtIcon, CrossIcon } from '../../icons';
 
 const Footer = ({ isOnePage }) => {
+  const isDarkMode = useSelector(modeSelector);
   const { Portal } = usePortal();
   const { isMobile } = useWindowSize();
   const [isOpenIcons, setIsOpenIcons] = useState(false);
@@ -36,11 +39,16 @@ const Footer = ({ isOnePage }) => {
             {isMobile &&
               (!isOpenIcons ? (
                 <ArrowGdtIcon
-                  className={styles.wrapper__arrow_icon}
+                  className={classNames(styles.wrapper__arrow_icon, {
+                    [styles.wrapper__arrow_icon_dark]: isDarkMode,
+                  })}
                   onClick={handleOpenIcons}
                 />
               ) : (
-                <CrossIcon onClick={handleOpenIcons} />
+                <CrossIcon
+                  className={isDarkMode && styles.wrapper__arrow_icon_dark}
+                  onClick={handleOpenIcons}
+                />
               ))}
 
             {(!isOpenIcons || !isMobile) && <Chat />}
