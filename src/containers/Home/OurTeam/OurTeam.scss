@@ -1,5 +1,4 @@
 .wrapper {
-  height: 100%;
   @extend %flex-center;
   flex-direction: column;
 }
@@ -23,9 +22,9 @@
   }
 }
 
-.section {
-  @extend %flex-center;
-}
+// .section {
+//   @extend %flex-center;
+// }
 
 .banner {
   width: 468px;

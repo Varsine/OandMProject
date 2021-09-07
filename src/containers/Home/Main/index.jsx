@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
 import { activeIndexSelector, modeSelector } from 'slices/mainSlice';
@@ -20,7 +21,7 @@ const Main = () => {
   return (
     <section id="header" className="section">
       <div className="canvas__working" />
-      <div className={styles.wrapper}>
+      <div className={classNames(styles.wrapper, 'container')}>
         {isAnimate ? (
           <>
             <LogoMoveBallIcon className={styles.wrapper__ball} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import classNames from 'classnames';
 
 import { worksCards } from 'utils/index';
 
@@ -28,7 +29,7 @@ const OurWorks = () => {
   return (
     <section className="section">
       <div className="canvas__working" />
-      <div className={styles.wrapper}>
+      <div className={classNames(styles.wrapper, 'container')}>
         <Slider {...settings}>{renderSlides}</Slider>
       </div>
     </section>

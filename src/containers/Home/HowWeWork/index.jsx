@@ -25,7 +25,7 @@ const HowWeWork = () => {
   return (
     <section className="section">
       <div className="canvas__working" />
-      <div className={styles.wrapper}>
+      <div className={classNames(styles.wrapper, 'container')}>
         <h2 className={styles.title}>How We Work</h2>
         <div className={styles.animation}>
           <div

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { teamCards } from 'utils/index';
@@ -9,7 +10,7 @@ import {
   teamSliderIndexSelector,
 } from 'slices/mainSlice';
 
-import Slide from './Slide/index';
+// import Slide from './Slide/index';
 import styles from './OurTeam.scss';
 
 import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
@@ -46,24 +47,24 @@ const OurTeam = () => {
     }
   };
 
-  const renderteamCards = teamCards.map(
-    (item, index) =>
-      activeIndex === index && (
-        <Slide
-          // eslint-disable-next-line react/no-array-index-key
-          key={`slide ${index}`}
-          activeIndex={activeIndex}
-          isDarkMode={isDarkMode}
-        />
-      ),
-  );
+  // const renderteamCards = teamCards.map(
+  //   (item, index) =>
+  //     activeIndex === index && (
+  //       <Slide
+  //         // eslint-disable-next-line react/no-array-index-key
+  //         key={`slide ${index}`}
+  //         activeIndex={activeIndex}
+  //         isDarkMode={isDarkMode}
+  //       />
+  //     ),
+  // );
 
   return (
     <section className="section">
       <div className="canvas__working" />
-      <div className={styles.wrapper}>
+      <div className={classNames(styles.wrapper, 'container')}>
         <h2 className={styles.title}>Our Team</h2>
-        {renderteamCards}
+        {/* {renderteamCards} */}
         <div className={styles.arrows}>
           {isDarkMode ? (
             <ArrowIcon

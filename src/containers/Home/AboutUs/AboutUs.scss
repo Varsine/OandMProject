@@ -1,18 +1,8 @@
 .wrapper {
-  height: 100%;
-  padding: 80px 9.5% 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @extend %flex-center;
 
   @include breakpoint(desktop) {
     flex-direction: column-reverse;
-    padding: 28px 5.5%;
-    height: auto;
-  }
-
-  @include breakpoint(tablet-m) {
-    padding: 20px 16px;
   }
 }
 

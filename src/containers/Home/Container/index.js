@@ -17,14 +17,22 @@ const HomeContainer = () => {
     dispatch(changeIndex(destination.index + 1));
   };
 
+  const pluginWrapper = () => {
+    // eslint-disable-next-line global-require
+    require('fullpage.js/vendors/scrolloverflow');
+  };
+
   return (
     <ReactFullPage
+      pluginWrapper={pluginWrapper}
       navigation={false}
       scrollingSpeed={1300}
       keyboardScrolling={false}
       onLeave={changeActiveStep}
       fitToSection={false}
       fixedElements="#canvas"
+      scrollOverflow
+      normalScrollElements=".section"
       render={({ fullpageApi }) => (
         <ReactFullPage.Wrapper>
           <FullPageLayout fullpageApi={fullpageApi}>
