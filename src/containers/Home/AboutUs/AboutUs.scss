@@ -25,12 +25,12 @@
   z-index: -5;
 
   @include breakpoint(desktop) {
-    margin: 32px 0 0;
+    margin: 32px 0 80px;
     padding: 36px 28px;
   }
 
   @include breakpoint(tablet-m) {
-    margin: 24px 0 0;
+    margin: 24px 0 40px;
     padding: 35px 16px;
   }
 
@@ -87,6 +87,7 @@
   height: 647px;
   max-width: 740px;
   width: 100%;
+  margin-top: 32px;
 
   @media only screen and (max-width: 1400px) {
     height: 480px;
@@ -94,6 +95,7 @@
   }
 
   @include breakpoint(tablet-m) {
+    margin-top: 24px;
     max-width: 288px;
     height: 252px;
   }

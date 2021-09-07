@@ -1,14 +1,13 @@
 .wrapper {
   @extend %flex-align;
+  width: 100%;
   flex-direction: column;
 
   @include breakpoint(tablet) {
-    padding: 64px 0 50px;
     justify-content: center;
   }
 
   @include breakpoint(tablet-m) {
-    height: 100vh;
     justify-content: start;
   }
 }
@@ -18,24 +17,8 @@
   height: 693px;
 }
 
-.container {
-  max-width: 1341px;
-  width: 100%;
-  margin: 0 auto;
-
-  @media (max-width: 1381px) {
-    max-width: 100%;
-    padding: 0 20px;
-  }
-
-  @media (max-width: 576) {
-    max-width: 100%;
-    padding: 0 16px;
-  }
-}
-
 .title {
-  padding: 24px 0 72px;
+  padding: 32px 0 72px;
   position: relative;
   text-align: center;
   user-select: none;
@@ -45,22 +28,24 @@
     font-size: 32px;
     line-height: 44px;
     font-weight: 600;
-    padding: 0;
+    padding: 24px 0 0;
   }
 }
 
 .animation {
-  margin: 0 79px 0 30px;
-  min-height: 504px;
+  width: 100%;
+  // min-height: 504px;
   @extend %flex-center;
   position: relative;
 
-  @include breakpoint(tablet) {
-    min-height: 415px;
-    margin: 0;
+  @include breakpoint(desktop) {
+    display: none;
+    margin: 0 0 80px;
+    // min-height: 415px;
   }
 
   @include breakpoint(tablet-m) {
+    margin: 0 0 40px;
     max-width: 668px;
   }
 

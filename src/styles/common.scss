@@ -5,6 +5,7 @@
 
     @include breakpoint(desktop) {
       padding: 80px 50px 60px;
+      min-height: 100vh;
       height: auto;
     }
 
@@ -75,6 +76,6 @@
 }
 
 .section {
-  height: 100vh;
+  height: 100vh !important;
   width: 100vw;
 }

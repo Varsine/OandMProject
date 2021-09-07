@@ -15,9 +15,9 @@ const Main = () => {
   const [isAnimate, setIsAnimate] = useState(false);
 
   useEffect(() => {
-    // window.addEventListener('load', () => {
-    setIsAnimate(true);
-    // });
+    window.addEventListener('load', () => {
+      setIsAnimate(true);
+    });
   }, []);
 
   const showAnimation = isActive ? (

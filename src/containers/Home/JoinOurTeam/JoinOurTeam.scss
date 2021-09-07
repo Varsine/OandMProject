@@ -2,8 +2,6 @@
   @extend %flex-center;
 
   &__info {
-    // padding: 0 16px 0 50px;
-
     &_title {
       @extend %open-sans-48;
     }
