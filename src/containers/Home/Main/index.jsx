@@ -14,25 +14,29 @@ const Main = () => {
   const [isAnimate, setIsAnimate] = useState(false);
 
   useEffect(() => {
-    setIsAnimate(isActive);
-  }, [activeIndex]);
+    window.addEventListener('load', () => {
+      setIsAnimate(true);
+    });
+  }, []);
+
+  const showAnimation = isActive ? (
+    <>
+      <LogoMoveBallIcon className={styles.wrapper__ball} />
+      <LogoAnimaIcon
+        className={styles.wrapper__logo}
+        stopColor={isDarkMode ? '#fff' : '#333'}
+      />
+    </>
+  ) : (
+    <LogoAnimaIcon className={styles.wrapper__logo_ball} />
+  );
+
+  const renderAnimation = isAnimate && showAnimation;
 
   return (
     <section id="header" className="section">
       <div className="canvas__working" />
-      <div className={styles.wrapper}>
-        {isAnimate ? (
-          <>
-            <LogoMoveBallIcon className={styles.wrapper__ball} />
-            <LogoAnimaIcon
-              className={styles.wrapper__logo}
-              stopColor={isDarkMode ? '#fff' : '#333'}
-            />
-          </>
-        ) : (
-          <LogoAnimaIcon />
-        )}
-      </div>
+      <div className={styles.wrapper}>{renderAnimation}</div>
     </section>
   );
 };

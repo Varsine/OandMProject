@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
+// import * as LottiePlayer from '@lottiefiles/lottie-player';
 
 import { industry } from 'utils/index';
 import { activeIndexSelector } from 'slices/mainSlice';
@@ -14,6 +16,10 @@ import {
 } from '../../../icons';
 
 const Industry = () => {
+  React.useEffect(() => {
+    import('@lottiefiles/lottie-player');
+  });
+
   const activeSelector = useSelector(activeIndexSelector);
   const isShow = activeSelector === 4;
   const [activeIndex, setActiveIndex] = useState(0);

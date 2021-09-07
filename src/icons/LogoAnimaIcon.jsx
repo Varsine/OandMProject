@@ -10,72 +10,70 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
     {...rest}
   >
     <path
-      d="M137.5 102.189C137.5 98.8493 136.285 96.6348 134 94.3493C131 91.3493 126.5 90.6892 126.5 90.6892C123.5 90.1892 120.19 90.2588 117.5 90.6892C114.81 91.1196 111.988 92.4119 110 95.1892C108.235 97.6539 107.815 99.6636 108 102.689C108.151 105.154 108.41 106.3 110 108.189C112.031 110.603 114.94 111.924 118 112.689C122 113.689 123.5 114.189 126.5 115.189C129.5 116.189 132.5 117.189 135.5 119.189C137.757 120.694 139 122.189 139.5 124.689C140.036 127.37 139.302 129.586 138.5 131.189C137.636 132.918 136.985 133.952 135.5 135.189C132.5 137.689 130 138.147 127 138.689C123.541 139.314 120.32 139.203 117.5 138.349C114.131 137.33 112.368 136.294 110 133.689C107.882 131.359 107 129.509 107 126.849"
-      stroke="url(#paint29_linear)"
+      d="M137.5 102.189C137.5 98.8494 136.285 96.6349 134 94.3494C131 91.3494 126.5 90.6892 126.5 90.6892C123.5 90.1892 120.19 90.2589 117.5 90.6892C114.81 91.1196 111.988 92.4119 110 95.1892C108.235 97.654 107.815 99.6636 108 102.689C108.151 105.154 108.41 106.3 110 108.189C112.031 110.603 114.94 111.924 118 112.689C122 113.689 123.5 114.189 126.5 115.189C129.5 116.189 132.5 117.189 135.5 119.189C137.757 120.694 139 122.189 139.5 124.689C140.036 127.37 139.302 129.586 138.5 131.189C137.636 132.918 136.985 133.952 135.5 135.189C132.5 137.689 130 138.147 127 138.689C123.541 139.314 120.32 139.203 117.5 138.349C114.131 137.33 112.368 136.294 110 133.689C107.882 131.36 107 129.51 107 126.849"
+      stroke="url(#paint0_linear)"
       strokeWidth="7"
     />
     <path
-      d="M180 88.4776V114.689M180 140.994V114.689M180 114.689H214V88.46V140.969"
-      stroke="url(#paint30_linear)"
+      d="M180 88.4776V114.689M180 140.994V114.689M180 114.689H214V88.4599V140.968"
+      stroke="url(#paint1_linear)"
       strokeWidth="7"
     />
     <path
-      d="M288.62 91.1892H258.496V114.689M258.496 114.689H286.951M258.496 114.689L258.453 138.189H289.2"
-      stroke="url(#paint31_linear)"
+      d="M288.62 91.189H258.496V114.689M258.496 114.689H286.951M258.496 114.689L258.453 138.189H289.2"
+      stroke="url(#paint2_linear)"
       strokeWidth="7"
       strokeMiterlimit="16"
     />
     <path
-      d="M327 88.4459V138.189H357.598"
-      stroke="url(#paint32_linear)"
+      d="M327 88.4458V138.189H357.598"
+      stroke="url(#paint3_linear)"
       strokeWidth="7"
     />
     <path
-      d="M393 88.4548V138.189H423.628"
-      stroke="url(#paint33_linear)"
+      d="M393 88.4546V138.189H423.628"
+      stroke="url(#paint4_linear)"
       strokeWidth="7"
     />
     <path
-      d="M458.5 88.4548V138.873L488.35"
-      stroke="url(#paint34_linear)"
+      d="M458.5 88.4546V138.873L488.35 139.189"
+      stroke="url(#paint5_linear)"
       strokeWidth="5"
     />
     <rect
       x="522"
-      y="91.6892"
+      y="91.689"
       width="32"
       height="46"
       rx="15.5"
-      stroke="url(#paint35_linear)"
+      stroke="url(#paint6_linear)"
       strokeWidth="5"
     />
     <path
-      d="M629.5 102.189C629.5 102.189 628.586 97.549 626.492 95.1892C622.5 90.6892 618.439 89.3343 612.492 89.1892C606.185 89.0354 601.548 90.3563 597.492 95.1892C594.555 98.6892 593.497 104.189 593.497 107.689C593.498 114.189 593.494 114.689 593.497 120.189C593.5 124.944 596.051 131.189 597.997 133.689C601.5 138.189 606.035 140.364 612.497 140.189C618.608 140.024 622.997 137.689 626.492 133.689C628.102 131.847 629.015 129.088 629.497 126.689C630.503 121.689 629.997 115.689 629.997 115.689H613.168"
-      stroke="url(#paint36_linear)"
+      d="M629.5 102.189C629.5 102.189 628.586 97.5488 626.492 95.189C622.5 90.689 618.439 89.334 612.492 89.189C606.185 89.0352 601.548 90.3561 597.492 95.189C594.555 98.689 593.497 104.189 593.497 107.689C593.498 114.189 593.494 114.689 593.497 120.189C593.5 124.944 596.051 131.189 597.997 133.689C601.5 138.189 606.035 140.364 612.497 140.189C618.608 140.024 622.997 137.689 626.492 133.689C628.102 131.847 629.015 129.088 629.497 126.689C630.503 121.689 629.997 115.689 629.997 115.689H613.168"
+      stroke="url(#paint7_linear)"
       strokeWidth="5"
     />
     <path
-      d="M669.5 88.4509V140.994"
-      stroke="url(#paint37_linear)"
+      d="M669.5 88.4507V140.994"
+      stroke="url(#paint8_linear)"
       strokeWidth="5"
     />
     <path
-      d="M705.132 89.3952L720.502 109.5L725.002 115M744.002 141.885L725.002 115M725.002 115L705.501 141.885M725.002 115L744.002 88.9999"
-      stroke="url(#paint38_linear)"
+      d="M705.132 89.3951L720.502 109.5L725.002 115M744.002 141.884L725.002 115M725.002 115L705.501 141.884M725.002 115L744.002 88.9998"
+      stroke="url(#paint9_linear)"
       strokeWidth="5"
     />
     <rect
-      width="35"
-      height="35"
-      rx="17.5"
-      fill="url(#paint0_linear)"
-      transform="translate(-575 10)"
+      x="166"
+      y="10"
+      rx="17.505"
+      transform="translate(-575 3)"
+      fill="url(#paint10_linear)"
     />
     <path
-      d="M157.12 236.25L177.12 252.75C212.12 249.75 191.12 217.75 183.62 217.75C170.718 217.75 149.12 224.32 149.12 224.32C146.562 229.554 145.12 235.477 145.12 241.75C145.12 263.013 161.686 280.25 182.12 280.25C202.555 280.25 219.12 263.013 219.12 241.75C219.12 220.487 204.922 203.25 182.12 203.25C182.12 203.25 164.731 203.25 130.87 203.25C97.0097 203.25 44 180 44 114.5C44 55 97.0161 28 130.863 28"
+      d="M130.856 31C97.0161 31 44.0045 55 44 114.5C43.9954 180 97.0961 203.25 130.796 203.25C164.73 203.25 164.73 203.25 182.12 203.25C204.92 203.25 219.12 220.49 219.12 241.75C219.12 263.01 202.55 280.25 182.12 280.25C161.69 280.25 145.12 263.01 145.12 241.75C145.12 238.998 146.56 229.55 149.12 224.32C149.12 224.32 171.349 215.682 183.62 217.75C198.324 220.228 200.921 224.813 203.5 239.5C205.864 252.964 184.833 271 176 264.5C167.167 258 154.864 249.855 159.5 238C162.38 230.636 188.5 238 188.5 238"
       stroke="url(#paint40_linear)"
-      strokeDasharray="800"
-      strokeDashoffset="0"
       strokeWidth="34.5"
     />
     <path
@@ -86,8 +84,8 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
       <linearGradient id="left-to-right">
         <stop offset="0" stopColor={stopColor}>
           <animate
-            begin="6s"
-            dur="2s"
+            begin="3.5s"
+            dur="0.5s"
             attributeName="offset"
             fill="freeze"
             from="0"
@@ -128,113 +126,124 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint29_linear"
-        x1="697.342"
-        y1="490.34"
-        x2="697.342"
-        y2="539.087"
+        id="paint0_linear"
+        x1="123.342"
+        y1="90.3398"
+        x2="123.342"
+        y2="139.087"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint30_linear"
-        x1="771"
-        y1="488.46"
-        x2="771"
-        y2="540.994"
+        id="paint1_linear"
+        x1="197"
+        y1="88.46"
+        x2="197"
+        y2="140.994"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint31_linear"
-        x1="847.826"
-        y1="491.189"
-        x2="847.826"
-        y2="538.189"
+        id="paint2_linear"
+        x1="273.826"
+        y1="91.189"
+        x2="273.826"
+        y2="138.189"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint32_linear"
-        x1="916.299"
-        y1="488.446"
-        x2="916.299"
-        y2="538.189"
+        id="paint3_linear"
+        x1="342.299"
+        y1="88.4458"
+        x2="342.299"
+        y2="138.189"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint33_linear"
-        x1="982.314"
-        y1="488.455"
-        x2="982.314"
-        y2="538.189"
+        id="paint4_linear"
+        x1="408.314"
+        y1="88.4546"
+        x2="408.314"
+        y2="138.189"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint34_linear"
-        x1="1047.43"
-        y1="488.455"
-        x2="1047.43"
-        y2="539.189"
+        id="paint5_linear"
+        x1="473.425"
+        y1="88.4546"
+        x2="473.425"
+        y2="139.189"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint35_linear"
-        x1="1112"
-        y1="489.189"
-        x2="1112"
-        y2="540.189"
+        id="paint6_linear"
+        x1="538"
+        y1="89.189"
+        x2="538"
+        y2="140.189"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint36_linear"
-        x1="1185.81"
-        y1="489.177"
-        x2="1185.81"
-        y2="540.199"
+        id="paint7_linear"
+        x1="611.81"
+        y1="89.1772"
+        x2="611.81"
+        y2="140.199"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint37_linear"
-        x1="1244"
-        y1="488.451"
-        x2="1244"
-        y2="540.994"
+        id="paint8_linear"
+        x1="670"
+        y1="88.4507"
+        x2="670"
+        y2="140.994"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
-        id="paint38_linear"
-        x1="1280.05"
-        y1="488.749"
-        x2="1317.51"
-        y2="542.227"
+        id="paint9_linear"
+        x1="706.054"
+        y1="88.7492"
+        x2="743.513"
+        y2="142.227"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
+        <stop offset="1" stopColor="#3D80D4" />
+      </linearGradient>
+      <linearGradient
+        id="paint10_linear"
+        x1="184"
+        y1="-400"
+        x2="183.505"
+        y2="45.01"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.921348" stopColor="#5040B6" />
         <stop offset="1" stopColor="#3D80D4" />
       </linearGradient>
       <linearGradient
@@ -250,10 +259,10 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
       </linearGradient>
       <linearGradient
         id="paint40_linear"
-        x1="705.56"
-        y1="428"
-        x2="705.56"
-        y2="680.25"
+        x1="131.56"
+        y1="28"
+        x2="131.56"
+        y2="280.25"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#5040B6" />
