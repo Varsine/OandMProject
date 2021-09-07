@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
-// import * as LottiePlayer from '@lottiefiles/lottie-player';
 
 import { industry } from 'utils/index';
 import { activeIndexSelector } from 'slices/mainSlice';
