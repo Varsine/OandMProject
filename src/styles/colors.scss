@@ -6,8 +6,10 @@ $header-bg: var(--headerBg);
 $text-color: var(--textColor);
 $team-image: var(--teamImage);
 $btn-disabled: var(--btnDisabdled);
+$industryColor: var(--industryColor);
 $field-bg-active: var(--fieldBgActive);
 $logo-bottom-color: var(--logoBottomColor);
+
 // color vars
 $black: #000;
 $black-10: #00000099;
@@ -21,6 +23,7 @@ $white: #fff;
 $white-10: rgba(234, 241, 250, 0.6);
 $white-20: #f1f2f2;
 $white-30: rgba(207, 229, 255, 0.6);
+$white40: rgba(135, 133, 133, 1);
 $white-100: #f5f5f5;
 
 $liner-red: linear-gradient(339.44deg, #da4638 5.68%, #ff3623 85.94%);

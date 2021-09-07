@@ -84,8 +84,8 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
       <linearGradient id="left-to-right">
         <stop offset="0" stopColor={stopColor}>
           <animate
-            begin="6s"
-            dur="2s"
+            begin="3.5s"
+            dur="0.5s"
             attributeName="offset"
             fill="freeze"
             from="0"

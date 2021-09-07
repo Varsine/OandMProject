@@ -55,69 +55,73 @@
       &:nth-of-type(1) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 8.25s;
+        animation: dash 1s linear forwards;
+        animation-delay: 3.5s;
       }
 
       &:nth-of-type(2) {
-        animation: ball 6s linear forwards;
+        animation: ball 2.5s linear forwards;
+
+        @include breakpoint(tablet-m) {
+          animation: ball 2.35s linear forwards;
+        }
       }
     }
     path {
       &:nth-of-type(1) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 6.75s;
+        animation: dash 1s linear forwards;
+        animation-delay: 2.2s;
       }
 
       &:nth-of-type(2) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 7s;
+        animation: dash 1s linear forwards;
+        animation-delay: 2.4s;
       }
 
       &:nth-of-type(3) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 7.25s;
+        animation: dash 1s linear forwards;
+        animation-delay: 2.6s;
       }
 
       &:nth-of-type(4) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 7.5s;
+        animation: dash 1s linear forwards;
+        animation-delay: 2.8s;
       }
 
       &:nth-of-type(5) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 7.75s;
+        animation: dash 1s linear forwards;
+        animation-delay: 3.1s;
       }
       &:nth-of-type(6) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 8s;
+        animation: dash 1s linear forwards;
+        animation-delay: 3.3s;
       }
       &:nth-of-type(7),
       &:nth-of-type(8),
       &:nth-of-type(9) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 8.25s;
+        animation: dash 1s linear forwards;
+        animation-delay: 3.5s;
       }
 
       &:nth-of-type(10) {
         stroke-dasharray: 800;
         stroke-dashoffset: 800;
-        animation: dash 3.5s linear forwards;
-        animation-delay: 5s;
+        animation: dash 1.5s linear forwards;
+        animation-delay: 2s;
       }
     }
   }
