@@ -25,6 +25,7 @@ const HomeContainer = () => {
       onLeave={changeActiveStep}
       fitToSection={false}
       fixedElements="#canvas"
+      scrollOverflow
       render={({ fullpageApi }) => (
         <ReactFullPage.Wrapper>
           <FullPageLayout fullpageApi={fullpageApi}>

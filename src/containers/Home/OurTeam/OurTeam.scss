@@ -1,5 +1,4 @@
 .wrapper {
-  height: 100%;
   @extend %flex-center;
   flex-direction: column;
 }
@@ -21,10 +20,6 @@
   &__right {
     z-index: 1;
   }
-}
-
-.section {
-  @extend %flex-center;
 }
 
 .banner {

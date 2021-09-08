@@ -1,13 +1,8 @@
 .wrapper {
   @extend %flex-center;
   position: relative;
-  margin: 0 21%;
-  margin: 0 150px 0 50px;
-  height: calc(100vh - 172px);
-  height: 100vh;
 
   @include breakpoint(desktop) {
-    margin: 0 50px;
     flex-direction: column;
     justify-content: center;
   }
@@ -27,12 +22,14 @@
     user-select: none;
 
     @include breakpoint(desktop) {
+      margin-top: 32px;
       flex-direction: unset;
       justify-content: space-between;
     }
 
     @include breakpoint(tablet-m) {
       width: calc(100vw - 16px);
+      margin-top: 24px;
       overflow-x: scroll;
       scroll-behavior: smooth;
       scrollbar-width: none;
@@ -133,13 +130,14 @@
 
     @include breakpoint(desktop) {
       max-width: 100%;
-      margin: 0;
+      margin: 0 0 80px;
       display: flex;
       flex-direction: unset;
     }
 
     @include breakpoint(tablet-m) {
       flex-direction: column;
+      margin: 0 0 40px;
     }
 
     &__gif {

@@ -1,16 +1,12 @@
 .wrapper {
-  height: 100%;
   @extend %flex-center;
 }
 
 .slider {
-  height: 100%;
-  padding: 80px 99px 60px 50px;
   max-width: 100%;
 
   &__item {
     width: 100%;
-    height: calc(100vh - 140px);
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -25,11 +21,9 @@
     }
 
     &_wrapper {
-      width: 100%;
-      padding: 53px 77px;
       max-width: 768px;
+      width: 100%;
       text-align: center;
-      margin-top: -99px;
       background: $field-bg;
       border-radius: 20px;
       flex-direction: column;

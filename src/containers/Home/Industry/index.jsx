@@ -72,8 +72,8 @@ const Industry = () => {
 
   return (
     <section className="section">
-      <div className={styles.wrapper}>
-        <div className="canvas__working" />
+      <div className="canvas__working" />
+      <div className={`${styles.wrapper} container`}>
         <div className={styles.wrapper__menu}>
           <div
             role="button"

@@ -70,8 +70,8 @@ const AboutUs = () => {
 
   return (
     <section className="section">
-      <div className={styles.wrapper}>
-        <div className="canvas__working" />
+      <div className="canvas__working" />
+      <div className={`${styles.wrapper} container`}>
         <div
           className={classNames(styles.info, { [styles.info_show]: isShow })}
         >

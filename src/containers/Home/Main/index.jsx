@@ -36,7 +36,7 @@ const Main = () => {
   return (
     <section id="header" className="section">
       <div className="canvas__working" />
-      <div className={styles.wrapper}>{renderAnimation}</div>
+      <div className={`${styles.wrapper} container`}>{renderAnimation}</div>
     </section>
   );
 };

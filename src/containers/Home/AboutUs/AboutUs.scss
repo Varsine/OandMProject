@@ -1,18 +1,8 @@
 .wrapper {
-  height: 100%;
-  padding: 80px 150px 60px 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @extend %flex-center;
 
   @include breakpoint(desktop) {
     flex-direction: column-reverse;
-    padding: 28px 5.5%;
-    height: auto;
-  }
-
-  @include breakpoint(tablet-m) {
-    padding: 20px 16px;
   }
 }
 
@@ -35,12 +25,12 @@
   z-index: -5;
 
   @include breakpoint(desktop) {
-    margin: 32px 0 0;
+    margin: 32px 0 80px;
     padding: 36px 28px;
   }
 
   @include breakpoint(tablet-m) {
-    margin: 24px 0 0;
+    margin: 24px 0 40px;
     padding: 35px 16px;
   }
 
@@ -97,6 +87,7 @@
   height: 647px;
   max-width: 740px;
   width: 100%;
+  margin-top: 32px;
 
   @media only screen and (max-width: 1400px) {
     height: 480px;
@@ -104,6 +95,7 @@
   }
 
   @include breakpoint(tablet-m) {
+    margin-top: 24px;
     max-width: 288px;
     height: 252px;
   }

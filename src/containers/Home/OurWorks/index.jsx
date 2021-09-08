@@ -28,7 +28,7 @@ const OurWorks = () => {
   return (
     <section className="section">
       <div className="canvas__working" />
-      <div className={styles.wrapper}>
+      <div className={`${styles.wrapper} container`}>
         <Slider {...settings}>{renderSlides}</Slider>
       </div>
     </section>

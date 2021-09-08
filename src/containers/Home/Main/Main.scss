@@ -1,18 +1,12 @@
 .wrapper {
   @extend %flex-center;
   position: relative;
-  width: 100%;
-  height: 100%;
-
-  @include breakpoint(tablet) {
-    height: auto;
-  }
 
   &__ball {
     position: absolute;
 
     @include breakpoint(tablet) {
-      width: 1200px;
+      width: 1400px;
     }
 
     @include breakpoint(tablet-m) {

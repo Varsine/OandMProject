@@ -8,7 +8,7 @@ import styles from './JoinOurTeam.scss';
 const JoinOurTeam = () => (
   <section className="section">
     <div className="canvas__working" />
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} container`}>
       <div className={styles.wrapper__info}>
         <h2 className={styles.wrapper__info_title}>Team</h2>
         <h3 className={styles.wrapper__info_subtitle}>
