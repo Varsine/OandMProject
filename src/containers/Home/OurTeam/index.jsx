@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { teamCards } from 'utils/index';
@@ -62,7 +61,7 @@ const OurTeam = () => {
   return (
     <section className="section">
       <div className="canvas__working" />
-      <div className={classNames(styles.wrapper, 'container')}>
+      <div className={`${styles.wrapper} container`}>
         <h2 className={styles.title}>Our Team</h2>
         {/* {renderteamCards} */}
         <div className={styles.arrows}>

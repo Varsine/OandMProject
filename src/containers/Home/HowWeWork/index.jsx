@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
 import { modeSelector, activeIndexSelector } from 'slices/mainSlice';
@@ -16,7 +15,7 @@ const HowWeWork = () => {
   return (
     <section className="section">
       <div className="canvas__working" />
-      <div className={classNames(styles.wrapper, 'container')}>
+      <div className={`${styles.wrapper} container`}>
         <h2 className={styles.title}>How We Work</h2>
 
         <div className={styles.animation}>

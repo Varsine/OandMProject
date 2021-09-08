@@ -73,7 +73,7 @@ const Industry = () => {
   return (
     <section className="section">
       <div className="canvas__working" />
-      <div className={classNames(styles.wrapper, 'container')}>
+      <div className={`${styles.wrapper} container`}>
         <div className={styles.wrapper__menu}>
           <div
             role="button"
