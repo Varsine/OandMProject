@@ -4,11 +4,11 @@ import {
   Map,
   Main,
   AboutUs,
-  OurTeam,
-  OurWorks,
-  Industry,
-  HowWeWork,
-  JoinOurTeam,
+  // OurTeam,
+  // OurWorks,
+  // Industry,
+  // HowWeWork,
+  // JoinOurTeam,
   OurPartners,
   TechnologyStack,
   Testimonials,
@@ -24,26 +24,26 @@ export const mainSections = [
     id: shortid.generate(),
     component: AboutUs,
   },
-  {
-    id: shortid.generate(),
-    component: HowWeWork,
-  },
-  {
-    id: shortid.generate(),
-    component: Industry,
-  },
-  {
-    id: shortid.generate(),
-    component: OurWorks,
-  },
-  {
-    id: shortid.generate(),
-    component: OurTeam,
-  },
-  {
-    id: shortid.generate(),
-    component: JoinOurTeam,
-  },
+  // {
+  //   id: shortid.generate(),
+  //   component: HowWeWork,
+  // },
+  // {
+  //   id: shortid.generate(),
+  //   component: Industry,
+  // },
+  // {
+  //   id: shortid.generate(),
+  //   component: OurWorks,
+  // },
+  // {
+  //   id: shortid.generate(),
+  //   component: OurTeam,
+  // },
+  // {
+  //   id: shortid.generate(),
+  //   component: JoinOurTeam,
+  // },
   {
     id: shortid.generate(),
     component: TechnologyStack,
