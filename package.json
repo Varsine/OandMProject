@@ -49,7 +49,6 @@
     "react-firebase-file-uploader": "^2.4.4",
     "react-google-maps": "^9.4.5",
     "react-hook-form": "^7.8.3",
-    "react-id-swiper": "^4.0.0",
     "react-messenger-customer-chat": "^0.8.0",
     "react-multi-carousel": "^2.6.3",
     "react-page-scroller": "^2.1.0",
@@ -62,7 +61,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "shortid": "^2.2.15",
-    "swiper": "^5.3.8"
+    "swiper": "^6.8.4"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
