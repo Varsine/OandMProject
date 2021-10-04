@@ -85,7 +85,10 @@ const Header = () => {
 };
 
 Header.propTypes = {
-  isOnePage: PropTypes.bool.isRequired,
+  isOnePage: PropTypes.bool,
+};
+Header.defaultProps = {
+  isOnePage: false,
 };
 
 export default Header;

@@ -4,7 +4,11 @@ import Router from 'next/router';
 import PropTypes from 'prop-types';
 import withError from 'next-with-error';
 import NextNprogress from 'nextjs-progressbar';
+
 import 'styles/index.global.scss';
+import 'swiper/swiper.min.css';
+
+import 'swiper/swiper-bundle.min.css';
 
 import { wrapper } from 'libraries/index';
 import { useDarkMode } from 'hooks/index';
