@@ -8,7 +8,7 @@ import {
   // OurWorks,
   // Industry,
   // HowWeWork,
-  // JoinOurTeam,
+  JoinOurTeam,
   OurPartners,
   TechnologyStack,
   Testimonials,
@@ -40,10 +40,11 @@ export const mainSections = [
   //   id: shortid.generate(),
   //   component: OurTeam,
   // },
-  // {
-  //   id: shortid.generate(),
-  //   component: JoinOurTeam,
-  // },
+  // /////////////JOIN
+  {
+    id: shortid.generate(),
+    component: JoinOurTeam,
+  },
   {
     id: shortid.generate(),
     component: TechnologyStack,
