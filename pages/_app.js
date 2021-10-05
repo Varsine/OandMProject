@@ -1,11 +1,16 @@
+/* eslint-disable import/no-unresolved */
 import React, { useEffect } from 'react';
 import App from 'next/app';
 import Router from 'next/router';
 import PropTypes from 'prop-types';
 import withError from 'next-with-error';
 import NextNprogress from 'nextjs-progressbar';
+
 import 'styles/index.global.scss';
+import 'swiper/swiper.min.css';
 import 'react-multi-carousel/lib/styles.css';
+
+import 'swiper/swiper-bundle.min.css';
 
 import { wrapper } from 'libraries/index';
 import { useDarkMode } from 'hooks/index';

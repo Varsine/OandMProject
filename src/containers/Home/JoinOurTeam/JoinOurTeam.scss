@@ -1,7 +1,12 @@
 .wrapper {
-  @extend %flex-center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   &__info {
+    width: 100%;
+    max-width: 768px;
+
     &_title {
       @extend %open-sans-48;
     }
@@ -11,24 +16,23 @@
       max-width: 615px;
       @extend %open-sans-24;
     }
-
     &_text {
-      max-width: 768px;
+      width: 100%;
       @extend %open-sans-18;
     }
 
     &_join {
       width: 100%;
-      color: $white-20;
       padding: 18px 0;
-      position: relative;
+      color: $white-20;
       max-width: 201px;
       margin-top: 32px;
+      position: relative;
       text-align: center;
-      transition: ease-in 0.3s;
-      background: $liner-blue;
       border-radius: 50px;
       @extend %open-sans-16;
+      background: $liner-blue;
+      transition: ease-in 0.3s;
 
       &:hover {
         background: $liner-blue-hover;
@@ -36,8 +40,44 @@
     }
   }
 
-  &__photos {
-    background: #333;
-    height: 100%;
+  &__swiper {
+    width: 100%;
+    display: flex;
+    max-width: 330px;
+    height: 500px;
+    margin-left: 5px;
+    justify-content: flex-end;
+
+    @include breakpoint(tablet) {
+      display: none;
+    }
+
+    & > div {
+      width: 100%;
+      display: flex;
+      max-width: 330px;
+      position: absolute;
+      align-items: center;
+      will-change: transform;
+      justify-content: center;
+
+      @include breakpoint(tablet) {
+        max-width: 227px;
+        height: 343px;
+      }
+    }
+
+    & > div > .swiper-wrapper {
+      background-color: transparent;
+      background-size: cover;
+      max-width: 330px;
+      will-change: transform;
+      border-radius: 10px;
+
+      @include breakpoint(tablet) {
+        max-width: 227px;
+        height: 343px;
+      }
+    }
   }
 }

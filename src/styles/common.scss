@@ -58,22 +58,6 @@
   }
 
   //our works slider
-  .slick {
-    &-track {
-      display: flex;
-    }
-
-    &-slide {
-      width: 100%;
-      pointer-events: none;
-    }
-
-    &-active {
-      pointer-events: auto;
-    }
-  }
-
-  //our team
 
   .react-multi-carousel-item {
     @include breakpoint(desktop) {

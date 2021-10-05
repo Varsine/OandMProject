@@ -1,19 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { Chat } from '@styled-icons/fluentui-system-filled/Chat';
 
-import { modeSelector } from 'slices/mainSlice';
-
-// import MessengerCustomerChat from 'react-messenger-customer-chat';
 import styles from './Chat.scss';
+// import { useSelector } from 'react-redux';
 
-import { ChatIcon, ChatDarkIcon } from '../../icons';
+// import { modeSelector } from 'slices/mainSlice';
 
-const Chat = () => {
-  const isDarkMode = useSelector(modeSelector);
+// // import MessengerCustomerChat from 'react-messenger-customer-chat';
 
-  const currentIcon = isDarkMode ? <ChatDarkIcon /> : <ChatIcon />;
+// import { ChatIcon, ChatDarkIcon } from '../../icons';
+const ChatIcon = () => {
+  //   const isDarkMode = useSelector(modeSelector);
 
-  return <div className={styles.wrapper}>{currentIcon}</div>;
+  //   const currentIcon = isDarkMode ? <ChatDarkIcon /> : <ChatIcon />;
+  return (
+    <div className={styles.wrapper}>
+      <Chat width={40} height={40} fill="#4A52BE" />
+    </div>
+  );
 };
 
-export default Chat;
+export default ChatIcon;

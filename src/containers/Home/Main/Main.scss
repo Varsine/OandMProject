@@ -5,6 +5,7 @@
 .wrapper {
   @extend %flex-center;
   position: relative;
+  overflow: hidden;
 
   &__ball {
     position: absolute;
@@ -65,6 +66,7 @@
         }
       }
     }
+
     path {
       &:nth-of-type(1) {
         stroke-dasharray: 300;
@@ -100,12 +102,14 @@
         animation: dash 1s linear forwards;
         animation-delay: 3.1s;
       }
+
       &:nth-of-type(6) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
         animation-delay: 3.3s;
       }
+
       &:nth-of-type(7),
       &:nth-of-type(8),
       &:nth-of-type(9) {

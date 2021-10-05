@@ -60,7 +60,11 @@ const Footer = ({ isOnePage }) => {
 };
 
 Footer.propTypes = {
-  isOnePage: PropTypes.bool.isRequired,
+  isOnePage: PropTypes.bool,
+};
+
+Footer.defaultProps = {
+  isOnePage: false,
 };
 
 export default Footer;
