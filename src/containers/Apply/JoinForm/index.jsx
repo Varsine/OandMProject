@@ -17,6 +17,7 @@ const JoinForm = () => {
     text: dropdownList[0].text,
     jobIndex: 0,
   });
+
   const [activeIndex, setIsActiveIndex] = useState(1);
 
   const { control, register, formState, handleSubmit } = useForm({
