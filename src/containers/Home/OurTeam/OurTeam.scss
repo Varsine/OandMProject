@@ -1,5 +1,7 @@
 .container {
-  height: auto !important;
+  @include breakpoint(desktop) {
+    height: auto !important;
+  }
 }
 
 .wrapper {

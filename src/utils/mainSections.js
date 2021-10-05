@@ -10,7 +10,6 @@ import {
   HowWeWork,
   JoinOurTeam,
   OurPartners,
-  TechnologyStack,
   Testimonials,
 } from 'containers/Home';
 import { JoinForm } from 'containers/Apply';
@@ -43,10 +42,6 @@ export const mainSections = [
   {
     id: shortid.generate(),
     component: JoinOurTeam,
-  },
-  {
-    id: shortid.generate(),
-    component: TechnologyStack,
   },
   {
     id: shortid.generate(),
