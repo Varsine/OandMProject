@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Field, Button } from 'components/index';
 import { fieldsList, noop } from 'utils/index';
 
-import styles from './Apply.scss';
+import styles from '../Apply.scss';
 
 const StepTwo = ({ formState, register }) => {
   const { errors, isValid } = formState;

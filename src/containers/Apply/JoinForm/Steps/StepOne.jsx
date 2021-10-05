@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Field, Button } from 'components/index';
 import { fieldsList, noop } from 'utils/index';
 
-import styles from './Apply.scss';
+import styles from '../Apply.scss';
 
 const StepOne = ({ formState, register, changejobType, jobType }) => {
   const { errors, isValid } = formState;
@@ -19,9 +19,9 @@ const StepOne = ({ formState, register, changejobType, jobType }) => {
           name={name}
           type={type}
           label={label}
-          error={errors[name]}
           jobType={jobType}
           register={register}
+          error={errors[name]}
           inputType={inputType}
           validation={validation}
           placeholder={placeholder}

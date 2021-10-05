@@ -6,9 +6,9 @@ import { Button } from 'components/index';
 import { dropdownList } from 'utils/index';
 
 import styles from './Apply.scss';
-import Success from './Success';
-import StepOne from './StepOne';
-import StepTwo from './StepTwo';
+import Success from './Steps/Success';
+import StepOne from './Steps/StepOne';
+import StepTwo from './Steps/StepTwo';
 
 import { StepIcon } from '../../../icons';
 
@@ -27,9 +27,8 @@ const JoinForm = () => {
     if (activeIndex === 1) {
       setIsActiveIndex(2);
     }
-
     // eslint-disable-next-line no-console
-    console.log(values);
+    console.log(values, 'form values');
   };
 
   const editActiveStep = (step) => {
@@ -70,7 +69,7 @@ const JoinForm = () => {
                 2
               </Button>
             </div>
-            <form onSubmit={handleSubmit(submitValueHandler)}>
+            <form ref={{}} onSubmit={handleSubmit(submitValueHandler)}>
               {activeIndex === 1 && (
                 <StepOne
                   jobType={jobType}

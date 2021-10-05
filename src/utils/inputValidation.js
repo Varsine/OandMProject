@@ -9,12 +9,30 @@ const inputValidation = {
       message: 'Alphabetical characters only',
     },
     minLength: {
-      value: 6,
-      message: 'First name must have at least 6 characters',
+      value: 3,
+      message: 'First name must have at least 3 characters',
     },
     maxLength: {
       value: 20,
       message: 'First name cannot exceed 20 characters',
+    },
+  },
+  lastName: {
+    required: {
+      value: true,
+      message: '* required',
+    },
+    pattern: {
+      value: /^[A-Za-z]+$/i,
+      message: 'Alphabetical characters only',
+    },
+    minLength: {
+      value: 3,
+      message: 'Last name must have at least 3 characters',
+    },
+    maxLength: {
+      value: 20,
+      message: 'Last name cannot exceed 20 characters',
     },
   },
   email: {
