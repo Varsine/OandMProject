@@ -1,57 +1,71 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Formik } from 'formik';
 
-import { Field, Button } from 'components/index';
-import { fieldsList, noop } from 'utils/index';
-
-import styles from '../Apply.scss';
-
-const StepOne = ({ formState, register, changejobType, jobType }) => {
-  const { errors, isValid } = formState;
-
-  const renderFieldsList = fieldsList
-    .slice(0, 5)
-    .map(({ id, type, name, label, inputType, validation, placeholder }) => {
-      return (
-        <Field
-          id={id}
-          key={id}
-          name={name}
-          type={type}
-          label={label}
-          jobType={jobType}
-          register={register}
-          error={errors[name]}
-          inputType={inputType}
-          validation={validation}
-          placeholder={placeholder}
-          changejobType={changejobType}
-        />
-      );
-    });
-
+const StepOne = () => {
   return (
     <>
-      {renderFieldsList}
-      <Button type="submit" className={styles.next} disabled={!isValid}>
-        Next
-      </Button>
+      <Formik
+        initialValues={{ email: '', password: '' }}
+        validate={(values) => {
+          const errors = {};
+          if (!values.email) {
+            errors.email = 'Required';
+          } else if (
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+          ) {
+            errors.email = 'Invalid email address';
+          }
+          return errors;
+        }}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            // alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+        }}
+      >
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          isSubmitting,
+          /* and other goodies */
+        }) => (
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+            />
+            {errors.email && touched.email && errors.email}
+            <input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.password}
+            />
+            {errors.password && touched.password && errors.password}
+            <button type="submit" disabled={isSubmitting}>
+              Submit
+            </button>
+          </form>
+        )}
+      </Formik>
+      {/* <Button type="submit" className={styles.next} disabled={!isValid}> */}
+      {/*  Next */}
+      {/* </Button> */}
     </>
   );
 };
 
-StepOne.propTypes = {
-  jobType: PropTypes.object,
-  register: PropTypes.func,
-  formState: PropTypes.object,
-  changejobType: PropTypes.func,
-};
+StepOne.propTypes = {};
 
-StepOne.defaultProps = {
-  jobType: {},
-  register: noop,
-  formState: {},
-  changejobType: noop,
-};
+StepOne.defaultProps = {};
 
 export default StepOne;
