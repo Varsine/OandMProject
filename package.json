@@ -61,6 +61,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "shortid": "^2.2.15",
+    "styled-components": "^5.3.1",
     "styled-icons": "^10.44.0",
     "swiper": "^6.8.4"
   },
