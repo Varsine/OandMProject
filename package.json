@@ -45,7 +45,6 @@
     "nextjs-progressbar": "0.0.6",
     "node-sass": "^4.14.1",
     "react": "17.0.1",
-    "react-alice-carousel": "^2.5.1",
     "react-dom": "17.0.1",
     "react-firebase-file-uploader": "^2.4.4",
     "react-google-maps": "^9.4.5",
@@ -61,8 +60,7 @@
     "redux-form": "^8.3.6",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "shortid": "^2.2.15",
-    "swiper": "^5.4.5"
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",

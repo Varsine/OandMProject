@@ -12,22 +12,28 @@ const Slide = ({ slide, isActive }) => {
 
   const { image, imageLight, title, subtitle } = slide;
 
-  const imgMode = isDarkMode ? image : imageLight;
-
   return (
     <div
-      className={classNames(styles.slides__item, {
-        [styles.slides__item_active]: isActive,
+      className={classNames(styles.carousel__item, {
+        [styles.carousel__item_active]: isActive,
       })}
     >
-      <div
-        className={classNames(styles.slides__item_img, {
-          [styles.slides__item_img_active]: isActive,
-        })}
-        style={{ background: `url(${imgMode})` }}
-      />
-      <h2 className={styles.slides__item_title}>{title}</h2>
-      <h3 className={styles.slides__item_subtitle}>{subtitle}</h3>
+      <div className={styles.carousel__item_imges}>
+        <div
+          className={classNames(styles.carousel__item_img, {
+            [styles.carousel__item_img_active]: isDarkMode,
+          })}
+          style={{ background: `url(${image})` }}
+        />
+        <div
+          className={classNames(styles.carousel__item_img, {
+            [styles.carousel__item_img_active]: !isDarkMode,
+          })}
+          style={{ background: `url(${imageLight})` }}
+        />
+      </div>
+      <h2 className={styles.carousel__item_title}>{title}</h2>
+      <h3 className={styles.carousel__item_subtitle}>{subtitle}</h3>
     </div>
   );
 };

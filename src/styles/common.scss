@@ -81,10 +81,9 @@
     }
   }
 
-  .section,
   .fp-tableCell {
     @include breakpoint(desktop) {
-      height: auto !important;
+      height: 100% !important;
     }
   }
 }

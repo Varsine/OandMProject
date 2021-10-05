@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
 import { activeIndexSelector, modeSelector } from 'slices/mainSlice';
@@ -34,7 +35,7 @@ const Main = () => {
   const renderAnimation = isAnimate && showAnimation;
 
   return (
-    <section id="header" className="section">
+    <section id="header" className={classNames('section', styles.container)}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>{renderAnimation}</div>
     </section>
