@@ -47,7 +47,7 @@ const ModeSwitch = ({ isOnePage }) => {
           }}
         />
       )}
-      <h3 className={styles.index}>0{activeIndex}</h3>
+      <h3 className={styles.index}>{activeIndex}</h3>
       {!isOnePage && <Mouse />}
     </div>
   );
