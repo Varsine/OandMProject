@@ -27,6 +27,7 @@
   @include breakpoint(desktop) {
     margin: 32px 0 80px;
     padding: 36px 28px;
+    height: 29%;
   }
 
   @include breakpoint(tablet-m) {
@@ -84,14 +85,19 @@
   @extend %flex-center;
   position: relative;
   user-select: none;
-  height: 647px;
-  max-width: 740px;
+  height: 70%;
+  max-width: 45%;
   width: 100%;
-  margin-top: 32px;
 
-  @media only screen and (max-width: 1400px) {
-    height: 480px;
-    max-width: 559px;
+  @media (min-width: 1024px) and(min-height:670px) {
+    height: 50vh;
+    max-width: 50vh;
+  }
+
+  @include breakpoint(desktop) {
+    height: 48vh;
+    max-width: 73%;
+    margin: 16px 0 0;
   }
 
   @include breakpoint(tablet-m) {
@@ -121,17 +127,17 @@
     }
 
     &_image {
-      width: 204px;
-      height: 204px;
+      width: 20vh;
+      height: 20vh;
 
-      @media only screen and (max-width: 1600px) {
-        width: calc(100vw / 8);
-        height: calc(100vw / 8);
+      @media (min-width: 1024px) and(min-height:670px) {
+        width: 16vh;
+        height: 16vh;
       }
 
       @include breakpoint(desktop) {
-        width: 154px;
-        height: 154px;
+        width: 16vh;
+        height: 16vh;
       }
 
       @include breakpoint(tablet-m) {
