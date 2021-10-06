@@ -7,8 +7,6 @@ import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './Industry.scss';
 
-global.lottiePlayer = import('@lottiefiles/lottie-player');
-
 const Industry = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeSelector = useSelector(activeIndexSelector);
@@ -17,6 +15,11 @@ const Industry = () => {
     () => industry[activeIndex],
     [activeIndex],
   );
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    import('@lottiefiles/lottie-player');
+  });
 
   const isShow = useMemo(() => activeSelector === 4, [activeSelector]);
 
