@@ -1,6 +1,7 @@
 .wrapper {
   @extend %flex-center;
   position: relative;
+  overflow: hidden;
 
   @include breakpoint(desktop) {
     flex-direction: column;
@@ -42,6 +43,18 @@
     &__item {
       cursor: pointer;
       display: flex;
+
+      &:nth-child(2) {
+        margin: 56px 0;
+
+        @include breakpoint(desktop) {
+          margin: 0;
+        }
+
+        @include breakpoint(tablet-m) {
+          margin: 0 24px;
+        }
+      }
     }
 
     &__active {
@@ -104,20 +117,6 @@
       left: 0;
       top: 160px;
       max-width: 100%;
-    }
-
-    &__crypto {
-      cursor: pointer;
-      display: flex;
-      margin: 56px 0;
-
-      @include breakpoint(desktop) {
-        margin: 0;
-      }
-
-      @include breakpoint(tablet-m) {
-        margin: 0 24px;
-      }
     }
   }
 
