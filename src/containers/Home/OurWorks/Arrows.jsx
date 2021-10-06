@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
@@ -10,10 +10,13 @@ import styles from './OurWorks.scss';
 
 import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
 
-const NextArrow = ({ onClick, type }) => {
+const Arrows = ({ onClick, type }) => {
   const isDarkMode = useSelector(modeSelector);
 
-  const Arrow = isDarkMode ? ArrowIcon : ArrowGdtIcon;
+  const Arrow = useMemo(() => {
+    return isDarkMode ? ArrowIcon : ArrowGdtIcon;
+  }, [isDarkMode]);
+
   const classList = classNames(styles.arrow, {
     [styles.arrow__next]: type === 'next',
     [styles.arrow__prev]: type === 'prev',
@@ -21,13 +24,13 @@ const NextArrow = ({ onClick, type }) => {
   return <Arrow onClick={onClick} className={classList} />;
 };
 
-NextArrow.propTypes = {
+Arrows.propTypes = {
   onClick: PropTypes.func,
   type: PropTypes.string,
 };
-NextArrow.defaultProps = {
+Arrows.defaultProps = {
   onClick: noop,
   type: '',
 };
 
-export default NextArrow;
+export default Arrows;
