@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import Carousel from 'react-multi-carousel';
-import classNames from 'classnames';
 
 import { teamCards } from 'utils/index';
 import { useWindowSize } from 'hooks/index';
@@ -51,7 +50,7 @@ const OurTeam = () => {
   };
 
   return (
-    <section className={classNames('section', styles.container)}>
+    <section className={`section ${styles.container}`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <h2 className={styles.title}>Our Team</h2>

@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux';
 
 import { Button } from 'components/index';
 import { modeSelector } from 'slices/mainSlice';
-import { teamCards, noop } from 'utils/index';
+import { ourPartnersCards, noop } from 'utils/index';
 
-import styles from './OurTeam.scss';
+import styles from './OurPartners.scss';
 
 import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
 
@@ -43,7 +43,7 @@ const ButtonGroup = ({
       <Button
         className={`${styles.carousel__controls_item} ${styles.carousel__controls_right}`}
         onClick={next}
-        disabled={currentSlide === teamCards.length - 3}
+        disabled={currentSlide === ourPartnersCards.length - 3}
       >
         {arrIconMode}
       </Button>

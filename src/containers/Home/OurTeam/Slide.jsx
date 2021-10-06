@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
@@ -12,23 +12,39 @@ const Slide = ({ slide, isActive }) => {
 
   const { image, imageLight, title, subtitle } = slide;
 
-  return (
-    <div
-      className={classNames(styles.carousel__item, {
+  const darkModeImageClasses = useMemo(
+    () =>
+      classNames(styles.carousel__item_img, {
+        [styles.carousel__item_img_active]: isDarkMode,
+      }),
+    [isDarkMode],
+  );
+
+  const lightImageClasses = useMemo(
+    () =>
+      classNames(styles.carousel__item_img, {
+        [styles.carousel__item_img_active]: !isDarkMode,
+      }),
+    [isDarkMode],
+  );
+
+  const carouselItemClasses = useMemo(
+    () =>
+      classNames(styles.carousel__item, {
         [styles.carousel__item_active]: isActive,
-      })}
-    >
+      }),
+    [isActive],
+  );
+
+  return (
+    <div className={carouselItemClasses}>
       <div className={styles.carousel__item_imges}>
         <div
-          className={classNames(styles.carousel__item_img, {
-            [styles.carousel__item_img_active]: isDarkMode,
-          })}
+          className={darkModeImageClasses}
           style={{ background: `url(${image})` }}
         />
         <div
-          className={classNames(styles.carousel__item_img, {
-            [styles.carousel__item_img_active]: !isDarkMode,
-          })}
+          className={lightImageClasses}
           style={{ background: `url(${imageLight})` }}
         />
       </div>

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React, { useEffect } from 'react';
 import App from 'next/app';
 import Router from 'next/router';
