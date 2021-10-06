@@ -36,6 +36,20 @@
   font-family: Open Sans;
 }
 
+.light_text {
+  bottom: 15px;
+  display: flex;
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33px;
+  position: absolute;
+  text-align: center;
+  font-style: normal;
+  align-items: center;
+  font-family: Open Sans;
+}
+
 @media (max-width: 768px) {
   .text {
     font-size: 18px;

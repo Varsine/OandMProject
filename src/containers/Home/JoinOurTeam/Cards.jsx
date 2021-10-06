@@ -1,48 +1,61 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { EffectCube, Pagination } from 'swiper';
+
+import { modeSelector } from 'slices/mainSlice';
 
 import './styles.css';
 
 const Cards = () => {
   SwiperCore.use([EffectCube, Pagination]);
 
+  const isDarkMode = useSelector(modeSelector);
+
+  const cube = useMemo(
+    () =>
+      classNames({
+        text: isDarkMode,
+        light_text: !isDarkMode,
+      }),
+    [isDarkMode],
+  );
+
   return (
     <Swiper
-      effect="cube"
-      grabCursor
       loop
+      grabCursor
+      effect="cube"
       cubeEffect={{
-        shadow: true,
-        slideShadows: true,
-        shadowOffset: 20,
-        shadowScale: 0.94,
+        shadow: false,
+        slideShadows: false,
       }}
       pagination={false}
     >
       <SwiperSlide>
         <div className="swiperr_image" />
-        <p className="text">Fun and creative staff</p>
+        <p className={cube}>Fun and creative staff</p>
       </SwiperSlide>
       <SwiperSlide>
         <div className="swiperr_image" />
-        <p className="text">Friendship</p>
+        <p className={cube}>Friendship</p>
       </SwiperSlide>
       <SwiperSlide>
         <div className="swiperr_image" />
-        <p className="text">Music for everyone</p>
+        <p className={cube}>Music for everyone</p>
       </SwiperSlide>
       <SwiperSlide>
         <div className="swiperr_image" />
-        <p className="text">Best Coffee for work</p>
+        <p className={cube}>Best Coffee for work</p>
       </SwiperSlide>
       <SwiperSlide>
         <div className="swiperr_image" />
-        <p className="text">Work comfortably</p>
+        <p className={cube}>Work comfortably</p>
       </SwiperSlide>
       <SwiperSlide>
         <div className="swiperr_image" />
-        <p className="text">Happy working day</p>
+        <p className={cube}>Happy working day</p>
       </SwiperSlide>
     </Swiper>
   );

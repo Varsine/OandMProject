@@ -146,7 +146,10 @@
 
       @include breakpoint(desktop) {
         width: 100%;
-        height: 280px;
+      }
+
+      @media (max-height: 650px) {
+        height: 230px;
       }
 
       &_animation {
@@ -155,10 +158,24 @@
         @include breakpoint(desktop) {
           animation: moveToLeft 2s linear;
         }
+
+        @media (max-height: 650px) {
+          height: 230px !important;
+        }
+        @media (max-height: 750px) {
+          height: 280px;
+        }
       }
 
       &_first {
         transform: rotateY(180deg);
+
+        @media (max-height: 650px) {
+          height: 230px !important;
+        }
+        @media (max-height: 750px) {
+          height: 280px;
+        }
       }
     }
 
