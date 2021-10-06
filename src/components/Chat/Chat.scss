@@ -1,5 +1,6 @@
 .wrapper {
   @extend %flex-align;
+
   svg {
     @include breakpoint(tablet) {
       width: 32px;

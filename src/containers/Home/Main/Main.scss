@@ -1,3 +1,7 @@
+.container {
+  overflow: hidden;
+}
+
 .wrapper {
   @extend %flex-center;
   position: relative;

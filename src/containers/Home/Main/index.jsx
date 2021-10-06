@@ -34,7 +34,7 @@ const Main = () => {
   const renderAnimation = isAnimate && showAnimation;
 
   return (
-    <section id="header" className="section">
+    <section id="header" className={`section ${styles.container}`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>{renderAnimation}</div>
     </section>

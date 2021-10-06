@@ -1,12 +1,11 @@
 :global {
   .container {
     padding: 80px 150px 60px 50px;
-    height: 100vh;
+    height: 100%;
 
     @include breakpoint(desktop) {
-      padding: 80px 50px 60px;
-      min-height: 100vh;
       height: auto;
+      padding: 0;
     }
 
     @include breakpoint(tablet-m) {
@@ -59,18 +58,16 @@
   }
 
   //our works slider
-  .slick {
-    &-track {
-      display: flex;
-    }
 
-    &-slide {
-      width: 100%;
-      pointer-events: none;
+  .react-multi-carousel-item {
+    @include breakpoint(desktop) {
+      height: max-content !important;
     }
+  }
 
-    &-active {
-      pointer-events: auto;
+  .fp-tableCell {
+    @include breakpoint(desktop) {
+      height: 100% !important;
     }
   }
 }

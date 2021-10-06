@@ -1,92 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useMemo } from 'react';
+import Carousel from 'react-multi-carousel';
 
 import { teamCards } from 'utils/index';
-import {
-  modeSelector,
-  activeIndexSelector,
-  changeTeamSliderIndex,
-  teamSliderIndexSelector,
-} from 'slices/mainSlice';
+import { useWindowSize } from 'hooks/index';
 
-// import Slide from './Slide/index';
+import Slide from './Slide';
 import styles from './OurTeam.scss';
-
-import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
+import ButtonGroup from './ButtonGroup';
 
 const OurTeam = () => {
-  const dispatch = useDispatch();
-  const [activeIndex, setActiveIndex] = useState(1000);
-  const isDarkMode = useSelector(modeSelector);
-  const activeSectionIndex = useSelector(activeIndexSelector);
-  const activeTeamSliderIndex = useSelector(teamSliderIndexSelector);
-  const isShow = activeSectionIndex === 5;
+  const { isLaptop } = useWindowSize();
+  const [activeIndex, setActiveIndex] = useState(2);
 
-  useEffect(() => {
-    setActiveIndex(isShow ? activeTeamSliderIndex : 1000);
-  }, [activeSectionIndex]);
+  const renderSliderList = useMemo(
+    () =>
+      teamCards
+        .slice(isLaptop ? 1 : 0, teamCards.length)
+        .map((item, index) => (
+          <Slide key={item.id} slide={item} isActive={index === activeIndex} />
+        )),
+    [teamCards, activeIndex, isLaptop],
+  );
 
-  const incrementSlideHandler = () => {
-    if (activeIndex === teamCards.length - 1) {
-      setActiveIndex(0);
-      dispatch(changeTeamSliderIndex(0));
-    } else {
-      setActiveIndex(activeIndex + 1);
-      dispatch(changeTeamSliderIndex(activeIndex + 1));
-    }
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 10000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 0 },
+      items: 1,
+    },
   };
 
-  const decrementSlideHandler = () => {
-    if (activeIndex === 0) {
-      setActiveIndex(teamCards.length - 1);
-      dispatch(changeTeamSliderIndex(teamCards.length - 1));
-    } else {
-      setActiveIndex(activeIndex - 1);
-      dispatch(changeTeamSliderIndex(activeIndex - 1));
-    }
+  const setting = {
+    ssr: true,
+    arrows: false,
+    infinite: false,
+    autoPlay: false,
+    draggable: false,
+    swipeable: false,
+    responsive,
+    sliderClass: styles.carousel__container,
+    containerClass: styles.carousel__wrapper,
+    customButtonGroup: <ButtonGroup />,
+    beforeChange: (nextSlide) => {
+      setActiveIndex(nextSlide + 1);
+    },
   };
-
-  // const renderteamCards = teamCards.map(
-  //   (item, index) =>
-  //     activeIndex === index && (
-  //       <Slide
-  //         // eslint-disable-next-line react/no-array-index-key
-  //         key={`slide ${index}`}
-  //         activeIndex={activeIndex}
-  //         isDarkMode={isDarkMode}
-  //       />
-  //     ),
-  // );
 
   return (
-    <section className="section">
+    <section className={`section ${styles.container}`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <h2 className={styles.title}>Our Team</h2>
-        {/* {renderteamCards} */}
-        <div className={styles.arrows}>
-          {isDarkMode ? (
-            <ArrowIcon
-              className={styles.arrows__left}
-              onClick={decrementSlideHandler}
-            />
-          ) : (
-            <ArrowGdtIcon
-              className={styles.arrows__left}
-              onClick={decrementSlideHandler}
-            />
-          )}
-          {isDarkMode ? (
-            <ArrowIcon
-              className={styles.arrows__right}
-              onClick={incrementSlideHandler}
-            />
-          ) : (
-            <ArrowGdtIcon
-              className={styles.arrows__right}
-              onClick={incrementSlideHandler}
-            />
-          )}
+        <div className={styles.carousel}>
+          <Carousel {...setting}>{renderSliderList}</Carousel>
         </div>
       </div>
     </section>
