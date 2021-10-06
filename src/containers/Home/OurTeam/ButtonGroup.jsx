@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
@@ -11,18 +11,25 @@ import styles from './OurTeam.scss';
 
 import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
 
-const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  const {
-    carouselState: { currentSlide },
-  } = rest;
-
+const ButtonGroup = ({
+  next,
+  previous,
+  goToSlide,
+  carouselState: { currentSlide },
+}) => {
   const isDarkMode = useSelector(modeSelector);
 
   useEffect(() => {
     goToSlide(1);
   }, []);
 
-  const arrIconMode = isDarkMode ? <ArrowIcon /> : <ArrowGdtIcon />;
+  const arrIconMode = useMemo(() => {
+    if (isDarkMode) {
+      return <ArrowIcon />;
+    }
+
+    return <ArrowGdtIcon />;
+  }, [isDarkMode]);
 
   return (
     <div className={styles.carousel__controls}>
@@ -55,12 +62,14 @@ ButtonGroup.propTypes = {
   next: PropTypes.func,
   previous: PropTypes.func,
   goToSlide: PropTypes.func,
+  carouselState: PropTypes.object,
 };
 
 ButtonGroup.defaultProps = {
   next: noop,
   previous: noop,
   goToSlide: noop,
+  carouselState: {},
 };
 
 export default ButtonGroup;
