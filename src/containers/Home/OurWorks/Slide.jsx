@@ -10,7 +10,12 @@ const Slide = ({ data }) => {
 
   return (
     <div className={styles.slider__item}>
-      <NextImage className={styles.slider__item_image} src={src} alt={title} />
+      <NextImage
+        objectFit="contain"
+        className={styles.slider__item_image}
+        src={src}
+        alt={title}
+      />
       <div className={styles.slider__item_info}>
         <div className={styles.slider__item_wrapper}>
           <h2 className={styles.slider__item_title}>{title}</h2>
