@@ -9,3 +9,4 @@ export { default as teamCards } from './teamCards';
 export { default as menuLinks } from './menuLinks';
 export { default as worksCards } from './worksCards';
 export { default as linksInformation } from './linksInformation';
+export { default as ourPartnersCards } from './ourPartnersCards';

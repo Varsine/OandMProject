@@ -52,7 +52,7 @@ const OurTeam = () => {
   return (
     <section className={`section ${styles.container}`}>
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
+      <div className={classNames(styles.wrapper, 'container')}>
         <h2 className={styles.title}>Our Team</h2>
         <div className={styles.carousel}>
           <Carousel {...setting}>{renderSliderList}</Carousel>
