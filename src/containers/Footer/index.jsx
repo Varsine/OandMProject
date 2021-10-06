@@ -1,14 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import usePortal from 'react-useportal';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { Chat } from 'components/index';
 import { modeSelector } from 'slices/mainSlice';
 import { useWindowSize } from 'hooks/index';
 
+import Chat from './Chat';
 import styles from './Footer.scss';
 import ModeSwitch from './ModeSwitch';
 import SocialLinks from './SocialLinks';
@@ -50,7 +49,6 @@ const Footer = ({ isOnePage }) => {
                   onClick={handleOpenIcons}
                 />
               ))}
-
             {(!isOpenIcons || !isMobile) && <Chat />}
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -21,6 +21,14 @@ const ModeSwitch = ({ isOnePage }) => {
   const modeToggleHandler = () => {
     dispatch(modeToggler());
   };
+
+  const recastActiveIndex = useMemo(() => {
+    if (activeIndex > 9) {
+      return activeIndex;
+    }
+
+    return `0${activeIndex}`;
+  }, [activeIndex]);
 
   return (
     <div className={styles.wrapper}>
@@ -47,7 +55,7 @@ const ModeSwitch = ({ isOnePage }) => {
           }}
         />
       )}
-      <h3 className={styles.index}>{activeIndex}</h3>
+      <h3 className={styles.index}>{recastActiveIndex}</h3>
       {!isOnePage && <Mouse />}
     </div>
   );
