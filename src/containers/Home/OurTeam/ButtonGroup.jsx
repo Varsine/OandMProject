@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
 import { Button } from 'components/index';
@@ -34,22 +33,16 @@ const ButtonGroup = ({
   return (
     <div className={styles.carousel__controls}>
       <Button
-        className={classNames(
-          styles.carousel__controls_item,
-          styles.carousel__controls_left,
-        )}
-        onClick={() => previous()}
+        className={`${styles.carousel__controls_item} ${styles.carousel__controls_left}`}
+        onClick={previous}
         disabled={currentSlide === 0}
       >
         {arrIconMode}
       </Button>
 
       <Button
-        className={classNames(
-          styles.carousel__controls_item,
-          styles.carousel__controls_right,
-        )}
-        onClick={() => next()}
+        className={`${styles.carousel__controls_item} ${styles.carousel__controls_right}`}
+        onClick={next}
         disabled={currentSlide === teamCards.length - 3}
       >
         {arrIconMode}
