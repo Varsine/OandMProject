@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TextError = ({ name }) => <div className="error">{name}</div>;
+const TextError = ({ message }) => <div className="error">{message}</div>;
 TextError.propTypes = {
-  name: PropTypes.string,
+  message: PropTypes.string,
 };
 
 TextError.defaultProps = {
-  name: '',
+  message: '',
 };
 
 export default TextError;

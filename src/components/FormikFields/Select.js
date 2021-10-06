@@ -1,14 +1,19 @@
 import React from 'react';
-import { Field, ErrorMessage } from 'formik';
 import PropTypes from 'prop-types';
 
 import TextError from './TextError';
 
-const Select = ({ label, name, options, ...rest }) => {
+const Select = ({
+  label,
+  placeholder,
+  field: { onChange, name, value },
+  form: { touched, errors },
+  options,
+}) => {
   return (
     <div className="form-control">
       <label htmlFor={name}>{label}</label>
-      <Field as="select" id={name} name={name} {...rest}>
+      <Select value={value} onChange={onChange} placeholder={placeholder}>
         {options.map((option) => {
           return (
             <option key={option.value} value={option.value}>
@@ -16,8 +21,10 @@ const Select = ({ label, name, options, ...rest }) => {
             </option>
           );
         })}
-      </Field>
-      <ErrorMessage component={TextError} name={name} />
+      </Select>
+      {touched[name] && errors[name] && (
+        <TextError component={TextError} message={errors[name]} />
+      )}
     </div>
   );
 };
@@ -25,14 +32,18 @@ const Select = ({ label, name, options, ...rest }) => {
 Select.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
+  placeholder: PropTypes.string,
+  field: PropTypes.object,
+  form: PropTypes.object,
   options: PropTypes.array,
-  rest: PropTypes.any,
 };
 
 Select.defaultProps = {
   label: '',
   name: '',
+  placeholder: '',
+  field: {},
+  form: {},
   options: [],
-  rest: {},
 };
 export default Select;

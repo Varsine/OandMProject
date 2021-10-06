@@ -1,15 +1,26 @@
 import React from 'react';
-import { Field, ErrorMessage } from 'formik';
 import PropTypes from 'prop-types';
 
 import TextError from './TextError';
 
-const Input = ({ label, name, ...rest }) => {
+const Input = ({
+  label,
+  placeholder,
+  field: { onChange, name, value },
+  form: { touched, errors },
+}) => {
   return (
     <div className="form-control">
       <label htmlFor={name}>{label}</label>
-      <Field id={name} name={name} {...rest} />
-      <ErrorMessage component={TextError} name={name} />
+      <input
+        onChange={onChange}
+        value={value}
+        name={name}
+        placeholder={placeholder}
+      />
+      {touched[name] && errors[name] && (
+        <TextError component={TextError} message={errors[name]} />
+      )}
     </div>
   );
 };
@@ -17,13 +28,17 @@ const Input = ({ label, name, ...rest }) => {
 Input.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
-  rest: PropTypes.any,
+  placeholder: PropTypes.string,
+  field: PropTypes.object,
+  form: PropTypes.object,
 };
 
 Input.defaultProps = {
   label: '',
   name: '',
-  rest: {},
+  placeholder: '',
+  field: {},
+  form: {},
 };
 
 export default Input;

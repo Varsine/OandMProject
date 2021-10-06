@@ -3,19 +3,12 @@ import PropTypes from 'prop-types';
 
 import Input from './Input';
 import Select from './Select';
+import { Field } from 'formik';
 // placeholder, type, label, name,
 const FormikControl = ({ control, rest }) => {
   switch (control) {
     case 'input':
-      return (
-        <Input
-          // placeholder={placeholder}
-          // type={type}
-          // label={label}
-          // name={name}
-          {...rest}
-        />
-      );
+      return <Field name={rest.name} {...rest} component={Input} />;
 
     case 'select':
       return <Select {...rest} />;
