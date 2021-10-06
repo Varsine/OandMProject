@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
 import { Button } from 'components/index';
@@ -11,38 +10,39 @@ import styles from './OurPartners.scss';
 
 import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
 
-const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  const {
-    carouselState: { currentSlide },
-  } = rest;
-
+const ButtonGroup = ({
+  next,
+  previous,
+  goToSlide,
+  carouselState: { currentSlide },
+}) => {
   const isDarkMode = useSelector(modeSelector);
 
   useEffect(() => {
     goToSlide(1);
   }, []);
 
-  const arrIconMode = isDarkMode ? <ArrowIcon /> : <ArrowGdtIcon />;
+  const arrIconMode = useMemo(() => {
+    if (isDarkMode) {
+      return <ArrowIcon />;
+    }
+
+    return <ArrowGdtIcon />;
+  }, [isDarkMode]);
 
   return (
     <div className={styles.carousel__controls}>
       <Button
-        className={classNames(
-          styles.carousel__controls_item,
-          styles.carousel__controls_left,
-        )}
-        onClick={() => previous()}
+        className={`${styles.carousel__controls_item} ${styles.carousel__controls_left}`}
+        onClick={previous}
         disabled={currentSlide === 0}
       >
         {arrIconMode}
       </Button>
 
       <Button
-        className={classNames(
-          styles.carousel__controls_item,
-          styles.carousel__controls_right,
-        )}
-        onClick={() => next()}
+        className={`${styles.carousel__controls_item} ${styles.carousel__controls_right}`}
+        onClick={next}
         disabled={currentSlide === ourPartnersCards.length - 3}
       >
         {arrIconMode}
@@ -55,12 +55,14 @@ ButtonGroup.propTypes = {
   next: PropTypes.func,
   previous: PropTypes.func,
   goToSlide: PropTypes.func,
+  carouselState: PropTypes.object,
 };
 
 ButtonGroup.defaultProps = {
   next: noop,
   previous: noop,
   goToSlide: noop,
+  carouselState: {},
 };
 
 export default ButtonGroup;

@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import Carousel from 'react-multi-carousel';
-import classNames from 'classnames';
 
 import { useWindowSize } from 'hooks/index';
 import { ourPartnersCards } from 'utils/index';
@@ -50,9 +49,9 @@ const OurPartners = () => {
   };
 
   return (
-    <section className={classNames('section', styles.container)}>
+    <section className={`section ${styles.container}`}>
       <div className="canvas__working" />
-      <div className={classNames(styles.wrapper, 'container')}>
+      <div className={`${styles.wrapper} container`}>
         <h2 className={styles.title}>Our Partners</h2>
         <div className={styles.carousel}>
           {!isLaptop ? (

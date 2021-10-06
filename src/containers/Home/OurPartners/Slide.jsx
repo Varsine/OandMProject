@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
@@ -12,14 +12,16 @@ const Slide = ({ slide, isActive }) => {
 
   const { icon, iconLight } = slide;
 
-  return (
-    <div
-      className={classNames(styles.carousel__item, {
+  const sliderItemClasses = useMemo(
+    () =>
+      classNames(styles.carousel__item, {
         [styles.carousel__item_active]: isActive,
-      })}
-    >
-      {isDarkMode ? icon : iconLight}
-    </div>
+      }),
+    [isActive],
+  );
+
+  return (
+    <div className={sliderItemClasses}>{isDarkMode ? icon : iconLight}</div>
   );
 };
 
