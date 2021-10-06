@@ -1,12 +1,12 @@
 import React from 'react';
 import Slider from 'react-slick';
+import classNames from 'classnames';
 
 import { worksCards } from 'utils/index';
 
 import Slide from './Slide';
 import styles from './OurWorks.scss';
-import NextArrow from './NextArrow';
-import PrevArrow from './PrevArrow';
+import Arrows from './Arrows';
 
 const OurWorks = () => {
   const settings = {
@@ -14,8 +14,8 @@ const OurWorks = () => {
     dots: false,
     speed: 700,
     infinite: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: <Arrows type="next" />,
+    prevArrow: <Arrows type="prev" />,
     className: styles.slider,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -26,7 +26,7 @@ const OurWorks = () => {
   ));
 
   return (
-    <section className="section">
+    <section className={classNames('section', styles.works_section)}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <Slider {...settings}>{renderSlides}</Slider>
