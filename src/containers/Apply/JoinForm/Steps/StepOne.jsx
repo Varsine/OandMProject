@@ -1,71 +1,102 @@
 import React from 'react';
-import { Formik } from 'formik';
+import { Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
+import PropTypes from 'prop-types';
 
-const StepOne = () => {
+import Input from 'components/FormikFields/Input';
+import Select from 'components/FormikFields/Select';
+
+import styles from '../Apply.scss';
+
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+const StepOne = ({ editActiveStep }) => {
+  const initialValues = {
+    jobType: 'Back-End Developer',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+  };
+
+  const validationSchema = Yup.object({
+    jobType: Yup.string().required('* required'),
+    firstName: Yup.string().required('* required'),
+    lastName: Yup.string().required('* required'),
+    email: Yup.string().email('Invalid email format').required('* required'),
+    phoneNumber: Yup.string()
+      .required('* required')
+      .matches(phoneRegExp, 'Phone number is not valid'),
+  });
+
+  const dropdownOptions = [
+    { key: 'Back-End Developer', value: 'Back-End Developer' },
+    { key: 'Front-End Developer', value: 'Front-End Developer' },
+    { key: 'Product Designer', value: 'Product Designer' },
+    { key: 'QA Tester', value: 'QA Tester' },
+    { key: 'UX Designer', value: 'UX Designer' },
+    { key: '3D Animator', value: '3D Animator' },
+    { key: 'Graphic Designer', value: 'Graphic Designer' },
+  ];
+
   return (
     <>
       <Formik
-        initialValues={{ email: '', password: '' }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.email) {
-            errors.email = 'Required';
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = 'Invalid email address';
-          }
-          return errors;
-        }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            // alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={() => {
+          // // same shape as initial values
+          editActiveStep(2);
         }}
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-          /* and other goodies */
-        }) => (
-          <form onSubmit={handleSubmit}>
-            <input
-              type="email"
+        {() => (
+          <Form>
+            <Field
+              name="jobType"
+              label="Job type"
+              component={Select}
+              options={dropdownOptions}
+            />
+            <Field
+              name="firstName"
+              label="First name"
+              placeholder="First name"
+              component={Input}
+            />
+            <Field
+              name="lastName"
+              label="Last name"
+              placeholder="Last name"
+              component={Input}
+            />
+            <Field
               name="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
+              label="Email"
+              placeholder="Email"
+              component={Input}
             />
-            {errors.email && touched.email && errors.email}
-            <input
-              type="password"
-              name="password"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.password}
+            <Field
+              name="phoneNumber"
+              label="Phone number"
+              placeholder="Phone number"
+              type="tel"
+              component={Input}
             />
-            {errors.password && touched.password && errors.password}
-            <button type="submit" disabled={isSubmitting}>
-              Submit
+            <button className={styles.next} type="submit">
+              Next
             </button>
-          </form>
+          </Form>
         )}
       </Formik>
-      {/* <Button type="submit" className={styles.next} disabled={!isValid}> */}
-      {/*  Next */}
-      {/* </Button> */}
     </>
   );
 };
 
-StepOne.propTypes = {};
-
-StepOne.defaultProps = {};
-
+StepOne.propTypes = {
+  editActiveStep: PropTypes.func,
+};
+StepOne.defaultProps = {
+  editActiveStep: () => {},
+};
 export default StepOne;

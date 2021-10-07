@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Field } from 'formik';
 
 import Input from './Input';
 import Select from './Select';
-import { Field } from 'formik';
 // placeholder, type, label, name,
 const FormikControl = ({ control, rest }) => {
   switch (control) {

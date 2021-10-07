@@ -1,49 +1,81 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Form, Formik, Field } from 'formik';
+import * as Yup from 'yup';
 
-import { Field, Button } from 'components/index';
-import { fieldsList, noop } from 'utils/index';
+import Input from 'components/FormikFields/Input';
+import FileUpload from 'components/FormikFields/FileUpload';
+import styles from 'containers/Apply/JoinForm/Apply.scss';
 
-import styles from '../Apply.scss';
+const StepTwo = ({ editActiveStep }) => {
+  const initialValues = {
+    resume: '',
+    coverLetter: '',
+    githubLink: '',
+    linkedInLink: '',
+  };
 
-const StepTwo = ({ formState, register }) => {
-  const { errors, isValid } = formState;
-
-  const renderFieldsList = fieldsList
-    .slice(5, 10)
-    .map(({ id, type, name, label, inputType, validation, placeholder }) => (
-      <Field
-        id={id}
-        key={id}
-        name={name}
-        type={type}
-        label={label}
-        error={errors[name]}
-        register={register}
-        inputType={inputType}
-        validation={validation}
-        placeholder={placeholder}
-      />
-    ));
+  const validationSchema = Yup.object({
+    resume: Yup.string().required('* required'),
+    coverLetter: Yup.string().required('* required'),
+    githubLink: Yup.string().matches(
+      '/^https:\\/\\/github\\.com\\/.*$/gim',
+      'Invalid GitHub link',
+    ),
+    linkedInLink: Yup.string().matches(
+      '/^https:\\/\\/[a-z]{2,3}\\.linkedin\\.com\\/.*$/gim',
+      'Invalid LinkedIn link',
+    ),
+  });
 
   return (
-    <>
-      {renderFieldsList}
-      <Button type="submit" className={styles.next} disabled={!isValid}>
-        Send
-      </Button>
-    </>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={() => {
+        editActiveStep(3);
+      }}
+    >
+      {() => (
+        <Form>
+          <Field
+            name="resume"
+            label="Attach resume"
+            placeholder="Attach file"
+            component={FileUpload}
+          />
+          <Field
+            name="coverLetter"
+            label="Attach cover letter"
+            placeholder="Cover letter"
+            component={FileUpload}
+          />
+          <Field
+            name="githubLink"
+            label="First name"
+            placeholder="Github link"
+            component={Input}
+          />
+          <Field
+            name="linkedInLink"
+            label="LinkedIn link"
+            placeholder="LinkedIn link"
+            component={Input}
+          />
+          <button className={styles.next} type="submit">
+            Submit
+          </button>
+        </Form>
+      )}
+    </Formik>
   );
 };
 
 StepTwo.propTypes = {
-  register: PropTypes.func,
-  formState: PropTypes.object,
+  editActiveStep: PropTypes.func,
 };
-
 StepTwo.defaultProps = {
-  register: noop,
-  formState: {},
+  editActiveStep: () => {},
 };
 
 export default StepTwo;

@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TextError = ({ message }) => <div className="error">{message}</div>;
+import styles from './Field.scss';
+
+const TextError = ({ message }) => (
+  <div className={styles.message}>{message}</div>
+);
 TextError.propTypes = {
   message: PropTypes.string,
 };

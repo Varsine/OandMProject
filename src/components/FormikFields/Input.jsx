@@ -1,27 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import TextError from './TextError';
+import styles from './Field.scss';
 
-const Select = ({
+const Input = ({
   label,
+  type,
   placeholder,
+  className,
   field: { onChange, name, value },
   form: { touched, errors },
-  options,
 }) => {
   return (
-    <div className="form-control">
+    <div className={classNames(styles.text, className)}>
       <label htmlFor={name}>{label}</label>
-      <Select value={value} onChange={onChange} placeholder={placeholder}>
-        {options.map((option) => {
-          return (
-            <option key={option.value} value={option.value}>
-              {option.key}
-            </option>
-          );
-        })}
-      </Select>
+      <input
+        className={styles.text__change}
+        onChange={onChange}
+        type={type}
+        value={value}
+        name={name}
+        placeholder={placeholder}
+      />
       {touched[name] && errors[name] && (
         <TextError component={TextError} message={errors[name]} />
       )}
@@ -29,21 +31,24 @@ const Select = ({
   );
 };
 
-Select.propTypes = {
+Input.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
+  type: PropTypes.string,
+  className: PropTypes.string,
   field: PropTypes.object,
   form: PropTypes.object,
-  options: PropTypes.array,
 };
 
-Select.defaultProps = {
+Input.defaultProps = {
   label: '',
   name: '',
+  type: '',
+  className: '',
   placeholder: '',
   field: {},
   form: {},
-  options: [],
 };
-export default Select;
+
+export default Input;
