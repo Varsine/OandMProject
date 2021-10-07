@@ -7,4 +7,25 @@
       height: 32px;
     }
   }
+
+  &__arrow {
+    display: none;
+    width: 48px !important;
+    height: 48px !important;
+    margin-right: 8px;
+    transform: rotate(180deg);
+
+    path {
+      stroke: $text-color;
+    }
+
+    @include breakpoint(tablet) {
+      display: block;
+    }
+  }
+
+  &__hide {
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
 }

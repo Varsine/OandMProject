@@ -1,29 +1,61 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 
+import { noop } from 'utils/index';
 import { IconHover } from 'components/index';
-// eslint-disable-next-line no-unused-vars
 import { IS_SERVER, CHAT_PAGE_ID, CHAT_APP_ID } from 'constants/index';
+import { useWindowSize } from 'hooks/index';
 
 import styles from './Chat.scss';
 
-import { ChatIcon, ChatHoverIcon } from '../../../icons';
+import { ChatIcon, ChatHoverIcon, ArrowIcon } from '../../../icons';
 
-const Chat = () => {
-  const chatRef = useRef(null);
+const Chat = ({ isOpenHandler, isOpen }) => {
+  const { isMobile } = useWindowSize();
+
+  const openChatHandler = () => {
+    if (!IS_SERVER) {
+      window.FB.CustomerChat.show(true);
+    }
+  };
 
   return (
-    !IS_SERVER && (
-      <div className={styles.wrapper}>
-        <IconHover icon={<ChatIcon />} iconHover={<ChatHoverIcon />} />
-        <MessengerCustomerChat
-          ref={chatRef}
-          appId="198907471868804"
-          pageId="559202877917881"
+    <div
+      className={classNames(styles.wrapper, {
+        [styles.wrapper__hide]: isOpen,
+      })}
+    >
+      {isMobile && (
+        <ArrowIcon
+          onClick={isOpenHandler}
+          className={styles.wrapper__arrow}
+          aria-label="open social links"
         />
-      </div>
-    )
+      )}
+      <MessengerCustomerChat appId={CHAT_APP_ID} pageId={CHAT_PAGE_ID} />
+      <IconHover
+        icon={<ChatIcon />}
+        isLink={false}
+        onClick={openChatHandler}
+        iconHover={<ChatHoverIcon />}
+        anchorProps={{
+          'aria-label': 'messenger chat',
+        }}
+      />
+    </div>
   );
+};
+
+Chat.propTypes = {
+  isOpen: PropTypes.bool,
+  isOpenHandler: PropTypes.func,
+};
+
+Chat.defaultProps = {
+  isOpen: false,
+  isOpenHandler: noop,
 };
 
 export default Chat;

@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import usePortal from 'react-useportal';
-import classNames from 'classnames';
-import { useSelector } from 'react-redux';
 
-import { modeSelector } from 'slices/mainSlice';
 import { useWindowSize } from 'hooks/index';
 
 import Chat from './Chat';
@@ -12,45 +9,36 @@ import styles from './Footer.scss';
 import ModeSwitch from './ModeSwitch';
 import SocialLinks from './SocialLinks';
 
-import { ArrowGdtIcon, CrossIcon } from '../../icons';
+import { CrossIcon } from '../../icons';
 
 const Footer = ({ isOnePage }) => {
-  const isDarkMode = useSelector(modeSelector);
   const { Portal } = usePortal();
   const { isMobile } = useWindowSize();
-  const [isOpenIcons, setIsOpenIcons] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpenIcons = () => setIsOpenIcons(!isOpenIcons);
-
-  const iconsGroup = isOpenIcons || !isMobile ? <SocialLinks /> : null;
+  const isOpenHandler = () => setIsOpen(!isOpen);
 
   return (
     <Portal>
       <footer className={styles.wrapper}>
-        <div
-          className={classNames(styles.container, {
-            [styles.container_opened_icon]: isOpenIcons && isMobile,
-          })}
-        >
-          {(!isOpenIcons || !isMobile) && <ModeSwitch isOnePage={isOnePage} />}
-          {iconsGroup}
-          <div className={styles.wrapper__arrow_block}>
-            {isMobile &&
-              (!isOpenIcons ? (
-                <ArrowGdtIcon
-                  className={classNames(styles.wrapper__arrow_icon, {
-                    [styles.wrapper__arrow_icon_dark]: isDarkMode,
-                  })}
-                  onClick={handleOpenIcons}
-                />
-              ) : (
-                <CrossIcon
-                  className={isDarkMode && styles.wrapper__arrow_icon_dark}
-                  onClick={handleOpenIcons}
-                />
-              ))}
-            {(!isOpenIcons || !isMobile) && <Chat />}
+        {isMobile && (
+          <div
+            className={`${styles.wrapper__animation} ${
+              isOpen && styles.wrapper__animation_active
+            }`}
+          >
+            <SocialLinks />
+            <CrossIcon
+              onClick={isOpenHandler}
+              className={styles.wrapper__animation_close}
+              aria-label="close social links"
+            />
           </div>
+        )}
+        <div className={styles.container}>
+          <ModeSwitch isOpen={isOpen} isOnePage={isOnePage} />
+          {!isMobile && <SocialLinks />}
+          <Chat isOpenHandler={isOpenHandler} isOpen={isOpen} />
         </div>
       </footer>
     </Portal>
