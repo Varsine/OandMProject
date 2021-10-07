@@ -11,9 +11,23 @@ import styles from './Apply.scss';
 import { StepIcon } from '../../../icons';
 
 const JoinForm = () => {
+  const [applicationForm, setApplicationForm] = useState({});
   const [activeIndex, setIsActiveIndex] = useState(1);
   const editActiveStep = (step) => {
     setIsActiveIndex(step);
+  };
+
+  const sendApplicationHandler = async (values) => {
+    const formData = new FormData();
+    formData.append('jobType', values.jobType);
+    formData.append('firstName', values.firstName);
+    formData.append('lastName', values.lastName);
+    formData.append('email', values.email);
+    formData.append('phone', values.phone);
+    formData.append('resume', values.resume);
+    formData.append('coverLetter', values.coverLetter);
+    formData.append('githubLink', values.githubLink);
+    formData.append('linkedInLink', values.linkedInLink);
   };
 
   return (
@@ -50,8 +64,20 @@ const JoinForm = () => {
               </div>
             </div>
           )}
-          {activeIndex === 1 && <StepOne editActiveStep={editActiveStep} />}
-          {activeIndex === 2 && <StepTwo editActiveStep={editActiveStep} />}
+          {activeIndex === 1 && (
+            <StepOne
+              setApplicationForm={setApplicationForm}
+              editActiveStep={editActiveStep}
+            />
+          )}
+          {activeIndex === 2 && (
+            <StepTwo
+              sendApplicationHandler={sendApplicationHandler}
+              applicationForm={applicationForm}
+              setApplicationForm={setApplicationForm}
+              editActiveStep={editActiveStep}
+            />
+          )}
           {activeIndex === 3 && <Success />}
         </div>
       </div>

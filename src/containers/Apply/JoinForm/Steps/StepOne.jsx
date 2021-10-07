@@ -11,7 +11,7 @@ import styles from '../Apply.scss';
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
-const StepOne = ({ editActiveStep }) => {
+const StepOne = ({ editActiveStep, setApplicationForm }) => {
   const initialValues = {
     jobType: 'Back-End Developer',
     firstName: '',
@@ -45,8 +45,8 @@ const StepOne = ({ editActiveStep }) => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={() => {
-          // // same shape as initial values
+        onSubmit={(values) => {
+          setApplicationForm(values);
           editActiveStep(2);
         }}
       >
@@ -95,8 +95,10 @@ const StepOne = ({ editActiveStep }) => {
 
 StepOne.propTypes = {
   editActiveStep: PropTypes.func,
+  setApplicationForm: PropTypes.func,
 };
 StepOne.defaultProps = {
   editActiveStep: () => {},
+  setApplicationForm: () => {},
 };
 export default StepOne;

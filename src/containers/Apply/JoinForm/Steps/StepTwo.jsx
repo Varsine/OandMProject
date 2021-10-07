@@ -7,7 +7,11 @@ import Input from 'components/FormikFields/Input';
 import FileUpload from 'components/FormikFields/FileUpload';
 import styles from 'containers/Apply/JoinForm/Apply.scss';
 
-const StepTwo = ({ editActiveStep }) => {
+const StepTwo = ({
+  editActiveStep,
+  applicationForm,
+  sendApplicationHandler,
+}) => {
   const initialValues = {
     resume: '',
     coverLetter: '',
@@ -32,7 +36,8 @@ const StepTwo = ({ editActiveStep }) => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={() => {
+      onSubmit={(values) => {
+        sendApplicationHandler({ ...applicationForm, ...values });
         editActiveStep(3);
       }}
     >
@@ -52,7 +57,7 @@ const StepTwo = ({ editActiveStep }) => {
           />
           <Field
             name="githubLink"
-            label="First name"
+            label="Github link"
             placeholder="Github link"
             component={Input}
           />
@@ -73,9 +78,13 @@ const StepTwo = ({ editActiveStep }) => {
 
 StepTwo.propTypes = {
   editActiveStep: PropTypes.func,
+  applicationForm: PropTypes.object,
+  sendApplicationHandler: PropTypes.func,
 };
 StepTwo.defaultProps = {
   editActiveStep: () => {},
+  applicationForm: {},
+  sendApplicationHandler: () => {},
 };
 
 export default StepTwo;
