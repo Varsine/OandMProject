@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react';
-import usePortal from 'react-useportal';
 import { useSelector } from 'react-redux';
+import usePortal from 'react-useportal';
 import classNames from 'classnames';
 
 import { menuLinks } from 'utils/index';
