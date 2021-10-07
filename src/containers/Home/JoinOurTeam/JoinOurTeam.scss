@@ -7,6 +7,14 @@
     width: 100%;
     max-width: 768px;
 
+    @include breakpoint(desktop) {
+      padding-left: 35px;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 0 35px;
+    }
+
     &_title {
       @extend %open-sans-48;
     }
