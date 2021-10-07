@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
@@ -21,12 +21,16 @@ const Chat = ({ isOpenHandler, isOpen }) => {
     }
   };
 
-  return (
-    <div
-      className={classNames(styles.wrapper, {
+  const wrapperClassNames = useMemo(
+    () =>
+      classNames(styles.wrapper, {
         [styles.wrapper__hide]: isOpen,
-      })}
-    >
+      }),
+    [isOpen],
+  );
+
+  return (
+    <div className={wrapperClassNames}>
       {isMobile && (
         <ArrowIcon
           onClick={isOpenHandler}

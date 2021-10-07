@@ -1,7 +1,8 @@
 .wrapper {
-  min-width: 168px;
   opacity: 1;
+  z-index: 5;
   display: flex;
+  min-width: 168px;
   transition: opacity 0.1s;
 
   @include breakpoint(tablet) {

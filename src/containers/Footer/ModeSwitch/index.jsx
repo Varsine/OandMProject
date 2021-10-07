@@ -32,12 +32,16 @@ const ModeSwitch = ({ isOnePage, isOpen }) => {
     return `0${activeIndex}`;
   }, [activeIndex]);
 
-  return (
-    <div
-      className={classNames(styles.wrapper, {
+  const wrapperClassNames = useMemo(
+    () =>
+      classNames(styles.wrapper, {
         [styles.wrapper__hide]: isOpen,
-      })}
-    >
+      }),
+    [isOpen],
+  );
+
+  return (
+    <div className={wrapperClassNames}>
       {isDarkMode ? (
         <IconHover
           id="siteMode"

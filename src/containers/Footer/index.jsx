@@ -23,9 +23,8 @@ const Footer = ({ isOnePage }) => {
       <footer className={styles.wrapper}>
         {isMobile && (
           <div
-            className={`${styles.wrapper__animation} ${
-              isOpen && styles.wrapper__animation_active
-            }`}
+            className={`${styles.wrapper__animation} 
+            ${isOpen ? styles.wrapper__animation_active : null}`}
           >
             <SocialLinks />
             <CrossIcon
