@@ -28,6 +28,12 @@ export default class extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="favicon.ico" />
           <link
+            rel="stylesheet"
+            type="text/css"
+            charset="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
+          <link
             rel="apple-touch-icon"
             href="/static/icon/apple-touch-icon-192.png"
           />

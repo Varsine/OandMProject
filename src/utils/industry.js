@@ -9,14 +9,14 @@ const industry = [
     icon: IndustyFirstIcon,
   },
   {
-    src: 'https://assets2.lottiefiles.com/packages/lf20_ikaawl5v.json',
+    src: 'https://assets3.lottiefiles.com/packages/lf20_2uuywmkb.json',
     text: 'Cryptocurrency is a type of digital currency that generally only exists electronically. It can be exchanged online for goods and services.',
     title: 'Crypto',
     class: '__twoIcon',
     icon: IndustyTwoIcon,
   },
   {
-    src: 'https://assets5.lottiefiles.com/packages/lf20_aa0wy04q.json',
+    src: 'https://assets6.lottiefiles.com/packages/lf20_i2eyukor.json',
     text: "Business is the activity of making one's living or making money by producing or buying and selling products (such as goods and services). Simply put, it is 'any activity or enterprise entered into for profit.",
     title: 'Business',
     class: '__threeIcon',

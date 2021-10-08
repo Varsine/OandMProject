@@ -13,27 +13,28 @@
   }
 
   &__menu {
-    display: flex;
-    flex-direction: column;
     left: 0;
-    max-width: 327px;
     width: 100%;
     z-index: 10;
+    display: flex;
     position: static;
+    max-width: 327px;
     user-select: none;
+    flex-direction: column;
 
     @include breakpoint(desktop) {
       margin-top: 32px;
       flex-direction: unset;
+      width: calc(100vw - 16px);
       justify-content: space-between;
     }
 
     @include breakpoint(tablet-m) {
-      width: calc(100vw - 16px);
+      max-width: 100%;
       margin-top: 24px;
       overflow-x: scroll;
-      scroll-behavior: smooth;
       scrollbar-width: none;
+      scroll-behavior: smooth;
 
       &::-webkit-scrollbar {
         display: none;
@@ -41,8 +42,8 @@
     }
 
     &__item {
-      cursor: pointer;
       display: flex;
+      cursor: pointer;
 
       &:nth-child(2) {
         margin: 56px 0;
@@ -52,7 +53,14 @@
         }
 
         @include breakpoint(tablet-m) {
-          margin: 0 24px;
+          margin: 0;
+          padding: 0 12px;
+        }
+      }
+
+      @include breakpoint(tablet-m) {
+        p {
+          display: none;
         }
       }
     }
@@ -60,6 +68,10 @@
     &__active {
       p {
         color: $logo-bottom-color !important;
+
+        @include breakpoint(tablet-m) {
+          display: block;
+        }
       }
     }
 
@@ -79,6 +91,12 @@
         font-size: 24px;
         line-height: 33px;
         font-weight: 600;
+      }
+
+      @include breakpoint(tablet) {
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 6px;
       }
     }
 
@@ -111,38 +129,38 @@
     }
 
     @include breakpoint(desktop) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       left: 0;
       top: 160px;
+      display: flex;
       max-width: 100%;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 
   &__active_item {
     @extend %flex-center;
     flex-direction: column;
-    margin-left: 8%;
     max-width: 615px;
+    margin-left: 8%;
     width: 100%;
 
     @include breakpoint(desktop) {
+      display: flex;
       max-width: 100%;
       margin: 0 0 80px;
-      display: flex;
       flex-direction: unset;
     }
 
     @include breakpoint(tablet-m) {
-      flex-direction: column;
       margin: 0 0 40px;
+      flex-direction: column;
     }
 
     &__gif {
       @extend %flex-center;
-      width: 422px;
       height: 410px;
+      width: 422px;
 
       @include breakpoint(desktop) {
         width: 100%;
@@ -181,17 +199,17 @@
 
     &__info {
       @extend %open-sans-18;
-      color: $text-color;
       word-wrap: break-word;
+      color: $text-color;
 
       @include breakpoint(desktop) {
-        max-width: 100%;
         width: 100%;
-        margin: 39px 0 24px 36px;
         height: 354px;
+        max-width: 100%;
         overflow-y: scroll;
-        scroll-behavior: smooth;
         scrollbar-width: none;
+        scroll-behavior: smooth;
+        margin: 39px 0 24px 36px;
 
         &::-webkit-scrollbar {
           display: none;
@@ -200,8 +218,8 @@
 
       @include breakpoint(tablet-m) {
         font-size: 14px;
-        line-height: 19px;
         margin: 0 0 24px;
+        line-height: 19px;
       }
 
       &_anima {
