@@ -65,8 +65,12 @@ const ModeSwitch = ({ isOnePage, isOpen }) => {
           }}
         />
       )}
-      <h3 className={styles.index}>{recastActiveIndex}</h3>
-      {!isOnePage && <Mouse />}
+      {!isOnePage && (
+        <>
+          <h3 className={styles.index}>{recastActiveIndex}</h3>
+          <Mouse />
+        </>
+      )}
     </div>
   );
 };
