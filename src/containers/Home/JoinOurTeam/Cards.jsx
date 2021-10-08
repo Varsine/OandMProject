@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react';
+import shortid from 'shortid';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, EffectCube, Pagination } from 'swiper';
 
 import { modeSelector } from 'slices/mainSlice';
+import { swipeData } from 'utils';
 
 import './styles.css';
 
@@ -22,6 +24,13 @@ const Cards = () => {
     [isDarkMode],
   );
 
+  const renderSwipe = swipeData.map((item) => (
+    <SwiperSlide key={shortid.generate()}>
+      <div className="swiperr_image" />
+      <p className={cube}>{item.text}</p>
+    </SwiperSlide>
+  ));
+
   return (
     <Swiper
       loop
@@ -37,30 +46,7 @@ const Cards = () => {
         disableOnInteraction: false,
       }}
     >
-      <SwiperSlide>
-        <div className="swiperr_image" />
-        <p className={cube}>Fun and creative staff</p>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="swiperr_image" />
-        <p className={cube}>Friendship</p>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="swiperr_image" />
-        <p className={cube}>Music for everyone</p>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="swiperr_image" />
-        <p className={cube}>Best Coffee for work</p>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="swiperr_image" />
-        <p className={cube}>Work comfortably</p>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="swiperr_image" />
-        <p className={cube}>Happy working day</p>
-      </SwiperSlide>
+      {renderSwipe}
     </Swiper>
   );
 };
