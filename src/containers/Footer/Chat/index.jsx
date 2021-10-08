@@ -5,8 +5,8 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 import { noop } from 'utils/index';
 import { IconHover } from 'components/index';
-import { IS_SERVER, CHAT_PAGE_ID, CHAT_APP_ID } from 'constants/index';
 import { useWindowSize } from 'hooks/index';
+import { IS_SERVER, CHAT_PAGE_ID, CHAT_APP_ID } from 'constants/index';
 
 import styles from './Chat.scss';
 

@@ -9,6 +9,14 @@ const ErrorContainer = () => {
     <fullPage.component key={fullPage.id} />
   ));
 
+  const renderFullPageContent = ({ fullpageApi }) => (
+    <ReactFullPage.Wrapper>
+      <FullPageLayout fullpageApi={fullpageApi} isOnePage>
+        {renderFullPages}
+      </FullPageLayout>
+    </ReactFullPage.Wrapper>
+  );
+
   return (
     <ReactFullPage
       navigation={false}
@@ -16,13 +24,7 @@ const ErrorContainer = () => {
       keyboardScrolling={false}
       fitToSection={false}
       fixedElements="#canvas"
-      render={({ fullpageApi }) => (
-        <ReactFullPage.Wrapper>
-          <FullPageLayout fullpageApi={fullpageApi} isOnePage>
-            {renderFullPages}
-          </FullPageLayout>
-        </ReactFullPage.Wrapper>
-      )}
+      render={renderFullPageContent}
     />
   );
 };
