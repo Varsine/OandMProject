@@ -4,7 +4,10 @@ import { HelmetLayout } from 'layouts/index';
 import { ApplyContainer } from 'containers/index';
 
 const ApplyPage = () => (
-  <HelmetLayout title="Apply" metaDescription="Apply page">
+  <HelmetLayout
+    title="ShellLogix LLC"
+    metaDescription="join us  ShellLogixTeam"
+  >
     <ApplyContainer />
   </HelmetLayout>
 );
