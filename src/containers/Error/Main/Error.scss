@@ -1,0 +1,22 @@
+.wrapper {
+  height: 100%;
+  padding: 80px 0 60px;
+  text-align: center;
+  user-select: none;
+  flex-direction: column;
+  @extend %flex-center;
+}
+
+.title {
+  @extend %open-sans-48;
+}
+
+.subtitle {
+  margin: 16px 0 40px;
+  @extend %open-sans-24;
+}
+
+.link {
+  max-width: 201px;
+  @extend %button-gradient;
+}

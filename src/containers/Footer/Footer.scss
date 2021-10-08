@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
   height: 60px;
-  bottom: 0;
+  bottom: -1px;
   z-index: 10;
   position: fixed;
   background: $header-bg;
@@ -11,26 +11,34 @@
     height: 50px;
   }
 
-  &__arrow_icon {
-    transform: rotateY(180deg);
-    margin-left: 8px;
-
-    &_dark {
-      path {
-        stroke: $white-20;
-      }
-    }
-  }
-
-  &__arrow_block {
-    display: flex;
+  &__animation {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: all 0.3s;
     align-items: center;
+
+    @include breakpoint(tablet) {
+      display: flex;
+    }
+
+    &_active {
+      transform: translateX(0);
+    }
+
+    &_close path {
+      fill: $text-color;
+    }
   }
 }
 
 .container {
   height: 100%;
   padding: 0 50px;
+  user-select: none;
   @extend %flex-between;
 
   @include breakpoint(tablet) {
@@ -47,8 +55,14 @@
 }
 
 .links {
-  @extend %flex-center;
+  left: 0;
   width: 100%;
+  position: absolute;
+  @extend %flex-center;
+
+  @include breakpoint(tablet-m) {
+    position: relative;
+  }
 
   &__item {
     margin-right: 23px;

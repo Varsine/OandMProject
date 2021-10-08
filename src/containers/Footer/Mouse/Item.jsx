@@ -8,7 +8,7 @@ import { modeSelector, activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './Mouse.scss';
 
-import { MouseIcon, MouseLightIcon } from '../../icons';
+import { MouseIcon, MouseLightIcon } from '../../../icons';
 
 const Item = ({ type, className }) => {
   const isDarkMode = useSelector(modeSelector);
