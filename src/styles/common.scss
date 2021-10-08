@@ -71,9 +71,15 @@
     }
   }
 
+  // swiper default styles changes
+
   .slick__container {
     .slick-list {
       height: 100%;
+    }
+
+    .slick-dots {
+      display: none !important;
     }
   }
 }

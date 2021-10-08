@@ -3,6 +3,10 @@
   align-items: center;
   justify-content: space-between;
 
+  @include breakpoint(tablet) {
+    flex-direction: column-reverse;
+  }
+
   &__info {
     width: 100%;
     max-width: 768px;
@@ -17,16 +21,41 @@
 
     &_title {
       @extend %open-sans-48;
+
+      @include breakpoint(tablet-m) {
+        font-size: 40px;
+      }
+
+      @include breakpoint(mobile) {
+        font-size: 32px;
+      }
     }
 
     &_subtitle {
       padding: 16px 0;
       max-width: 615px;
       @extend %open-sans-24;
+
+      @include breakpoint(tablet-m) {
+        font-size: 20px;
+      }
+
+      @include breakpoint(mobile-m) {
+        font-size: 17px;
+      }
     }
+
     &_text {
       width: 100%;
       @extend %open-sans-18;
+
+      @include breakpoint(tablet-m) {
+        font-size: 16px;
+      }
+
+      @include breakpoint(mobile-m) {
+        font-size: 14px;
+      }
     }
 
     &_join {
@@ -50,14 +79,31 @@
 
   &__swiper {
     width: 100%;
+    height: 500px;
     display: flex;
     max-width: 330px;
-    height: 500px;
     margin-left: 5px;
     justify-content: flex-end;
 
     @include breakpoint(tablet) {
+      height: 230px;
+      margin-top: 230px;
+    }
+
+    @include breakpoint(tablet-m) {
       display: none;
+    }
+
+    &__swipe_icon {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      z-index: 159;
+      bottom: -224px;
+
+      @include breakpoint(tablet) {
+        bottom: -94px;
+      }
     }
 
     & > div {

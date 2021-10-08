@@ -2,14 +2,14 @@ import React, { useMemo } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { EffectCube, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, EffectCube, Pagination } from 'swiper';
 
 import { modeSelector } from 'slices/mainSlice';
 
 import './styles.css';
 
 const Cards = () => {
-  SwiperCore.use([EffectCube, Pagination]);
+  SwiperCore.use([Autoplay, EffectCube, Pagination]);
 
   const isDarkMode = useSelector(modeSelector);
 
@@ -32,6 +32,10 @@ const Cards = () => {
         slideShadows: false,
       }}
       pagination={false}
+      autoplay={{
+        delay: 1500,
+        disableOnInteraction: false,
+      }}
     >
       <SwiperSlide>
         <div className="swiperr_image" />
