@@ -13,6 +13,7 @@ import {
   // Testimonials,
 } from 'containers/Home';
 import { JoinForm } from 'containers/Apply';
+import { ErrorPage } from 'containers/Error';
 
 export const mainSections = [
   {
@@ -67,6 +68,6 @@ export const applySections = [
 export const errorSection = [
   {
     id: shortid.generate(),
-    component: Main,
+    component: ErrorPage,
   },
 ];

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactFullPage from '@fullpage/react-fullpage';
 
-import { applySections } from 'utils/index';
+import { errorSection } from 'utils/index';
 import { FullPageLayout } from 'layouts/index';
 
-const ApplyContainer = () => {
-  const renderFullPages = applySections.map((fullPage) => (
+const ErrorContainer = () => {
+  const renderFullPages = errorSection.map((fullPage) => (
     <fullPage.component key={fullPage.id} />
   ));
 
@@ -29,4 +29,4 @@ const ApplyContainer = () => {
   );
 };
 
-export default ApplyContainer;
+export default ErrorContainer;

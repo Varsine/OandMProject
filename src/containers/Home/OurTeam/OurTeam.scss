@@ -64,6 +64,10 @@
     height: calc(100% + 64px);
     align-items: flex-start !important;
 
+    @media (min-width: 1024px) and (max-height: 700px) {
+      height: calc(100% + 50px);
+    }
+
     @include breakpoint(desktop) {
       flex-direction: column;
     }
