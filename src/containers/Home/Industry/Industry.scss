@@ -61,16 +61,26 @@
       @include breakpoint(tablet-m) {
         p {
           display: none;
+          animation: disNone 0.7s linear !important;
         }
       }
     }
 
     &__active {
+      display: flex;
+
+      svg {
+        width: 37px;
+        height: 37px;
+        display: block;
+      }
+
       p {
         color: $logo-bottom-color !important;
 
         @include breakpoint(tablet-m) {
           display: block;
+          animation: disBlock 0.7s linear !important;
         }
       }
     }
@@ -289,5 +299,28 @@
     opacity: 1;
     margin-right: 0;
     margin-left: 36px;
+  }
+}
+
+@keyframes disBlock {
+  0% {
+    display: block !important;
+    font-size: 1px;
+  }
+
+  100% {
+    font-size: 20px;
+  }
+}
+
+@keyframes disNone {
+  0% {
+    display: block !important;
+    font-size: 20px;
+  }
+
+  100% {
+    font-size: 0px;
+    display: none !important;
   }
 }
