@@ -17,7 +17,7 @@ const OurWorks = () => {
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 6000,
     adaptiveHeight: false,
     nextArrow: <Arrows type="next" />,
     prevArrow: <Arrows type="prev" />,
