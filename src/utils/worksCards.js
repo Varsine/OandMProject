@@ -18,7 +18,7 @@ const worksCards = [
     subtitle:
       'This service allows you to watch collective forecasts for Masstips from different forecasters.',
     text: 'Masstips is a service that will help you choose a successful bet based on forecasts for football from a large number of authors.',
-    link: 'www.masstips.ru/',
+    link: 'www.masstips.ru',
     href: 'https://www.masstips.ru/',
   },
   {
@@ -28,7 +28,8 @@ const worksCards = [
     subtitle:
       'Eiev allow their clients to get live race updates, follow your favorite riders and etc.',
     text: 'Eiev is an informative app that cater to enthusiasts and fans alike of the equestrian sport of endurance riding held at Emirates International Endurance Village in Al Wathba, Abu Dhabi.',
-    link: 'apps.apple.com/ae/app/eiev-timing-system/id1434150311',
+    // link: 'apps.apple.com/ae/app/eiev-timing-system/id1434150311',
+    link: 'apps.apple.com',
     href: 'https://apps.apple.com/ae/app/eiev-timing-system/id1434150311',
   },
   {

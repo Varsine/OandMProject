@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { worksCards } from 'utils/index';
 
 import Slide from './Slide';
-// import Arrows from './Arrows';
+import Arrows from './Arrows';
 import styles from './OurWorks.scss';
 
 const OurWorks = () => {
@@ -17,13 +17,13 @@ const OurWorks = () => {
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 6000,
     adaptiveHeight: false,
+    nextArrow: <Arrows type="next" />,
+    prevArrow: <Arrows type="prev" />,
     className: `slick__container ${styles.slider}`,
-    // nextArrow: <Arrows type="next" />,
-    // prevArrow: <Arrows type="prev" />,
-    nextArrow: false,
-    prevArrow: false,
+    // nextArrow: false,
+    // prevArrow: false,
   };
 
   const renderSlides = worksCards.map((item) => (

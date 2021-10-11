@@ -42,7 +42,7 @@ const Cards = () => {
       }}
       pagination={false}
       autoplay={{
-        delay: 1500,
+        delay: 1530,
         disableOnInteraction: false,
       }}
     >
