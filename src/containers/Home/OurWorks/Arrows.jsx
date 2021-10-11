@@ -18,8 +18,8 @@ const Arrows = ({ onClick, type }) => {
   }, [isDarkMode]);
 
   const classList = classNames(styles.arrow, {
-    [styles.arrow__next]: type === 'prev',
-    [styles.arrow__prev]: type === 'next',
+    [styles.arrow__next]: type === 'next',
+    [styles.arrow__prev]: type === 'prev',
   });
   return <Arrow onClick={onClick} className={classList} />;
 };
