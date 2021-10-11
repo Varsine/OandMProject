@@ -1,8 +1,6 @@
-import shortid from 'shortid';
-
 const worksCards = [
   {
-    id: shortid.generate(),
+    id: 0,
     src: '/images/works/moni.webp',
     title: 'Moni',
     subtitle:
@@ -12,27 +10,27 @@ const worksCards = [
     href: 'https://getmoni.io/',
   },
   {
-    id: shortid.generate(),
+    id: 1,
     src: '/images/works/masstips.webp',
     title: 'Masstips',
     subtitle:
       'This service allows you to watch collective forecasts for Masstips from different forecasters.',
     text: 'Masstips is a service that will help you choose a successful bet based on forecasts for football from a large number of authors.',
-    link: 'www.masstips.ru/',
+    link: 'www.masstips.ru',
     href: 'https://www.masstips.ru/',
   },
   {
-    id: shortid.generate(),
+    id: 2,
     src: '/images/works/eiev.webp',
     title: 'Eiev',
     subtitle:
       'Eiev allow their clients to get live race updates, follow your favorite riders and etc.',
     text: 'Eiev is an informative app that cater to enthusiasts and fans alike of the equestrian sport of endurance riding held at Emirates International Endurance Village in Al Wathba, Abu Dhabi.',
-    link: 'apps.apple.com/ae/app/eiev-timing-system/id1434150311',
+    link: 'apps.apple.com',
     href: 'https://apps.apple.com/ae/app/eiev-timing-system/id1434150311',
   },
   {
-    id: shortid.generate(),
+    id: 3,
     src: '/images/works/statecert.webp',
     title: 'Statecert',
     subtitle:
@@ -42,7 +40,7 @@ const worksCards = [
     href: 'https://statecert.com/',
   },
   {
-    id: shortid.generate(),
+    id: 4,
     src: '/images/works/auction.webp',
     title: 'Global Shipping',
     subtitle:
@@ -52,7 +50,7 @@ const worksCards = [
     href: 'https://emilauto.com/',
   },
   {
-    id: shortid.generate(),
+    id: 5,
     src: '/images/works/kristobad.webp',
     title: 'KristoBad',
     subtitle: 'Kristobad from elegant classic to sport chic.',
@@ -61,7 +59,7 @@ const worksCards = [
     href: 'https://kristobad.com/',
   },
   {
-    id: shortid.generate(),
+    id: 6,
     src: '/images/works/doubleone.webp',
     title: 'DuobleOne',
     subtitle:

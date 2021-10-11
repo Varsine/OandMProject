@@ -5,25 +5,23 @@ import classNames from 'classnames';
 import { worksCards } from 'utils/index';
 
 import Slide from './Slide';
-// import Arrows from './Arrows';
+import Arrows from './Arrows';
 import styles from './OurWorks.scss';
 
 const OurWorks = () => {
   const settings = {
-    fade: true,
-    dots: true,
-    speed: 700,
+    dots: false,
+    fade: false,
+    speed: 500,
     infinite: true,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplaySpeed: 3000,
     adaptiveHeight: false,
+    nextArrow: <Arrows type="next" />,
+    prevArrow: <Arrows type="prev" />,
     className: `slick__container ${styles.slider}`,
-    // nextArrow: <Arrows type="next" />,
-    // prevArrow: <Arrows type="prev" />,
-    nextArrow: false,
-    prevArrow: false,
   };
 
   const renderSlides = worksCards.map((item) => (

@@ -6,7 +6,7 @@ import { NextImage, NextLink } from 'components/index';
 import styles from './OurWorks.scss';
 
 const Slide = ({ data }) => {
-  const { src, title, subtitle, text, link, href } = data;
+  const { src, title, subtitle, text, href, link } = data;
 
   return (
     <div className={styles.slider__item}>
@@ -36,6 +36,7 @@ const Slide = ({ data }) => {
 
 Slide.propTypes = {
   data: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default Slide;
