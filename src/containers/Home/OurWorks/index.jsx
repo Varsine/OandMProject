@@ -10,9 +10,9 @@ import styles from './OurWorks.scss';
 
 const OurWorks = () => {
   const settings = {
-    fade: true,
-    dots: true,
-    speed: 700,
+    dots: false,
+    fade: false,
+    speed: 500,
     infinite: true,
     autoplay: true,
     slidesToShow: 1,
@@ -22,8 +22,6 @@ const OurWorks = () => {
     nextArrow: <Arrows type="next" />,
     prevArrow: <Arrows type="prev" />,
     className: `slick__container ${styles.slider}`,
-    // nextArrow: false,
-    // prevArrow: false,
   };
 
   const renderSlides = worksCards.map((item) => (
