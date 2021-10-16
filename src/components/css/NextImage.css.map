@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,QAAQ,EAAE,QAAQ;CAEnB",
-    "sources": [
-        "../NextImage/NextImage.scss"
-    ],
-    "names": [],
-    "file": "NextImage.css"
-}

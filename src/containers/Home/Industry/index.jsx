@@ -76,7 +76,7 @@ const Industry = () => {
   );
 
   return (
-    <section className="section">
+    <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <div className={styles.wrapper__menu}>{renderIndustries()}</div>
@@ -92,7 +92,9 @@ const Industry = () => {
             <h1 className={styles.wrapper__active_item__info__title}>
               {title}
             </h1>
-            <p>{text}</p>
+            <p className={styles.wrapper__active_item__info_anima__textt}>
+              {text}
+            </p>
           </div>
         </div>
       </div>

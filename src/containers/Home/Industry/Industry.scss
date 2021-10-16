@@ -1,3 +1,10 @@
+@include breakpoint(desktop) {
+  .height_reponce {
+    height: auto !important;
+    margin-bottom: 50px !important;
+  }
+}
+
 .wrapper {
   @extend %flex-center;
   position: relative;
@@ -9,6 +16,7 @@
   }
 
   @include breakpoint(tablet-m) {
+    padding-bottom: 0;
     margin: 0 16px;
   }
 
@@ -23,6 +31,7 @@
     flex-direction: column;
 
     @include breakpoint(desktop) {
+      padding: 0 15px;
       margin-top: 32px;
       flex-direction: unset;
       width: calc(100vw - 16px);
@@ -30,6 +39,7 @@
     }
 
     @include breakpoint(tablet-m) {
+      padding: 0 7px;
       max-width: 100%;
       margin-top: 24px;
       overflow-x: scroll;
@@ -68,6 +78,7 @@
 
     &__active {
       display: flex;
+      align-items: center;
 
       svg {
         width: 37px;
@@ -163,7 +174,7 @@
     }
 
     @include breakpoint(tablet-m) {
-      margin: 0 0 40px;
+      margin-bottom: 0px;
       flex-direction: column;
     }
 
@@ -219,7 +230,7 @@
         overflow-y: scroll;
         scrollbar-width: none;
         scroll-behavior: smooth;
-        margin: 39px 0 24px 36px;
+        margin: 39px 15px 24px 36px;
 
         &::-webkit-scrollbar {
           display: none;
@@ -228,7 +239,7 @@
 
       @include breakpoint(tablet-m) {
         font-size: 14px;
-        margin: 0 0 24px;
+        margin: 0 0 0;
         line-height: 19px;
       }
 
@@ -237,6 +248,18 @@
 
         @include breakpoint(desktop) {
           animation: moveToRigth 2s linear;
+
+          &__textt {
+            margin-right: 16px;
+          }
+        }
+
+        @include breakpoint(tablet-m) {
+          height: auto;
+
+          &__textt {
+            margin: 0;
+          }
         }
       }
 
@@ -304,7 +327,7 @@
 
 @keyframes disBlock {
   0% {
-    display: block !important;
+    // display: block !important;
     font-size: 1px;
   }
 
@@ -315,12 +338,10 @@
 
 @keyframes disNone {
   0% {
-    display: block !important;
     font-size: 20px;
   }
 
   100% {
     font-size: 0px;
-    display: none !important;
   }
 }

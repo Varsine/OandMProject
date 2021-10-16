@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from 'react';
+import React from 'react';
 
 import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
@@ -7,24 +7,8 @@ import SwiperCards from './Cards';
 import styles from './JoinOurTeam.scss';
 
 const JoinOurTeam = () => {
-  const renderSwipeGIg = {
-    src: 'https://assets1.lottiefiles.com/temp/lf20_XEB0JO.json',
-  };
-
-  const { src } = useMemo(() => renderSwipeGIg);
-
-  useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    import('@lottiefiles/lottie-player');
-  });
-
-  const lottieAnimation = useMemo(
-    () => `<lottie-player src=${src} loop="true" autoplay="true" />`,
-    [src],
-  );
-
   return (
-    <section className="section">
+    <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <div className={styles.wrapper__info}>
@@ -48,13 +32,6 @@ const JoinOurTeam = () => {
         </div>
         <div className={styles.wrapper__swiper} id="app">
           <SwiperCards />
-          <span
-            className={styles.wrapper__swiper__swipe_icon}
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: lottieAnimation,
-            }}
-          />
         </div>
       </div>
     </section>

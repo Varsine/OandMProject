@@ -1,3 +1,14 @@
+.height_reponce {
+  @include breakpoint(desktop) {
+    height: auto !important;
+    margin-bottom: 80px !important;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 50px !important;
+  }
+}
+
 .wrapper {
   @extend %flex-center;
 
@@ -7,32 +18,35 @@
 }
 
 .info {
-  @extend %flex-align;
-  user-select: none;
-  max-width: 768px;
+  opacity: 1;
   width: 100%;
+  z-index: -5;
   padding: 42px;
-  margin-right: 46px;
-  text-align: center;
-  background: $field-bg;
   overflow: hidden;
+  max-width: 768px;
+  user-select: none;
+  text-align: center;
+  margin-right: 46px;
+  @extend %flex-align;
   border-radius: 20px;
+  transform: scale(1);
+  transition: all 0.5s;
+  background: $field-bg;
   flex-direction: column;
   backdrop-filter: blur(20px);
-  transition: all 0.5s;
-  transform: scale(1);
-  opacity: 1;
-  z-index: -5;
 
   @include breakpoint(desktop) {
-    margin: 32px 0 80px;
-    padding: 36px 28px;
-    height: 29%;
+    margin: 0 auto;
+  }
+
+  @include breakpoint(tablet-l) {
+    width: 95%;
   }
 
   @include breakpoint(tablet-m) {
-    margin: 24px 0 40px;
+    width: 100%;
     padding: 35px 16px;
+    margin: 24px 0 40px;
   }
 
   &_show {

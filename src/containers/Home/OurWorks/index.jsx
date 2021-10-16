@@ -10,9 +10,9 @@ import styles from './OurWorks.scss';
 
 const OurWorks = () => {
   const settings = {
+    speed: 500,
     dots: false,
     fade: false,
-    speed: 500,
     infinite: true,
     autoplay: true,
     slidesToShow: 1,
@@ -29,7 +29,13 @@ const OurWorks = () => {
   ));
 
   return (
-    <section className={classNames('section', styles.works_section)}>
+    <section
+      className={classNames(
+        'section',
+        styles.works_section,
+        styles.height_reponce,
+      )}
+    >
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <Slider {...settings}>{renderSlides}</Slider>

@@ -36,7 +36,7 @@ const OurTeam = () => {
   const setting = {
     ssr: true,
     arrows: false,
-    infinite: false,
+    infinite: true,
     autoPlay: false,
     draggable: false,
     swipeable: false,
@@ -50,7 +50,7 @@ const OurTeam = () => {
   };
 
   return (
-    <section className={`section ${styles.container}`}>
+    <section className={`section ${styles.container} ${styles.height_reponce}`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <h2 className={styles.title}>Our Team</h2>
