@@ -85,7 +85,7 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
         <stop offset="0" stopColor={stopColor}>
           <animate
             begin="3.5s"
-            dur="0.5s"
+            dur="2s"
             attributeName="offset"
             fill="freeze"
             from="0"
