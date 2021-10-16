@@ -35,14 +35,14 @@ const OurPartners = () => {
 
   const setting = {
     ssr: true,
+    responsive,
     arrows: false,
-    infinite: false,
-    autoPlay: false,
+    infinite: true,
+    autoPlay: true,
     draggable: false,
     swipeable: false,
-    responsive,
-    containerClass: styles.carousel__wrapper,
     customButtonGroup: <ButtonGroup />,
+    containerClass: styles.carousel__wrapper,
     beforeChange: (nextSlide) => {
       setActiveIndex(nextSlide + 1);
     },

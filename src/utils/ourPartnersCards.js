@@ -10,11 +10,6 @@ import {
 const ourPartnersCards = [
   {
     id: shortid.generate(),
-    icon: null,
-    iconLight: null,
-  },
-  {
-    id: shortid.generate(),
     icon: <KristobadIcon />,
     iconLight: <KristobadIcon />,
   },
@@ -72,11 +67,6 @@ const ourPartnersCards = [
     id: shortid.generate(),
     icon: <DoubleOneIcon />,
     iconLight: <DoubleOneIcon />,
-  },
-  {
-    id: shortid.generate(),
-    icon: null,
-    iconLight: null,
   },
 ];
 

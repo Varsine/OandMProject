@@ -1,4 +1,12 @@
+.height_reponce {
+  @include breakpoint(desktop) {
+    height: auto !important;
+    margin-bottom: 50px !important;
+  }
+}
+
 .container {
+  height: unset;
   @include breakpoint(desktop) {
     height: auto !important;
   }
@@ -19,7 +27,7 @@
   padding: 10px 0;
 
   @include breakpoint(desktop) {
-    padding: 10px 0 24px;
+    padding: 10px 0 32px;
   }
 
   @include breakpoint(tablet-m) {

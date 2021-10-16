@@ -2,20 +2,15 @@ import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
+import { noop } from 'utils/index';
 import { Button } from 'components/index';
 import { modeSelector } from 'slices/mainSlice';
-import { ourPartnersCards, noop } from 'utils/index';
 
 import styles from './OurPartners.scss';
 
 import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
 
-const ButtonGroup = ({
-  next,
-  previous,
-  goToSlide,
-  carouselState: { currentSlide },
-}) => {
+const ButtonGroup = ({ next, previous, goToSlide }) => {
   const isDarkMode = useSelector(modeSelector);
 
   useEffect(() => {
@@ -35,7 +30,6 @@ const ButtonGroup = ({
       <Button
         className={`${styles.carousel__controls_item} ${styles.carousel__controls_left}`}
         onClick={previous}
-        disabled={currentSlide === 0}
       >
         {arrIconMode}
       </Button>
@@ -43,7 +37,6 @@ const ButtonGroup = ({
       <Button
         className={`${styles.carousel__controls_item} ${styles.carousel__controls_right}`}
         onClick={next}
-        disabled={currentSlide === ourPartnersCards.length - 3}
       >
         {arrIconMode}
       </Button>
