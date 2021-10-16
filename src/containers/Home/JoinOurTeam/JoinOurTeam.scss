@@ -1,3 +1,14 @@
+.height_reponce {
+  @include breakpoint(tablet) {
+    height: auto !important;
+    margin-bottom: 50px !important;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 50px !important;
+  }
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -100,19 +111,6 @@
 
     @include breakpoint(tablet-m) {
       display: none;
-    }
-
-    &__swipe_icon {
-      width: 150px;
-      height: 150px;
-      position: relative;
-      z-index: 159;
-      bottom: -224px;
-      animation: loadSwipe 0.51s infinite;
-
-      @include breakpoint(tablet) {
-        bottom: -94px;
-      }
     }
 
     & > div {

@@ -1,3 +1,10 @@
+@include breakpoint(desktop) {
+  .height_reponce {
+    height: auto !important;
+    margin-bottom: 50px !important;
+  }
+}
+
 .works_section {
   overflow: hidden;
 }
@@ -38,6 +45,15 @@
 
       @include breakpoint(desktop) {
         max-width: 669px;
+      }
+      @media (max-width: 700px) {
+        width: 90%;
+      }
+
+      @include breakpoint(tablet-m) {
+        width: 100%;
+        max-width: 669px;
+        margin-top: 16px;
       }
 
       @include breakpoint(tablet-m) {
@@ -157,6 +173,10 @@
     right: 45%;
     bottom: -10%;
     position: relative;
+  }
+
+  @media (min-width: 1024px) and( max-height: 730px) {
+    bottom: -12%;
   }
 
   @include breakpoint(tablet-m) {

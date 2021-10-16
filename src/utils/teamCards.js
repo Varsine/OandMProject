@@ -3,13 +3,6 @@ import shortid from 'shortid';
 const teamCard = [
   {
     id: shortid.generate(),
-    image: '',
-    imageLight: '',
-    title: '',
-    subtitle: '',
-  },
-  {
-    id: shortid.generate(),
     image: '/images/team/Sash.png',
     imageLight: '/images/team/Sash.png',
     title: 'Sasha Vardanyan',
@@ -91,13 +84,6 @@ const teamCard = [
     imageLight: '/images/team/LyudvigLight.png',
     title: 'Lyudvig Grigoryan',
     subtitle: 'FRONT-END DEVELOPER',
-  },
-  {
-    id: shortid.generate(),
-    image: '',
-    imageLight: '',
-    title: '',
-    subtitle: '',
   },
 ];
 

@@ -1,3 +1,29 @@
+@include breakpoint(desktop) {
+  .height_reponce {
+    display: none !important;
+    height: auto !important;
+  }
+}
+
+.text_color {
+  color: #1d1d1d;
+}
+
+.text_color_light {
+  color: #f1f2f2;
+}
+
+.we_work {
+  margin: 0 auto;
+  width: 95% !important;
+}
+
+@include breakpoint(tablet) {
+  .height_reponce {
+    display: none !important;
+  }
+}
+
 .wrapper {
   @extend %flex-align;
   width: 100%;
@@ -34,19 +60,55 @@
 
 .animation {
   width: 100%;
+  max-width: 1000px;
   // min-height: 504px;
   @extend %flex-center;
   position: relative;
+  // max-width: 334px;
+  // width: 100%;
 
   @include breakpoint(desktop) {
     display: none;
-    margin: 0 0 80px;
+    // margin: 0 0 80px;
     // min-height: 415px;
   }
 
-  @include breakpoint(tablet-m) {
-    margin: 0 0 40px;
-    max-width: 668px;
+  @media (min-width: 1140px) {
+    bottom: -20px;
+  }
+
+  @media (min-width: 1024px) {
+    bottom: -25px;
+  }
+
+  @include breakpoint(desktop) {
+    bottom: -25px;
+    left: 10px;
+
+    p {
+      text-align: left;
+    }
+  }
+
+  @include breakpoint(tablet-l) {
+    max-width: 250px;
+  }
+
+  @media (min-width: 1124px) {
+    bottom: -25px;
+  }
+
+  @media (min-width: 1024px) {
+    bottom: -35px;
+  }
+
+  @include breakpoint(desktop) {
+    bottom: -35px;
+    right: 10px;
+
+    p {
+      text-align: right;
+    }
   }
 
   &__text_tree,

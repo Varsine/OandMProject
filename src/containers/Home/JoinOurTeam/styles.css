@@ -76,6 +76,11 @@
   background-repeat: no-repeat;
   background-image: url(../../../../public/images/join_our_team/join_our_team_1.jpg);
 }
+@media (max-width: 768px) {
+  #app .swiper-slide:nth-child(1n) .swiperr_image {
+    height: 320px;
+  }
+}
 
 #app .swiper-slide:nth-child(2n) .swiperr_image {
   width: 100%;
@@ -85,6 +90,11 @@
   background-repeat: no-repeat;
   background-image: url(../../../../public/images/join_our_team/join_our_team_2.jpg);
 }
+@media (max-width: 768px) {
+  #app .swiper-slide:nth-child(2n) .swiperr_image {
+    height: 320px;
+  }
+}
 
 #app .swiper-slide:nth-child(3n) .swiperr_image {
   width: 100%;
@@ -93,6 +103,11 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../../../../public/images/join_our_team/join_our_team_3.jpg);
+}
+@media (max-width: 768px) {
+  #app .swiper-slide:nth-child(3n) .swiperr_image {
+    height: 320px;
+  }
 }
 
 #app .swiper-slide:nth-child(4n) .swiperr_image {
@@ -104,6 +119,12 @@
   background-image: url(../../../../public/images/join_our_team/join_our_team_4.jpg);
 }
 
+@media (max-width: 768px) {
+  #app .swiper-slide:nth-child(4n) .swiperr_image {
+    height: 320px;
+  }
+}
+
 #app .swiper-slide:nth-child(5n) .swiperr_image {
   width: 100%;
   height: 400px;
@@ -111,6 +132,11 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../../../../public/images/join_our_team/join_our_team_5.jpg);
+}
+@media (max-width: 768px) {
+  #app .swiper-slide:nth-child(5n) .swiperr_image {
+    height: 320px;
+  }
 }
 
 #app .swiper-slide:nth-child(6n) .swiperr_image {
@@ -120,4 +146,9 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../../../../public/images/join_our_team/join_our_team_6.jpg);
+}
+@media (max-width: 768px) {
+  #app .swiper-slide:nth-child(6n) .swiperr_image {
+    height: 320px;
+  }
 }
