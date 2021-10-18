@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const LogoAnimaIcon = ({ stopColor, ...rest }) => (
+const LogoAnimaIcon = ({ stopColor, isAnima, fastAnima, ...rest }) => (
   <svg
     width="100vw"
     height="300"
@@ -83,24 +83,31 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
     <defs>
       <linearGradient id="left-to-right">
         <stop offset="0" stopColor={stopColor}>
-          <animate
-            begin="3.5s"
-            dur="0.5s"
-            attributeName="offset"
-            fill="freeze"
-            from="0"
-            to="1"
-          />
+          {isAnima && (
+            <animate
+              begin={fastAnima ? '2.5s' : '3.5s'}
+              dur={fastAnima ? '1s' : '2s'}
+              attributeName="offset"
+              fill="freeze"
+              from="0"
+              to="1"
+            />
+          )}
         </stop>
-        <stop offset="0" stopColor="transparent">
-          <animate
-            begin="6s"
-            dur="2s"
-            attributeName="offset"
-            fill="freeze"
-            from="0"
-            to="1"
-          />
+        <stop
+          offset={isAnima ? '0' : '1'}
+          stopColor={isAnima ? 'transparent' : stopColor}
+        >
+          {isAnima && (
+            <animate
+              begin={fastAnima ? '2.5s' : '6s'}
+              dur={fastAnima ? '1s' : '2s'}
+              attributeName="offset"
+              fill="freeze"
+              from="0"
+              to="1"
+            />
+          )}
         </stop>
       </linearGradient>
       <linearGradient
@@ -273,11 +280,15 @@ const LogoAnimaIcon = ({ stopColor, ...rest }) => (
 );
 
 LogoAnimaIcon.propTypes = {
+  isAnima: PropTypes.bool,
   stopColor: PropTypes.string,
+  fastAnima: PropTypes.bool,
 };
 
 LogoAnimaIcon.defaultProps = {
+  isAnima: false,
   stopColor: '',
+  fastAnima: false,
 };
 
 export default LogoAnimaIcon;
