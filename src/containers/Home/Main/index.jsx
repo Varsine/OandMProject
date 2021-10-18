@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { useWindowSize } from 'hooks/index';
 import { activeIndexSelector, modeSelector } from 'slices/mainSlice';
 
 import styles from './Main.scss';
@@ -9,49 +9,49 @@ import styles from './Main.scss';
 import { LogoAnimaIcon, LogoMoveBallIcon } from '../../../icons';
 
 const Main = () => {
-  const { isDesktop } = useWindowSize();
   const activeIndex = useSelector(activeIndexSelector);
   const isDarkMode = useSelector(modeSelector);
   const isActive = activeIndex === 1;
 
-  const [isMove, setIsMove] = useState(false);
   const [isBall, setIsBall] = useState(false);
   const [isAnimate, setIsAnimate] = useState(false);
-  const isShowLogo = isDesktop ? isMove : isActive;
+  const [activeClass, setActiveClass] = useState(false);
 
   useEffect(() => {
     window.addEventListener('load', () => {
       setIsAnimate(true);
+      setIsBall(true);
     });
   }, []);
 
   useEffect(() => {
-    if (isActive) {
-      setIsMove(true);
-      if (isAnimate) {
-        setIsBall(true);
-
-        setTimeout(() => {
-          setIsBall(false);
-        }, 3500);
-      }
-    } else {
-      setTimeout(() => {
-        setIsMove(false);
-      }, 1300);
+    if (activeIndex !== 1) {
+      setActiveClass(true);
     }
-  }, [isAnimate, isActive]);
 
-  const showAnimation = isShowLogo && (
+    if (!isActive) {
+      setIsBall(false);
+    }
+  }, [isActive]);
+
+  const showAnimation = isActive ? (
     <>
       {isBall && <LogoMoveBallIcon className={styles.wrapper__ball} />}
       <LogoAnimaIcon
-        className={styles.wrapper__logo}
+        className={classNames(styles.wrapper__logo, {
+          [styles.wrapper__logo_active]: activeClass,
+        })}
         stopColor={isDarkMode ? '#fff' : '#333'}
+        isAnima
+        fastAnima={activeClass}
       />
     </>
+  ) : (
+    <LogoAnimaIcon
+      className={styles.wrapper__logo_fixed}
+      stopColor={isDarkMode ? '#fff' : '#333'}
+    />
   );
-
   const renderAnimation = isAnimate && showAnimation;
 
   return (

@@ -108,7 +108,7 @@
     max-width: 740px !important;
   }
 
-  @media (min-width: 1024px) and(min-height:800px) {
+  @media (min-width: 1025px) and(min-height:800px) {
     height: 450px !important;
   }
 
@@ -117,7 +117,7 @@
   }
 
   @include breakpoint(desktop) {
-    height: 48vh;
+    height: 489px;
     max-width: 73%;
     margin: 16px 0 0;
   }
@@ -152,7 +152,7 @@
       width: 16vh;
       height: 16vh;
 
-      @media (min-width: 1024px) and(min-height:670px) {
+      @media (min-width: 1025px) and(min-height:670px) {
         width: 15vh;
         height: 15vh;
       }
@@ -178,8 +178,8 @@
       }
 
       @include breakpoint(desktop) {
-        width: 16vh;
-        height: 16vh;
+        width: 155px;
+        height: 155px;
       }
 
       @include breakpoint(tablet-m) {
