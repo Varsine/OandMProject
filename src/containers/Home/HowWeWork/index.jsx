@@ -26,9 +26,8 @@ const HowWeWork = () => {
                 [styles.text_color_light]: isDarkMode,
               })}
             >
-              The first step of our work is to get acquainted with your
-              application and discuss the possible deadlines with our
-              engineering team.
+              We will get acquainted with your application and discuss the
+              possible deadlines with our engineering team.
             </p>
           </div>
           <div className={styles.animation__text_two}>
@@ -37,8 +36,8 @@ const HowWeWork = () => {
                 [styles.text_color_light]: isDarkMode,
               })}
             >
-              We will provide an hourly based working schedule that will give
-              you a clear understanding of implementation of your application.
+              We will provide an hourly based working schedule to give you a
+              clear understanding of implementation of your application.
             </p>
           </div>
           <div className={styles.animation__text_tree}>
@@ -47,8 +46,8 @@ const HowWeWork = () => {
                 [styles.text_color_light]: isDarkMode,
               })}
             >
-              Our management team will be in daily contact providing information
-              related to the developments of your project.
+              We will be in daily contact with you, to provide information
+              related to the developments of the project.
             </p>
           </div>
         </div>

@@ -2,14 +2,12 @@ import React, { useState, useMemo } from 'react';
 import Carousel from 'react-multi-carousel';
 
 import { teamCards } from 'utils/index';
-import { useWindowSize } from 'hooks/index';
 
 import Slide from './Slide';
 import styles from './OurTeam.scss';
 import ButtonGroup from './ButtonGroup';
 
 const OurTeam = () => {
-  const { isLaptop } = useWindowSize();
   const [activeIndex, setActiveIndex] = useState(2);
 
   const renderSliderList = useMemo(
@@ -17,7 +15,7 @@ const OurTeam = () => {
       teamCards.map((item, index) => (
         <Slide key={item.id} slide={item} isActive={index === activeIndex} />
       )),
-    [teamCards, activeIndex, isLaptop],
+    [teamCards, activeIndex],
   );
 
   const responsive = {
@@ -33,12 +31,12 @@ const OurTeam = () => {
 
   const setting = {
     ssr: true,
+    responsive,
     arrows: false,
     infinite: true,
     autoPlay: false,
     draggable: false,
     swipeable: false,
-    responsive,
     sliderClass: styles.carousel__container,
     containerClass: styles.carousel__wrapper,
     customButtonGroup: <ButtonGroup />,
