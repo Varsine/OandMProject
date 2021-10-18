@@ -3,6 +3,10 @@
     height: auto !important;
     margin-bottom: 50px !important;
   }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 0 !important;
+  }
 }
 
 .container {
@@ -19,6 +23,10 @@
   @include breakpoint(desktop) {
     padding: 40px 0 !important;
   }
+
+  @include breakpoint(tablet) {
+    padding: 40px 0 20px !important;
+  }
 }
 
 .title {
@@ -27,7 +35,12 @@
   padding: 10px 0;
 
   @include breakpoint(desktop) {
+    margin-top: 5vh;
     padding: 10px 0 32px;
+  }
+
+  @include breakpoint(tablet-l) {
+    margin-top: 0vh;
   }
 
   @include breakpoint(tablet-m) {
@@ -117,27 +130,6 @@
     @include breakpoint(tablet-m) {
       height: auto !important;
       max-width: 100% !important;
-    }
-
-    &_active {
-      margin: 0 auto;
-      height: 677px;
-      max-width: 460px;
-
-      @media (min-width: 1024px) and (max-height: 970px) {
-        height: 485px;
-        max-width: 336px;
-      }
-
-      @media (min-width: 1024px) and (max-height: 780px) {
-        height: 405px;
-        max-width: 276px;
-      }
-
-      @media (min-width: 1024px) and (max-height: 700px) {
-        height: 350px;
-        max-width: 240px;
-      }
     }
 
     &_imges {

@@ -7,6 +7,10 @@
   @include breakpoint(tablet) {
     margin-bottom: 50px !important;
   }
+
+  @include breakpoint(tablet-m) {
+    margin-bottom: 0 !important;
+  }
 }
 
 .wrapper {

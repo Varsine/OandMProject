@@ -51,6 +51,10 @@
       }
     }
 
+    @include breakpoint(mobile) {
+      justify-content: space-around !important;
+    }
+
     &__item {
       display: flex;
       cursor: pointer;
@@ -126,6 +130,8 @@
     }
 
     &__oneIcon {
+      display: flex;
+      align-items: center;
       animation: moveToLeft 1.5s alternate;
 
       @include breakpoint(desktop) {
@@ -134,6 +140,8 @@
     }
 
     &__twoIcon {
+      display: flex;
+      align-items: center;
       animation: moveToLeft 2s alternate;
 
       @include breakpoint(desktop) {
@@ -142,6 +150,8 @@
     }
 
     &__threeIcon {
+      display: flex;
+      align-items: center;
       animation: moveToLeft 3s alternate;
 
       @include breakpoint(desktop) {
@@ -225,7 +235,7 @@
 
       @include breakpoint(desktop) {
         width: 100%;
-        height: 354px;
+        max-height: 354px;
         max-width: 100%;
         overflow-y: scroll;
         scrollbar-width: none;

@@ -19,7 +19,12 @@
   padding: 10px 0;
 
   @include breakpoint(desktop) {
+    margin: 5vh 0;
     padding: 10px 0 24px;
+  }
+
+  @include breakpoint(tablet-l) {
+    margin-top: 0vh;
   }
 
   @include breakpoint(tablet-m) {
@@ -100,7 +105,7 @@
   &__controls {
     left: 0;
     width: 100%;
-    bottom: 0;
+    bottom: 50px;
     position: absolute;
     @extend %flex-center;
 
