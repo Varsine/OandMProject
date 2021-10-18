@@ -123,13 +123,21 @@
   @include breakpoint(desktop) {
     height: 489px;
     max-width: 73%;
-    margin: 16px 0 0;
+    margin: 16px 0 24px;
+  }
+
+  @include breakpoint(tablet) {
+    max-width: 90%;
   }
 
   @include breakpoint(tablet-m) {
     margin-top: 24px;
-    max-width: 288px;
+    max-width: 80%;
     height: 252px;
+  }
+
+  @include breakpoint(mobile) {
+    max-width: 90%;
   }
 }
 
