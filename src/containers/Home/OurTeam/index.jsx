@@ -14,11 +14,9 @@ const OurTeam = () => {
 
   const renderSliderList = useMemo(
     () =>
-      teamCards
-        .slice(isLaptop ? 1 : 0, teamCards.length)
-        .map((item, index) => (
-          <Slide key={item.id} slide={item} isActive={index === activeIndex} />
-        )),
+      teamCards.map((item, index) => (
+        <Slide key={item.id} slide={item} isActive={index === activeIndex} />
+      )),
     [teamCards, activeIndex, isLaptop],
   );
 

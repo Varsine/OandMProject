@@ -254,6 +254,7 @@
 
   &__arrows {
     @extend %flex-center;
+    position: relative;
 
     &_item {
       height: 48px;
@@ -263,6 +264,7 @@
 
     &_left {
       transform: rotate(180deg);
+      // transform: translateX(0px);
     }
   }
 }
