@@ -1,5 +1,5 @@
 .height_reponce {
-  @include breakpoint(tablet) {
+  @include breakpoint(desktop) {
     height: auto !important;
     margin-bottom: 50px !important;
   }

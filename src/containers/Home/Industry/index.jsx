@@ -45,12 +45,6 @@ const Industry = () => {
     [src],
   );
 
-  useEffect(() => {
-    setTimeout(() => {
-      setActiveIndex(0);
-    }, 500);
-  }, [isShow]);
-
   const renderIndustries = useCallback(
     () =>
       industry.map((industryItem, index) => {

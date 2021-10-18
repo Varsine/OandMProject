@@ -7,7 +7,7 @@ import { modeSelector } from 'slices/mainSlice';
 
 import styles from './OurTeam.scss';
 
-const Slide = ({ slide, isActive }) => {
+const Slide = ({ slide }) => {
   const isDarkMode = useSelector(modeSelector);
 
   const { image, imageLight, title, subtitle } = slide;
@@ -28,16 +28,8 @@ const Slide = ({ slide, isActive }) => {
     [isDarkMode],
   );
 
-  const carouselItemClasses = useMemo(
-    () =>
-      classNames(styles.carousel__item, {
-        [styles.carousel__item_active]: isActive,
-      }),
-    [isActive],
-  );
-
   return (
-    <div className={carouselItemClasses}>
+    <div className={styles.carousel__item}>
       <div className={styles.carousel__item_imges}>
         <div
           className={darkModeImageClasses}
