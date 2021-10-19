@@ -9,7 +9,7 @@ const HelmetLayout = ({ children, title, metaDescription }) => (
     <Head>
       {title && <title>{title}</title>}
       {metaDescription && <meta name="description" content={metaDescription} />}
-      {!IS_SERVER && <script src="/js/script.js" />}
+      {/* {!IS_SERVER && <script src="/js/script.js" />} */}
     </Head>
     {children}
     {!IS_SERVER && <canvas id="canvas" />}
