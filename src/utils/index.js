@@ -1,3 +1,4 @@
+export * from './weWork';
 export * from './helpers';
 export * from './fieldsList';
 export * from './mainSections';
