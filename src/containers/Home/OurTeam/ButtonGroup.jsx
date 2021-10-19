@@ -8,7 +8,7 @@ import { noop } from 'utils/index';
 
 import styles from './OurTeam.scss';
 
-import { ArrowIcon, ArrowGdtIcon } from '../../../icons';
+import { ArrowIcon, ArrowIconLight } from '../../../icons';
 
 const ButtonGroup = ({ next, previous, goToSlide }) => {
   const isDarkMode = useSelector(modeSelector);
@@ -21,8 +21,7 @@ const ButtonGroup = ({ next, previous, goToSlide }) => {
     if (isDarkMode) {
       return <ArrowIcon />;
     }
-
-    return <ArrowGdtIcon />;
+    return <ArrowIconLight />;
   }, [isDarkMode]);
 
   return (
