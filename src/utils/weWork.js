@@ -1,4 +1,4 @@
-export const weLabel = [
+const weLabel = [
   {
     htmlFor: 's1',
     id: 'slideWe1',
@@ -11,7 +11,6 @@ export const weLabel = [
     image: 'url(/images/weWork/about_slider-1d.png)',
     darkImage: 'url(/images/weWork/about_slider-1.png)',
   },
-
   {
     htmlFor: 's2',
     id: 'slideWe2',
@@ -52,7 +51,7 @@ export const weLabel = [
     htmlFor: 's5',
     id: 'slideWe5',
     text: 'Global Shipping',
-    image: 'url(/images/weWork/6.png)',
+    image: 'url(/images/weWork/auction.jpg)',
     title:
       'The history of Global Shipping LLC began in 2006. Global Shipping LLC provides also transportation services and is responsible for cars shipping from UAE to all over the world.',
     subtitle:
@@ -84,3 +83,5 @@ export const weLabel = [
     hrefLink: 'https://doubleone.org/',
   },
 ];
+
+export default weLabel;
