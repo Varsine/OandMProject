@@ -1,13 +1,13 @@
 .wrapper {
-  width: 500px;
-  height: 500px;
   position: fixed;
   top: 50%;
   transform: translate(0, -50%);
   right: 50px;
   z-index: 555;
   width: 64px;
-  max-height: 384px;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 50vh;
   overflow: hidden;
 
   @include breakpoint(desktop) {
@@ -17,8 +17,8 @@
   &__item {
     width: 64px;
     height: 64px;
-    margin: 0 auto;
     display: flex;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;

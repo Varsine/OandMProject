@@ -1,0 +1,117 @@
+.arrow_comp {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0 2vh;
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+
+  &__slide__prev_arrows {
+    cursor: pointer;
+    background-color: transparent;
+
+    &__left_content {
+      width: 29px;
+      height: 2px;
+      margin: 9px 0;
+      display: flex;
+      cursor: pointer;
+      position: relative;
+      align-items: center;
+      background: $text-color;
+      justify-content: center;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      animation: arrowKeyframeLeft 0.7s ease-in-out infinite;
+
+      &:before,
+      &:after {
+        width: 15px;
+        height: 3px;
+        content: '';
+        position: absolute;
+        background: $text-color;
+      }
+
+      &:before {
+        top: -5px;
+        left: -3px;
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        left: -3px;
+        bottom: -5px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__slide__next_arrows {
+    cursor: pointer;
+    background-color: transparent;
+
+    &__right_content {
+      width: 29px;
+      height: 2px;
+      margin: 9px 0;
+      display: flex;
+      cursor: pointer;
+      position: relative;
+      background: $text-color;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      animation: arrowKeyframeRight 0.7s ease-in-out infinite;
+
+      &:before,
+      &:after {
+        width: 15px;
+        height: 3px;
+        content: '';
+        position: absolute;
+        background: $text-color;
+      }
+
+      &:before {
+        right: -3px;
+        bottom: -5px;
+        transform: rotate(-45deg);
+        border-bottom-left-radius: 15px;
+      }
+
+      &:after {
+        right: -3px;
+        top: -5px;
+        transform: rotate(45deg);
+        border-top-left-radius: 15px;
+      }
+    }
+  }
+}
+@keyframes arrowKeyframeLeft {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(15px, 0);
+  }
+}
+
+@keyframes arrowKeyframeRight {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-15px, 0);
+  }
+}

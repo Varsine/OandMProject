@@ -7,7 +7,7 @@ import { modeSelector } from 'slices/mainSlice';
 
 import styles from './OurWorks.scss';
 
-const AboutUsContainer = () => {
+const OurWorks = () => {
   const isDarkMode = useSelector(modeSelector);
   const [activeIndex, setActiveIndex] = useState(weLabel[0].htmlFor);
 
@@ -87,4 +87,4 @@ const AboutUsContainer = () => {
   );
 };
 
-export default AboutUsContainer;
+export default OurWorks;
