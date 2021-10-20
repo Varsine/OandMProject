@@ -29,7 +29,7 @@ const ModeSwitch = ({ isOnePage, isOpen }) => {
       return activeIndex;
     }
 
-    return `0${activeIndex}`;
+    return `${activeIndex}`;
   }, [activeIndex]);
 
   const wrapperClassNames = useMemo(

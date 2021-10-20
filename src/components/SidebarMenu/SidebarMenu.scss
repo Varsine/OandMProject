@@ -1,13 +1,13 @@
 .wrapper {
+  width: 500px;
+  height: 500px;
   position: fixed;
   top: 50%;
   transform: translate(0, -50%);
   right: 50px;
   z-index: 555;
   width: 64px;
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 50vh;
+  max-height: 384px;
   overflow: hidden;
 
   @include breakpoint(desktop) {
@@ -17,15 +17,27 @@
   &__item {
     width: 64px;
     height: 64px;
-    display: flex;
     margin: 0 auto;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
 
+    svg {
+      path {
+        fill: $iconColor;
+      }
+    }
+
     &_active {
       background: $liner-blue;
       border-radius: 50%;
+
+      svg {
+        path {
+          fill: $white;
+        }
+      }
     }
   }
 
