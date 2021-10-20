@@ -8,6 +8,7 @@ import { noop } from 'utils/index';
 
 const NextLink = ({
   to,
+  target,
   onClick,
   children,
   disabled,
@@ -29,6 +30,7 @@ const NextLink = ({
     <Link href={to} {...linkProps}>
       <a
         role="button"
+        target={target}
         className={anchorClasses}
         {...anchorProps}
         onClick={onClick}
@@ -41,6 +43,7 @@ const NextLink = ({
 
 NextLink.propTypes = {
   children: PropTypes.any,
+  target: PropTypes.string,
   disabled: PropTypes.string,
   queryKey: PropTypes.string,
   className: PropTypes.any,
@@ -52,6 +55,7 @@ NextLink.propTypes = {
 };
 
 NextLink.defaultProps = {
+  target: '',
   children: [],
   disabled: undefined,
   queryKey: undefined,
