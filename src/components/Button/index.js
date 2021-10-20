@@ -3,13 +3,21 @@ import PropTypes from 'prop-types';
 
 import { noop } from 'utils/index';
 
-const Button = ({ onClick, className, children, disabled, ...rest }) => (
+const Button = ({
+  onClick,
+  children,
+  disabled,
+  className,
+  ariaLabel,
+  ...rest
+}) => (
   <button
+    {...rest}
     type="button"
     onClick={onClick}
-    className={className}
     disabled={disabled}
-    {...rest}
+    className={className}
+    aria-label={ariaLabel}
   >
     {children}
   </button>
@@ -18,14 +26,16 @@ const Button = ({ onClick, className, children, disabled, ...rest }) => (
 Button.propTypes = {
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
-  children: PropTypes.any.isRequired,
   className: PropTypes.string,
+  ariaLabel: PropTypes.string,
+  children: PropTypes.any.isRequired,
 };
 
 Button.defaultProps = {
   onClick: noop,
-  disabled: false,
   className: '',
+  disabled: false,
+  ariaLabel: 'Slider arrows',
 };
 
 export default Button;
