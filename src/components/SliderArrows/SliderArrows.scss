@@ -26,6 +26,7 @@
       justify-content: center;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
+      animation: arrowKeyframeLeft 0.7s ease-in-out infinite;
 
       &:before,
       &:after {
@@ -66,6 +67,7 @@
       justify-content: center;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
+      animation: arrowKeyframeRight 0.7s ease-in-out infinite;
 
       &:before,
       &:after {
@@ -90,5 +92,26 @@
         border-top-left-radius: 15px;
       }
     }
+  }
+}
+@keyframes arrowKeyframeLeft {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(15px, 0);
+  }
+}
+
+@keyframes arrowKeyframeRight {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-15px, 0);
   }
 }

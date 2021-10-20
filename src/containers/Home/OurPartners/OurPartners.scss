@@ -16,7 +16,7 @@
 .title {
   @extend %open-sans-48;
   text-decoration: underline;
-  padding: 10px 0;
+  padding: 32px 0 10px;
 
   @include breakpoint(desktop) {
     margin: 5vh 0;

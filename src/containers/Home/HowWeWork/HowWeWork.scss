@@ -45,6 +45,7 @@
   text-align: center;
   padding: 32px 0 72px;
   @extend %open-sans-48;
+  text-decoration: underline;
 
   @include breakpoint(desktop) {
     padding-bottom: 42px;
