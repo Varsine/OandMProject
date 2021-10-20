@@ -3,10 +3,10 @@ import Carousel from 'react-multi-carousel';
 
 import { useWindowSize } from 'hooks/index';
 import { ourPartnersCards } from 'utils/index';
+import { SliderArrows } from 'components/index';
 
 import Slide from './Slide';
 import styles from './OurPartners.scss';
-import ButtonGroup from './ButtonGroup';
 
 const OurPartners = () => {
   const { isLaptop } = useWindowSize();
@@ -41,7 +41,7 @@ const OurPartners = () => {
     autoPlay: true,
     draggable: false,
     swipeable: false,
-    customButtonGroup: <ButtonGroup />,
+    customButtonGroup: <SliderArrows arrowStyles={styles.arrow_container} />,
     containerClass: styles.carousel__wrapper,
     beforeChange: (nextSlide) => {
       setActiveIndex(nextSlide + 1);
