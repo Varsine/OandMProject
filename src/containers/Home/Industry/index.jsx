@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-expressions */
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
@@ -8,109 +7,88 @@ import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './Industry.scss';
 
-import {
-  IndustyTwoIcon,
-  IndustyThreeIcon,
-  IndustyFirstIcon,
-} from '../../../icons';
-
 const Industry = () => {
-  React.useEffect(() => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeSelector = useSelector(activeIndexSelector);
+
+  const { text, title, src } = useMemo(
+    () => industry[activeIndex],
+    [activeIndex],
+  );
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
     import('@lottiefiles/lottie-player');
   });
 
-  const activeSelector = useSelector(activeIndexSelector);
-  const isShow = activeSelector === 4;
-  const [activeIndex, setActiveIndex] = useState(0);
-  const { text, title, src } = industry[activeIndex];
+  const isShow = useMemo(() => activeSelector === 4, [activeSelector]);
 
-  const ecommerceClass = classNames(styles.wrapper__menu__item, {
-    [styles.wrapper__menu__oneIcon]: isShow,
-    [styles.wrapper__menu__active]: activeIndex === 0,
-  });
-
-  const cryptoClass = classNames(styles.wrapper__menu__crypto, {
-    [styles.wrapper__menu__twoIcon]: isShow,
-    [styles.wrapper__menu__active]: activeIndex === 1,
-  });
-
-  const bussinessClass = classNames(styles.wrapper__menu__item, {
-    [styles.wrapper__menu__threeIcon]: isShow,
-    [styles.wrapper__menu__active]: activeIndex === 2,
-  });
-
-  const gifClass = classNames(styles.wrapper__active_item__gif, {
-    [styles.wrapper__active_item__gif_first]: activeIndex === 0,
-    [styles.wrapper__active_item__gif_animation]: isShow,
-  });
-
-  const infoClass = classNames(styles.wrapper__active_item__info, {
-    [styles.wrapper__active_item__info_anima]: isShow,
-  });
-
-  // packagi het ka xndir src editi jamanak live update chi linum;
-
-  const ecommerceGif = activeIndex === 0 && (
-    <lottie-player src={src} loop autoplay />
-  );
-  const cryptoAnima = activeIndex === 1 && (
-    <lottie-player src={src} loop autoplay />
-  );
-  const bussinessAnima = activeIndex === 2 && (
-    <lottie-player src={src} loop autoplay />
+  const gifClass = useMemo(
+    () =>
+      classNames(styles.wrapper__active_item__gif, {
+        [styles.wrapper__active_item__gif_first]: activeIndex === 0,
+        [styles.wrapper__active_item__gif_animation]: isShow,
+      }),
+    [isShow, activeIndex],
   );
 
-  const handlerChangeActiveItem = (idx) => {
-    setActiveIndex(idx);
-  };
+  const infoClass = useMemo(
+    () =>
+      classNames(styles.wrapper__active_item__info, {
+        [styles.wrapper__active_item__info_anima]: isShow,
+      }),
+    [isShow],
+  );
 
-  useEffect(() => {
-    setTimeout(() => {
-      setActiveIndex(0);
-    }, 500);
-  }, [isShow]);
+  const lottieAnimation = useMemo(
+    () => `<lottie-player src=${src} loop="true" autoplay="true" />`,
+    [src],
+  );
+
+  const renderIndustries = useCallback(
+    () =>
+      industry.map((industryItem, index) => {
+        const stylesKey = `wrapper__menu${industryItem.class}`;
+
+        const classes = classNames(styles.wrapper__menu__item, {
+          [styles[stylesKey]]: isShow,
+          [styles.wrapper__menu__active]: activeIndex === index,
+        });
+
+        return (
+          <div
+            role="button"
+            className={classes}
+            onClick={() => setActiveIndex(index)}
+          >
+            <industryItem.icon />
+            <p className={styles.wrapper__menu__text}>{industryItem.title}</p>
+          </div>
+        );
+      }),
+    [activeIndex, isShow],
+  );
 
   return (
-    <section className="section">
+    <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
-        <div className={styles.wrapper__menu}>
-          <div
-            role="button"
-            className={ecommerceClass}
-            onClick={() => handlerChangeActiveItem(0)}
-          >
-            <IndustyFirstIcon />
-            <p className={styles.wrapper__menu__text}>Ecommerce</p>
-          </div>
-          <div
-            role="button"
-            className={cryptoClass}
-            onClick={() => handlerChangeActiveItem(1)}
-          >
-            <IndustyTwoIcon />
-            <p className={styles.wrapper__menu__text}>Crypto</p>
-          </div>
-          <div
-            role="button"
-            className={bussinessClass}
-            onClick={() => handlerChangeActiveItem(2)}
-          >
-            <IndustyThreeIcon />
-            <p className={styles.wrapper__menu__text}>Bussiness</p>
-          </div>
-        </div>
+        <div className={styles.wrapper__menu}>{renderIndustries()}</div>
         <div className={styles.wrapper__active_item}>
-          <div className={gifClass}>
-            {ecommerceGif}
-            {cryptoAnima}
-            {bussinessAnima}
-          </div>
+          <div
+            className={gifClass}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: lottieAnimation,
+            }}
+          />
           <div className={infoClass}>
             <h1 className={styles.wrapper__active_item__info__title}>
               {title}
             </h1>
-            <p>{text}</p>
+            <p className={styles.wrapper__active_item__info_anima__textt}>
+              {text}
+            </p>
           </div>
         </div>
       </div>

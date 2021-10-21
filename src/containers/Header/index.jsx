@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import usePortal from 'react-useportal';
 import { useSelector } from 'react-redux';
 
+import { paths } from 'routes/index';
+import { NextLink } from 'components/index';
 import { FullPageContext } from 'context/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
@@ -23,7 +25,7 @@ import {
   SectionTwoActiveIcon,
 } from '../../icons';
 
-const Header = () => {
+const Header = ({ isOnePage }) => {
   const { Portal } = usePortal();
   const { moveToSection } = useContext(FullPageContext);
   const activeIndex = useSelector(activeIndexSelector);
@@ -74,10 +76,18 @@ const Header = () => {
       <header className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.logo}>
-            <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
+            {isOnePage ? (
+              <NextLink to={paths.home}>
+                <LogoIcon />
+              </NextLink>
+            ) : (
+              <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
+            )}
           </div>
 
-          <div className={styles.icon}>{memoizedUpdateActiveIcon()}</div>
+          {!isOnePage ? (
+            <div className={styles.icon}>{memoizedUpdateActiveIcon()}</div>
+          ) : null}
         </div>
       </header>
     </Portal>

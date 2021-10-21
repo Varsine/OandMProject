@@ -85,7 +85,6 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  cursor: url('../icons/cursor.svg'), auto;
 }
 
 article,
@@ -117,7 +116,6 @@ table {
 * {
   outline: none !important;
   box-sizing: border-box;
-  cursor: url('../icons/cursor.svg'), auto;
 }
 
 input {
@@ -130,7 +128,7 @@ input {
 
 button,
 a {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   cursor: pointer;
   text-decoration: none !important;
   border: 0;
@@ -148,10 +146,11 @@ svg {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   margin: 0;
   padding: 0;
   background: $bg-color;
   color: $text-color;
+  cursor: url('/images/Mouse.png'), auto;
 }

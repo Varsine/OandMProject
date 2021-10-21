@@ -1,35 +1,87 @@
-import React from 'react';
-import Slider from 'react-slick';
+import React, { useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import { worksCards } from 'utils/index';
+import { weLabel } from 'utils/index';
+import { NextLink } from 'components/index';
+import { modeSelector } from 'slices/mainSlice';
 
-import Slide from './Slide';
 import styles from './OurWorks.scss';
-import NextArrow from './NextArrow';
-import PrevArrow from './PrevArrow';
 
 const OurWorks = () => {
-  const settings = {
-    fade: true,
-    dots: false,
-    speed: 700,
-    infinite: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    className: styles.slider,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  const isDarkMode = useSelector(modeSelector);
+  const [activeIndex, setActiveIndex] = useState(weLabel[0].htmlFor);
+
+  const isCheckedHandler = (el) => {
+    setActiveIndex(el);
   };
 
-  const renderSlides = worksCards.map((item) => (
-    <Slide key={item.id} data={item} />
-  ));
+  const renderInputs = useMemo(
+    () =>
+      weLabel.map((elem, index) => (
+        <input
+          type="radio"
+          name="slider"
+          id={elem.htmlFor}
+          key={elem.htmlFor}
+          value={elem.htmlFor}
+          className="carousel__inp"
+          defaultChecked={index === 0}
+          onChange={(event) => isCheckedHandler(event.target.value)}
+        />
+      )),
+    [],
+  );
+
+  const renderLabels = useMemo(
+    () =>
+      weLabel.map((item) => (
+        <label
+          id={item.id}
+          key={item.id}
+          type="button"
+          htmlFor={item.htmlFor}
+          className="slider__item"
+          style={{
+            backgroundImage: isDarkMode ? item.darkImage : item.image,
+          }}
+        >
+          <NextLink
+            target="_blanck"
+            to={item.hrefLink}
+            className={isDarkMode ? styles.next_dark_link : styles.next_link}
+          >
+            {item.text}
+          </NextLink>
+        </label>
+      )),
+    [isDarkMode],
+  );
+
+  const renderTexts = useMemo(() => {
+    const activeItem = weLabel.find((weItem) => weItem.htmlFor === activeIndex);
+
+    return <p className="we_work__text">{activeItem.title}</p>;
+  }, [activeIndex]);
+
+  const renderSubTitle = useMemo(() => {
+    const activeItem = weLabel.find((weItem) => weItem.htmlFor === activeIndex);
+
+    return <p className="we_work__subtitle">{activeItem.subtitle}</p>;
+  }, [activeIndex]);
 
   return (
-    <section className="section">
+    <section className="section we_work">
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
-        <Slider {...settings}>{renderSlides}</Slider>
+      <div className="container we_work__content">
+        <h2 className="we_work__title">We work</h2>
+        {renderSubTitle}
+        <div className="we_work__slider">
+          <div className="slider_we_work" id="slider_we_work">
+            {renderInputs}
+            {renderLabels}
+          </div>
+        </div>
+        {renderTexts}
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import NextNprogress from 'nextjs-progressbar';
 
 import 'styles/index.global.scss';
 import 'swiper/swiper.min.css';
+import 'react-multi-carousel/lib/styles.css';
 
 import 'swiper/swiper-bundle.min.css';
 

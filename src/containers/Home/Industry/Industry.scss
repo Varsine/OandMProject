@@ -1,6 +1,14 @@
+@include breakpoint(desktop) {
+  .height_reponce {
+    height: auto !important;
+    margin-bottom: 50px !important;
+  }
+}
+
 .wrapper {
   @extend %flex-center;
   position: relative;
+  overflow: hidden;
 
   @include breakpoint(desktop) {
     flex-direction: column;
@@ -8,45 +16,87 @@
   }
 
   @include breakpoint(tablet-m) {
+    padding-bottom: 0;
     margin: 0 16px;
   }
 
   &__menu {
-    display: flex;
-    flex-direction: column;
     left: 0;
-    max-width: 327px;
     width: 100%;
     z-index: 10;
+    display: flex;
     position: static;
+    max-width: 327px;
     user-select: none;
+    flex-direction: column;
 
     @include breakpoint(desktop) {
+      padding: 0 15px;
       margin-top: 32px;
       flex-direction: unset;
+      width: calc(100vw - 16px);
       justify-content: space-between;
     }
 
     @include breakpoint(tablet-m) {
-      width: calc(100vw - 16px);
+      padding: 0 7px;
+      max-width: 100%;
       margin-top: 24px;
       overflow-x: scroll;
-      scroll-behavior: smooth;
       scrollbar-width: none;
+      scroll-behavior: smooth;
 
       &::-webkit-scrollbar {
         display: none;
       }
     }
 
+    @include breakpoint(mobile) {
+      justify-content: space-around !important;
+    }
+
     &__item {
-      cursor: pointer;
       display: flex;
+      cursor: pointer;
+
+      &:nth-child(2) {
+        margin: 56px 0;
+
+        @include breakpoint(desktop) {
+          margin: 0;
+        }
+
+        @include breakpoint(tablet-m) {
+          margin: 0;
+          padding: 0 12px;
+        }
+      }
+
+      @include breakpoint(tablet-m) {
+        p {
+          display: none;
+          animation: disNone 0.7s linear !important;
+        }
+      }
     }
 
     &__active {
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 37px;
+        height: 37px;
+        display: block;
+      }
+
       p {
         color: $logo-bottom-color !important;
+
+        @include breakpoint(tablet-m) {
+          display: block;
+          animation: disBlock 0.7s linear !important;
+        }
       }
     }
 
@@ -67,6 +117,12 @@
         line-height: 33px;
         font-weight: 600;
       }
+
+      @include breakpoint(tablet) {
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 6px;
+      }
     }
 
     &__active {
@@ -74,6 +130,8 @@
     }
 
     &__oneIcon {
+      display: flex;
+      align-items: center;
       animation: moveToLeft 1.5s alternate;
 
       @include breakpoint(desktop) {
@@ -82,6 +140,8 @@
     }
 
     &__twoIcon {
+      display: flex;
+      align-items: center;
       animation: moveToLeft 2s alternate;
 
       @include breakpoint(desktop) {
@@ -90,6 +150,8 @@
     }
 
     &__threeIcon {
+      display: flex;
+      align-items: center;
       animation: moveToLeft 3s alternate;
 
       @include breakpoint(desktop) {
@@ -98,56 +160,45 @@
     }
 
     @include breakpoint(desktop) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       left: 0;
       top: 160px;
-      max-width: 100%;
-    }
-
-    &__crypto {
-      cursor: pointer;
       display: flex;
-      margin: 56px 0;
-
-      @include breakpoint(desktop) {
-        margin: 0;
-      }
-
-      @include breakpoint(tablet-m) {
-        margin: 0 24px;
-      }
+      max-width: 100%;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 
   &__active_item {
     @extend %flex-center;
     flex-direction: column;
-    margin-left: 8%;
     max-width: 615px;
+    margin-left: 8%;
     width: 100%;
 
     @include breakpoint(desktop) {
+      display: flex;
       max-width: 100%;
       margin: 0 0 80px;
-      display: flex;
       flex-direction: unset;
     }
 
     @include breakpoint(tablet-m) {
+      margin-bottom: 0px;
       flex-direction: column;
-      margin: 0 0 40px;
     }
 
     &__gif {
       @extend %flex-center;
-      width: 422px;
       height: 410px;
+      width: 422px;
 
       @include breakpoint(desktop) {
         width: 100%;
-        height: 280px;
+      }
+
+      @media (max-height: 650px) {
+        height: 230px;
       }
 
       &_animation {
@@ -156,26 +207,40 @@
         @include breakpoint(desktop) {
           animation: moveToLeft 2s linear;
         }
+
+        @media (max-height: 650px) {
+          height: 230px !important;
+        }
+        @media (max-height: 750px) {
+          height: 280px;
+        }
       }
 
       &_first {
         transform: rotateY(180deg);
+
+        @media (max-height: 650px) {
+          height: 230px !important;
+        }
+        @media (max-height: 750px) {
+          height: 280px;
+        }
       }
     }
 
     &__info {
       @extend %open-sans-18;
-      color: $text-color;
       word-wrap: break-word;
+      color: $text-color;
 
       @include breakpoint(desktop) {
-        max-width: 100%;
         width: 100%;
-        margin: 39px 0 24px 36px;
-        height: 354px;
+        max-height: 354px;
+        max-width: 100%;
         overflow-y: scroll;
-        scroll-behavior: smooth;
         scrollbar-width: none;
+        scroll-behavior: smooth;
+        margin: 39px 15px 24px 36px;
 
         &::-webkit-scrollbar {
           display: none;
@@ -184,8 +249,8 @@
 
       @include breakpoint(tablet-m) {
         font-size: 14px;
+        margin: 0 0 0;
         line-height: 19px;
-        margin: 0 0 24px;
       }
 
       &_anima {
@@ -193,6 +258,18 @@
 
         @include breakpoint(desktop) {
           animation: moveToRigth 2s linear;
+
+          &__textt {
+            margin-right: 16px;
+          }
+        }
+
+        @include breakpoint(tablet-m) {
+          height: auto;
+
+          &__textt {
+            margin: 0;
+          }
         }
       }
 
@@ -255,5 +332,26 @@
     opacity: 1;
     margin-right: 0;
     margin-left: 36px;
+  }
+}
+
+@keyframes disBlock {
+  0% {
+    // display: block !important;
+    font-size: 1px;
+  }
+
+  100% {
+    font-size: 20px;
+  }
+}
+
+@keyframes disNone {
+  0% {
+    font-size: 20px;
+  }
+
+  100% {
+    font-size: 0px;
   }
 }

@@ -1,39 +1,65 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import shortid from 'shortid';
+import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { EffectCube, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, EffectCube, Pagination } from 'swiper';
 
-import { swiperSlides } from './constants';
+import { modeSelector } from 'slices/mainSlice';
+import { swipeData } from 'utils';
+
+// import { swiperSlides } from './constants';
 
 import './styles.css';
 
 const Cards = () => {
-  SwiperCore.use([EffectCube, Pagination]);
+  SwiperCore.use([Autoplay, EffectCube, Pagination]);
 
-  const swipeSlideRenderer = () => {
-    return swiperSlides.map(({ id, text }) => {
-      return (
-        <SwiperSlide key={id}>
-          <div className="swiper_image" />
-          <p className="text">{text}</p>
-        </SwiperSlide>
-      );
-    });
-  };
+  const isDarkMode = useSelector(modeSelector);
+
+  const cube = useMemo(
+    () =>
+      classNames({
+        text: isDarkMode,
+        light_text: !isDarkMode,
+      }),
+    [isDarkMode],
+  );
+
+  const renderSwipe = swipeData.map((item) => (
+    <SwiperSlide key={shortid.generate()}>
+      <div className="swiperr_image" />
+      <p className={cube}>{item.text}</p>
+    </SwiperSlide>
+  ));
+
+  // const swipeSlideRenderer = () => {
+  //   return swiperSlides.map(({ id, text }) => {
+  //     return (
+  //       <SwiperSlide key={id}>
+  //         <div className="swiper_image" />
+  //         <p className="text">{text}</p>
+  //       </SwiperSlide>
+  //     );
+  //   });
+  // };
 
   return (
     <Swiper
-      effect="cube"
-      grabCursor
       loop
+      grabCursor
+      effect="cube"
       cubeEffect={{
-        shadow: true,
-        slideShadows: true,
-        shadowOffset: 20,
-        shadowScale: 0.94,
+        shadow: false,
+        slideShadows: false,
       }}
       pagination={false}
+      autoplay={{
+        delay: 1500,
+        disableOnInteraction: false,
+      }}
     >
-      {swipeSlideRenderer()}
+      {renderSwipe}
     </Swiper>
   );
 };

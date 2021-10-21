@@ -1,0 +1,28 @@
+.wrapper {
+  @extend %flex-center;
+  margin-left: 16px;
+
+  @include breakpoint(desktop) {
+    display: none;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.top {
+  margin-top: -4px;
+  margin-right: 8px;
+}
+
+.bottom {
+  transform: rotate(180deg);
+  margin-top: 5px;
+
+  &_skt {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -13,7 +13,7 @@ import styles from './JoinOurTeam.scss';
 
 const JoinOurTeam = () => {
   return (
-    <section className="section">
+    <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <div className={styles.wrapper__info}>

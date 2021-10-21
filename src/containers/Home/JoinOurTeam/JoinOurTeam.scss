@@ -1,24 +1,76 @@
+.height_reponce {
+  @include breakpoint(desktop) {
+    height: auto !important;
+    margin-bottom: 50px !important;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 50px !important;
+  }
+}
+
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  @include breakpoint(tablet) {
+    flex-direction: column-reverse;
+  }
+
   &__info {
     width: 100%;
     max-width: 768px;
 
+    @include breakpoint(desktop) {
+      padding-left: 35px;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 0 35px;
+    }
+
+    @include breakpoint(mobile) {
+      padding: 0 16px;
+    }
+
     &_title {
       @extend %open-sans-48;
+
+      @include breakpoint(tablet-m) {
+        font-size: 40px;
+      }
+
+      @include breakpoint(mobile) {
+        font-size: 32px;
+      }
     }
 
     &_subtitle {
       padding: 16px 0;
       max-width: 615px;
       @extend %open-sans-24;
+
+      @include breakpoint(tablet-m) {
+        font-size: 20px;
+      }
+
+      @include breakpoint(mobile-m) {
+        font-size: 17px;
+      }
     }
+
     &_text {
       width: 100%;
       @extend %open-sans-18;
+
+      @include breakpoint(tablet-m) {
+        font-size: 16px;
+      }
+
+      @include breakpoint(mobile-m) {
+        font-size: 14px;
+      }
     }
 
     &_join {
@@ -37,19 +89,28 @@
       &:hover {
         background: $liner-blue-hover;
       }
+
+      @include breakpoint(mobile) {
+        max-width: 100%;
+      }
     }
   }
 
   &__swiper {
     width: 100%;
+    height: 500px;
     display: flex;
     max-width: 330px;
-    height: 500px;
     margin-left: 5px;
     justify-content: flex-end;
     margin-right: 10px;
 
     @include breakpoint(tablet) {
+      height: 230px;
+      margin-top: 230px;
+    }
+
+    @include breakpoint(tablet-m) {
       display: none;
     }
 
@@ -71,14 +132,23 @@
     & > div > .swiper-wrapper {
       background-color: transparent;
       background-size: cover;
-      max-width: 330px;
       will-change: transform;
       border-radius: 10px;
+      max-width: 330px;
 
       @include breakpoint(tablet) {
         max-width: 227px;
         height: 343px;
       }
     }
+  }
+}
+
+@keyframes loadSwipe {
+  0% {
+    opacity: 0.51;
+  }
+  100% {
+    opacity: 0.51;
   }
 }

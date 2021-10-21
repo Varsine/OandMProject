@@ -1,19 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import classNames from 'classnames';
 
 import { modeSelector, activeIndexSelector } from 'slices/mainSlice';
 
-import styles from './HowWeWork.scss';
 import HowWeWorkAnimation from './HowWeWork';
+import styles from './HowWeWork.scss';
 
 const HowWeWork = () => {
   const isDarkMode = useSelector(modeSelector);
   const activeIndex = useSelector(activeIndexSelector);
   const isActiveAnimate = activeIndex === 3;
-  const textColor = isDarkMode ? '#F1F2F2' : '#1D1D1D';
 
   return (
-    <section className="section">
+    <section className={`${styles.height_reponce} ${styles.we_work} section`}>
       <div className="canvas__working" />
       <div className={`${styles.wrapper} container`}>
         <h2 className={styles.title}>How We Work</h2>
@@ -21,22 +21,33 @@ const HowWeWork = () => {
         <div className={styles.animation}>
           {isActiveAnimate && <HowWeWorkAnimation />}
           <div className={styles.animation__text_one}>
-            <p style={{ color: textColor }}>
-              The first step of our work is to get acquainted with your
-              application and discuss the possible deadlines with our
-              engineering team.
+            <p
+              className={classNames(styles.text_color, {
+                [styles.text_color_light]: isDarkMode,
+              })}
+            >
+              We will get acquainted with your application and discuss the
+              possible deadlines with our engineering team.
             </p>
           </div>
           <div className={styles.animation__text_two}>
-            <p style={{ color: textColor }}>
-              We will provide an hourly based working schedule that will give
-              you a clear understanding of implementation of your application.
+            <p
+              className={classNames(styles.text_color, {
+                [styles.text_color_light]: isDarkMode,
+              })}
+            >
+              We will provide an hourly based working schedule to give you a
+              clear understanding of implementation of your application.
             </p>
           </div>
           <div className={styles.animation__text_tree}>
-            <p style={{ color: textColor }}>
-              Our management team will be in daily contact providing information
-              related to the developments of your project.
+            <p
+              className={classNames(styles.text_color, {
+                [styles.text_color_light]: isDarkMode,
+              })}
+            >
+              We will be in daily contact with you, to provide information
+              related to the developments of the project.
             </p>
           </div>
         </div>

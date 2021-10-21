@@ -10,10 +10,10 @@ import {
   HowWeWork,
   JoinOurTeam,
   OurPartners,
-  TechnologyStack,
-  Testimonials,
+  // Testimonials,
 } from 'containers/Home';
 import { JoinForm } from 'containers/Apply';
+import { ErrorPage } from 'containers/Error';
 
 export const mainSections = [
   {
@@ -46,16 +46,12 @@ export const mainSections = [
   },
   {
     id: shortid.generate(),
-    component: TechnologyStack,
-  },
-  {
-    id: shortid.generate(),
     component: OurPartners,
   },
-  {
-    id: shortid.generate(),
-    component: Testimonials,
-  },
+  // {
+  //   id: shortid.generate(),
+  //   component: Testimonials,
+  // },
   {
     id: shortid.generate(),
     component: Map,
@@ -72,6 +68,6 @@ export const applySections = [
 export const errorSection = [
   {
     id: shortid.generate(),
-    component: Main,
+    component: ErrorPage,
   },
 ];

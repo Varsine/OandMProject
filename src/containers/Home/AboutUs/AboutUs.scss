@@ -1,3 +1,18 @@
+.height_reponce {
+  @include breakpoint(desktop) {
+    height: auto !important;
+    margin-bottom: 80px !important;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 50px !important;
+  }
+
+  @include breakpoint(tablet-m) {
+    margin-bottom: 0 !important;
+  }
+}
+
 .wrapper {
   @extend %flex-center;
 
@@ -7,31 +22,35 @@
 }
 
 .info {
-  @extend %flex-align;
-  user-select: none;
-  max-width: 768px;
+  opacity: 1;
   width: 100%;
+  z-index: -5;
   padding: 42px;
-  margin-right: 46px;
-  text-align: center;
-  background: $field-bg;
   overflow: hidden;
+  max-width: 768px;
+  user-select: none;
+  text-align: center;
+  margin-right: 46px;
+  @extend %flex-align;
   border-radius: 20px;
+  transform: scale(1);
+  transition: all 0.5s;
+  background: $field-bg;
   flex-direction: column;
   backdrop-filter: blur(20px);
-  transition: all 0.5s;
-  transform: scale(1);
-  opacity: 1;
-  z-index: -5;
 
   @include breakpoint(desktop) {
-    margin: 32px 0 80px;
-    padding: 36px 28px;
+    margin: 0 auto;
+  }
+
+  @include breakpoint(tablet-l) {
+    width: 95%;
   }
 
   @include breakpoint(tablet-m) {
-    margin: 24px 0 40px;
+    width: 100%;
     padding: 35px 16px;
+    margin: 24px 0 40px;
   }
 
   &_show {
@@ -84,20 +103,41 @@
   @extend %flex-center;
   position: relative;
   user-select: none;
-  height: 647px;
-  max-width: 740px;
+  height: 70%;
+  max-width: 45%;
   width: 100%;
-  margin-top: 32px;
 
-  @media only screen and (max-width: 1400px) {
-    height: 480px;
-    max-width: 559px;
+  @media (min-width: 1024px) and(min-height:670px) {
+    height: 50vh;
+    max-width: 740px !important;
+  }
+
+  @media (min-width: 1025px) and(min-height:800px) {
+    height: 450px !important;
+  }
+
+  @media (min-width: 1600px) and(min-height:1080px) {
+    height: 647px !important;
+  }
+
+  @include breakpoint(desktop) {
+    height: 489px;
+    max-width: 73%;
+    margin: 16px 0 24px;
+  }
+
+  @include breakpoint(tablet) {
+    max-width: 90%;
   }
 
   @include breakpoint(tablet-m) {
     margin-top: 24px;
-    max-width: 288px;
+    max-width: 80%;
     height: 252px;
+  }
+
+  @include breakpoint(mobile) {
+    max-width: 90%;
   }
 }
 
@@ -121,17 +161,37 @@
     }
 
     &_image {
-      width: 204px;
-      height: 204px;
+      width: 16vh;
+      height: 16vh;
 
-      @media only screen and (max-width: 1600px) {
-        width: calc(100vw / 8);
-        height: calc(100vw / 8);
+      @media (min-width: 1025px) and(min-height:670px) {
+        width: 15vh;
+        height: 15vh;
+      }
+
+      @media (max-width: 1300px) and(min-height:800px) {
+        width: 120px;
+        height: 120px;
+      }
+
+      @media (max-width: 1440px) and(max-height:800px) {
+        width: 16vh;
+        height: 16vh;
+      }
+
+      @media (min-width: 1440px) and(min-height:800px) {
+        width: 150px;
+        height: 150px;
+      }
+
+      @media (min-width: 1600px) and(min-height:1080px) {
+        width: 205px;
+        height: 205px;
       }
 
       @include breakpoint(desktop) {
-        width: 154px;
-        height: 154px;
+        width: 155px;
+        height: 155px;
       }
 
       @include breakpoint(tablet-m) {

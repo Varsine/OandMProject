@@ -22,13 +22,21 @@ const HomeContainer = () => {
     }
   }, [isLaptop]);
 
+  const changeActiveStep = (section, destination) => {
+    dispatch(changeIndex(destination.index + 1));
+  };
+
   const renderFullPages = mainSections.map((fullPage) => (
     <fullPage.component key={fullPage.id} />
   ));
 
-  const changeActiveStep = (section, destination) => {
-    dispatch(changeIndex(destination.index + 1));
-  };
+  const renderFullPageContent = ({ fullpageApi }) => (
+    <ReactFullPage.Wrapper>
+      <FullPageLayout fullpageApi={fullpageApi}>
+        {renderFullPages}
+      </FullPageLayout>
+    </ReactFullPage.Wrapper>
+  );
 
   return (
     <ReactFullPage
@@ -38,13 +46,7 @@ const HomeContainer = () => {
       onLeave={changeActiveStep}
       fitToSection={false}
       fixedElements="#canvas"
-      render={({ fullpageApi }) => (
-        <ReactFullPage.Wrapper>
-          <FullPageLayout fullpageApi={fullpageApi}>
-            {renderFullPages}
-          </FullPageLayout>
-        </ReactFullPage.Wrapper>
-      )}
+      render={renderFullPageContent}
     />
   );
 };
