@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 
 import { useWindowSize } from 'hooks/index';
 import { ourPartnersCards } from 'utils/index';
-import { SliderArrows } from 'components/index';
+import { SliderArrows, NextLink } from 'components/index';
 
 import Slide from './Slide';
 import styles from './OurPartners.scss';
@@ -14,11 +14,15 @@ const OurPartners = () => {
 
   const renderSliderList = useMemo(
     () =>
-      ourPartnersCards
-        .slice(isLaptop ? 1 : 0, ourPartnersCards.length)
-        .map((item, index) => (
+      ourPartnersCards.map((item, index) =>
+        item.href ? (
+          <NextLink target="_blanck" key={item.id} to={item.href}>
+            <Slide slide={item} isActive={index === activeIndex} />
+          </NextLink>
+        ) : (
           <Slide key={item.id} slide={item} isActive={index === activeIndex} />
-        )),
+        ),
+      ),
     [ourPartnersCards, activeIndex, isLaptop],
   );
 
