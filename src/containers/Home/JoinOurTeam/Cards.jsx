@@ -8,6 +8,8 @@ import SwiperCore, { Autoplay, EffectCube, Pagination } from 'swiper';
 import { modeSelector } from 'slices/mainSlice';
 import { swipeData } from 'utils';
 
+import styles from './JoinOurTeam.scss';
+
 import './styles.css';
 
 const Cards = () => {
@@ -23,7 +25,6 @@ const Cards = () => {
       }),
     [isDarkMode],
   );
-
   const renderSwipe = swipeData.map((item) => (
     <SwiperSlide key={shortid.generate()}>
       <div className="swiperr_image" />
@@ -32,22 +33,24 @@ const Cards = () => {
   ));
 
   return (
-    <Swiper
-      loop
-      grabCursor
-      effect="cube"
-      cubeEffect={{
-        shadow: false,
-        slideShadows: false,
-      }}
-      pagination={false}
-      autoplay={{
-        delay: 1500,
-        disableOnInteraction: false,
-      }}
-    >
-      {renderSwipe}
-    </Swiper>
+    <div id="app" className={styles.wrapper__swiper}>
+      <Swiper
+        loop
+        effect="cube"
+        cubeEffect={{
+          shadow: false,
+          slideShadows: false,
+        }}
+        pagination={false}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+      >
+        {renderSwipe}
+      </Swiper>
+    </div>
   );
 };
 

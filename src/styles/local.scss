@@ -114,8 +114,9 @@ table {
 }
 
 * {
-  outline: none !important;
   box-sizing: border-box;
+  outline: none !important;
+  cursor: url('/images/Mouse.png'), auto !important;
 }
 
 input {
@@ -152,5 +153,5 @@ body {
   padding: 0;
   background: $bg-color;
   color: $text-color;
-  cursor: url('/images/Mouse.png'), auto;
+  cursor: url('/images/Mouse.png'), auto !important;
 }

@@ -30,9 +30,7 @@ const JoinOurTeam = () => {
             Join our team
           </NextLink>
         </div>
-        <div className={styles.wrapper__swiper} id="app">
-          <SwiperCards />
-        </div>
+        <SwiperCards />
       </div>
     </section>
   );
