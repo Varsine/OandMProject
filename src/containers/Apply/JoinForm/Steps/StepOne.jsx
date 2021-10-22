@@ -1,50 +1,25 @@
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
-import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 
 import Input from 'components/FormikFields/Input';
+import Button from 'components/Button';
 import Select from 'components/FormikFields/Select';
+
+import {
+  dropdownOptions,
+  stepOneInitialValues,
+  stepOneValidationSchema,
+} from './JoinFormConstants';
 
 import styles from '../Apply.scss';
 
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
 const StepOne = ({ editActiveStep, setApplicationForm }) => {
-  const initialValues = {
-    jobType: 'Back-End Developer',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-  };
-
-  const validationSchema = Yup.object({
-    jobType: Yup.string().required('* required'),
-    firstName: Yup.string().required('* required'),
-    lastName: Yup.string().required('* required'),
-    email: Yup.string().email('Invalid email format').required('* required'),
-    phone: Yup.string()
-      .required('* required')
-      .matches(phoneRegExp, 'Phone number is not valid'),
-  });
-
-  const dropdownOptions = [
-    { key: 'Back-End Developer', value: 'Back-End Developer' },
-    { key: 'Front-End Developer', value: 'Front-End Developer' },
-    { key: 'Product Designer', value: 'Product Designer' },
-    { key: 'QA Tester', value: 'QA Tester' },
-    { key: 'UX Designer', value: 'UX Designer' },
-    { key: '3D Animator', value: '3D Animator' },
-    { key: 'Graphic Designer', value: 'Graphic Designer' },
-  ];
-
   return (
     <>
       <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
+        initialValues={stepOneInitialValues}
+        validationSchema={stepOneValidationSchema}
         onSubmit={(values) => {
           setApplicationForm(values);
           editActiveStep(2);
@@ -83,9 +58,9 @@ const StepOne = ({ editActiveStep, setApplicationForm }) => {
               type="tel"
               component={Input}
             />
-            <button className={styles.next} type="submit">
+            <Button className={styles.next} type="submit">
               Next
-            </button>
+            </Button>
           </Form>
         )}
       </Formik>

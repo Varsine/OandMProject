@@ -32,7 +32,6 @@ const JoinForm = () => {
 
   return (
     <section className="section">
-      {/* <div className="canvas__working" /> */}
       <div className={styles.container}>
         <div
           style={{ marginTop: activeIndex === 3 ? 100 : 0 }}

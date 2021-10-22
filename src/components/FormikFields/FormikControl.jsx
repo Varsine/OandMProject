@@ -4,7 +4,7 @@ import { Field } from 'formik';
 
 import Input from './Input';
 import Select from './Select';
-// placeholder, type, label, name,
+
 const FormikControl = ({ control, rest }) => {
   switch (control) {
     case 'input':
@@ -21,18 +21,10 @@ const FormikControl = ({ control, rest }) => {
 FormikControl.propTypes = {
   rest: PropTypes.any,
   control: PropTypes.string,
-  // placeholder: PropTypes.string,
-  // type: PropTypes.string,
-  // label: PropTypes.string,
-  // name: PropTypes.string,
 };
 
 FormikControl.defaultProps = {
   rest: {},
   control: '',
-  // placeholder: '',
-  // type: '',
-  // label: '',
-  // name: '',
 };
 export default FormikControl;
