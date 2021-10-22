@@ -57,7 +57,7 @@
 
     &__item {
       display: flex;
-      cursor: pointer;
+      cursor: url('/images/Mouse.png'), auto;
 
       &:nth-child(2) {
         margin: 56px 0;

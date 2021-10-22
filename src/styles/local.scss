@@ -117,7 +117,15 @@ table {
   outline: none !important;
   box-sizing: border-box;
   outline: none !important;
-  cursor: url('/images/Mouse.png'), auto !important;
+}
+
+label,
+input {
+  cursor: url('/images/Mouse.png'), auto;
+
+  &:focus {
+    cursor: url('/images/Mouse2.png'), auto;
+  }
 }
 
 input {
@@ -131,7 +139,7 @@ input {
 button,
 a {
   font-family: 'Roboto', sans-serif;
-  cursor: pointer;
+  cursor: url('/images/Mouse.png'), auto;
   text-decoration: none !important;
   border: 0;
   display: inline-block;
@@ -143,7 +151,7 @@ img {
 }
 
 svg {
-  cursor: pointer;
+  cursor: url('/images/Mouse.png'), auto;
   user-select: none;
 }
 
@@ -154,5 +162,5 @@ body {
   padding: 0;
   background: $bg-color;
   color: $text-color;
-  cursor: url('/images/Mouse.png'), auto !important;
+  cursor: url('/images/Mouse.png'), auto;
 }
