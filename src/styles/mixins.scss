@@ -25,3 +25,43 @@
     }
   }
 }
+
+@mixin bounce($zero, $one, $two, $three, $four) {
+  animation: bounce 2.5s alternate linear;
+  margin-top: $one;
+
+  @keyframes bounce {
+    0% {
+      margin-top: $zero;
+      animation-timing-function: ease-in;
+    }
+    15% {
+      margin-top: $one;
+      animation-timing-function: ease-out;
+    }
+    30% {
+      margin-top: $two;
+      animation-timing-function: ease-in;
+    }
+    45% {
+      margin-top: $one;
+      animation-timing-function: ease-out;
+    }
+    60% {
+      margin-top: $three;
+      animation-timing-function: ease-in;
+    }
+    75% {
+      margin-top: $one;
+      animation-timing-function: ease-out;
+    }
+    90% {
+      margin-top: $four;
+      animation-timing-function: ease-in;
+    }
+    100% {
+      margin-top: $one;
+      animation-timing-function: ease-out;
+    }
+  }
+}

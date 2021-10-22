@@ -1,6 +1,7 @@
 export const THEMES = {
   dark: {
     mapBg: '#000',
+    ropeBg: 'rgba(255, 255, 255, 0.08)',
     bgColor: '#1d1d1d',
     fieldBg: ' rgba(207, 229, 255, 0.6)',
     headerBg: 'rgba(0, 0, 0, 0.6)',
@@ -12,8 +13,9 @@ export const THEMES = {
   },
   light: {
     mapBg: '#e9f1f9',
+    ropeBg: 'rgba(4, 4, 2, 0.08)',
     bgColor: '#f1f2f2',
-    fieldBg: ' rgba(236, 233, 255, 0.6)',
+    fieldBg: ' rgba(236, 233, 255, 0.5)',
     headerBg: 'rgba(234, 241, 250, 0.6)',
     textColor: '#1d1d1d',
     btnDisabdled: '#ECE9FF',
