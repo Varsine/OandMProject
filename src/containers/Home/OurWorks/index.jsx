@@ -50,11 +50,11 @@ const OurWorks = () => {
             to={item.hrefLink}
             className={isDarkMode ? styles.next_dark_link : styles.next_link}
           >
-            {item.text}
+            {activeIndex === item.htmlFor && item.text}
           </NextLink>
         </label>
       )),
-    [isDarkMode],
+    [isDarkMode, activeIndex],
   );
 
   const renderTexts = useMemo(() => {

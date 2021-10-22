@@ -32,6 +32,17 @@ const Cards = () => {
     </SwiperSlide>
   ));
 
+  // const swipeSlideRenderer = () => {
+  //   return swiperSlides.map(({ id, text }) => {
+  //     return (
+  //       <SwiperSlide key={id}>
+  //         <div className="swiper_image" />
+  //         <p className="text">{text}</p>
+  //       </SwiperSlide>
+  //     );
+  //   });
+  // };
+
   return (
     <div id="app" className={styles.wrapper__swiper}>
       <Swiper

@@ -17,9 +17,7 @@ import { useDarkMode } from 'hooks/index';
 import ErrorPage from './404';
 
 const MyApp = ({ Component, pageProps }) => {
-  const onMouseAnimationHandler = () => {
-    console.log('QQQQQQQQQQQQQQQ');
-  };
+  const onMouseAnimationHandler = () => {};
   useEffect(() => {
     Router.events.on('routeChangeComplete', () => {
       window.scroll({

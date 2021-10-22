@@ -63,11 +63,10 @@
     width: calc(33vw - 66px);
     height: calc((33vw - 66px) / 4 * 3);
     padding: 16px;
-    background-color: transparent;
     border-radius: 20px;
     @extend %flex-center;
-    transition: background-color 0.3s;
     margin: auto;
+    background-color: transparent !important;
 
     @include breakpoint(desktop) {
       width: 300px;

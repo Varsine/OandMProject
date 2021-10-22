@@ -12,12 +12,12 @@ const Button = ({
   ...rest
 }) => (
   <button
-    {...rest}
     type="button"
     onClick={onClick}
     disabled={disabled}
     className={className}
     aria-label={ariaLabel}
+    {...rest}
   >
     {children}
   </button>

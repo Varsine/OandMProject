@@ -74,8 +74,8 @@
 
       @include breakpoint(tablet-m) {
         p {
-          display: none;
-          animation: disNone 0.7s linear !important;
+          animation: disNone 0.4s;
+          animation-fill-mode: forwards;
         }
       }
     }
@@ -197,6 +197,10 @@
         width: 100%;
       }
 
+      @include breakpoint(tablet-m) {
+        height: 280px;
+      }
+
       @media (max-height: 650px) {
         height: 230px;
       }
@@ -208,11 +212,16 @@
           animation: moveToLeft 2s linear;
         }
 
-        @media (max-height: 650px) {
-          height: 230px !important;
+        @include breakpoint(tablet-m) {
+          height: 280px;
         }
+
         @media (max-height: 750px) {
           height: 280px;
+        }
+
+        @media (max-height: 650px) {
+          height: 230px !important;
         }
       }
 
@@ -337,7 +346,6 @@
 
 @keyframes disBlock {
   0% {
-    // display: block !important;
     font-size: 1px;
   }
 
@@ -353,5 +361,6 @@
 
   100% {
     font-size: 0px;
+    opacity: 0;
   }
 }
