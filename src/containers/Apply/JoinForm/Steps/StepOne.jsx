@@ -25,7 +25,7 @@ const StepOne = ({ editActiveStep, setApplicationForm }) => {
     firstName: Yup.string().required('* required'),
     lastName: Yup.string().required('* required'),
     email: Yup.string().email('Invalid email format').required('* required'),
-    phoneNumber: Yup.string()
+    phone: Yup.string()
       .required('* required')
       .matches(phoneRegExp, 'Phone number is not valid'),
   });
@@ -51,7 +51,7 @@ const StepOne = ({ editActiveStep, setApplicationForm }) => {
         }}
       >
         {() => (
-          <Form>
+          <Form autoComplete="off">
             <Field
               name="jobType"
               label="Job type"
@@ -77,7 +77,7 @@ const StepOne = ({ editActiveStep, setApplicationForm }) => {
               component={Input}
             />
             <Field
-              name="phoneNumber"
+              name="phone"
               label="Phone number"
               placeholder="Phone number"
               type="tel"

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import axios from 'axios';
 
 import { Button } from 'components/index';
 import Success from 'containers/Apply/JoinForm/Steps/Success';
@@ -18,16 +19,15 @@ const JoinForm = () => {
   };
 
   const sendApplicationHandler = async (values) => {
-    const formData = new FormData();
-    formData.append('jobType', values.jobType);
-    formData.append('firstName', values.firstName);
-    formData.append('lastName', values.lastName);
-    formData.append('email', values.email);
-    formData.append('phone', values.phone);
-    formData.append('resume', values.resume);
-    formData.append('coverLetter', values.coverLetter);
-    formData.append('githubLink', values.githubLink);
-    formData.append('linkedInLink', values.linkedInLink);
+    const formData = Object.keys(values).reduce((data, key) => {
+      data.append(key, values[key]);
+      return data;
+    }, new FormData());
+    formData.append('otherFile', undefined);
+    await axios.post(
+      'https://shelllogix-mail.herokuapp.com/messages',
+      formData,
+    );
   };
 
   return (

@@ -42,7 +42,7 @@ const StepTwo = ({
       }}
     >
       {() => (
-        <Form>
+        <Form autoComplete="off">
           <Field
             name="resume"
             label="Attach resume"
