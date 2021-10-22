@@ -3,12 +3,14 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 import { images } from 'utils/index';
+import { useWindowSize } from 'hooks/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './AboutUs.scss';
 import AboutUsBlock from './AboutUsBlock';
 
 const AboutUs = () => {
+  const { isDesktop } = useWindowSize;
   const activeIndex = useSelector(activeIndexSelector);
   const isOpen = activeIndex === 2;
   const [isShow, setIsShow] = useState(false);
@@ -40,7 +42,7 @@ const AboutUs = () => {
         <div className={styles.wrapper__content}>
           <h1
             className={classNames(styles.wrapper__content__title, {
-              [styles.wrapper__content__title_show]: isShow,
+              [styles.wrapper__content__title_show]: isShow || !isDesktop,
             })}
           >
             <span>About Us</span>

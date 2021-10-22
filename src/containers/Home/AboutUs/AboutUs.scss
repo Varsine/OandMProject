@@ -16,8 +16,9 @@
     left: 50px;
 
     @include breakpoint(desktop) {
-      top: 16px;
+      top: 0;
       right: 16px;
+      left: 16px;
     }
 
     &__title {
@@ -33,16 +34,17 @@
           clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
           transform: translateY(0);
           animation: titleUnMountAnima 3s ease;
+          text-align: center;
 
           @include breakpoint(desktop) {
             animation: none;
             clip-path: none;
             transform: none;
+            width: 100%;
           }
 
           &:last-child {
             @extend %open-sans-16;
-            text-align: center;
           }
         }
       }
