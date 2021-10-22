@@ -8,6 +8,8 @@ import SwiperCore, { Autoplay, EffectCube, Pagination } from 'swiper';
 import { modeSelector } from 'slices/mainSlice';
 import { swipeData } from 'utils';
 
+// import { swiperSlides } from './constants';
+
 import './styles.css';
 
 const Cards = () => {
@@ -30,6 +32,17 @@ const Cards = () => {
       <p className={cube}>{item.text}</p>
     </SwiperSlide>
   ));
+
+  // const swipeSlideRenderer = () => {
+  //   return swiperSlides.map(({ id, text }) => {
+  //     return (
+  //       <SwiperSlide key={id}>
+  //         <div className="swiper_image" />
+  //         <p className="text">{text}</p>
+  //       </SwiperSlide>
+  //     );
+  //   });
+  // };
 
   return (
     <Swiper

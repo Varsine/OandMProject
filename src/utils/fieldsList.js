@@ -2,7 +2,8 @@ import shortid from 'shortid';
 
 import inputValidation from './inputValidation';
 
-const { firstName, email, phone, resume, github, linkedin } = inputValidation;
+const { firstName, email, phone, resume, github, linkedin, lastName } =
+  inputValidation;
 
 export const dropdownList = [
   {
@@ -58,7 +59,7 @@ export const fieldsList = [
     name: 'lastName',
     label: 'Last name',
     inputType: 'text',
-    validation: firstName,
+    validation: lastName,
     placeholder: 'Last name',
   },
   {

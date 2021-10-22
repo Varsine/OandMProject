@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-// import { Controller, useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // import FileUploader from 'react-firebase-file-uploader';

@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-import { IS_SERVER } from 'constants/index';
+// import { IS_SERVER } from 'constants/index';
 
 const HelmetLayout = ({ children, title, metaDescription }) => (
   <>
@@ -12,7 +12,7 @@ const HelmetLayout = ({ children, title, metaDescription }) => (
       {/* {!IS_SERVER && <script src="/js/script.js" />} */}
     </Head>
     {children}
-    {!IS_SERVER && <canvas id="canvas" />}
+    {/* {!IS_SERVER && <canvas id="canvas" />} */}
   </>
 );
 
