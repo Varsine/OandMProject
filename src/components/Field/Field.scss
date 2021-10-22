@@ -42,7 +42,7 @@
   &__header {
     width: 100%;
     height: 50px;
-    cursor: pointer;
+    cursor: url('/images/Mouse.png'), auto;
     padding: 0 12px 0 24px;
     position: relative;
     background: $field-bg;
@@ -76,7 +76,7 @@
     border-radius: 0 0 32px 32px;
 
     &_item {
-      cursor: pointer;
+      cursor: url('/images/Mouse.png'), auto;
       padding: 14px 24px;
       font-weight: normal;
       @extend %open-sans-16;
@@ -99,7 +99,7 @@
 .file {
   width: 100%;
   height: 50px;
-  cursor: pointer;
+  cursor: url('/images/Mouse.png'), auto;
   padding: 0 24px;
   background: $field-bg;
   border-radius: 50px;

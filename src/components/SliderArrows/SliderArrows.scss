@@ -11,7 +11,7 @@
   justify-content: space-between;
 
   &__slide__prev_arrows {
-    cursor: pointer;
+    cursor: url('/images/Mouse.png'), auto;
     background-color: transparent;
 
     &__left_content {
@@ -19,7 +19,7 @@
       height: 2px;
       margin: 9px 0;
       display: flex;
-      cursor: pointer;
+      cursor: url('/images/Mouse.png'), auto;
       position: relative;
       align-items: center;
       background: $text-color;
@@ -52,7 +52,7 @@
   }
 
   &__slide__next_arrows {
-    cursor: pointer;
+    cursor: url('/images/Mouse.png'), auto;
     background-color: transparent;
 
     &__right_content {
@@ -60,7 +60,7 @@
       height: 2px;
       margin: 9px 0;
       display: flex;
-      cursor: pointer;
+      cursor: url('/images/Mouse.png'), auto;
       position: relative;
       background: $text-color;
       align-items: center;

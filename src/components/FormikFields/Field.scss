@@ -26,7 +26,7 @@
   &__header {
     width: 100%;
     height: 50px;
-    cursor: pointer;
+    cursor: url('/images/Mouse.png'), auto;
     padding: 0 12px 0 24px;
     position: relative;
     background: $field-bg;
@@ -65,7 +65,7 @@
     top: 100%;
 
     &_item {
-      cursor: pointer;
+      cursor: url('/images/Mouse.png'), auto;
       padding: 14px 24px;
       font-weight: normal;
       @extend %open-sans-16;

@@ -17,6 +17,14 @@ import { useDarkMode } from 'hooks/index';
 import ErrorPage from './404';
 
 const MyApp = ({ Component, pageProps }) => {
+  const handleMouseUp = () => {
+    window.document.body.classList.remove('mouse_animation');
+  };
+
+  const handleMouseDown = () => {
+    window.document.body.classList.add('mouse_animation');
+  };
+
   useEffect(() => {
     Router.events.on('routeChangeComplete', () => {
       window.scroll({
@@ -25,6 +33,19 @@ const MyApp = ({ Component, pageProps }) => {
         behavior: 'smooth',
       });
     });
+
+    window.addEventListener('mousedown', () => {
+      window.document.body.style.cursor = "url('/images/Mouse2.png'), auto";
+    });
+
+    window.addEventListener('mouseup', () => {
+      window.document.body.style.cursor = "url('/images/Mouse.png'), auto";
+    });
+
+    return () => {
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
   }, []);
 
   useDarkMode();

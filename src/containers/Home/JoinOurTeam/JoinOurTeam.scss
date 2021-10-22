@@ -90,7 +90,7 @@
         background: $liner-blue-hover;
       }
 
-      @include breakpoint(mobile) {
+      @include breakpoint(tablet-m) {
         max-width: 100%;
       }
     }
@@ -102,8 +102,9 @@
     display: flex;
     max-width: 330px;
     margin-left: 5px;
-    justify-content: flex-end;
     margin-right: 10px;
+    justify-content: flex-end;
+    animation: cubeAnimationRotate 2.8s infinite !important;
 
     @include breakpoint(tablet) {
       height: 230px;
@@ -150,5 +151,41 @@
   }
   100% {
     opacity: 0.51;
+  }
+}
+
+@keyframes cubeAnimationRotate {
+  0% {
+    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
+  }
+  10% {
+    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
+  }
+  20% {
+    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
+  }
+  30% {
+    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
+  }
+  40% {
+    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
+  }
+  50% {
+    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
+  }
+  60% {
+    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
+  }
+  70% {
+    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
+  }
+  80% {
+    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
+  }
+  90% {
+    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
+  }
+  100% {
+    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
   }
 }
