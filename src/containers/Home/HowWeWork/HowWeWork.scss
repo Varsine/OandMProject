@@ -5,6 +5,10 @@
     height: auto !important;
     margin: 50px auto 150px !important;
   }
+
+  @include breakpoint(tablet-m) {
+    margin: 0 auto 0 !important;
+  }
 }
 
 .text_color {
@@ -30,6 +34,7 @@
   }
 
   @include breakpoint(tablet-m) {
+    padding-top: 0;
     justify-content: start;
   }
 }
