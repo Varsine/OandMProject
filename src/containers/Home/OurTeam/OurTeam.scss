@@ -16,6 +16,10 @@
   }
 }
 
+.arrow_style {
+  height: 43vh;
+}
+
 .wrapper {
   @extend %flex-align;
   flex-direction: column;
@@ -32,7 +36,7 @@
 .title {
   @extend %open-sans-48;
   text-decoration: underline;
-  padding: 10px 0;
+  padding: 32px 0 10px;
 
   @include breakpoint(desktop) {
     margin-top: 5vh;
@@ -212,40 +216,41 @@
     }
   }
 
-  &__controls {
-    left: 0;
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-    @extend %flex-center;
+  // &__controls {
+  //   left: 0;
+  //   width: 100%;
+  //   bottom: 5vh;
+  //   position: absolute;
+  //   @extend %flex-center;
 
-    @include breakpoint(desktop) {
-      position: relative;
-      margin-top: 16px;
-    }
+  //   @include breakpoint(desktop) {
+  //     position: relative;
+  //     margin-top: 16px;
+  //   }
 
-    &_item {
-      height: 48px;
-      padding: 0;
-      background: unset;
+  //   &_item {
+  //     height: 48px;
+  //     padding: 0;
+  //     background: unset;
 
-      &:disabled {
-        opacity: 0.35;
-        pointer-events: none;
+  //     &:disabled {
+  //       opacity: 0.35;
+  //       pointer-events: none;
 
-        svg path {
-          stroke: #a1a1a1;
-        }
-      }
-    }
+  //       svg path {
+  //         stroke: #a1a1a1;
+  //       }
+  //     }
+  //   }
 
-    &_left {
-      transform: rotate(180deg);
-    }
-  }
+  //   &_left {
+  //     transform: rotate(180deg);
+  //   }
+  // }
 
   &__arrows {
     @extend %flex-center;
+    position: relative;
 
     &_item {
       height: 48px;

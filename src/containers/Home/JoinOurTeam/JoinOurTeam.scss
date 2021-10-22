@@ -103,6 +103,7 @@
     max-width: 330px;
     margin-left: 5px;
     justify-content: flex-end;
+    margin-right: 10px;
 
     @include breakpoint(tablet) {
       height: 230px;

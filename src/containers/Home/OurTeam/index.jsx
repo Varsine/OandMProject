@@ -2,10 +2,10 @@ import React, { useState, useMemo } from 'react';
 import Carousel from 'react-multi-carousel';
 
 import { teamCards } from 'utils/index';
+import { SliderArrows } from 'components/index';
 
 import Slide from './Slide';
 import styles from './OurTeam.scss';
-import ButtonGroup from './ButtonGroup';
 
 const OurTeam = () => {
   const [activeIndex, setActiveIndex] = useState(2);
@@ -39,7 +39,7 @@ const OurTeam = () => {
     swipeable: false,
     sliderClass: styles.carousel__container,
     containerClass: styles.carousel__wrapper,
-    customButtonGroup: <ButtonGroup />,
+    customButtonGroup: <SliderArrows arrowStyles={styles.arrow_style} />,
     beforeChange: (nextSlide) => {
       setActiveIndex(nextSlide + 1);
     },

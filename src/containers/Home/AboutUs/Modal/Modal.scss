@@ -29,16 +29,14 @@
 
   @include breakpoint(desktop) {
     margin: 0 auto;
-  }
-
-  @include breakpoint(tablet-l) {
-    width: 95%;
+    max-width: 70vw;
   }
 
   @include breakpoint(tablet-m) {
+    max-width: 100%;
     width: 100%;
     padding: 35px 16px;
-    margin: 24px 0 40px;
+    margin: 24px 16px 40px;
   }
 
   &__title {

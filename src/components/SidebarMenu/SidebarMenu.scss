@@ -23,9 +23,21 @@
     align-items: center;
     margin-bottom: 16px;
 
+    svg {
+      path {
+        fill: $iconColor;
+      }
+    }
+
     &_active {
       background: $liner-blue;
       border-radius: 50%;
+
+      svg {
+        path {
+          fill: $white;
+        }
+      }
     }
   }
 

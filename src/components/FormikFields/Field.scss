@@ -1,0 +1,102 @@
+.text {
+  width: 100%;
+  min-height: 105px;
+
+  &__change {
+    width: 100%;
+    color: $text-color;
+    height: 50px;
+    border: none;
+    padding: 0 24px;
+    position: relative;
+    background: $field-bg;
+    border-radius: 50px;
+    @extend %open-sans-16;
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+}
+
+.dropdown {
+  min-height: 105px;
+  user-select: none;
+
+  &__header {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    padding: 0 12px 0 24px;
+    position: relative;
+    background: $field-bg;
+    font-weight: normal;
+    border-radius: 50px;
+    @extend %open-sans-16;
+    @extend %flex-between;
+
+    &_active {
+      background: $field-bg-active;
+      border-radius: 32px 32px 0 0;
+    }
+
+    &_icon {
+      path {
+        stroke: #eaf1fa;
+      }
+    }
+
+    svg {
+      transition: all 0.3s;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__content {
+    width: 100%;
+    z-index: 10;
+    position: absolute;
+    max-width: 594px;
+    background: $field-bg-active;
+    border-radius: 0 0 32px 32px;
+    top: 100%;
+
+    &_item {
+      cursor: pointer;
+      padding: 14px 24px;
+      font-weight: normal;
+      @extend %open-sans-16;
+
+      &:hover {
+        background: $white-10;
+      }
+
+      &_active {
+        background: $white-10;
+      }
+
+      &:last-child {
+        border-radius: 0 0 32px 32px;
+      }
+    }
+  }
+}
+
+.label {
+  display: block;
+  font-weight: normal;
+  margin-bottom: 8px;
+  @extend %open-sans-18;
+}
+
+.message {
+  background: $liner-red;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: right;
+  font-weight: 600;
+  @extend %open-sans-16;
+}

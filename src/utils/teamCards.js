@@ -17,13 +17,6 @@ const teamCard = [
   },
   {
     id: shortid.generate(),
-    image: '/images/team/Martin.png',
-    imageLight: '/images/team/Martin.png',
-    title: 'Martin Martirosyan',
-    subtitle: 'FRONT-END DEVELOPER',
-  },
-  {
-    id: shortid.generate(),
     image: '/images/team/Lyudvig.png',
     imageLight: '/images/team/LyudvigLight.png',
     title: 'Lyudvig Grigoryan',
@@ -45,13 +38,6 @@ const teamCard = [
   },
   {
     id: shortid.generate(),
-    image: '/images/team/Martin.png',
-    imageLight: '/images/team/Martin.png',
-    title: 'Martin Martirosyan',
-    subtitle: 'FRONT-END DEVELOPER',
-  },
-  {
-    id: shortid.generate(),
     image: '/images/team/Lyudvig.png',
     imageLight: '/images/team/LyudvigLight.png',
     title: 'Lyudvig Grigoryan',
@@ -70,13 +56,6 @@ const teamCard = [
     imageLight: '/images/team/KaroLight.png',
     title: 'Karo Zakaryan',
     subtitle: 'FULL-STACK DEVELOPER',
-  },
-  {
-    id: shortid.generate(),
-    image: '/images/team/Martin.png',
-    imageLight: '/images/team/Martin.png',
-    title: 'Martin Martirosyan',
-    subtitle: 'FRONT-END DEVELOPER',
   },
   {
     id: shortid.generate(),
