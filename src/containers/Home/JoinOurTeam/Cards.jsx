@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
-import shortid from 'shortid';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, EffectCube, Pagination } from 'swiper';
 
+import { swipeData } from 'utils/index';
 import { modeSelector } from 'slices/mainSlice';
-import { swipeData } from 'utils';
 
 import styles from './JoinOurTeam.scss';
 
@@ -25,23 +24,12 @@ const Cards = () => {
       }),
     [isDarkMode],
   );
-  const renderSwipe = swipeData.map((item) => (
-    <SwiperSlide key={shortid.generate()}>
-      <div className="swiperr_image" />
-      <p className={cube}>{item.text}</p>
+  const renderSwipe = swipeData.map(({ id, text }) => (
+    <SwiperSlide key={id}>
+      <div className="swiper_image" />
+      <p className={cube}>{text}</p>
     </SwiperSlide>
   ));
-
-  // const swipeSlideRenderer = () => {
-  //   return swiperSlides.map(({ id, text }) => {
-  //     return (
-  //       <SwiperSlide key={id}>
-  //         <div className="swiper_image" />
-  //         <p className="text">{text}</p>
-  //       </SwiperSlide>
-  //     );
-  //   });
-  // };
 
   return (
     <div id="app" className={styles.wrapper__swiper}>
@@ -54,7 +42,7 @@ const Cards = () => {
         }}
         pagination={false}
         autoplay={{
-          delay: 1500,
+          delay: 1700,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}

@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
 
-import Input from './Input';
-import Select from './Select';
+import { FormikInput, FormikSelect } from 'components/index';
 
 const FormikControl = ({ control, rest }) => {
   switch (control) {
     case 'input':
-      return <Field name={rest.name} {...rest} component={Input} />;
+      return <Field name={rest.name} {...rest} component={FormikInput} />;
 
     case 'select':
-      return <Select {...rest} />;
+      return <FormikSelect {...rest} />;
 
     default:
       return null;
