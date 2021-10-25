@@ -2,158 +2,65 @@ import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { aboutUsInfoList } from 'utils/index';
-import { NextImage, Button } from 'components/index';
+import { images } from 'utils/index';
+import { useWindowSize } from 'hooks/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './AboutUs.scss';
+import AboutUsBlock from './AboutUsBlock';
 
 const AboutUs = () => {
+  const { isDesktop } = useWindowSize;
   const activeIndex = useSelector(activeIndexSelector);
   const isOpen = activeIndex === 2;
-  const imgAnimationClassList = [
-    styles.block_one,
-    styles.block_two,
-    styles.block_three,
-    styles.block_four,
-  ];
-  const images = {
-    imgOne: '/images/aboutUs/2.png',
-    imgTwo: '/images/aboutUs/3.png',
-    imgThree: '/images/aboutUs/4.png',
-    imgFour: '/images/aboutUs/5.png',
-  };
-
-  const [isAnimate] = useState(false);
-  const [infoId, setInfoId] = useState(0);
   const [isShow, setIsShow] = useState(false);
-  const [imgList, setImgList] = useState(images);
-  const [activeItemImg, setActiveItemImg] = useState('/images/aboutUs/1.png');
-  const [imgAnimationClasses, setImgAnimationClasses] = useState(
-    imgAnimationClassList,
-  );
-
-  const { title, subTitle, paragraph } = aboutUsInfoList[infoId];
-  const { imgOne, imgTwo, imgThree, imgFour } = imgList;
+  const [isTitle, setIsTitle] = useState(false);
 
   useEffect(() => {
-    setImgAnimationClasses(
-      imgAnimationClasses.slice(1).concat(imgAnimationClasses[0]),
-    );
+    if (isOpen) {
+      setIsTitle(true);
+    }
+
     setTimeout(() => {
-      setActiveItemImg('/images/aboutUs/1.png');
-      setInfoId(0);
-      setImgList(images);
-    }, 500);
+      if (isOpen) {
+        setIsShow(true);
+      } else {
+        setIsShow(false);
+        if (isDesktop) {
+          setIsTitle(false);
+        }
+      }
+    }, 1300);
   }, [isOpen]);
 
-  const editActiveItemHandler = () => {
-    setImgAnimationClasses(
-      imgAnimationClasses.slice(1).concat(imgAnimationClasses[0]),
-    );
-  };
-
-  const handlerImg = (currImg, idx) => {
-    const imgArray = Object.keys(imgList);
-    const keyImg = imgArray[idx];
-    const patt = /[1-9]/g;
-    const filterNum = currImg.match(patt);
-
-    setImgList((prevImgList) => ({ ...prevImgList, [keyImg]: activeItemImg }));
-    setIsShow(true);
-    setTimeout(() => {
-      setActiveItemImg(currImg);
-      setInfoId(filterNum);
-      setIsShow(false);
-    }, 500);
-  };
+  const renderAboutBlock = images.map(({ src, imgClass, classRope }, idx) => (
+    <AboutUsBlock
+      key={src}
+      src={src}
+      className={imgClass}
+      classRope={classRope}
+      currentIndex={idx}
+    />
+  ));
 
   return (
     <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
-        <div
-          className={classNames(styles.info, { [styles.info_show]: isShow })}
-        >
-          <h2 className={styles.info__title}>{title}</h2>
-          <h4 className={styles.info__subtitle}>{subTitle}</h4>
-          <p className={styles.info__text}>{paragraph}</p>
+      <div className={`container ${styles.wrapper}`}>
+        <div className={styles.wrapper__content}>
+          <h1
+            className={classNames(styles.wrapper__content__title, {
+              [styles.wrapper__content__title_show]: isTitle && !isDesktop,
+            })}
+          >
+            <span>About Us</span>
+            <span>
+              SHELLLOGIX LLC has been established in 2017 with a mission to
+              offer creative solutions in the field of.
+            </span>
+          </h1>
         </div>
-        <div className={styles.animation}>
-          <div className={styles.photos}>
-            <Button
-              onClick={editActiveItemHandler}
-              disabled={isAnimate}
-              className={classNames(
-                styles.photos__item,
-                imgAnimationClasses[0],
-              )}
-            >
-              <NextImage
-                loading="eager"
-                src={imgOne}
-                onClick={() => handlerImg(imgOne, 0)}
-                className={styles.photos__item_image}
-              />
-            </Button>
-            <Button
-              onClick={editActiveItemHandler}
-              disabled={isAnimate}
-              className={classNames(
-                styles.photos__item,
-                imgAnimationClasses[1],
-              )}
-            >
-              <NextImage
-                loading="eager"
-                src={imgTwo}
-                onClick={() => handlerImg(imgTwo, 1)}
-                className={styles.photos__item_image}
-              />
-            </Button>
-            <Button
-              onClick={editActiveItemHandler}
-              disabled={isAnimate}
-              className={classNames(
-                styles.photos__item,
-                imgAnimationClasses[2],
-              )}
-            >
-              <NextImage
-                loading="eager"
-                src={imgThree}
-                onClick={() => handlerImg(imgThree, 2)}
-                className={styles.photos__item_image}
-              />
-            </Button>
-            <Button
-              onClick={editActiveItemHandler}
-              disabled={isAnimate}
-              className={classNames(
-                styles.photos__item,
-                imgAnimationClasses[3],
-              )}
-            >
-              <NextImage
-                loading="eager"
-                src={imgFour}
-                onClick={() => handlerImg(imgFour, 3)}
-                className={styles.photos__item_image}
-              />
-            </Button>
-            <div
-              className={classNames(styles.photos__item, {
-                [styles.photos__item_show]: isShow,
-              })}
-            >
-              <NextImage
-                loading="eager"
-                src={activeItemImg}
-                className={styles.photos__item_image}
-              />
-            </div>
-          </div>
-        </div>
+        <div className={styles.wrapper__list}>{isShow && renderAboutBlock}</div>
       </div>
     </section>
   );

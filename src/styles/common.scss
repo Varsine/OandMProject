@@ -4,7 +4,6 @@
     height: 88vh;
 
     @include breakpoint(desktop) {
-      height: auto;
       padding: 0;
     }
 
