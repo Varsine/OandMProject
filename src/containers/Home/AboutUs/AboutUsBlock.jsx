@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 
 import { NextImage } from 'components/index';
 import { aboutUsInfoList } from 'utils/index';
+import { activeIndexSelector } from 'slices/mainSlice';
 
 import Modal from './Modal';
 import styles from './AboutUs.scss';
 
 const AboutUsBlock = ({ src, currentIndex, className, classRope }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const activeIndex = useSelector(activeIndexSelector);
+  const isOpen = activeIndex === 2;
 
   const handlerOpenPopup = () => {
     setIsOpenModal(true);
   };
+
+  useEffect(() => {
+    if (!isOpen) {
+      setIsOpenModal(false);
+    }
+  }, [isOpen]);
 
   return (
     <>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 
 import { images } from 'utils/index';
 import { useWindowSize } from 'hooks/index';
@@ -14,13 +14,21 @@ const AboutUs = () => {
   const activeIndex = useSelector(activeIndexSelector);
   const isOpen = activeIndex === 2;
   const [isShow, setIsShow] = useState(false);
+  const [isTitle, setIsTitle] = useState(false);
 
   useEffect(() => {
+    if (isOpen) {
+      setIsTitle(true);
+    }
+
     setTimeout(() => {
       if (isOpen) {
         setIsShow(true);
       } else {
         setIsShow(false);
+        if (isDesktop) {
+          setIsTitle(false);
+        }
       }
     }, 1300);
   }, [isOpen]);
@@ -38,11 +46,11 @@ const AboutUs = () => {
   return (
     <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
+      <div className={`container ${styles.wrapper}`}>
         <div className={styles.wrapper__content}>
           <h1
             className={classNames(styles.wrapper__content__title, {
-              [styles.wrapper__content__title_show]: isShow || !isDesktop,
+              [styles.wrapper__content__title_show]: isTitle && !isDesktop,
             })}
           >
             <span>About Us</span>
