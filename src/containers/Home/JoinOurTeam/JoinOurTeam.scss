@@ -3,10 +3,6 @@
     height: auto !important;
     margin-bottom: 50px !important;
   }
-
-  @include breakpoint(tablet) {
-    margin-bottom: 50px !important;
-  }
 }
 
 .wrapper {
@@ -16,6 +12,13 @@
 
   @include breakpoint(tablet) {
     flex-direction: column-reverse;
+    min-height: 800px;
+    max-height: 800px;
+  }
+
+  @include breakpoint(tablet-m) {
+    min-height: 570px;
+    max-height: 570px;
   }
 
   &__info {
@@ -101,8 +104,6 @@
     height: 500px;
     display: flex;
     max-width: 330px;
-    margin-left: 5px;
-    margin-right: 10px;
     justify-content: flex-end;
     animation: cubeAnimationRotate 2.8s infinite;
 
@@ -111,8 +112,8 @@
     }
 
     @include breakpoint(tablet) {
-      height: 230px;
-      margin-top: 230px;
+      // height: 230px;
+      margin-top: 140px;
     }
 
     @include breakpoint(tablet-m) {

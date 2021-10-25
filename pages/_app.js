@@ -34,6 +34,10 @@ const MyApp = ({ Component, pageProps }) => {
       });
     });
 
+    window.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+
     window.addEventListener('mousedown', () => {
       window.document.body.style.cursor = "url('/images/Mouse2.png'), auto";
     });

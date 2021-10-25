@@ -52,7 +52,7 @@
     }
   }
 
-  // Our works
+  // Our partners
 
   .logo_fix_size {
     width: 70%;
@@ -135,6 +135,9 @@
       @include breakpoint(desktop) {
         height: auto !important;
       }
+      @include breakpoint(tablet) {
+        min-height: 900px !important;
+      }
     }
 
     &__slider {
@@ -149,6 +152,9 @@
 
       @media (max-width: 470px) {
         padding-left: 5px;
+      }
+
+      @media (max-width: 400px) {
         margin-left: -23px;
       }
 
