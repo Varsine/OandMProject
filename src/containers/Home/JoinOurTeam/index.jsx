@@ -5,7 +5,6 @@ import { NextLink } from 'components/index';
 
 import SwiperCards from './Cards';
 import { infoText, subtitle, joinOurTeam } from './constants';
-//
 import styles from './JoinOurTeam.scss';
 
 const JoinOurTeam = () => {

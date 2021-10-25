@@ -4,7 +4,6 @@ import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
 
 import { SuccessIcon } from '../../../../icons';
-//
 import styles from '../Apply.scss';
 
 const Success = () => (
