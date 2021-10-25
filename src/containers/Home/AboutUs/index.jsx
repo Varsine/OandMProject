@@ -71,7 +71,7 @@ const AboutUs = () => {
   return (
     <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
+      <div className={`container ${styles.wrapper}`}>
         <div
           className={classNames(styles.info, { [styles.info_show]: isShow })}
         >

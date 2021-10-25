@@ -15,7 +15,7 @@ const JoinOurTeam = () => {
   return (
     <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
+      <div className={`container ${styles.wrapper}`}>
         <div className={styles.wrapper__info}>
           <h2 className={styles.wrapper__info_title}>{joinOurTeam}</h2>
           <h3 className={styles.wrapper__info_subtitle}>{subtitle}</h3>
