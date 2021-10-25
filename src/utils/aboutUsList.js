@@ -1,11 +1,6 @@
+import styles from '../containers/Home/AboutUs/AboutUs.scss';
+
 export const aboutUsInfoList = [
-  {
-    title: 'About Us',
-    subTitle:
-      'SHELLLOGIX LLC has been established in 2017 with a mission to offer creative solutions in the field of.',
-    paragraph:
-      'We believe that contemporary ideas and technologies are the key milestones for creating strategic solutions for traditions based on businesses. ',
-  },
   {
     title: 'SEO Engineering',
     subTitle:
@@ -40,5 +35,33 @@ export const aboutUsInfoList = [
       'Quality assurance testing has generally been brought into process relatively late in the development cycle.',
     paragraph:
       'Quality assurance testing is quality assurance(QA) or a quality testing process that ensures that an organization delivers the best products or services possible.',
+  },
+];
+
+export const images = [
+  {
+    src: '/images/aboutUs/1.png',
+    imgClass: styles.aboute_img_one,
+    classRope: styles.aboute_img_one__rope,
+  },
+  {
+    src: '/images/aboutUs/2.png',
+    imgClass: styles.aboute_img_two,
+    classRope: styles.aboute_img_two__rope,
+  },
+  {
+    src: '/images/aboutUs/3.png',
+    imgClass: styles.aboute_img_three,
+    classRope: styles.aboute_img_three__rope,
+  },
+  {
+    src: '/images/aboutUs/4.png',
+    imgClass: styles.aboute_img_four,
+    classRope: styles.aboute_img_four__rope,
+  },
+  {
+    src: '/images/aboutUs/5.png',
+    imgClass: styles.aboute_img_five,
+    classRope: styles.aboute_img_five__rope,
   },
 ];
