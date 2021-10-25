@@ -7,7 +7,11 @@
   justify-content: space-around;
   flex-direction: column;
   position: relative;
-  height: 100vh !important;
+  height: 100vh;
+
+  @include breakpoint(desktop) {
+    height: auto;
+  }
 
   &__content {
     position: absolute !important;
@@ -65,6 +69,10 @@
     height: 100%;
     display: flex;
     justify-content: space-around;
+
+    @include breakpoint(tablet) {
+      height: auto;
+    }
   }
 }
 

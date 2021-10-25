@@ -18,6 +18,10 @@
 
 .arrow_style {
   height: 43vh;
+
+  @include breakpoint(tablet) {
+    height: 243px;
+  }
 }
 
 .wrapper {
@@ -30,6 +34,13 @@
 
   @include breakpoint(tablet) {
     padding: 40px 0 20px !important;
+    min-height: 730px;
+    max-height: 730px;
+  }
+
+  @include breakpoint(tablet-m) {
+    min-height: 450px;
+    max-height: 450px;
   }
 }
 
