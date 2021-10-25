@@ -41,12 +41,6 @@ export const stepTwoInitialValues = {
 export const stepTwoValidationSchema = Yup.object({
   resume: Yup.string().required('* required'),
   coverLetter: Yup.string().required('* required'),
-  githubLink: Yup.string().matches(
-    '/^https:\\/\\/github\\.com\\/.*$/gim',
-    'Invalid GitHub link',
-  ),
-  linkedInLink: Yup.string().matches(
-    '/^https:\\/\\/[a-z]{2,3}\\.linkedin\\.com\\/.*$/gim',
-    'Invalid LinkedIn link',
-  ),
+  githubLink: Yup.string().url('Invalid GitHub link'),
+  linkedInLink: Yup.string().url('Invalid LinkedIn link'),
 });

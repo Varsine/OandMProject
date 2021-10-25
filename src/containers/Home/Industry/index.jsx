@@ -59,6 +59,7 @@ const Industry = () => {
           <div
             role="button"
             className={classes}
+            key={industryItem.id}
             onClick={() => setActiveIndex(index)}
           >
             <industryItem.icon />

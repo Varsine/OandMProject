@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import axios from 'axios';
 
 import { Button } from 'components/index';
-import Success from 'containers/Apply/JoinForm/Steps/Success';
 
+import Success from './Steps/Success';
 import StepOne from './Steps/StepOne';
 import StepTwo from './Steps/StepTwo';
 import styles from './Apply.scss';
