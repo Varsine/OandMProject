@@ -110,6 +110,7 @@ table {
 * {
   box-sizing: border-box;
   outline: none !important;
+  cursor: url('/images/Mouse.png'), auto;
 }
 
 label,
@@ -141,7 +142,7 @@ a {
 
 img {
   max-width: 100%;
-  pointer-events: none;
+  // pointer-events: none;
 }
 
 svg {
@@ -154,7 +155,7 @@ body {
   padding: 0;
   color: $text-color;
   font-weight: normal;
-  pointer-events: none;
+  // pointer-events: none;
   background: $bg-color;
   font-family: 'Open Sans', sans-serif;
   cursor: url('/images/Mouse.png'), auto;
