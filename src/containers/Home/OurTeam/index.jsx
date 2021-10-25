@@ -48,7 +48,7 @@ const OurTeam = () => {
   return (
     <section className={`section ${styles.container} ${styles.height_reponce}`}>
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
+      <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>Our Team</h2>
         <div className={styles.carousel}>
           <Carousel {...setting}>{renderSliderList}</Carousel>
