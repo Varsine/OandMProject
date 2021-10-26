@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 
 // import { weLabel } from 'utils/index';
@@ -15,13 +15,14 @@ const OurWorks = () => {
   const appRef = useRef(null);
   // const [animation, setAnimation] = useState(true);
   // const [curSlide, setCurSlide] = useState(1);
-  // // const [scrolledUp, setScrolledUp] = useState(false);
+  // const [scrolledUp, setScrolledUp] = useState(false);
   // const [nextSlide, setnextSlide] = useState(1);
   // const app = $('.app');
   // let animation = true;
   // let curSlide = 1;
   // let scrolledUp;
   // let nextSlide;
+  // console.log(appRef.current, 'ujhikj');
 
   // const pagination = (slide) => {
   //   setAnimation(true);
@@ -31,76 +32,67 @@ const OurWorks = () => {
   //   nextSlide = target;
   // }
 
-  //   $(`.pages__item--${nextSlide}`).addClass('page__item-active');
-  //   $(`.pages__item--${slide}`).removeClass('page__item-active');
+  // $(`.pages__item--${nextSlide}`).addClass('page__item-active');
+  // $(`.pages__item--${slide}`).removeClass('page__item-active');
 
-  //   $app.toggleClass('active');
+  //   appRef.current.toggleClass('active');
   //   setTimeout(() => {
   //     setAnimation(true);
   //   }, 3000);
   // };
 
-  // useEffect(() => {
-  //   const img = $('.app__img');
-  //   const pageNav1 = $('.pages__item--1');
-  //   const pageNav2 = $('.pages__item--2');
-
-  //   // const pagination = (slide, target) => {
-  //   //   animation = true;
-  //   //   if (target === undefined) {
-  //   //     nextSlide = scrolledUp ? slide - 1 : slide + 1;
-  //   //   } else {
-  //   //     nextSlide = target;
-  //   //   }
-
-  //   //   $(`.pages__item--${nextSlide}`).addClass('page__item-active');
-  //   //   $(`.pages__item--${slide}`).removeClass('page__item-active');
-
-  //   //   $app.toggleClass('active');
-  //   //   setTimeout(() => {
-  //   //     animation = false;
-  //   //   }, 3000);
-  //   // };
-
-  //   const navigateDown = () => {
-  //     if (curSlide > 1) return;
-  //     // scrolledUp = false;
-  //     pagination(curSlide);
-  //     curSlide++;
-  //   };
-
-  //   const navigateUp = () => {
-  //     if (curSlide === 1) return;
-  //     scrolledUp = true;
-  //     pagination(curSlide);
-  //     curSlide--;
-  //   };
-
-  //   setTimeout(() => {
-  //     $app.addClass('initial');
-  //   }, 1500);
-
-  //   setTimeout(() => {
-  //     animation = false;
-  //   }, 4500);
-
-  //   $(document).on('mousewheel DOMMouseScroll', (e) => {
-  //     const delta = e.originalEvent.wheelDelta;
-  //     if (animation) return;
-  //     if (delta > 0 || e.originalEvent.detail < 0) {
-  //       navigateUp();
-  //     } else {
-  //       navigateDown();
-  //     }
-  //   });
-
-  //   $(document).on('click', '.pages__item:not(.page__item-active)', () => {
-  //     if (animation) return;
-  //     const target = +$(this).attr('data-target');
-  //     pagination(curSlide, target);
-  //     curSlide = target;
-  //   });
-  // }, []);
+  useEffect(() => {
+    // const img = $('.app__img');
+    // const pageNav1 = $('.pages__item--1');
+    // const pageNav2 = $('.pages__item--2');
+    // const pagination = (slide, target) => {
+    //   animation = true;
+    //   if (target === undefined) {
+    //     nextSlide = scrolledUp ? slide - 1 : slide + 1;
+    //   } else {
+    //     nextSlide = target;
+    //   }
+    //   $(`.pages__item--${nextSlide}`).addClass('page__item-active');
+    //   $(`.pages__item--${slide}`).removeClass('page__item-active');
+    //   $app.toggleClass('active');
+    //   setTimeout(() => {
+    //     animation = false;
+    //   }, 3000);
+    // };
+    // const navigateDown = () => {
+    //   if (curSlide > 1) return;
+    //   // scrolledUp = false;
+    //   pagination(curSlide);
+    //   setCurSlide(curSlide + 1);
+    // };
+    // const navigateUp = () => {
+    //   if (curSlide === 1) return;
+    //   // scrolledUp = true;
+    //   pagination(curSlide);
+    //   setCurSlide(curSlide - 1);
+    // };
+    // setTimeout(() => {
+    //   $app.addClass('initial');
+    // }, 1500);
+    // setTimeout(() => {
+    //   setAnimation(true);
+    // }, 4500);
+    // $(document).on('mousewheel DOMMouseScroll', (e) => {
+    //   const delta = e.originalEvent.wheelDelta;
+    //   if (animation) return;
+    //   if (delta > 0 || e.originalEvent.detail < 0) {
+    //     navigateUp();
+    //   } else {
+    //     navigateDown();
+    //   }
+    // });
+    // $(document).on('click', '.pages__item:not(.page__item-active)', () => {
+    //   if (animation) return;
+    //   const target = +$(this).attr('data-target');
+    //   pagination(curSlide, target);
+    //   curSlide = target;
+    // });
+  }, []);
 
   return (
     <section className="section we_work">
