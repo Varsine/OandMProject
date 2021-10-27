@@ -3,14 +3,13 @@ import classNames from 'classnames';
 import axios from 'axios';
 
 import { Button } from 'components/index';
-import { applayImages } from 'utils/index';
 
 import Success from './Steps/Success';
 import StepOne from './Steps/StepOne';
 import StepTwo from './Steps/StepTwo';
+import PiecesAnimation from './PiecesAnimation';
 import styles from './Apply.scss';
 
-import { ReactComponent as ImageCube } from '../../../../public/images/imagesss.svg';
 import { StepIcon } from '../../../icons';
 
 const JoinForm = () => {
@@ -38,42 +37,6 @@ const JoinForm = () => {
     );
   };
 
-  const renderImage1 = applayImages.slice(0, 42).map(({ id }) => (
-    <div className={styles.cut_images_containerTL__cubs} key={id}>
-      <ImageCube style={{ width: '50px', height: '50px' }} />
-    </div>
-  ));
-
-  const renderImage2 = applayImages.slice(42, 84).map(({ id }) => (
-    <div
-      className={styles.cut_images_containerTR__cubs}
-      key={id}
-      // style={{
-      //   backgroundImage: bgImage,
-      // }}
-    >
-      <ImageCube style={{ width: '50px', height: '50px' }} />
-    </div>
-  ));
-
-  const renderImage3 = applayImages.slice(84, 126).map(({ id }) => (
-    <div
-      className={styles.cut_images_containerBL__cubs}
-      key={id}
-      // style={{
-      //   backgroundImage: bgImage,
-      // }}
-    >
-      <ImageCube style={{ width: '50px', height: '50px' }} />
-    </div>
-  ));
-
-  const renderImage4 = applayImages.slice(126, 168).map(({ id }) => (
-    <div className={styles.cut_images_containerBR__cubs} key={id}>
-      <ImageCube style={{ width: '50px', height: '50px' }} />
-    </div>
-  ));
-
   return (
     <section className="section">
       <div
@@ -83,20 +46,7 @@ const JoinForm = () => {
         className={styles.container}
       >
         {!renderAnimation ? (
-          <div className={styles.cut_images}>
-            <span className={styles.cut_images_containerTL}>
-              {renderImage1}
-            </span>
-            <span className={styles.cut_images_containerTR}>
-              {renderImage2}
-            </span>
-            <span className={styles.cut_images_containerBL}>
-              {renderImage3}
-            </span>
-            <span className={styles.cut_images_containerBR}>
-              {renderImage4}
-            </span>
-          </div>
+          <PiecesAnimation />
         ) : (
           <div
             style={{ marginTop: activeIndex === 3 ? 100 : 0 }}
