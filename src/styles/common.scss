@@ -4,13 +4,16 @@
     height: 88vh;
 
     @include breakpoint(desktop) {
-      height: auto;
       padding: 0;
     }
 
     @include breakpoint(tablet-m) {
       padding: 64px 16px 50px;
     }
+  }
+
+  .mouse_animation {
+    cursor: url(/images/Mouse2.png), auto;
   }
 
   #fullpage {
@@ -46,6 +49,25 @@
     iframe {
       right: 11px;
       bottom: 81px;
+    }
+  }
+
+  // Our partners
+
+  .logo_fix_size {
+    width: 70%;
+    height: 70%;
+  }
+
+  .acc_logo_edit_dark_mode {
+    path {
+      fill: white;
+    }
+  }
+
+  .spp_lightMode {
+    path {
+      fill: #252525;
     }
   }
 
@@ -113,6 +135,9 @@
       @include breakpoint(desktop) {
         height: auto !important;
       }
+      @include breakpoint(tablet) {
+        min-height: 900px !important;
+      }
     }
 
     &__slider {
@@ -127,6 +152,9 @@
 
       @media (max-width: 470px) {
         padding-left: 5px;
+      }
+
+      @media (max-width: 400px) {
         margin-left: -23px;
       }
 
@@ -350,7 +378,7 @@
     text-align: center;
     letter-spacing: 0.02em;
     display: flex !important;
-    cursor: pointer !important;
+    cursor: url('/images/Mouse.png'), auto;
     font-size: 20px !important;
     color: #1a1a1a !important;
     font-weight: bold !important;

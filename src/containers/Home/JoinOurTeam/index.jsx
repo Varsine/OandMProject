@@ -2,20 +2,16 @@ import React from 'react';
 
 import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
-import {
-  infoText,
-  joinOurTeam,
-  subtitle,
-} from 'containers/Home/JoinOurTeam/constants';
 
 import SwiperCards from './Cards';
+import { infoText, subtitle, joinOurTeam } from './constants';
 import styles from './JoinOurTeam.scss';
 
 const JoinOurTeam = () => {
   return (
     <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
+      <div className={`container ${styles.wrapper}`}>
         <div className={styles.wrapper__info}>
           <h2 className={styles.wrapper__info_title}>{joinOurTeam}</h2>
           <h3 className={styles.wrapper__info_subtitle}>{subtitle}</h3>
@@ -24,9 +20,7 @@ const JoinOurTeam = () => {
             {joinOurTeam}
           </NextLink>
         </div>
-        <div className={styles.wrapper__swiper} id="app">
-          <SwiperCards />
-        </div>
+        <SwiperCards />
       </div>
     </section>
   );

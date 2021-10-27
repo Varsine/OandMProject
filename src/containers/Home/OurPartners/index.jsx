@@ -55,7 +55,7 @@ const OurPartners = () => {
   return (
     <section className={`section ${styles.container}`}>
       <div className="canvas__working" />
-      <div className={`${styles.wrapper} container`}>
+      <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>Our Partners</h2>
         <div className={styles.carousel}>
           {!isLaptop ? (

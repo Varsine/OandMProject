@@ -73,7 +73,7 @@ const OurWorks = () => {
     <section className="section we_work">
       <div className="canvas__working" />
       <div className="container we_work__content">
-        <h2 className="we_work__title">We work</h2>
+        <h2 className="we_work__title">Our works</h2>
         {renderSubTitle}
         <div className="we_work__slider">
           <div className="slider_we_work" id="slider_we_work">

@@ -19,6 +19,10 @@
   @include breakpoint(desktop) {
     padding: 40px 0 !important;
   }
+
+  @include breakpoint(tablet) {
+    max-height: 470px;
+  }
 }
 
 .title {
@@ -75,7 +79,7 @@
     }
 
     svg {
-      cursor: default;
+      cursor: url('/images/Mouse.png'), auto;
     }
 
     &_active {
@@ -108,37 +112,6 @@
       overflow-y: auto;
     }
   }
-
-  // &__controls {
-  //   left: 0;
-  //   width: 100%;
-  //   bottom: 50px;
-  //   position: absolute;
-  //   @extend %flex-center;
-
-  //   @include breakpoint(desktop) {
-  //     display: none;
-  //   }
-
-  //   &_item {
-  //     height: 48px;
-  //     padding: 0;
-  //     background: unset;
-
-  //     &:disabled {
-  //       opacity: 0.35;
-  //       pointer-events: none;
-
-  //       svg path {
-  //         stroke: #a1a1a1;
-  //       }
-  //     }
-  //   }
-
-  //   &_left {
-  //     transform: rotate(180deg);
-  //   }
-  // }
 
   &__arrows {
     @extend %flex-center;
