@@ -73,23 +73,6 @@ const Field = ({
           <FileIcon />
         </label>
         <p className={styles.message}>{message}</p>
-        {/* <Controller
-          name={name}
-          control={control}
-          render={({ field }) => (
-            <FileUploader
-              accept="image/*"
-              name="avatar"
-              randomizeFilename
-              {...field}
-              // storageRef={firebase.storage().ref('images')}
-              // onUploadStart={this.handleUploadStart}
-              // onUploadError={this.handleUploadError}
-              // onUploadSuccess={this.handleUploadSuccess}
-              // onProgress={this.handleProgress}
-            />
-          )}
-        /> */}
       </div>
     );
   }

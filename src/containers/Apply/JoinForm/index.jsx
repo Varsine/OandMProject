@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import axios from 'axios';
 
 import { Button } from 'components/index';
+import { modeSelector } from 'slices/mainSlice';
 
 import Success from './Steps/Success';
 import StepOne from './Steps/StepOne';
 import StepTwo from './Steps/StepTwo';
+import PiecesAnimation from './PiecesAnimation';
 import styles from './Apply.scss';
 
 import { StepIcon } from '../../../icons';
 
 const JoinForm = () => {
+  const isDarkMode = useSelector(modeSelector);
+
   const [applicationForm, setApplicationForm] = useState({});
   const [activeIndex, setIsActiveIndex] = useState(1);
+  const [renderAnimation, setRenderAnimation] = useState(false);
+
   const editActiveStep = (step) => {
     setIsActiveIndex(step);
   };
@@ -30,12 +37,24 @@ const JoinForm = () => {
     );
   };
 
+  const formContainers = classNames(styles.wrapper, {
+    [styles.wrapper_anima]: renderAnimation,
+  });
+
+  const animClickHanlder = () => {
+    setRenderAnimation(true);
+  };
+
   return (
     <section className="section">
       <div className={styles.container}>
+        <PiecesAnimation
+          isAnimate={renderAnimation}
+          animClickHanlder={animClickHanlder}
+        />
         <div
+          className={formContainers}
           style={{ marginTop: activeIndex === 3 ? 100 : 0 }}
-          className={styles.wrapper}
         >
           <h1 className={styles.title}>Apply Now!</h1>
           {activeIndex !== 3 && (
@@ -50,7 +69,7 @@ const JoinForm = () => {
                 >
                   1
                 </Button>
-                <StepIcon />
+                <StepIcon className={isDarkMode || styles.steps__line} />
                 <Button
                   disabled={activeIndex === 1}
                   onClick={() => editActiveStep(2)}
