@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -11,17 +11,19 @@ const PiecesAnimation = ({ isAnimate, animClickHanlder }) => {
     id: i + 1,
   }));
 
-  const renderPiecesList = piecesList.map(({ id }, index) => (
-    <div
-      key={id}
-      role="button"
-      aria-label="img"
-      className={`${styles.cut_images_item}`}
-      style={{
-        backgroundPosition: calculatePiecesPosition(index),
-      }}
-    />
-  ));
+  const renderPiecesList = useMemo(() =>
+    piecesList.map(({ id }, index) => (
+      <div
+        key={id}
+        role="button"
+        aria-label="img"
+        className={`${styles.cut_images_item}`}
+        style={{
+          backgroundPosition: calculatePiecesPosition(index),
+        }}
+      />
+    )),
+  );
 
   return (
     <div

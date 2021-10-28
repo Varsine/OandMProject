@@ -2,19 +2,15 @@ const calculatePiecesPosition = (index) => {
   if (index < 12) {
     return `${0 - index * 100}% 0%`;
   }
-
   if (index > 11 && index < 24) {
     return `${0 - index * 100 + 1200}% -100%`;
   }
-
   if (index > 23 && index < 36) {
     return `${0 - index * 100 + 2400}% -200%`;
   }
-
   if (index > 35 && index < 48) {
     return `${0 - index * 100 + 3600}% -300%`;
   }
-
   if (index > 47 && index < 60) {
     return `${0 - index * 100 + 4800}% -400%`;
   }
