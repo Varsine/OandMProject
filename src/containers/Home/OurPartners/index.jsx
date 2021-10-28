@@ -37,6 +37,8 @@ const OurPartners = () => {
     },
   };
 
+  const timeSettings = 3000;
+
   const setting = {
     ssr: true,
     responsive,
@@ -45,6 +47,7 @@ const OurPartners = () => {
     autoPlay: true,
     draggable: false,
     swipeable: false,
+    autoPlaySpeed: timeSettings,
     customButtonGroup: <SliderArrows arrowStyles={styles.arrow_container} />,
     containerClass: styles.carousel__wrapper,
     beforeChange: (nextSlide) => {
