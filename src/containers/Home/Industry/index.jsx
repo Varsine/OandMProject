@@ -70,10 +70,14 @@ const Industry = () => {
     [activeIndex, isShow],
   );
 
+  const industryStyles = classNames(styles.wrapper, {
+    [styles.d_none]: activeSelector !== 4,
+  });
+
   return (
     <section className={`${styles.height_reponce} section`}>
       <div className="canvas__working" />
-      <div className={`container ${styles.wrapper}`}>
+      <div className={`container ${industryStyles}`}>
         <div className={styles.wrapper__menu}>{renderIndustries()}</div>
         <div className={styles.wrapper__active_item}>
           <div
