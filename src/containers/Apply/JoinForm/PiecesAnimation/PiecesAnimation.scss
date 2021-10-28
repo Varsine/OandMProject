@@ -532,14 +532,14 @@
 
 @keyframes opacityNulling {
   0% {
-    opacity: 1;
     height: 0;
+    opacity: 1;
     border-radius: 1px;
   }
 
   100% {
-    opacity: 0.2;
     height: 0;
+    opacity: 0.2;
     border-radius: 6px;
   }
 }

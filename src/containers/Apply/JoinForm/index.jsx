@@ -37,6 +37,10 @@ const JoinForm = () => {
     );
   };
 
+  const formContainers = classNames(styles.wrapper, {
+    [styles.wrapper_anima]: renderAnimation,
+  });
+
   const animClickHanlder = () => {
     setRenderAnimation(true);
   };
@@ -49,8 +53,8 @@ const JoinForm = () => {
           animClickHanlder={animClickHanlder}
         />
         <div
+          className={formContainers}
           style={{ marginTop: activeIndex === 3 ? 100 : 0 }}
-          className={!renderAnimation ? styles.wrapper : styles.wrapper_anima}
         >
           <h1 className={styles.title}>Apply Now!</h1>
           {activeIndex !== 3 && (
