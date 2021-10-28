@@ -54,7 +54,6 @@
   text-align: center;
   padding: 32px 0 72px;
   @extend %open-sans-48;
-  text-decoration: underline;
 
   @include breakpoint(desktop) {
     padding-bottom: 42px;
@@ -104,6 +103,11 @@
 
     p {
       text-align: left;
+
+      @include breakpoint(tablet-m) {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
 
     @include breakpoint(tablet) {
@@ -127,6 +131,11 @@
 
     p {
       text-align: center;
+
+      @include breakpoint(tablet-m) {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
 
     @include breakpoint(tablet-m) {
@@ -144,6 +153,11 @@
 
     p {
       text-align: right;
+
+      @include breakpoint(tablet-m) {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
 
     @include breakpoint(tablet) {

@@ -52,10 +52,7 @@ const JoinForm = () => {
           isAnimate={renderAnimation}
           animClickHanlder={animClickHanlder}
         />
-        <div
-          className={formContainers}
-          style={{ marginTop: activeIndex === 3 ? 100 : 0 }}
-        >
+        <div className={formContainers}>
           <h1 className={styles.title}>Apply Now!</h1>
           {activeIndex !== 3 && (
             <div>

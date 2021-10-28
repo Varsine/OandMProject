@@ -39,6 +39,7 @@
           transform: translateY(0);
           animation: titleUnMountAnima 3s ease;
           text-align: center;
+          @extend %open-sans-48;
 
           @include breakpoint(desktop) {
             animation: none;
@@ -47,8 +48,20 @@
             width: 100%;
           }
 
+          @include breakpoint(tablet-m) {
+            font-size: 32px;
+            font-weight: 600;
+            padding: 24px 0 0;
+            line-height: 44px;
+          }
+
           &:last-child {
             @extend %open-sans-16;
+
+            @include breakpoint(tablet-m) {
+              font-size: 16px;
+              line-height: 22px;
+            }
           }
         }
       }
