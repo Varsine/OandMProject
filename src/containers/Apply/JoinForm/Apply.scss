@@ -103,6 +103,12 @@
     margin: 40px 0;
     text-align: center;
     @extend %open-sans-48;
+
+    @include breakpoint(tablet-m) {
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 44px;
+    }
   }
 
   &__link {

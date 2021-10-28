@@ -41,7 +41,10 @@
       @extend %open-sans-48;
 
       @include breakpoint(tablet-m) {
-        font-size: 40px;
+        font-size: 32px;
+        font-weight: 600;
+        padding: 24px 0 0;
+        line-height: 44px;
       }
 
       @include breakpoint(mobile) {

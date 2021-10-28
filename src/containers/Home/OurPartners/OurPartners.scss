@@ -27,7 +27,6 @@
 
 .title {
   @extend %open-sans-48;
-  text-decoration: underline;
   padding: 32px 0 10px;
 
   @include breakpoint(desktop) {
@@ -40,8 +39,9 @@
   }
 
   @include breakpoint(tablet-m) {
-    font-weight: 600;
     font-size: 32px;
+    font-weight: 600;
+    padding: 24px 0 0;
     line-height: 44px;
   }
 }
