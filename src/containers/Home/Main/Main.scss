@@ -54,11 +54,11 @@
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
-        animation-delay: 5s;
+        animation-delay: 1.9s;
       }
 
       &:nth-of-type(2) {
-        animation: ball 4.3s linear forwards;
+        animation: ball 1s linear forwards;
       }
     }
 
@@ -67,42 +67,42 @@
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
-        animation-delay: 4s;
+        animation-delay: 1.3s;
       }
 
       &:nth-of-type(2) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
-        animation-delay: 4.2s;
+        animation-delay: 1.5s;
       }
 
       &:nth-of-type(3) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
-        animation-delay: 4.4s;
+        animation-delay: 1.7s;
       }
 
       &:nth-of-type(4) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
-        animation-delay: 5s;
+        animation-delay: 1.9s;
       }
 
       &:nth-of-type(5) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
-        animation-delay: 5.2s;
+        animation-delay: 2.1s;
       }
 
       &:nth-of-type(6) {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
-        animation-delay: 5.5s;
+        animation-delay: 2.3s;
       }
 
       &:nth-of-type(7),
@@ -111,14 +111,14 @@
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 1s linear forwards;
-        animation-delay: 5s;
+        animation-delay: 1.9s;
       }
 
       &:nth-of-type(10) {
         stroke-dasharray: 800;
         stroke-dashoffset: 800;
         animation: dash 1.5s linear forwards;
-        animation-delay: 3.5s;
+        animation-delay: 0.1s;
       }
     }
 
@@ -129,7 +129,7 @@
         }
 
         &:nth-of-type(2) {
-          animation: ball 1s linear forwards;
+          animation: activeball 1s linear forwards;
         }
       }
 
@@ -173,6 +173,44 @@
 }
 
 @keyframes ball {
+  0% {
+    x: 740;
+    width: 0;
+    height: 0;
+  }
+  8% {
+    x: 740;
+    width: 0;
+    height: 0;
+  }
+  9% {
+    x: 740;
+    width: 35px;
+    height: 35px;
+  }
+  10% {
+    x: 740;
+    width: 35px;
+    height: 35px;
+  }
+  16% {
+    x: 700;
+    width: 85px;
+    height: 35px;
+  }
+  30% {
+    x: 740;
+    width: 35px;
+    height: 35px;
+  }
+  100% {
+    x: 740;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@keyframes activeball {
   0% {
     width: 0;
     height: 0;

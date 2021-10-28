@@ -85,7 +85,7 @@ const LogoAnimaIcon = ({ stopColor, isAnima, fastAnima, ...rest }) => (
         <stop offset="0" stopColor={stopColor}>
           {isAnima && (
             <animate
-              begin={fastAnima ? '2.5s' : '3.5s'}
+              begin={fastAnima ? '2.5s' : '0.9s'}
               dur={fastAnima ? '1s' : '2s'}
               attributeName="offset"
               fill="freeze"
@@ -100,7 +100,7 @@ const LogoAnimaIcon = ({ stopColor, isAnima, fastAnima, ...rest }) => (
         >
           {isAnima && (
             <animate
-              begin={fastAnima ? '2.5s' : '6s'}
+              begin={fastAnima ? '2.5s' : '3.9s'}
               dur={fastAnima ? '1s' : '2s'}
               attributeName="offset"
               fill="freeze"

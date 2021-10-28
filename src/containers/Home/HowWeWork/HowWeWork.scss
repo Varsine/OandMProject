@@ -26,6 +26,7 @@
 
 .wrapper {
   width: 100%;
+  height: auto;
   @extend %flex-align;
   flex-direction: column;
 
