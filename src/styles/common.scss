@@ -54,15 +54,15 @@
 
   // Our partners
 
-  .logo_fix_size {
-    width: 70%;
-    height: 70%;
+  .fix_size_kms {
+    width: 100%;
   }
 
-  .acc_logo_edit_dark_mode {
-    path {
-      fill: white;
-    }
+  .logo_fix_size {
+    padding: 0;
+    height: 100% !important;
+    position: relative !important;
+    width: calc(100 vw - 200 px) !important;
   }
 
   .spp_lightMode {

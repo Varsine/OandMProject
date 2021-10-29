@@ -17,9 +17,7 @@ const ourPartnersCards = [
   {
     id: 2,
     href: '',
-    icon: (
-      <AccountantLightIcon className="acc_logo_edit_dark_mode logo_fix_size" />
-    ),
+    icon: <AccountantLightIcon className="logo_fix_size" />,
     iconLight: <AccountantLightIcon className="logo_fix_size" />,
   },
   {
@@ -31,14 +29,14 @@ const ourPartnersCards = [
   {
     id: 4,
     href: 'https://www.tekhhskich.am/',
-    icon: <KomShin className="logo_fix_size" />,
-    iconLight: <KomShin className="logo_fix_size" />,
+    icon: <KomShin className="fix_size_kms" />,
+    iconLight: <KomShin className="fix_size_kms" />,
   },
   {
     id: 5,
     href: 'https://spp.am/',
-    icon: <Spp className="logo_fix_size" />,
-    iconLight: <SppLight className="logo_fix_size spp_lightMode" />,
+    icon: <Spp className="fix_size_kms" />,
+    iconLight: <SppLight className="fix_size_kms spp_lightMode" />,
   },
 ];
 

@@ -85,6 +85,11 @@
     &_active {
       background-color: $btn-disabled;
     }
+
+    @include breakpoint(mobile) {
+      width: 190px;
+      padding: 0;
+    }
   }
 
   &__list {
@@ -110,6 +115,10 @@
       gap: 26px;
       display: flex;
       overflow-y: auto;
+    }
+
+    @include breakpoint(tablet-m) {
+      gap: 0;
     }
   }
 
