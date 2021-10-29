@@ -9,5 +9,6 @@ export { default as swipeData } from './swipeData';
 export { default as mapStyles } from './mapStyles';
 export { default as teamCards } from './teamCards';
 export { default as menuLinks } from './menuLinks';
+export { default as ourSliderData } from './ourWorks';
 export { default as linksInformation } from './linksInformation';
 export { default as ourPartnersCards } from './ourPartnersCards';

@@ -7,7 +7,11 @@
   justify-content: space-around;
   flex-direction: column;
   position: relative;
-  height: 100vh !important;
+  height: 100vh;
+
+  @include breakpoint(desktop) {
+    height: auto;
+  }
 
   &__content {
     position: absolute !important;
@@ -65,6 +69,10 @@
     height: 100%;
     display: flex;
     justify-content: space-around;
+
+    @include breakpoint(tablet) {
+      height: auto;
+    }
   }
 }
 
@@ -90,7 +98,7 @@
 
   &__rope {
     position: absolute;
-    width: 0.3px;
+    width: 1px;
     background: $rope-bg;
     transition-timing-function: cubic-bezier(1, 0, 1, 0);
     transition-duration: 0.5s;

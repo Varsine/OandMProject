@@ -1,42 +1,44 @@
-import shortid from 'shortid';
-
 import {
+  Spp,
+  KomShin,
+  SppLight,
   DoubleOneIcon,
   KristobadIcon,
-  AccountantIcon,
   AccountantLightIcon,
 } from '../icons';
 
 const ourPartnersCards = [
   {
+    id: 1,
     href: 'https://kristobad.com/',
-    id: shortid.generate(),
-    icon: <KristobadIcon />,
-    iconLight: <KristobadIcon />,
+    icon: <KristobadIcon className="logo_fix_size" />,
+    iconLight: <KristobadIcon className="logo_fix_size" />,
   },
   {
+    id: 2,
     href: '',
-    id: shortid.generate(),
-    icon: <AccountantIcon />,
-    iconLight: <AccountantLightIcon />,
+    icon: (
+      <AccountantLightIcon className="acc_logo_edit_dark_mode logo_fix_size" />
+    ),
+    iconLight: <AccountantLightIcon className="logo_fix_size" />,
   },
   {
+    id: 3,
     href: 'https://doubleone.org/',
-    id: shortid.generate(),
-    icon: <DoubleOneIcon />,
-    iconLight: <DoubleOneIcon />,
+    icon: <DoubleOneIcon className="logo_fix_size" />,
+    iconLight: <DoubleOneIcon className="logo_fix_size" />,
   },
   {
+    id: 4,
+    href: 'https://www.tekhhskich.am/',
+    icon: <KomShin className="logo_fix_size" />,
+    iconLight: <KomShin className="logo_fix_size" />,
+  },
+  {
+    id: 5,
     href: 'https://spp.am/',
-    id: shortid.generate(),
-    icon: <KristobadIcon />,
-    iconLight: <KristobadIcon />,
-  },
-  {
-    href: '',
-    id: shortid.generate(),
-    icon: <AccountantIcon />,
-    iconLight: <AccountantLightIcon />,
+    icon: <Spp className="logo_fix_size" />,
+    iconLight: <SppLight className="logo_fix_size spp_lightMode" />,
   },
 ];
 

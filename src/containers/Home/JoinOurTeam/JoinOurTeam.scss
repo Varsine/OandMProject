@@ -3,10 +3,6 @@
     height: auto !important;
     margin-bottom: 50px !important;
   }
-
-  @include breakpoint(tablet) {
-    margin-bottom: 50px !important;
-  }
 }
 
 .wrapper {
@@ -16,6 +12,13 @@
 
   @include breakpoint(tablet) {
     flex-direction: column-reverse;
+    min-height: 800px;
+    max-height: 800px;
+  }
+
+  @include breakpoint(tablet-m) {
+    min-height: 570px;
+    max-height: 570px;
   }
 
   &__info {
@@ -101,14 +104,16 @@
     height: 500px;
     display: flex;
     max-width: 330px;
-    margin-left: 5px;
-    margin-right: 10px;
     justify-content: flex-end;
-    animation: cubeAnimationRotate 2.8s infinite !important;
+    animation: cubeAnimationRotate 2.8s infinite;
+
+    &:hover {
+      animation: cubeHoverAnimationRotate 3s infinite;
+    }
 
     @include breakpoint(tablet) {
-      height: 230px;
-      margin-top: 230px;
+      // height: 230px;
+      margin-top: 140px;
     }
 
     @include breakpoint(tablet-m) {
@@ -123,6 +128,12 @@
       align-items: center;
       will-change: transform;
       justify-content: center;
+      transform: scale(1);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
 
       @include breakpoint(tablet) {
         max-width: 227px;
@@ -187,5 +198,41 @@
   }
   100% {
     transform: rotate3d(0.09, 6, 0.9, 0.025turn);
+  }
+}
+
+@keyframes cubeHoverAnimationRotate {
+  0% {
+    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
+  }
+  10% {
+    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
+  }
+  20% {
+    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
+  }
+  30% {
+    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
+  }
+  40% {
+    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
+  }
+  50% {
+    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
+  }
+  60% {
+    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
+  }
+  70% {
+    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
+  }
+  80% {
+    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
+  }
+  90% {
+    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
+  }
+  100% {
+    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
   }
 }

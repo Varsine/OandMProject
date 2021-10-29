@@ -46,7 +46,7 @@ const linksInformation = [
   },
   {
     id: shortid.generate(),
-    url: 'https://www.instagram.com/shelllogixllc',
+    url: 'https://instagram.com/shelllogix?utm_medium=copy_link',
     icon: <Instagram />,
     iconHover: <InstagramHover />,
     ariaLabel: 'instagram',

@@ -1,156 +1,91 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useRef, useEffect } from 'react';
-// import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 
-// import { weLabel } from 'utils/index';
-// import { NextLink } from 'components/index';
-// import { modeSelector } from 'slices/mainSlice';
+import { NextLink } from 'components/index';
+import { ourSliderData } from 'utils/index';
+import { useWindowSize } from 'hooks/index';
 
-import './OurWorks.scss';
-// import styles from './OurWorks.scss';
+import styles from './OurWorks.scss';
+
+import { DownArrow } from '../../../icons/ourWork/index';
 
 const OurWorks = () => {
-  // const isDarkMode = useSelector(modeSelector);
-  // const [activeIndex, setActiveIndex] = useState(weLabel[0].htmlFor);
-  const appRef = useRef(null);
-  // const [animation, setAnimation] = useState(true);
-  // const [curSlide, setCurSlide] = useState(1);
-  // const [scrolledUp, setScrolledUp] = useState(false);
-  // const [nextSlide, setnextSlide] = useState(1);
-  // const app = $('.app');
-  // let animation = true;
-  // let curSlide = 1;
-  // let scrolledUp;
-  // let nextSlide;
-  // console.log(appRef.current, 'ujhikj');
+  const { windowHeight, windowWidth, isMobile, isLaptop } = useWindowSize();
+  const [curSlide, setCurSlide] = useState(0);
+  const currentHeight = isLaptop ? windowHeight - 140 : windowHeight;
+  const transformValue = !isMobile
+    ? `translate3d(0px, -${curSlide * currentHeight}px, 0px)`
+    : `translate3d(-${curSlide * windowWidth}px, 0px, 0px)`;
 
-  // const pagination = (slide) => {
-  //   setAnimation(true);
-  // if (target === undefined) {
-  //   nextSlide = scrolledUp ? slide - 1 : slide + 1;
-  // } else {
-  //   nextSlide = target;
-  // }
+  const navigateDown = () => {
+    if (curSlide === ourSliderData.length - 1) {
+      setCurSlide(0);
+    } else {
+      setCurSlide(curSlide + 1);
+    }
+  };
 
-  // $(`.pages__item--${nextSlide}`).addClass('page__item-active');
-  // $(`.pages__item--${slide}`).removeClass('page__item-active');
+  const navigateUp = () => {
+    if (curSlide === 0) {
+      setCurSlide(ourSliderData.length - 1);
+    } else {
+      setCurSlide(curSlide - 1);
+    }
+  };
 
-  //   appRef.current.toggleClass('active');
-  //   setTimeout(() => {
-  //     setAnimation(true);
-  //   }, 3000);
-  // };
-
-  useEffect(() => {
-    // const img = $('.app__img');
-    // const pageNav1 = $('.pages__item--1');
-    // const pageNav2 = $('.pages__item--2');
-    // const pagination = (slide, target) => {
-    //   animation = true;
-    //   if (target === undefined) {
-    //     nextSlide = scrolledUp ? slide - 1 : slide + 1;
-    //   } else {
-    //     nextSlide = target;
-    //   }
-    //   $(`.pages__item--${nextSlide}`).addClass('page__item-active');
-    //   $(`.pages__item--${slide}`).removeClass('page__item-active');
-    //   $app.toggleClass('active');
-    //   setTimeout(() => {
-    //     animation = false;
-    //   }, 3000);
-    // };
-    // const navigateDown = () => {
-    //   if (curSlide > 1) return;
-    //   // scrolledUp = false;
-    //   pagination(curSlide);
-    //   setCurSlide(curSlide + 1);
-    // };
-    // const navigateUp = () => {
-    //   if (curSlide === 1) return;
-    //   // scrolledUp = true;
-    //   pagination(curSlide);
-    //   setCurSlide(curSlide - 1);
-    // };
-    // setTimeout(() => {
-    //   $app.addClass('initial');
-    // }, 1500);
-    // setTimeout(() => {
-    //   setAnimation(true);
-    // }, 4500);
-    // $(document).on('mousewheel DOMMouseScroll', (e) => {
-    //   const delta = e.originalEvent.wheelDelta;
-    //   if (animation) return;
-    //   if (delta > 0 || e.originalEvent.detail < 0) {
-    //     navigateUp();
-    //   } else {
-    //     navigateDown();
-    //   }
-    // });
-    // $(document).on('click', '.pages__item:not(.page__item-active)', () => {
-    //   if (animation) return;
-    //   const target = +$(this).attr('data-target');
-    //   pagination(curSlide, target);
-    //   curSlide = target;
-    // });
-  }, []);
+  const renderSliderItem = ourSliderData.map(
+    (
+      { bg, link, title, subTitle, textInfo, className, activeClassName },
+      idx,
+    ) => {
+      return (
+        <div className={styles.block} key={link}>
+          <div
+            className={classNames(
+              styles.text_block,
+              curSlide !== idx ? className : activeClassName,
+            )}
+          />
+          <div className={styles.info}>
+            <h1 className={styles.info__title}>{title}</h1>
+            <h2 className={styles.info__subtitle}>{subTitle}</h2>
+            <p className={styles.info__text}>{textInfo}</p>
+            <NextLink
+              className={styles.info__link}
+              to={link}
+              anchorProps={{
+                target: '_blank',
+                'aria-label': title,
+              }}
+            >
+              {link}
+            </NextLink>
+          </div>
+          <div
+            style={{ backgroundImage: `url(${bg})` }}
+            className={styles.wrapper__content__item}
+          />
+        </div>
+      );
+    },
+  );
 
   return (
     <section className="section we_work">
       <div className="canvas__working" />
-      <div className="container we_work__content">
-        <div className="cont">
-          <div className="mouse" />
-          <div ref={appRef} className="app">
-            <div className="app__bgimg">
-              <div className="app__bgimg-image app__bgimg-image--1" />
-              <div className="app__bgimg-image app__bgimg-image--2" />
-            </div>
-            <div className="app__img">
-              <img
-                onMouseDown="return false"
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/whiteTest4.png"
-                alt="city"
-              />
-            </div>
-
-            <div className="app__text app__text--1">
-              <div className="app__text-line app__text-line--4">imperdiet </div>
-              <div className="app__text-line app__text-line--3">ut le</div>
-              <div className="app__text-line app__text-line--2">
-                non tincidunt{' '}
-              </div>
-              <div className="app__text-line app__text-line--1">
-                <img
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/opus-attachment.png"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div className="app__text app__text--2">
-              <div className="app__text-line app__text-line--4">habitant</div>
-              <div className="app__text-line app__text-line--3">ut eget</div>
-              <div className="app__text-line app__text-line--2">
-                Nam imperdiet
-              </div>
-              <div className="app__text-line app__text-line--1">
-                <img
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/opus-attachment.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div className="pages">
-            <ul className="pages__list">
-              <li
-                data-target="1"
-                className="pages__item pages__item--1 page__item-active"
-              />
-              <li data-target="2" className="pages__item pages__item--2" />
-            </ul>
+      <div className={`container ${styles.wrapper}`}>
+        <DownArrow onClick={navigateUp} className={styles.wrapper__prev} />
+        <div className={styles.wrapper__container}>
+          <div
+            className={styles.wrapper__content}
+            style={{
+              transform: transformValue,
+            }}
+          >
+            {renderSliderItem}
           </div>
         </div>
+        <DownArrow onClick={navigateDown} className={styles.wrapper__next} />
       </div>
     </section>
   );

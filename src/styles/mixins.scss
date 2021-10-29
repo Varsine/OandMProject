@@ -26,42 +26,35 @@
   }
 }
 
-@mixin bounce($zero, $one, $two, $three, $four) {
-  animation: bounce 2.5s alternate linear;
-  margin-top: $one;
+@mixin ourWorkBlock($right, $bottom) {
+  right: $right;
+  bottom: $bottom;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 
-  @keyframes bounce {
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    transition: all 1.5s;
+  }
+}
+
+@mixin ourWorksText($top, $left, $bottom, $right) {
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+  opacity: 1;
+  animation: showText 1.5s alternate linear;
+
+  @keyframes showText {
     0% {
-      margin-top: $zero;
-      animation-timing-function: ease-in;
-    }
-    15% {
-      margin-top: $one;
-      animation-timing-function: ease-out;
-    }
-    30% {
-      margin-top: $two;
-      animation-timing-function: ease-in;
-    }
-    45% {
-      margin-top: $one;
-      animation-timing-function: ease-out;
-    }
-    60% {
-      margin-top: $three;
-      animation-timing-function: ease-in;
-    }
-    75% {
-      margin-top: $one;
-      animation-timing-function: ease-out;
-    }
-    90% {
-      margin-top: $four;
-      animation-timing-function: ease-in;
+      opacity: 0;
     }
     100% {
-      margin-top: $one;
-      animation-timing-function: ease-out;
+      opacity: 1;
     }
   }
 }

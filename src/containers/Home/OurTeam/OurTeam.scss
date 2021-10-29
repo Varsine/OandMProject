@@ -18,6 +18,10 @@
 
 .arrow_style {
   height: 43vh;
+
+  @include breakpoint(tablet) {
+    height: 243px;
+  }
 }
 
 .wrapper {
@@ -30,6 +34,13 @@
 
   @include breakpoint(tablet) {
     padding: 40px 0 20px !important;
+    min-height: 730px;
+    max-height: 730px;
+  }
+
+  @include breakpoint(tablet-m) {
+    min-height: 450px;
+    max-height: 450px;
   }
 }
 
@@ -215,38 +226,6 @@
       }
     }
   }
-
-  // &__controls {
-  //   left: 0;
-  //   width: 100%;
-  //   bottom: 5vh;
-  //   position: absolute;
-  //   @extend %flex-center;
-
-  //   @include breakpoint(desktop) {
-  //     position: relative;
-  //     margin-top: 16px;
-  //   }
-
-  //   &_item {
-  //     height: 48px;
-  //     padding: 0;
-  //     background: unset;
-
-  //     &:disabled {
-  //       opacity: 0.35;
-  //       pointer-events: none;
-
-  //       svg path {
-  //         stroke: #a1a1a1;
-  //       }
-  //     }
-  //   }
-
-  //   &_left {
-  //     transform: rotate(180deg);
-  //   }
-  // }
 
   &__arrows {
     @extend %flex-center;

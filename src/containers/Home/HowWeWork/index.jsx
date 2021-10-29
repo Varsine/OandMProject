@@ -2,16 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
-// import { modeSelector, activeIndexSelector } from 'slices/mainSlice';
 import { modeSelector } from 'slices/mainSlice';
 
-import HowWeWorkAnimation from './HowWeWork';
 import styles from './HowWeWork.scss';
+import HowWeWorkAnimation from './HowWeWork';
 
 const HowWeWork = () => {
   const isDarkMode = useSelector(modeSelector);
-  // const activeIndex = useSelector(activeIndexSelector);
-  // const isActiveAnimate = activeIndex === 3;
 
   return (
     <section className={`${styles.height_reponce} ${styles.we_work} section`}>
@@ -20,7 +17,6 @@ const HowWeWork = () => {
         <h2 className={styles.title}>How We Work</h2>
 
         <div className={styles.animation}>
-          {/* {isActiveAnimate && <HowWeWorkAnimation />} */}
           <HowWeWorkAnimation />
           <div className={styles.animation__text_one}>
             <p

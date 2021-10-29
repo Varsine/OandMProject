@@ -2,13 +2,9 @@ import React from 'react';
 
 import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
-import {
-  infoText,
-  joinOurTeam,
-  subtitle,
-} from 'containers/Home/JoinOurTeam/constants';
 
 import SwiperCards from './Cards';
+import { infoText, subtitle, joinOurTeam } from './constants';
 import styles from './JoinOurTeam.scss';
 
 const JoinOurTeam = () => {
