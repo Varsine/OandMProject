@@ -1,7 +1,497 @@
-.next_link {
-  color: blanchedalmond;
+.wrapper {
+  height: 100vh;
+  padding: 0;
+
+  @include breakpoint(desktop) {
+    height: calc(100vh - 140px);
+  }
+
+  &__container {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__content {
+    transform: translate3d(0px, 0px, 0px);
+    transition: 0.5s ease 0s;
+
+    @include breakpoint(tablet-m) {
+      display: flex;
+      align-items: center;
+      width: 700vh;
+    }
+
+    &__item {
+      overflow: hidden;
+      margin: 80px 0 60px;
+      height: calc(100vh - 140px);
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include breakpoint(tablet-m) {
+        height: 70vh !important;
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  .block {
+    @extend %flex-center;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+
+    @include breakpoint(desktop) {
+      height: calc(100vh - 140px);
+      width: 100vw !important;
+    }
+
+    @include breakpoint(tablet-m) {
+      flex-direction: column-reverse;
+      padding: 0 16px;
+    }
+  }
+
+  &__next {
+    @extend %nextPrev;
+    bottom: 60px;
+    animation: bounceAlpha 1.3s infinite linear;
+
+    @include breakpoint(desktop) {
+      bottom: 140px;
+      height: 40px;
+      width: 40px;
+    }
+
+    @include breakpoint(tablet-m) {
+      top: 50%;
+      animation: none;
+      transform: rotate(-90deg) translate(0, -50%);
+      bottom: unset;
+      left: unset;
+      right: 0;
+    }
+  }
+
+  &__prev {
+    @extend %nextPrev;
+    top: 80px;
+    animation: bouncePrew 1.3s infinite linear;
+
+    @include breakpoint(desktop) {
+      top: 0;
+      height: 40px;
+      width: 40px;
+    }
+
+    @include breakpoint(tablet-m) {
+      animation: none;
+      top: 50%;
+      left: 0;
+      transform: rotate(90deg) translate(0, -50%) !important;
+      height: 40px;
+      width: 40px;
+    }
+  }
 }
 
-.next_dark_link {
-  color: white;
+.text_block {
+  position: absolute;
+
+  @include breakpoint(tablet-m) {
+    display: none;
+  }
+
+  &__one {
+    @include ourWorkBlock(0, 0);
+
+    &::before {
+      width: 2000vw;
+      height: 2000vh;
+      border-radius: 100%;
+      bottom: 100%;
+      right: 100%;
+      box-shadow: 2000vh 2000vh 0 0 $our-works-bg;
+    }
+
+    &__active {
+      @include ourWorkBlock(0, 0);
+
+      &::before {
+        width: 300vw;
+        height: 300vh;
+        border-radius: 100%;
+        bottom: 0;
+        right: 0;
+        box-shadow: 60vh 60vh 0 0 $our-works-bg;
+        transition: all 1.5s;
+      }
+
+      & + div {
+        @include ourWorksText(unset, unset, 76px, 150px);
+
+        @include breakpoint(desktop) {
+          right: 50px;
+        }
+
+        @include breakpoint(tablet) {
+          right: 16px;
+        }
+
+        a {
+          color: $moni;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  &__two {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: $our-works-bg;
+    transition: all 1.5s;
+
+    &__active {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 50vw;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background-color: $our-works-bg;
+      transition: all 1.5s;
+
+      & + div {
+        @include ourWorksText(50%, 50px, unset, unset);
+        transform: translate(0, -50%);
+
+        @include breakpoint(tablet) {
+          left: 16px;
+        }
+
+        a {
+          color: $masstips;
+        }
+      }
+    }
+  }
+
+  &__three {
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 300vh solid $our-works-bg;
+    border-right: 300vw solid transparent;
+    transition: all 1.5s;
+
+    &__active {
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-bottom: 100vh solid $our-works-bg;
+      border-right: 90vw solid transparent;
+      transition: all 1.5s;
+
+      & + div {
+        @include ourWorksText(unset, 50px, 76px, unset);
+
+        @include breakpoint(tablet) {
+          left: 16px;
+        }
+
+        a {
+          color: $eiev;
+        }
+      }
+    }
+  }
+
+  &__four {
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 300vh solid $our-works-bg;
+    border-left: 300vw solid transparent;
+    transition: all 1.5s;
+
+    &__active {
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 100vh solid $our-works-bg;
+      border-left: 90vw solid transparent;
+      transition: all 1.5s;
+
+      & + div {
+        @include ourWorksText(106px, unset, unset, 150px);
+
+        @include breakpoint(desktop) {
+          right: 50px;
+        }
+
+        @include breakpoint(tablet) {
+          right: 16px;
+        }
+
+        a {
+          color: $statecert;
+        }
+      }
+    }
+  }
+
+  &__five {
+    width: 0;
+    height: 0;
+    right: 0;
+    border: 400vh solid transparent;
+    border-right: 100vw solid $our-works-bg;
+    transition: all 1.5s;
+
+    &__active {
+      width: 0;
+      height: 0;
+      right: 0;
+      border: 200vh solid transparent;
+      border-right: 53vw solid $our-works-bg;
+      transition: all 1.5s;
+
+      & + div {
+        @include ourWorksText(50%, unset, unset, 150px);
+        transform: translate(0, -50%);
+
+        @include breakpoint(desktop) {
+          right: 50px;
+        }
+
+        @include breakpoint(tablet) {
+          right: 16px;
+        }
+
+        a {
+          color: $white-20;
+        }
+      }
+    }
+  }
+
+  &__six {
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: skew(0deg);
+    background: $our-works-bg;
+    transition: all 1.5s;
+
+    &__active {
+      right: 50vw;
+      width: 100vw;
+      height: 100vh;
+      transform: skew(20deg);
+      background: $our-works-bg;
+      transition: all 1.5s;
+
+      & + div {
+        @include ourWorksText(50%, 50px, unset, unset);
+        transform: translate(0, -50%);
+
+        @include breakpoint(tablet) {
+          left: 16px;
+        }
+
+        a {
+          color: $kristobad;
+        }
+      }
+    }
+  }
+
+  &__sevn {
+    @include ourWorkBlock(0, 0);
+    transform: rotate(180deg);
+
+    &::before {
+      width: 2000vw;
+      height: 2000vh;
+      border-radius: 100%;
+      bottom: 100%;
+      right: 100%;
+      box-shadow: 2000vh 2000vh 0 0 $our-works-bg;
+    }
+
+    &__active {
+      @include ourWorkBlock(0, 0);
+      transform: rotate(180deg);
+
+      &::before {
+        width: 300vw;
+        height: 300vh;
+        border-radius: 100%;
+        bottom: 0;
+        right: 0;
+        box-shadow: 60vh 60vh 0 0 $our-works-bg;
+        transition: all 1.5s;
+      }
+
+      & + div {
+        @include ourWorksText(96px, 30px, unset, unset);
+
+        @include breakpoint(desktop) {
+          top: 16px;
+        }
+
+        @include breakpoint(tablet) {
+          left: 16px;
+        }
+
+        a {
+          color: $duoble-one;
+        }
+      }
+    }
+  }
+}
+
+.info {
+  @extend %flex-center;
+  position: absolute;
+  opacity: 0;
+  max-width: 400px;
+  width: 100%;
+  flex-direction: column;
+  word-break: break-all;
+  color: $white-20;
+
+  @include breakpoint(wide) {
+    max-width: 350px;
+  }
+
+  @include breakpoint(desktop) {
+    max-width: 40vw;
+  }
+
+  @include breakpoint(tablet-m) {
+    position: static;
+    max-width: 100%;
+    transform: none !important;
+    background: $our-works-bg;
+    backdrop-filter: blur(50px);
+    border-radius: 20px;
+    padding: 16px;
+  }
+
+  &__title {
+    @extend %open-sans-48;
+
+    @media (max-width: 1666px) and(max-height: 700px) {
+      font-size: 32px;
+      line-height: 44px;
+    }
+
+    @include breakpoint(wide) {
+      font-size: 32px;
+      line-height: 44px;
+    }
+
+    @include breakpoint(desktop) {
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+
+  &__subtitle {
+    @extend %open-sans-24;
+    font-weight: normal;
+    margin: 8px 0 24px;
+
+    @media (max-width: 1666px) and(max-height: 700px) {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    @include breakpoint(wide) {
+      font-size: 16px;
+      line-height: 22px;
+      margin: 8px 0 16px;
+    }
+  }
+
+  &__text {
+    @extend %open-sans-18;
+    font-weight: normal;
+    margin: 0 0 24px;
+
+    @media (max-width: 1666px) and(max-height: 700px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include breakpoint(wide) {
+      font-size: 14px;
+      line-height: 19px;
+      margin: 0 0 16px;
+    }
+  }
+
+  &__link {
+    @extend %open-sans-18;
+    font-weight: 500;
+    color: $liner-blue;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+@keyframes bounceAlpha {
+  0% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes bouncePrew {
+  0% {
+    opacity: 1;
+    transform: rotate(180deg) translateY(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: rotate(180deg) translateY(10px) scale(0.9);
+  }
+  50% {
+    opacity: 0;
+    transform: rotate(180deg) translateY(-10px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(180deg) translateY(0px) scale(1);
+  }
 }
