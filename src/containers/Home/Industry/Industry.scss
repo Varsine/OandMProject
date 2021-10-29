@@ -249,6 +249,7 @@
 
     &__info {
       @extend %open-sans-18;
+      user-select: none;
       word-wrap: break-word;
       color: $text-color;
 

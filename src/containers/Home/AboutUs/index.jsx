@@ -10,15 +10,18 @@ import styles from './AboutUs.scss';
 import AboutUsBlock from './AboutUsBlock';
 
 const AboutUs = () => {
-  const { isDesktop } = useWindowSize;
+  const { isDesktop } = useWindowSize();
   const activeIndex = useSelector(activeIndexSelector);
   const isOpen = activeIndex === 2;
   const [isShow, setIsShow] = useState(false);
   const [isTitle, setIsTitle] = useState(false);
+  const [firstAnimation, setFirstAnimation] = useState(false);
+  const showFirstAnimate = !isDesktop ? firstAnimation : isShow;
 
   useEffect(() => {
     if (isOpen) {
       setIsTitle(true);
+      setFirstAnimation(true);
     }
 
     setTimeout(() => {
@@ -26,9 +29,6 @@ const AboutUs = () => {
         setIsShow(true);
       } else {
         setIsShow(false);
-        if (isDesktop) {
-          setIsTitle(false);
-        }
       }
     }, 1300);
   }, [isOpen]);
@@ -50,7 +50,7 @@ const AboutUs = () => {
         <div className={styles.wrapper__content}>
           <h1
             className={classNames(styles.wrapper__content__title, {
-              [styles.wrapper__content__title_show]: isTitle && !isDesktop,
+              [styles.wrapper__content__title_show]: isTitle,
             })}
           >
             <span>About Us</span>
@@ -60,7 +60,9 @@ const AboutUs = () => {
             </span>
           </h1>
         </div>
-        <div className={styles.wrapper__list}>{isShow && renderAboutBlock}</div>
+        <div className={styles.wrapper__list}>
+          {showFirstAnimate && renderAboutBlock}
+        </div>
       </div>
     </section>
   );
