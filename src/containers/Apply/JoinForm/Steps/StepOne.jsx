@@ -50,10 +50,10 @@ const StepOne = ({ editActiveStep, setApplicationForm }) => {
               component={FormikInput}
             />
             <Field
-              name="phone"
+              type="tel"
+              name="phoneNumber"
               label="Phone number"
               placeholder="Phone number"
-              type="tel"
               component={FormikInput}
             />
             <Button className={styles.next} type="submit">
