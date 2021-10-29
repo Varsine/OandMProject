@@ -41,11 +41,11 @@ const Cards = () => {
           slideShadows: false,
         }}
         pagination={false}
-        // autoplay={{
-        //   delay: 1700,
-        //   disableOnInteraction: false,
-        //   pauseOnMouseEnter: true,
-        // }}
+        autoplay={{
+          delay: 1700,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
       >
         {renderSwipe}
       </Swiper>
