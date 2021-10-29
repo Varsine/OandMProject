@@ -176,13 +176,16 @@
 
     &__title {
       z-index: 1;
-      font-size: 48px;
-      font-weight: 600;
-      padding-top: 32px;
-      line-height: 65px;
       position: relative;
       text-align: center;
-      text-decoration: underline;
+      @extend %open-sans-48;
+
+      @include breakpoint(tablet-m) {
+        font-size: 32px;
+        font-weight: 600;
+        padding: 24px 0 0;
+        line-height: 44px;
+      }
     }
 
     &__subtitle {
@@ -238,6 +241,10 @@
 
       @media (max-width: 500px) {
         min-height: 88px;
+      }
+
+      @include breakpoint(tablet-m) {
+        font-weight: 100;
       }
 
       @media (max-width: 387px) {

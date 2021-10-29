@@ -29,14 +29,17 @@ const OurTeam = () => {
     },
   };
 
+  const timeSettings = 3000;
+
   const setting = {
     ssr: true,
     responsive,
     arrows: false,
     infinite: true,
-    autoPlay: false,
+    autoPlay: true,
     draggable: false,
     swipeable: false,
+    autoPlaySpeed: timeSettings,
     sliderClass: styles.carousel__container,
     containerClass: styles.carousel__wrapper,
     customButtonGroup: <SliderArrows arrowStyles={styles.arrow_style} />,

@@ -45,7 +45,7 @@ const InjectableGoogleMap = () => {
           setSelectedPark(!selectedPark);
         }}
         icon={{
-          url: `/img/marker.svg`,
+          url: '',
           scaledSize: new window.google.maps.Size(50, 50),
         }}
       >

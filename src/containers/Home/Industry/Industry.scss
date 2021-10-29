@@ -1,3 +1,9 @@
+.d_none {
+  @include breakpoint(desktop) {
+    opacity: 0;
+  }
+}
+
 @include breakpoint(desktop) {
   .height_reponce {
     height: auto !important;
@@ -29,13 +35,14 @@
     z-index: 10;
     display: flex;
     position: static;
-    max-width: 327px;
+    max-width: 339px;
     user-select: none;
     flex-direction: column;
 
     @include breakpoint(desktop) {
       padding: 0 15px;
       margin-top: 32px;
+      min-height: 56px;
       flex-direction: unset;
       width: calc(100vw - 16px);
       justify-content: space-between;
@@ -61,6 +68,14 @@
     &__item {
       display: flex;
       cursor: url('/images/Mouse.png'), auto;
+
+      svg {
+        animation: unActiveIconAnima 0.6s forwards;
+
+        @include breakpoint(tablet-m) {
+          animation: unset;
+        }
+      }
 
       &:nth-child(2) {
         margin: 56px 0;
@@ -88,9 +103,12 @@
       align-items: center;
 
       svg {
-        width: 37px;
-        height: 37px;
+        animation: activeIconAnima 0.6s forwards;
         display: block;
+
+        @include breakpoint(tablet-m) {
+          animation: unset;
+        }
       }
 
       p {
@@ -135,10 +153,10 @@
     &__oneIcon {
       display: flex;
       align-items: center;
-      animation: moveToLeft 1.5s alternate;
+      animation: moveToLeft 1s alternate;
 
       @include breakpoint(desktop) {
-        animation: moveToTop 2s linear;
+        animation: moveToTop 1s linear;
       }
     }
 
@@ -148,7 +166,7 @@
       animation: moveToLeft 2s alternate;
 
       @include breakpoint(desktop) {
-        animation: moveToTop 2s linear;
+        animation: moveToTop 1s linear;
       }
     }
 
@@ -158,7 +176,7 @@
       animation: moveToLeft 3s alternate;
 
       @include breakpoint(desktop) {
-        animation: moveToTop 2s linear;
+        animation: moveToTop 1s linear;
       }
     }
 
@@ -220,7 +238,7 @@
         animation: moveToTop 2s linear;
 
         @include breakpoint(desktop) {
-          animation: moveToLeft 2s linear;
+          animation: moveToLeft 1s linear;
         }
       }
 
@@ -240,10 +258,6 @@
         max-width: 100%;
         margin: 39px 15px 24px 36px;
         min-height: 157px;
-
-        // &::-webkit-scrollbar {
-        //   display: none;
-        // }
       }
 
       @include breakpoint(tablet-m) {
@@ -256,7 +270,7 @@
         animation: moveToBottom 2s linear;
 
         @include breakpoint(desktop) {
-          animation: moveToRigth 2s linear;
+          animation: moveToRigth 1s linear;
 
           &__textt {
             margin-right: 16px;
@@ -278,7 +292,6 @@
         margin: 0 0 24px;
 
         @include breakpoint(tablet-m) {
-          margin: 24px 0 16px 0;
         }
       }
     }
@@ -353,5 +366,27 @@
   100% {
     font-size: 0px;
     opacity: 0;
+  }
+}
+
+@keyframes activeIconAnima {
+  0% {
+    width: 37px;
+    height: 37px;
+  }
+  100% {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@keyframes unActiveIconAnima {
+  0% {
+    width: 56px;
+    height: 56px;
+  }
+  100% {
+    width: 37px;
+    height: 37px;
   }
 }

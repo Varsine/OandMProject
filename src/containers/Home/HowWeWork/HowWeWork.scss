@@ -26,6 +26,7 @@
 
 .wrapper {
   width: 100%;
+  height: auto;
   @extend %flex-align;
   flex-direction: column;
 
@@ -40,8 +41,12 @@
 }
 
 .svg {
-  width: 288px;
-  height: 693px;
+  width: 100%;
+
+  &__mobile {
+    width: 288px;
+    height: 693px;
+  }
 }
 
 .title {
@@ -50,7 +55,6 @@
   text-align: center;
   padding: 32px 0 72px;
   @extend %open-sans-48;
-  text-decoration: underline;
 
   @include breakpoint(desktop) {
     padding-bottom: 42px;
@@ -100,6 +104,11 @@
 
     p {
       text-align: left;
+
+      @include breakpoint(tablet-m) {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
 
     @include breakpoint(tablet) {
@@ -123,6 +132,11 @@
 
     p {
       text-align: center;
+
+      @include breakpoint(tablet-m) {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
 
     @include breakpoint(tablet-m) {
@@ -136,10 +150,15 @@
     max-width: 290px;
     width: 100%;
     right: 0;
-    bottom: -40px;
+    bottom: -60px;
 
     p {
       text-align: right;
+
+      @include breakpoint(tablet-m) {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
 
     @include breakpoint(tablet) {
@@ -153,170 +172,188 @@
   }
 }
 
-.rocket {
-  transform-origin: center center;
-  transform-box: fill-box;
-  offset-rotate: auto 45deg;
-  animation: move 8.5s linear 2s 1;
-  offset-path: path(
-    'M159 329.853C210 276.853 234.5 251.853 260.5 233.354C285.479 215.581 301.124 205.121 330.5 196.353C357.981 188.151 374.814 183.559 403 188.854C424.318 192.858 437.538 196.729 454 210.854C468.509 223.303 474 236.353 481.5 251.354C491.025 270.404 499.168 287.183 515.5 300.853C530.462 313.377 536.548 315.828 556 317.354C581.5 319.353 598 313.353 619.5 301.354C642.35 288.601 653.195 277.662 672.5 260.354C747.5 178.854 733.5 194.354 781.5 162.854C811 150.353 879.17 144.589 912.5 141.853C949.188 138.842 970.5 138.353 1007 149.353C1044.28 160.59 1071.12 173.081 1090.5 206.854C1099.38 222.331 1102.91 232.579 1104.5 250.354C1107 278.354 1104.5 275.678 1104.5 301.354C1104.5 324.354 1101.5 344.354 1116.5 377.354C1131.5 410.354 1181.49 421.852 1209.5 401.354C1291.5 341.354 1315.5 341.354 1315.5 340.354'
-  );
-
-  &_path {
-    offset-path: path(
-      'M52.4998 98.7016C91.4998 55.7016 135.182 14.523 172.5 23.2016C323 58.2017 238 325.5 238 325.5C238 325.5 37 262.5 25.5001 379C22.504 409.352 47.0001 492.5 47.0001 492.5'
-    );
+@keyframes clockbg {
+  from {
+    fill: #ffffff;
   }
-
-  &__move {
-    path {
-      &:nth-child(1) {
-        fill: url(#paint0_linear);
-      }
-
-      &:nth-child(2) {
-        fill: url(#paint1_linear);
-      }
-
-      &:nth-child(3) {
-        fill: url(#paint2_linear);
-      }
-
-      &:nth-child(4) {
-        fill: url(#paint3_linear);
-      }
-
-      &:nth-child(5) {
-        fill: url(#paint4_linear);
-      }
-    }
+  to {
+    fill: #ffffff;
+    fill-opacity: 1;
   }
 }
 
-@keyframes move {
-  0% {
-    offset-distance: 0%;
+@-webkit-keyframes clockbg {
+  from {
+    fill: #ffffff;
   }
-  98% {
-    offset-rotate: auto 45deg;
-    opacity: 1;
+  to {
+    fill: #ffffff;
+    fill-opacity: 1;
+  }
+}
+
+@-moz-keyframes clockbg {
+  from {
+    fill: #ffffff;
+  }
+  to {
+    fill: #ffffff;
+    fill-opacity: 1;
+  }
+}
+
+@keyframes handsbg {
+  to {
+    fill: #3d80d4;
+    fill-opacity: 1;
+  }
+  to {
+    fill: #3d80d4;
+    fill-opacity: 1;
+  }
+}
+
+@keyframes clockrotatelarg {
+  0% {
+    fill: #ffffff;
   }
   100% {
-    offset-distance: 100%;
+    transform: rotate(359deg);
+    fill: #ffffff;
+  }
+}
+
+@keyframes unsetborder {
+  to {
+    fill: unset;
+  }
+}
+
+@-webkit-keyframes unsetborder {
+  to {
+    fill: unset;
+  }
+}
+@-moz-keyframes unsetborder {
+  to {
+    fill: unset;
+  }
+}
+
+.rocket {
+  animation-fill-mode: forwards;
+  animation: hideRocket 11.1s;
+}
+
+.rocketAnimated {
+  transform-origin: center center;
+  transform-box: fill-box;
+  transform: rotate(45deg) translate(-27px, 1px);
+  animation-fill-mode: forwards;
+  animation: showRocket 11.1s;
+}
+
+.rocketMobileAnimated {
+  transform-origin: center center;
+  transform-box: fill-box;
+  transform: rotate(45deg) translate(-13px, -15px);
+  animation-fill-mode: forwards;
+  animation: mobileShowRocket 11.1s;
+}
+
+@keyframes hideRocket {
+  0% {
+    opacity: 1;
+  }
+  22% {
+    opacity: 1;
+  }
+  23% {
+    opacity: 0;
+  }
+  100% {
     opacity: 0;
   }
 }
 
-.light_circle {
-  animation: lightMode;
-  animation-delay: 2.4s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
+@keyframes showRocket {
+  0% {
+    opacity: 0;
+  }
+  23% {
+    opacity: 0;
+  }
+  24% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
-  @keyframes lightMode {
-    to {
-      fill: url(#paint0_linear);
-    }
+@keyframes mobileShowRocket {
+  0% {
+    opacity: 0;
+  }
+  24% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
 .clockAnimation {
   path {
-    &:nth-child(1) {
-      animation: clockColor;
-      animation-delay: 6s;
+    &:first-of-type {
+      animation: clockColor 0.3s ease-in-out 6s 1;
       animation-fill-mode: forwards;
-      animation-timing-function: ease-in-out;
 
       @keyframes clockColor {
         to {
-          fill: url(#paint0_linear);
+          fill: #3d80d4;
           fill-opacity: 1;
-        }
-      }
-    }
-
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5),
-    &:nth-child(6),
-    &:nth-child(7),
-    &:nth-child(8),
-    &:nth-child(9),
-    &:nth-child(10),
-    &:nth-child(11),
-    &:nth-child(12),
-    &:nth-child(13) {
-      animation: whiteBorder;
-      animation-delay: 6s;
-      animation-fill-mode: forwards;
-      animation-timing-function: linear;
-
-      @keyframes whiteBorder {
-        to {
-          fill: $white;
-        }
-      }
-    }
-
-    &:last-child {
-      animation: unsetborder;
-      animation-delay: 6s;
-      animation-fill-mode: forwards;
-      animation-timing-function: linear;
-
-      @keyframes unsetborder {
-        to {
-          fill: unset;
         }
       }
     }
   }
 
   &__arrow {
-    transform-origin: -25% -25%;
     transform-box: fill-box;
-    animation: clockrotate 0.3s linear 6s 5;
+    animation: clockrotatelarg 0.3s linear 6s 10;
     animation-fill-mode: forwards;
-    offset-distance: 0%;
-    offset-path: path(
-      'M769.998 168.488C768.807 168.488 767.81 167.667 767.523 166.562L767.523 166.56L767.52 166.547C767.517 166.536 767.514 166.52 767.509 166.499C767.5 166.458 767.488 166.4 767.477 166.334C767.453 166.201 767.43 166.042 767.43 165.921C767.43 165.8 767.453 165.641 767.477 165.508C767.488 165.442 767.5 165.384 767.509 165.343C767.514 165.322 767.517 165.306 767.52 165.294L767.523 165.281L767.523 165.278C767.757 164.383 768.457 163.681 769.353 163.447L769.353 163.447L769.366 163.445L769.414 163.437C769.456 163.431 769.514 163.422 769.58 163.414C769.714 163.396 769.875 163.38 769.998 163.38C770.122 163.38 770.283 163.396 770.417 163.414C770.483 163.422 770.541 163.431 770.582 163.437L770.631 163.445L770.644 163.447L770.644 163.447C771.746 163.735 772.565 164.73 772.565 165.921C772.565 167.336 771.414 168.488 769.998 168.488Z'
-    );
-
-    @keyframes clockrotate {
-      0% {
-        offset-distance: 0%;
-        fill: white;
-      }
-      100% {
-        offset-distance: 100%;
-        fill: white;
-      }
-    }
+    transform-origin: 82% 27%;
   }
 
   &__arrow_larg {
-    transform-origin: 50% 0;
     transform-box: fill-box;
-    animation: clockrotatelarg 0.3s linear 6s 5;
+    animation: clockrotatelarg 0.3s linear 6s 10;
     animation-fill-mode: forwards;
-    offset-distance: 0%;
-    offset-path: path(
-      'M769.998 168.488C768.807 168.488 767.81 167.667 767.523 166.562L767.523 166.56L767.52 166.547C767.517 166.536 767.514 166.52 767.509 166.499C767.5 166.458 767.488 166.4 767.477 166.334C767.453 166.201 767.43 166.042 767.43 165.921C767.43 165.8 767.453 165.641 767.477 165.508C767.488 165.442 767.5 165.384 767.509 165.343C767.514 165.322 767.517 165.306 767.52 165.294L767.523 165.281L767.523 165.278C767.757 164.383 768.457 163.681 769.353 163.447L769.353 163.447L769.366 163.445L769.414 163.437C769.456 163.431 769.514 163.422 769.58 163.414C769.714 163.396 769.875 163.38 769.998 163.38C770.122 163.38 770.283 163.396 770.417 163.414C770.483 163.422 770.541 163.431 770.582 163.437L770.631 163.445L770.644 163.447L770.644 163.447C771.746 163.735 772.565 164.73 772.565 165.921C772.565 167.336 771.414 168.488 769.998 168.488Z'
-    );
-
-    @keyframes clockrotatelarg {
-      0% {
-        offset-distance: 0%;
-        fill: white;
-      }
-      100% {
-        offset-distance: 100%;
-        fill: white;
-      }
-    }
+    transform-origin: 100% 95%;
   }
+}
+
+.removeFill {
+  transform-box: fill-box;
+  -webkit-animation: unsetborder 0s linear 6s 1;
+  -moz-animation: unsetborder 0s linear 6s 1;
+  animation: unsetborder 0s linear 6s 1;
+  animation-fill-mode: forwards;
 }
 
 .hands {
@@ -326,13 +363,6 @@
       animation-delay: 10.5s;
       animation-fill-mode: forwards;
       animation-timing-function: linear;
-
-      @keyframes handsbg {
-        to {
-          fill: url(#paint0_linear);
-          fill-opacity: 1;
-        }
-      }
     }
 
     &:nth-child(4) {
@@ -399,4 +429,30 @@
       }
     }
   }
+}
+
+.clockCircle {
+  animation: handsbg;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.clockPaths {
+  animation: clockbg;
+  -webkit-animation: clockbg;
+  -moz-animation: clockbg;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.clockPathsArrows {
+  animation: clockrotatelarg;
+  animation-duration: 0.5s;
+  animation-delay: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: 10;
+  animation-fill-mode: forwards;
+  transform-origin: 82.5% 47%;
 }

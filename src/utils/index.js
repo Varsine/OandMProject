@@ -12,3 +12,4 @@ export { default as menuLinks } from './menuLinks';
 export { default as ourSliderData } from './ourWorks';
 export { default as linksInformation } from './linksInformation';
 export { default as ourPartnersCards } from './ourPartnersCards';
+export { default as calculatePiecesPosition } from './calculatePiecesPosition';

@@ -1,4 +1,14 @@
-const LogoMoveBallIcon = (props) => {
+import { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+
+const LogoMoveBallIcon = ({ setisanimate, ...props }) => {
+  const animateElem = useRef({});
+  useEffect(() => {
+    animateElem.current.addEventListener('endEvent', () => {
+      setisanimate(true);
+    });
+  }, []);
+
   return (
     <svg
       width="1920"
@@ -8,8 +18,9 @@ const LogoMoveBallIcon = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <rect width="77" height="77" rx="38.5" fill="url(#paint0_linear)">
+      <rect width="77" height="77" rx="38.5" fill="url(#paint0_linear789789)">
         <animateMotion
+          ref={animateElem}
           dur="3.5s"
           restart="whenNotActive"
           path="M1 272C1 272 4.8211 252.761 62 215.5C238.666 100.373 226.284 596.012 437 604C630.136 611.321 820.466 312.263 1009.5 272C1186 234.406 1518.75 334.386 1467 604C1431.18 790.624 1266.06 866.444 1078.5 897C805.468 941.481 213.059 715.794 418.5 530.541C505 452.541 650 425.704 650 425.704L746 415.5"
@@ -29,7 +40,7 @@ const LogoMoveBallIcon = (props) => {
       </rect>
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id="paint0_linear789789"
           x1="38.5"
           y1="0"
           x2="38.5"
@@ -42,6 +53,14 @@ const LogoMoveBallIcon = (props) => {
       </defs>
     </svg>
   );
+};
+
+LogoMoveBallIcon.propTypes = {
+  setisanimate: PropTypes.func,
+};
+
+LogoMoveBallIcon.defaultProps = {
+  setisanimate: () => {},
 };
 
 export default LogoMoveBallIcon;
