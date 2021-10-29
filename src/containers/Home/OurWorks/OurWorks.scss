@@ -368,6 +368,7 @@
 
 .info {
   @extend %flex-center;
+  user-select: none;
   position: absolute;
   opacity: 0;
   max-width: 400px;
