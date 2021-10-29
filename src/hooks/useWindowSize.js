@@ -34,6 +34,7 @@ const useWindowSize = () => {
   const isLaptop = windowSize.width <= 1024;
   const isWide = windowSize.width > 1024 && windowSize.width < 1200;
   const windowWidth = windowSize.width;
+  const windowHeight = windowSize.height;
 
   return {
     isWide,
@@ -43,6 +44,7 @@ const useWindowSize = () => {
     isDesktop,
     windowWidth,
     isTabletMid,
+    windowHeight,
     isLargeTablet,
     isSaleListTablet,
   };

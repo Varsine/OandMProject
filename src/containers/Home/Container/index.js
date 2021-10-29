@@ -45,7 +45,6 @@ const HomeContainer = () => {
       keyboardScrolling={false}
       onLeave={changeActiveStep}
       fitToSection={false}
-      fixedElements="#canvas"
       render={renderFullPageContent}
     />
   );

@@ -12,6 +12,7 @@ import 'react-multi-carousel/lib/styles.css';
 import 'swiper/swiper-bundle.min.css';
 
 import { wrapper } from 'libraries/index';
+import { IS_SERVER } from 'constants/globalConstants';
 import { useDarkMode } from 'hooks/index';
 
 import ErrorPage from './404';
@@ -62,6 +63,7 @@ const MyApp = ({ Component, pageProps }) => {
         options={{ showSpinner: false }}
       />
       <Component {...pageProps} />
+      {!IS_SERVER && <canvas id="canvas" />}
     </>
   );
 };

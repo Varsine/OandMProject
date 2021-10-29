@@ -1,87 +1,91 @@
-import React, { useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 
-import { weLabel } from 'utils/index';
 import { NextLink } from 'components/index';
-import { modeSelector } from 'slices/mainSlice';
+import { ourSliderData } from 'utils/index';
+import { useWindowSize } from 'hooks/index';
 
 import styles from './OurWorks.scss';
 
-const OurWorks = () => {
-  const isDarkMode = useSelector(modeSelector);
-  const [activeIndex, setActiveIndex] = useState(weLabel[0].htmlFor);
+import { DownArrow } from '../../../icons/ourWork/index';
 
-  const isCheckedHandler = (el) => {
-    setActiveIndex(el);
+const OurWorks = () => {
+  const { windowHeight, windowWidth, isMobile, isLaptop } = useWindowSize();
+  const [curSlide, setCurSlide] = useState(0);
+  const currentHeight = isLaptop ? windowHeight - 140 : windowHeight;
+  const transformValue = !isMobile
+    ? `translate3d(0px, -${curSlide * currentHeight}px, 0px)`
+    : `translate3d(-${curSlide * windowWidth}px, 0px, 0px)`;
+
+  const navigateDown = () => {
+    if (curSlide === ourSliderData.length - 1) {
+      setCurSlide(0);
+    } else {
+      setCurSlide(curSlide + 1);
+    }
   };
 
-  const renderInputs = useMemo(
-    () =>
-      weLabel.map((elem, index) => (
-        <input
-          type="radio"
-          name="slider"
-          id={elem.htmlFor}
-          key={elem.htmlFor}
-          value={elem.htmlFor}
-          className="carousel__inp"
-          defaultChecked={index === 0}
-          onChange={(event) => isCheckedHandler(event.target.value)}
-        />
-      )),
-    [],
+  const navigateUp = () => {
+    if (curSlide === 0) {
+      setCurSlide(ourSliderData.length - 1);
+    } else {
+      setCurSlide(curSlide - 1);
+    }
+  };
+
+  const renderSliderItem = ourSliderData.map(
+    (
+      { bg, link, title, subTitle, textInfo, className, activeClassName },
+      idx,
+    ) => {
+      return (
+        <div className={styles.block} key={link}>
+          <div
+            className={classNames(
+              styles.text_block,
+              curSlide !== idx ? className : activeClassName,
+            )}
+          />
+          <div className={styles.info}>
+            <h1 className={styles.info__title}>{title}</h1>
+            <h2 className={styles.info__subtitle}>{subTitle}</h2>
+            <p className={styles.info__text}>{textInfo}</p>
+            <NextLink
+              className={styles.info__link}
+              to={link}
+              anchorProps={{
+                target: '_blank',
+                'aria-label': title,
+              }}
+            >
+              {link}
+            </NextLink>
+          </div>
+          <div
+            style={{ backgroundImage: `url(${bg})` }}
+            className={styles.wrapper__content__item}
+          />
+        </div>
+      );
+    },
   );
-
-  const renderLabels = useMemo(
-    () =>
-      weLabel.map((item) => (
-        <label
-          id={item.id}
-          key={item.id}
-          type="button"
-          htmlFor={item.htmlFor}
-          className="slider__item"
-          style={{
-            backgroundImage: isDarkMode ? item.darkImage : item.image,
-          }}
-        >
-          <NextLink
-            target="_blanck"
-            to={item.hrefLink}
-            className={isDarkMode ? styles.next_dark_link : styles.next_link}
-          >
-            {activeIndex === item.htmlFor && item.text}
-          </NextLink>
-        </label>
-      )),
-    [isDarkMode, activeIndex],
-  );
-
-  const renderTexts = useMemo(() => {
-    const activeItem = weLabel.find((weItem) => weItem.htmlFor === activeIndex);
-
-    return <p className="we_work__text">{activeItem.title}</p>;
-  }, [activeIndex]);
-
-  const renderSubTitle = useMemo(() => {
-    const activeItem = weLabel.find((weItem) => weItem.htmlFor === activeIndex);
-
-    return <p className="we_work__subtitle">{activeItem.subtitle}</p>;
-  }, [activeIndex]);
 
   return (
     <section className="section we_work">
       <div className="canvas__working" />
-      <div className="container we_work__content">
-        <h2 className="we_work__title">Our works</h2>
-        {renderSubTitle}
-        <div className="we_work__slider">
-          <div className="slider_we_work" id="slider_we_work">
-            {renderInputs}
-            {renderLabels}
+      <div className={`container ${styles.wrapper}`}>
+        <DownArrow onClick={navigateUp} className={styles.wrapper__prev} />
+        <div className={styles.wrapper__container}>
+          <div
+            className={styles.wrapper__content}
+            style={{
+              transform: transformValue,
+            }}
+          >
+            {renderSliderItem}
           </div>
         </div>
-        {renderTexts}
+        <DownArrow onClick={navigateDown} className={styles.wrapper__next} />
       </div>
     </section>
   );

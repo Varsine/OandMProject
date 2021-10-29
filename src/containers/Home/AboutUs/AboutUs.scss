@@ -111,7 +111,7 @@
 
   &__rope {
     position: absolute;
-    width: 0.3px;
+    width: 1px;
     background: $rope-bg;
     transition-timing-function: cubic-bezier(1, 0, 1, 0);
     transition-duration: 0.5s;
