@@ -8,15 +8,16 @@ export const stepOneInitialValues = {
   phoneNumber: '',
 };
 
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const phoneRegExp = /^[0-9 +]+$/;
 
 export const stepOneValidationSchema = Yup.object({
   jobType: Yup.string().required('* required'),
   firstName: Yup.string().required('* required'),
   lastName: Yup.string().required('* required'),
   email: Yup.string().email('Invalid email format').required('* required'),
-  phone: Yup.string()
+  phoneNumber: Yup.string()
+    .min(6)
+    .max(8, 'Maximum 8 charachters')
     .required('* required')
     .matches(phoneRegExp, 'Phone number is not valid'),
 });
