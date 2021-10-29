@@ -64,8 +64,6 @@ const MyApp = ({ Component, pageProps }) => {
       />
       <Component {...pageProps} />
       {!IS_SERVER && <canvas id="canvas" />}
-
-      {/* <canvas id="something" /> */}
     </>
   );
 };
