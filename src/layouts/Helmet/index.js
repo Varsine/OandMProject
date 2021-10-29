@@ -12,7 +12,6 @@ const HelmetLayout = ({ children, title, metaDescription }) => (
       {!IS_SERVER && <script src="/js/script.js" />}
     </Head>
     {children}
-    {!IS_SERVER && <canvas id="canvas" />}
   </>
 );
 

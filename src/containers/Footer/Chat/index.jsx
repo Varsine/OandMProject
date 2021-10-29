@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
@@ -14,12 +14,17 @@ import { ChatIcon, ChatHoverIcon, ArrowIcon } from '../../../icons';
 
 const Chat = ({ isOpenHandler, isOpen }) => {
   const { isMobile } = useWindowSize();
+  const [showChat, setShowChat] = useState(false);
 
   const openChatHandler = () => {
     if (!IS_SERVER) {
       window.FB.CustomerChat.show(true);
     }
   };
+
+  useEffect(() => {
+    setShowChat(true);
+  }, []);
 
   const wrapperClassNames = useMemo(
     () =>
@@ -38,7 +43,14 @@ const Chat = ({ isOpenHandler, isOpen }) => {
           aria-label="open social links"
         />
       )}
-      <MessengerCustomerChat appId={CHAT_APP_ID} pageId={CHAT_PAGE_ID} />
+      {showChat && (
+        <MessengerCustomerChat
+          appId={CHAT_APP_ID}
+          pageId={CHAT_PAGE_ID}
+          htmlRef="chat"
+        />
+      )}
+
       <IconHover
         icon={<ChatIcon />}
         isLink={false}

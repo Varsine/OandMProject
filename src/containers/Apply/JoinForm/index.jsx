@@ -66,7 +66,7 @@ const JoinForm = () => {
                 >
                   1
                 </Button>
-                <StepIcon className={isDarkMode || styles.steps__line} />
+                <StepIcon className={!isDarkMode ? styles.steps__line : ''} />
                 <Button
                   disabled={activeIndex === 1}
                   onClick={() => editActiveStep(2)}

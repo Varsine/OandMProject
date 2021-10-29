@@ -23,7 +23,6 @@ const ErrorContainer = () => {
       scrollingSpeed={1300}
       keyboardScrolling={false}
       fitToSection={false}
-      fixedElements="#canvas"
       render={renderFullPageContent}
     />
   );
