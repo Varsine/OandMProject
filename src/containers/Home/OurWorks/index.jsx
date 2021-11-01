@@ -10,11 +10,10 @@ import styles from './OurWorks.scss';
 import { DownArrow } from '../../../icons/ourWork/index';
 
 const OurWorks = () => {
-  const { windowHeight, windowWidth, isMobile, isLaptop } = useWindowSize();
+  const { windowHeight, windowWidth, isMobile } = useWindowSize();
   const [curSlide, setCurSlide] = useState(0);
-  const currentHeight = isLaptop ? windowHeight - 140 : windowHeight;
   const transformValue = !isMobile
-    ? `translate3d(0px, -${curSlide * currentHeight}px, 0px)`
+    ? `translate3d(0px, -${curSlide * windowHeight}px, 0px)`
     : `translate3d(-${curSlide * windowWidth}px, 0px, 0px)`;
 
   const navigateDown = () => {
@@ -71,9 +70,9 @@ const OurWorks = () => {
   );
 
   return (
-    <section className="section we_work">
+    <section className="section">
       <div className="canvas__working" />
-      <div className={`container ${styles.wrapper}`}>
+      <div className={styles.wrapper}>
         <DownArrow onClick={navigateUp} className={styles.wrapper__prev} />
         <div className={styles.wrapper__container}>
           <div

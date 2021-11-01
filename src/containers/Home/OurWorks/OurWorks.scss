@@ -1,14 +1,14 @@
 .wrapper {
-  height: 100vh;
+  height: 100vh !important;
   padding: 0;
+  position: relative;
 
   @include breakpoint(desktop) {
-    height: calc(100vh - 140px);
+    padding: 0 !important;
   }
 
   &__container {
     height: 100%;
-    overflow: hidden;
     position: relative;
   }
 
@@ -39,28 +39,14 @@
     }
   }
 
-  .block {
-    @extend %flex-center;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-
-    @include breakpoint(desktop) {
-      height: calc(100vh - 140px);
-      width: 100vw !important;
-    }
-
-    @include breakpoint(tablet-m) {
-      flex-direction: column-reverse;
-      padding: 0 16px;
-    }
-  }
-
   &__next {
     @extend %nextPrev;
-    bottom: 60px;
-    animation: bounceAlpha 1.3s infinite linear;
+    bottom: 80px;
+    animation: bounceAlpha 1s infinite linear;
+    background-color: $our-works-bg;
+    border-radius: 50%;
+    fill: $arrowColor;
+    padding: 10px;
 
     @include breakpoint(desktop) {
       bottom: 140px;
@@ -79,12 +65,16 @@
   }
 
   &__prev {
+    top: 100px;
+    padding: 10px;
+    fill: $arrowColor;
     @extend %nextPrev;
-    top: 80px;
-    animation: bouncePrew 1.3s infinite linear;
+    border-radius: 50%;
+    background-color: $our-works-bg;
+    animation: bouncePrew 1s infinite linear;
 
     @include breakpoint(desktop) {
-      top: 0;
+      top: 140px;
       height: 40px;
       width: 40px;
     }
@@ -96,6 +86,23 @@
       transform: rotate(90deg) translate(0, -50%) !important;
       height: 40px;
       width: 40px;
+    }
+  }
+
+  .block {
+    @extend %flex-center;
+    position: relative;
+    overflow: hidden;
+    height: 100vh !important;
+    width: 100vw !important;
+
+    @include breakpoint(desktop) {
+      width: 100vw !important;
+    }
+
+    @include breakpoint(tablet-m) {
+      flex-direction: column-reverse;
+      padding: 0 16px;
     }
   }
 }
@@ -461,38 +468,30 @@
 
 @keyframes bounceAlpha {
   0% {
-    opacity: 1;
-    transform: translateY(0px) scale(1);
-  }
-  25% {
-    opacity: 0;
-    transform: translateY(10px) scale(0.9);
+    opacity: 0.7;
+    transform: translateY(0px) scale(0.9);
   }
   50% {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.9);
+    opacity: 1;
+    transform: translateY(10px) scale(1);
   }
   100% {
-    opacity: 1;
-    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+    transform: translateY(0px) scale(0.9);
   }
 }
 
 @keyframes bouncePrew {
   0% {
-    opacity: 1;
-    transform: rotate(180deg) translateY(0px) scale(1);
-  }
-  25% {
-    opacity: 0;
-    transform: rotate(180deg) translateY(10px) scale(0.9);
+    opacity: 0.7;
+    transform: rotate(180deg) translateY(0px) scale(0.9);
   }
   50% {
-    opacity: 0;
-    transform: rotate(180deg) translateY(-10px) scale(0.9);
+    opacity: 1;
+    transform: rotate(180deg) translateY(10px) scale(1);
   }
   100% {
-    opacity: 1;
-    transform: rotate(180deg) translateY(0px) scale(1);
+    opacity: 0.7;
+    transform: rotate(180deg) translateY(0px) scale(0.9);
   }
 }
