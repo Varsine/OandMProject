@@ -14,7 +14,9 @@ const HowWeWork = () => {
   const isActiveAnimate = activeIndex === 3;
 
   return (
-    <section className={`${styles.height_reponce} ${styles.we_work} section`}>
+    <section
+      className={(classNames(styles.height_reponce, styles.we_work), 'section')}
+    >
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>How We Work</h2>
