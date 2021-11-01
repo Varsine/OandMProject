@@ -13,6 +13,7 @@ export const THEMES = {
     bacgWhite: 'rgba(234, 241, 250, 0.6)',
     fieldBgActive: 'linear-gradient(180deg, #5041b7 0%, #4e47ba 100%)',
     logoBottomColor: 'rgba(241, 242, 242, 1)',
+    arrowColor: '#173d65',
   },
   light: {
     mapBg: '#e9f1f9',
@@ -29,5 +30,6 @@ export const THEMES = {
       'linear-gradient(90deg, rgba(80,65,183,0.3) 0%, rgba(78,71,186,0.3) 100%)',
     fieldBgActive: '#ECE9FF',
     logoBottomColor: 'rgba(29, 29, 29, 1)',
+    arrowColor: '#4E46B9',
   },
 };

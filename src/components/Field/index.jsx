@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// import FileUploader from 'react-firebase-file-uploader';
 
 import { dropdownList, noop } from 'utils/index';
 import { useOutsideClick } from 'hooks/index';

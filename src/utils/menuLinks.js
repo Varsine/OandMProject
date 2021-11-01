@@ -94,20 +94,6 @@ const menuLinks = [
     iconHover: Section8ActiveIcon,
     sectionIndex: 8,
   },
-  // {
-  //   id: shortid.generate(),
-  //   icon: Section9DarkIcon,
-  //   iconLight: Section9LigthIcon,
-  //   iconHover: Section9ActiveIcon,
-  //   sectionIndex: 9,
-  // },
-  // {
-  //   id: shortid.generate(),
-  //   icon: Section10DarkIcon,
-  //   iconLight: Section10LigthIcon,
-  //   iconHover: Section10ActiveIcon,
-  //   sectionIndex: 10,
-  // },
   {
     id: shortid.generate(),
     icon: Section11DarkIcon,

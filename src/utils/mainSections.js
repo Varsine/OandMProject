@@ -10,7 +10,6 @@ import {
   HowWeWork,
   JoinOurTeam,
   OurPartners,
-  // Testimonials,
 } from 'containers/Home';
 import { JoinForm } from 'containers/Apply';
 import { ErrorPage } from 'containers/Error';
@@ -48,10 +47,6 @@ export const mainSections = [
     id: shortid.generate(),
     component: OurPartners,
   },
-  // {
-  //   id: shortid.generate(),
-  //   component: Testimonials,
-  // },
   {
     id: shortid.generate(),
     component: Map,

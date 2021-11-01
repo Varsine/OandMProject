@@ -22,7 +22,6 @@
 
 .we_work {
   margin: 0 auto;
-  width: 95% !important;
 }
 
 .wrapper {
@@ -54,8 +53,8 @@
   user-select: none;
   position: relative;
   text-align: center;
-  padding: 32px 0 72px;
   @extend %open-sans-48;
+  padding-bottom: 40px;
 
   @include breakpoint(desktop) {
     padding-bottom: 42px;
@@ -64,7 +63,7 @@
   @include breakpoint(tablet-m) {
     font-size: 32px;
     font-weight: 600;
-    padding: 24px 0 0;
+    padding: 0;
     line-height: 44px;
   }
 }
@@ -74,6 +73,10 @@
   max-width: 1000px;
   position: relative;
   @extend %flex-center;
+
+  @include breakpoint(desktop) {
+    max-width: 95%;
+  }
 
   &__text_tree,
   &__text_two,
@@ -127,8 +130,9 @@
   }
 
   &__text_two {
-    top: -30px;
+    top: -10px;
     width: 100%;
+    height: auto;
     max-width: 350px;
 
     p {
@@ -148,10 +152,10 @@
   }
 
   &__text_tree {
-    max-width: 290px;
+    max-width: 300px;
     width: 100%;
     right: 0;
-    bottom: -60px;
+    bottom: -40px;
 
     p {
       text-align: right;
