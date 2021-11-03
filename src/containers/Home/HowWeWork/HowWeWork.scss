@@ -247,7 +247,8 @@
 
 .rocket {
   animation-fill-mode: forwards;
-  animation: hideRocket 11.1s;
+  animation: hideRocket 8.7s;
+  animation-delay: 1.7s;
 }
 
 .rocketAnimated {
@@ -255,25 +256,14 @@
   transform-box: fill-box;
   transform: rotate(45deg) translate(-27px, 1px);
   animation-fill-mode: forwards;
-  animation: showRocket 11.1s;
-}
-
-.rocketMobileAnimated {
-  transform-origin: center center;
-  transform-box: fill-box;
-  transform: rotate(45deg) translate(-13px, -15px);
-  animation-fill-mode: forwards;
-  animation: mobileShowRocket 11.1s;
+  opacity: 0;
+  animation: showRocket 8.7s;
+  animation-timing-function: ease-in;
+  animation-delay: 1.7s;
 }
 
 @keyframes hideRocket {
   0% {
-    opacity: 1;
-  }
-  22% {
-    opacity: 1;
-  }
-  23% {
     opacity: 0;
   }
   100% {
@@ -283,42 +273,12 @@
 
 @keyframes showRocket {
   0% {
-    opacity: 0;
-  }
-  23% {
-    opacity: 0;
-  }
-  24% {
     opacity: 1;
   }
   96% {
     opacity: 1;
   }
   97% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes mobileShowRocket {
-  0% {
-    opacity: 0;
-  }
-  24% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  96% {
-    opacity: 1;
-  }
-  97% {
-    opacity: 0;
-  }
-  100% {
     opacity: 0;
   }
 }
@@ -326,7 +286,7 @@
 .clockAnimation {
   path {
     &:first-of-type {
-      animation: clockColor 0.3s ease-in-out 6s 1;
+      animation: clockColor 0.3s ease-in-out 5.5s 1;
       animation-fill-mode: forwards;
 
       @keyframes clockColor {
@@ -340,14 +300,14 @@
 
   &__arrow {
     transform-box: fill-box;
-    animation: clockrotatelarg 0.3s linear 6s 10;
+    animation: clockrotatelarg 0.3s linear 5.5s 10;
     animation-fill-mode: forwards;
     transform-origin: 82% 27%;
   }
 
   &__arrow_larg {
     transform-box: fill-box;
-    animation: clockrotatelarg 0.3s linear 6s 10;
+    animation: clockrotatelarg 0.3s linear 5.5s 10;
     animation-fill-mode: forwards;
     transform-origin: 100% 95%;
   }
@@ -355,9 +315,9 @@
 
 .removeFill {
   transform-box: fill-box;
-  -webkit-animation: unsetborder 0s linear 6s 1;
-  -moz-animation: unsetborder 0s linear 6s 1;
-  animation: unsetborder 0s linear 6s 1;
+  -webkit-animation: unsetborder 0s linear 5.5s 1;
+  -moz-animation: unsetborder 0s linear 5.5s 1;
+  animation: unsetborder 0s linear 5.5s 1;
   animation-fill-mode: forwards;
 }
 
@@ -365,14 +325,14 @@
   path {
     &:nth-child(1) {
       animation: handsbg;
-      animation-delay: 10.5s;
+      animation-delay: 10.1s;
       animation-fill-mode: forwards;
       animation-timing-function: linear;
     }
 
     &:nth-child(4) {
       animation: handscolor;
-      animation-delay: 10.5s;
+      animation-delay: 10.1s;
       animation-fill-mode: forwards;
       animation-timing-function: linear;
 
@@ -385,7 +345,7 @@
 
     &:last-child {
       animation: handsborderunset;
-      animation-delay: 10.5s;
+      animation-delay: 10.1s;
       animation-fill-mode: forwards;
       animation-timing-function: initial;
 
@@ -401,7 +361,7 @@
     transform-box: fill-box;
     transform-origin: center;
     animation: lefthand;
-    animation-delay: 10.5s;
+    animation-delay: 10.1s;
     animation-duration: 0.5s;
     animation-direction: alternate;
     animation-iteration-count: 4;
@@ -419,7 +379,7 @@
   &__right {
     transform-origin: center;
     animation: righthand;
-    animation-delay: 10.5s;
+    animation-delay: 10.1s;
     transform-box: fill-box;
     animation-duration: 0.5s;
     animation-direction: alternate;
@@ -438,7 +398,7 @@
 
 .clockCircle {
   animation: handsbg;
-  animation-delay: 6s;
+  animation-delay: 5.5s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -447,7 +407,7 @@
   animation: clockbg;
   -webkit-animation: clockbg;
   -moz-animation: clockbg;
-  animation-delay: 6s;
+  animation-delay: 5.5s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -455,7 +415,7 @@
 .clockPathsArrows {
   animation: clockrotatelarg;
   animation-duration: 0.5s;
-  animation-delay: 6s;
+  animation-delay: 5.5s;
   animation-timing-function: linear;
   animation-iteration-count: 10;
   animation-fill-mode: forwards;
