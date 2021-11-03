@@ -7,12 +7,12 @@
 .arrow_container {
   left: 0;
   right: 0;
-  height: 15vh;
-  top: unset !important;
+  top: 50% !important;
   max-width: 25% !important;
 }
 
 .wrapper {
+  height: 100%;
   @extend %flex-align;
   flex-direction: column;
 
@@ -47,9 +47,9 @@
 }
 
 .carousel {
-  width: calc(100vw - 200px);
-  height: 100%;
+  height: 80%;
   position: relative;
+  width: calc(100vw - 200px);
 
   @include breakpoint(desktop) {
     width: 100%;
@@ -57,6 +57,7 @@
 
   &__wrapper {
     height: 100%;
+    align-items: unset !important;
 
     @include breakpoint(desktop) {
       flex-direction: column;

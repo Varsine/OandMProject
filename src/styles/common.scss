@@ -82,6 +82,10 @@
   //our works slider
 
   .react-multi-carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     @include breakpoint(desktop) {
       height: max-content !important;
     }

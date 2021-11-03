@@ -1,27 +1,43 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
+import { useSelector } from 'react-redux';
 
 import { teamCards } from 'utils/index';
 import { SliderArrows } from 'components/index';
+import { activeIndexSelector } from 'slices/mainSlice';
 
 import Slide from './Slide';
 import styles from './OurTeam.scss';
 
 const OurTeam = () => {
-  const [activeIndex, setActiveIndex] = useState(2);
+  const activeIndex = useSelector(activeIndexSelector);
+
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+
+  const arrowHandler = () => {
+    setIsAutoPlay(false);
+  };
+
+  useEffect(() => {
+    if (activeIndex !== 6) {
+      setIsAutoPlay(false);
+    }
+    return setIsAutoPlay(true);
+
+    // if (!isAutoPlay) {
+    //   setIsAutoPlay(true);
+    // }
+  }, [isAutoPlay]);
 
   const renderSliderList = useMemo(
-    () =>
-      teamCards.map((item, index) => (
-        <Slide key={item.id} slide={item} isActive={index === activeIndex} />
-      )),
-    [teamCards, activeIndex],
+    () => teamCards.map((item) => <Slide key={item.id} slide={item} />),
+    [teamCards],
   );
 
   const responsive = {
     desktop: {
       breakpoint: { max: 10000, min: 1024 },
-      items: 3,
+      items: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 0 },
@@ -29,23 +45,26 @@ const OurTeam = () => {
     },
   };
 
-  const timeSettings = 3000;
-
   const setting = {
     ssr: true,
     responsive,
     arrows: false,
     infinite: true,
-    autoPlay: true,
     draggable: false,
     swipeable: false,
-    autoPlaySpeed: timeSettings,
+    afterChange: false,
+    beforeChange: false,
+    // autoPlay: isAutoPlay,
+    autoPlay: false,
     sliderClass: styles.carousel__container,
     containerClass: styles.carousel__wrapper,
-    customButtonGroup: <SliderArrows arrowStyles={styles.arrow_style} />,
-    beforeChange: (nextSlide) => {
-      setActiveIndex(nextSlide + 1);
-    },
+    customButtonGroup: (
+      <SliderArrows
+        nextProp={arrowHandler}
+        previousProp={arrowHandler}
+        arrowStyles={styles.arrow_style}
+      />
+    ),
   };
 
   return (

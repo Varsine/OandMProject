@@ -108,6 +108,7 @@ table {
 }
 
 * {
+  user-select: none;
   box-sizing: border-box;
   outline: none !important;
 }
