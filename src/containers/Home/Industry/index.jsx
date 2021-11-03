@@ -3,11 +3,13 @@ import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
 import { industry } from 'utils/index';
+import { useWindowSize } from 'hooks/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './Industry.scss';
 
 const Industry = () => {
+  const { isDesktop } = useWindowSize();
   const [activeIndex, setActiveIndex] = useState(0);
   const activeSelector = useSelector(activeIndexSelector);
 
@@ -71,7 +73,7 @@ const Industry = () => {
   );
 
   const industryStyles = classNames(styles.wrapper, {
-    [styles.d_none]: activeSelector !== 4,
+    [styles.d_none]: activeSelector !== 4 && isDesktop,
   });
 
   return (
