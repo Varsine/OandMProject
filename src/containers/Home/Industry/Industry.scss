@@ -156,7 +156,7 @@
       animation: moveToLeft 1s alternate;
 
       @include breakpoint(desktop) {
-        animation: moveToTop 1s linear;
+        animation: none;
       }
     }
 
@@ -166,7 +166,7 @@
       animation: moveToLeft 2s alternate;
 
       @include breakpoint(desktop) {
-        animation: moveToTop 1s linear;
+        animation: none;
       }
     }
 
@@ -176,7 +176,7 @@
       animation: moveToLeft 3s alternate;
 
       @include breakpoint(desktop) {
-        animation: moveToTop 1s linear;
+        animation: none;
       }
     }
 
@@ -238,7 +238,7 @@
         animation: moveToTop 2s linear;
 
         @include breakpoint(desktop) {
-          animation: moveToLeft 1s linear;
+          animation: none;
         }
       }
 
@@ -271,7 +271,7 @@
         animation: moveToBottom 2s linear;
 
         @include breakpoint(desktop) {
-          animation: moveToRigth 1s linear;
+          animation: none;
 
           &__textt {
             margin-right: 16px;
