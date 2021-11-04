@@ -1,54 +1,152 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { modeSelector } from 'slices/mainSlice';
+import { modeSelector, activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './OurTeam.scss';
 
-const Slide = ({ slide }) => {
-  const isDarkMode = useSelector(modeSelector);
+import './style.css';
 
-  const { image, imageLight, title, subtitle } = slide;
+const GlitchSquiggly = dynamic(
+  () => import('react-glitch-effect/core/GlitchSquiggly'),
+  {
+    ssr: false,
+  },
+);
+
+const Slide = ({ slide }) => {
+  const activeIndex = useSelector(activeIndexSelector);
+
+  const isDarkMode = useSelector(modeSelector);
+  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState(25);
+
+  useEffect(() => {
+    if (activeIndex === 6) {
+      const firstTimeoutId = setTimeout(() => {
+        setIsGlitchscaleNoise('10');
+      }, 800);
+      const secondTimeoutId = setTimeout(() => {
+        setIsGlitchscaleNoise('8');
+      }, 1500);
+      const thirdTimeoutId = setTimeout(() => {
+        setIsGlitchscaleNoise('6');
+      }, 2000);
+      const fourthTimeoutId = setTimeout(() => {
+        setIsGlitchscaleNoise('4');
+      }, 2300);
+      const fifthTimeoutId = setTimeout(() => {
+        setIsGlitchscaleNoise('1.3');
+      }, 3000);
+
+      return () => {
+        clearTimeout(firstTimeoutId);
+        clearTimeout(secondTimeoutId);
+        clearTimeout(thirdTimeoutId);
+        clearTimeout(fourthTimeoutId);
+        clearTimeout(fifthTimeoutId);
+      };
+    }
+  }, [activeIndex]);
+
+  const {
+    image1,
+    image2,
+    image3,
+    image4,
+    imageLight1,
+    imageLight2,
+    imageLight3,
+    imageLight4,
+    title,
+    subtitle,
+  } = slide;
 
   const darkModeImageClasses = useMemo(
     () =>
-      classNames(styles.carousel__item_img, {
-        [styles.carousel__item_img_active]: isDarkMode,
+      classNames(styles.carousel__item_imges_img, 'glitch', {
+        [styles.carousel__item_imges_img_active]: isDarkMode,
       }),
     [isDarkMode],
   );
 
   const lightImageClasses = useMemo(
     () =>
-      classNames(styles.carousel__item_img, {
-        [styles.carousel__item_img_active]: !isDarkMode,
+      classNames(styles.carousel__item_imges_img, 'glitch', {
+        [styles.carousel__item_imges_img_active]: !isDarkMode,
       }),
     [isDarkMode],
   );
 
+  const baseTimme = 0.07;
+
   return (
-    <div className={styles.carousel__item}>
-      <div className={styles.carousel__item_imges}>
-        <div
-          className={darkModeImageClasses}
-          style={{ background: `url(${image})` }}
-        />
-        <div
-          className={lightImageClasses}
-          style={{ background: `url(${imageLight})` }}
-        />
+    <GlitchSquiggly
+      className={styles.jbl}
+      iterationCount="infinite"
+      disabled={false}
+      baseFrequency={baseTimme}
+      scaleNoise={isGlitchscaleNoise}
+    >
+      <div className={styles.carousel__item}>
+        <div className={styles.carousel__item_imges}>
+          <div className={darkModeImageClasses}>
+            <div
+              style={{ background: `url(${imageLight1})` }}
+              className="glitch-img"
+            />
+            <div
+              style={{ background: `url(${imageLight2})` }}
+              className="glitch-img"
+            />
+            <div
+              className="glitch-img"
+              style={{ background: `url(${imageLight3})` }}
+            />
+            <div
+              className="glitch-img"
+              style={{ background: `url(${imageLight4})` }}
+            />
+          </div>
+          <div className={lightImageClasses}>
+            <div
+              className="glitch-img"
+              style={{ background: `url(${image1})` }}
+            />
+            <div
+              className="glitch-img"
+              style={{ background: `url(${image2})` }}
+            />
+            <div
+              style={{ background: `url(${image3})` }}
+              className="glitch-img"
+            />
+            <div
+              style={{ background: `url(${image4})` }}
+              className="glitch-img"
+            />
+          </div>
+        </div>
+        <div className={styles.carousel__item__text_block}>
+          <h2 className={styles.carousel__item__text_block_title}>{title}</h2>
+          <h3 className={styles.carousel__item__text_block_subtitle}>
+            {subtitle}
+          </h3>
+        </div>
       </div>
-      <h2 className={styles.carousel__item_title}>{title}</h2>
-      <h3 className={styles.carousel__item_subtitle}>{subtitle}</h3>
-    </div>
+    </GlitchSquiggly>
   );
 };
 
 Slide.propTypes = {
   slide: PropTypes.object.isRequired,
-  isActive: PropTypes.bool.isRequired,
+  isActive: PropTypes.bool,
+};
+
+Slide.defaultProps = {
+  isActive: false,
 };
 
 export default Slide;

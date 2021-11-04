@@ -17,8 +17,8 @@
   }
 
   @include breakpoint(tablet-m) {
-    min-height: 570px;
-    max-height: 570px;
+    min-height: 520px;
+    padding-top: 0;
   }
 
   &__info {

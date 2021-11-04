@@ -16,7 +16,13 @@ const OurPartners = () => {
     () =>
       ourPartnersCards.map((item, index) =>
         item.href ? (
-          <NextLink target="_blanck" key={item.id} to={item.href}>
+          <NextLink
+            anchorProps={{
+              target: '_blank',
+            }}
+            key={item.id}
+            to={item.href}
+          >
             <Slide slide={item} isActive={index === activeIndex} />
           </NextLink>
         ) : (
