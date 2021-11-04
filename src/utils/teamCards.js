@@ -9,7 +9,7 @@ const teamCard = [
     imageLight2: '/images/team/KaroLight.png',
     imageLight3: '/images/team/matrixLight.jpg',
     imageLight4: '/images/team/KaroLight.png',
-    title: '11 Karo Zakaryan',
+    title: 'Karo Zakaryan',
     subtitle: 'FULL-STACK DEVELOPER',
   },
   {

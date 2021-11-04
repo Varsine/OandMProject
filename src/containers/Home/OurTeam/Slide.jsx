@@ -21,7 +21,7 @@ const Slide = ({ slide }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
   const isDarkMode = useSelector(modeSelector);
-  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState(15);
+  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState(25);
 
   useEffect(() => {
     if (activeIndex === 6) {
@@ -29,20 +29,24 @@ const Slide = ({ slide }) => {
         setIsGlitchscaleNoise('10');
       }, 800);
       const secondTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('7');
+        setIsGlitchscaleNoise('8');
       }, 1500);
       const thirdTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('5');
+        setIsGlitchscaleNoise('6');
       }, 2000);
       const fourthTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('2');
+        setIsGlitchscaleNoise('4');
       }, 2300);
+      const fifthTimeoutId = setTimeout(() => {
+        setIsGlitchscaleNoise('1.3');
+      }, 3000);
 
       return () => {
         clearTimeout(firstTimeoutId);
         clearTimeout(secondTimeoutId);
         clearTimeout(thirdTimeoutId);
         clearTimeout(fourthTimeoutId);
+        clearTimeout(fifthTimeoutId);
       };
     }
   }, [activeIndex]);
@@ -76,7 +80,7 @@ const Slide = ({ slide }) => {
     [isDarkMode],
   );
 
-  const baseTimme = 0.09;
+  const baseTimme = 0.07;
 
   return (
     <GlitchSquiggly

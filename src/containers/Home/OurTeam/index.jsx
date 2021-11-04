@@ -23,10 +23,6 @@ const OurTeam = () => {
       setIsAutoPlay(false);
     }
     return setIsAutoPlay(true);
-
-    // if (!isAutoPlay) {
-    //   setIsAutoPlay(true);
-    // }
   }, [isAutoPlay]);
 
   const renderSliderList = useMemo(
@@ -54,8 +50,7 @@ const OurTeam = () => {
     swipeable: false,
     afterChange: false,
     beforeChange: false,
-    // autoPlay: isAutoPlay,
-    autoPlay: false,
+    autoPlay: isAutoPlay,
     sliderClass: styles.carousel__container,
     containerClass: styles.carousel__wrapper,
     customButtonGroup: (
