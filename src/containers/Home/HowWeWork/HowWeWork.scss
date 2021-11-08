@@ -54,11 +54,7 @@
   position: relative;
   text-align: center;
   @extend %open-sans-48;
-  padding-bottom: 40px;
-
-  @include breakpoint(desktop) {
-    padding-bottom: 42px;
-  }
+  padding-bottom: 24px;
 
   @include breakpoint(tablet-m) {
     font-size: 32px;
@@ -155,7 +151,7 @@
     max-width: 300px;
     width: 100%;
     right: 0;
-    bottom: -40px;
+    bottom: -56px;
 
     p {
       text-align: right;

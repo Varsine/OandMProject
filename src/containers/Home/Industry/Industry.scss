@@ -4,10 +4,9 @@
   }
 }
 
-@include breakpoint(desktop) {
-  .height_reponce {
+.height_reponce {
+  @include breakpoint(desktop) {
     height: auto !important;
-    margin-bottom: 50px !important;
   }
 }
 
@@ -26,7 +25,6 @@
 
   @include breakpoint(tablet-m) {
     padding-bottom: 0;
-    margin: 0 16px;
   }
 
   &__menu {
@@ -67,6 +65,7 @@
 
     &__item {
       display: flex;
+      align-items: center;
       cursor: url('/images/Mouse.png'), auto;
 
       svg {

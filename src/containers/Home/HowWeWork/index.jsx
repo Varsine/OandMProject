@@ -13,10 +13,14 @@ const HowWeWork = () => {
   const activeIndex = useSelector(activeIndexSelector);
   const isActiveAnimate = activeIndex === 3;
 
+  const textOne =
+    "If you're offered to seat on a rocket ship, don't ask what, just seat!";
+
+  const textTwo =
+    "There's on time for regrets. You've just got to keep moving forward.";
+
   return (
-    <section
-      className={(classNames(styles.height_reponce, styles.we_work), 'section')}
-    >
+    <section className={`${styles.height_reponce} ${styles.we_work} section`}>
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>How We Work</h2>
@@ -33,8 +37,7 @@ const HowWeWork = () => {
                 [styles.text_color_light]: isDarkMode,
               })}
             >
-              We will get acquainted with your application and discuss the
-              possible deadlines with our engineering team.
+              {textOne}
             </p>
           </div>
           <div className={styles.animation__text_two}>
@@ -43,8 +46,7 @@ const HowWeWork = () => {
                 [styles.text_color_light]: isDarkMode,
               })}
             >
-              We will provide an hourly based working schedule to give you a
-              clear understanding of implementation of your application.
+              {textTwo}
             </p>
           </div>
           <div className={styles.animation__text_tree}>
@@ -53,8 +55,7 @@ const HowWeWork = () => {
                 [styles.text_color_light]: isDarkMode,
               })}
             >
-              We will be in daily contact with you, to provide information
-              related to the developments of the project.
+              Somewhere, someone incredible is going to be known.
             </p>
           </div>
         </div>
