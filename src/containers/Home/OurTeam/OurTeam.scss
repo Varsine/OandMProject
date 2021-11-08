@@ -37,8 +37,10 @@
 
 .container {
   height: unset;
+
   @include breakpoint(desktop) {
     height: auto !important;
+    margin: 50px auto;
   }
 }
 
