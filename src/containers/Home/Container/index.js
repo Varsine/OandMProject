@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import ReactFullPage from '@fullpage/react-fullpage';
 import { useDispatch } from 'react-redux';
+import ReactFullPage from '@fullpage/react-fullpage';
 
 import { IS_SERVER } from 'constants/index';
 import { changeIndex } from 'slices/mainSlice';
