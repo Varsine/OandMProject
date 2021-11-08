@@ -98,6 +98,7 @@
 
     @include breakpoint(desktop) {
       width: 100vw !important;
+      height: 80vh !important;
     }
 
     @include breakpoint(tablet-m) {

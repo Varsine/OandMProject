@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
@@ -8,7 +9,8 @@ import styles from './Main.scss';
 
 import { LogoAnimaIcon, LogoMoveBallIcon } from '../../../icons';
 
-const Main = () => {
+// eslint-disable-next-line no-unused-vars
+const Main = ({ inView }) => {
   const activeIndex = useSelector(activeIndexSelector);
   const isDarkMode = useSelector(modeSelector);
   const isActive = activeIndex === 1;
@@ -53,6 +55,14 @@ const Main = () => {
       </div>
     </section>
   );
+};
+
+Main.propTypes = {
+  inView: PropTypes.bool,
+};
+
+Main.defaultProps = {
+  inView: false,
 };
 
 export default Main;
