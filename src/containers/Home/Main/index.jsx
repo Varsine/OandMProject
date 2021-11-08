@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
+import { useInView } from 'react-intersection-observer';
 
 import { activeIndexSelector, modeSelector } from 'slices/mainSlice';
 
@@ -9,8 +9,11 @@ import styles from './Main.scss';
 
 import { LogoAnimaIcon, LogoMoveBallIcon } from '../../../icons';
 
-// eslint-disable-next-line no-unused-vars
-const Main = ({ inView }) => {
+const Main = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.9,
+  });
+
   const activeIndex = useSelector(activeIndexSelector);
   const isDarkMode = useSelector(modeSelector);
   const isActive = activeIndex === 1;
@@ -43,10 +46,18 @@ const Main = ({ inView }) => {
   );
   const renderAnimation = isAnimate && showAnimation;
 
+  const containerClasses = classNames(`container ${styles.wrapper}`, {
+    [styles.wrapper__animation]: !inView,
+  });
+
   return (
-    <section id="header" className={`section ${styles.container}`}>
+    <section
+      ref={ref}
+      id="header"
+      className={`section fp-auto-height ${styles.container}`}
+    >
       <div className="canvas__working" />
-      <div className={`container ${styles.wrapper}`}>
+      <div className={containerClasses}>
         <LogoMoveBallIcon
           className={styles.wrapper__ball}
           setisanimate={setIsAnimate}
@@ -55,14 +66,6 @@ const Main = ({ inView }) => {
       </div>
     </section>
   );
-};
-
-Main.propTypes = {
-  inView: PropTypes.bool,
-};
-
-Main.defaultProps = {
-  inView: false,
 };
 
 export default Main;

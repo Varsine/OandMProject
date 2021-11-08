@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { InView } from 'react-intersection-observer';
 import ReactFullPage from '@fullpage/react-fullpage';
 
 import { IS_SERVER } from 'constants/index';
@@ -28,11 +27,7 @@ const HomeContainer = () => {
   };
 
   const renderFullPages = mainSections.map((fullPage) => (
-    <InView>
-      {({ ref, inView }) => (
-        <fullPage.component ref={ref} inView={inView} key={fullPage.id} />
-      )}
-    </InView>
+    <fullPage.component key={fullPage.id} />
   ));
 
   const renderFullPageContent = ({ fullpageApi }) => (
