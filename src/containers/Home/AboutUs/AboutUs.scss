@@ -1,5 +1,12 @@
 .height_reponce {
   position: relative;
+
+  @include breakpoint(desktop) {
+    height: auto !important;
+  }
+  @include breakpoint(tablet) {
+    margin-bottom: 50px;
+  }
 }
 
 .wrapper {
@@ -11,8 +18,12 @@
 
   @include breakpoint(desktop) {
     height: auto;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  @include breakpoint(tablet-m) {
+    padding-bottom: 0 !important;
   }
 
   &__content {
@@ -88,8 +99,8 @@
     justify-content: space-around;
 
     @include breakpoint(desktop) {
-      width: calc(100vw - 32);
-      padding: 0 16px 0;
+      width: 100vw;
+      height: 90vh;
 
       &::before {
         content: '';
@@ -98,6 +109,10 @@
         width: 100vw;
         background: $rope-bg;
       }
+    }
+
+    @include breakpoint(tablet) {
+      height: 80vh;
     }
   }
 }

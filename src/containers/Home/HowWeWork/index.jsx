@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
@@ -14,10 +13,14 @@ const HowWeWork = () => {
   const activeIndex = useSelector(activeIndexSelector);
   const isActiveAnimate = activeIndex === 3;
 
+  const textOne =
+    "If you're offered to seat on a rocket ship, don't ask what, just seat!";
+
+  const textTwo =
+    "There's on time for regrets. You've just got to keep moving forward.";
+
   return (
-    <section
-      className={(classNames(styles.height_reponce, styles.we_work), 'section')}
-    >
+    <section className={`${styles.height_reponce} ${styles.we_work} section`}>
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>How We Work</h2>
@@ -34,8 +37,7 @@ const HowWeWork = () => {
                 [styles.text_color_light]: isDarkMode,
               })}
             >
-              If you're offered to seat on a rocket ship, don't ask what, just
-              seat!
+              {textOne}
             </p>
           </div>
           <div className={styles.animation__text_two}>
@@ -44,8 +46,7 @@ const HowWeWork = () => {
                 [styles.text_color_light]: isDarkMode,
               })}
             >
-              There's on time for regrets. You've just got to keep moving
-              forward.
+              {textTwo}
             </p>
           </div>
           <div className={styles.animation__text_tree}>
