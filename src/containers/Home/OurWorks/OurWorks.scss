@@ -152,7 +152,6 @@
 
         a {
           color: $moni;
-          font-weight: normal;
         }
       }
     }
@@ -381,7 +380,7 @@
   max-width: 400px;
   width: 100%;
   flex-direction: column;
-  word-break: break-all;
+  word-break: break-word;
   color: $white-20;
 
   @include breakpoint(wide) {
