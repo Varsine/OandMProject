@@ -5,8 +5,8 @@ import { SidebarMenu } from 'components/index';
 import { FullPageContext } from 'context/index';
 import { HeaderContainer, FooterContainer } from 'containers/index';
 
-const FullPageLayout = ({ children, isOnePage, fullpageApi, inView }) => (
-  <FullPageContext.Provider value={{ moveToSection: fullpageApi, inView }}>
+const FullPageLayout = ({ children, isOnePage, fullpageApi }) => (
+  <FullPageContext.Provider value={{ moveToSection: fullpageApi }}>
     <HeaderContainer isOnePage={isOnePage} />
     {children}
     {!isOnePage && <SidebarMenu />}
@@ -17,12 +17,10 @@ const FullPageLayout = ({ children, isOnePage, fullpageApi, inView }) => (
 FullPageLayout.propTypes = {
   children: PropTypes.node.isRequired,
   isOnePage: PropTypes.bool,
-  inView: PropTypes.bool,
   fullpageApi: PropTypes.object,
 };
 
 FullPageLayout.defaultProps = {
-  inView: false,
   isOnePage: false,
   fullpageApi: {},
 };
