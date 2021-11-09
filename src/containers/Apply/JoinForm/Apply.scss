@@ -1,3 +1,10 @@
+.height_reponce {
+  @include breakpoint(desktop) {
+    height: auto !important;
+    // overflow: auto !important;
+  }
+}
+
 .form_style {
   margin: 0 auto;
   max-width: 594px;

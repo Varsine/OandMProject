@@ -23,10 +23,6 @@
     justify-content: center;
   }
 
-  @include breakpoint(tablet-m) {
-    padding-bottom: 0;
-  }
-
   &__menu {
     left: 0;
     width: 100%;
@@ -190,12 +186,12 @@
   }
 
   &__active_item {
-    @extend %flex-center;
-    flex-direction: column;
-    max-width: 615px;
-    margin-left: 8%;
     width: 100%;
     height: 100%;
+    margin-left: 8%;
+    max-width: 615px;
+    @extend %flex-center;
+    flex-direction: column;
 
     @include breakpoint(desktop) {
       display: flex;
@@ -204,8 +200,11 @@
       flex-direction: unset;
     }
 
+    @include breakpoint(tablet) {
+      margin-bottom: 50px;
+    }
+
     @include breakpoint(tablet-m) {
-      margin-bottom: 0px;
       flex-direction: column;
     }
 
@@ -261,8 +260,8 @@
       }
 
       @include breakpoint(tablet-m) {
+        margin: 0;
         font-size: 14px;
-        margin: 0 0 0;
         line-height: 19px;
       }
 
@@ -273,8 +272,7 @@
           animation: none;
 
           &__textt {
-            margin-right: 16px;
-            height: 100px;
+            height: auto;
           }
         }
 
