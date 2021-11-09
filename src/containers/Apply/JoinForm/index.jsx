@@ -46,7 +46,8 @@ const JoinForm = () => {
   };
 
   return (
-    <section className="section">
+    <section className={`${styles.height_reponce} section`}>
+      <div className="canvas__working" />
       <div className={styles.container}>
         <PiecesAnimation
           isAnimate={renderAnimation}

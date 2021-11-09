@@ -1,15 +1,25 @@
+.height_reponce {
+  @include breakpoint(tablet-m) {
+    height: auto !important;
+  }
+}
+
 .wrapper {
-  height: 100vh !important;
   padding: 0;
+  height: 100vh;
   position: relative;
 
-  @include breakpoint(desktop) {
-    padding: 0 !important;
+  @include breakpoint(tablet-m) {
+    height: auto;
   }
 
   &__container {
     height: 100%;
     position: relative;
+
+    @include breakpoint(tablet-m) {
+      height: auto;
+    }
   }
 
   &__content {
@@ -96,12 +106,8 @@
     height: 100vh !important;
     width: 100vw !important;
 
-    @include breakpoint(desktop) {
-      width: 100vw !important;
-      height: 80vh !important;
-    }
-
     @include breakpoint(tablet-m) {
+      height: 80vh !important;
       flex-direction: column-reverse;
       padding: 0 16px;
     }
