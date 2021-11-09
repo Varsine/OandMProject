@@ -1,7 +1,6 @@
 .height_reponce {
   @include breakpoint(desktop) {
-    height: auto !important;
-    // overflow: auto !important;
+    height: 100vh !important;
   }
 }
 
