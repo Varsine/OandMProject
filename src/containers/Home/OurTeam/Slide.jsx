@@ -85,7 +85,7 @@ const Slide = ({ slide }) => {
   return (
     <GlitchSquiggly
       disabled={false}
-      className={styles.jbl}
+      className={styles.glitch_effect}
       baseFrequency={baseTimme}
       iterationCount="infinite"
       scaleNoise={isGlitchscaleNoise}

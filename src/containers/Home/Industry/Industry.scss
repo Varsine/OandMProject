@@ -1,12 +1,12 @@
-.d_none {
+.height_responce {
   @include breakpoint(desktop) {
-    opacity: 0;
+    height: auto !important;
   }
 }
 
-.height_reponce {
+.d_none {
   @include breakpoint(desktop) {
-    height: auto !important;
+    opacity: 0;
   }
 }
 

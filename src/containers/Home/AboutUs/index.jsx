@@ -44,7 +44,7 @@ const AboutUs = () => {
   ));
 
   return (
-    <section className={`${styles.height_reponce} section`}>
+    <section className={`${styles.height_responce} section`}>
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <div className={styles.wrapper__content}>

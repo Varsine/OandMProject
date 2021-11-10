@@ -1,5 +1,3 @@
-import shortid from 'shortid';
-
 import {
   FbIcon,
   GmailIcon,
@@ -17,42 +15,42 @@ import {
 
 const linksInformation = [
   {
-    id: shortid.generate(),
-    url: 'https://www.facebook.com/ShellLogixLLC',
+    id: 1,
+    url: 'https://www.facebook.com/ShellLogixLLC/',
     icon: <FbIcon />,
     iconHover: <FbHoverIcon />,
     ariaLabel: 'facebook',
   },
   {
-    id: shortid.generate(),
+    id: 2,
     url: 'https://www.linkedin.com/company/shelllogixarm',
     icon: <LinkedinIcon />,
     iconHover: <LinkedinHoverIcon />,
     ariaLabel: 'linkedin',
   },
   {
-    id: shortid.generate(),
+    id: 3,
     url: 'https://twitter.com/shelllogix',
     icon: <TwitterIcon />,
     iconHover: <TwitterHoverIcon />,
     ariaLabel: 'twitter',
   },
   {
-    id: shortid.generate(),
+    id: 4,
     url: 'https://web.telegram.org/#/im?p=@ShellLogix',
     icon: <TelegramIcon />,
     iconHover: <TelegramHoverIcon />,
     ariaLabel: 'telegram',
   },
   {
-    id: shortid.generate(),
+    id: 5,
     url: 'https://instagram.com/shelllogix?utm_medium=copy_link',
     icon: <Instagram />,
     iconHover: <InstagramHover />,
     ariaLabel: 'instagram',
   },
   {
-    id: shortid.generate(),
+    id: 6,
     url: 'mailto:shelllogix.team@gmail.com',
     icon: <GmailIcon />,
     iconHover: <GmailHoverIcon />,
