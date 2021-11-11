@@ -1,4 +1,4 @@
-.height_reponce {
+.height_responce {
   @include breakpoint(desktop) {
     height: auto !important;
   }
@@ -70,7 +70,7 @@
         font-size: 20px;
       }
 
-      @include breakpoint(mobile-m) {
+      @include breakpoint(mobile) {
         font-size: 17px;
       }
     }
@@ -83,7 +83,7 @@
         font-size: 16px;
       }
 
-      @include breakpoint(mobile-m) {
+      @include breakpoint(mobile) {
         font-size: 14px;
       }
     }

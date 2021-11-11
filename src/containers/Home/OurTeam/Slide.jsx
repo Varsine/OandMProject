@@ -21,7 +21,7 @@ const Slide = ({ slide }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
   const isDarkMode = useSelector(modeSelector);
-  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState(25);
+  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState('25');
 
   useEffect(() => {
     if (activeIndex === 6) {
@@ -84,10 +84,10 @@ const Slide = ({ slide }) => {
 
   return (
     <GlitchSquiggly
-      className={styles.jbl}
-      iterationCount="infinite"
       disabled={false}
+      className={styles.glitch_effect}
       baseFrequency={baseTimme}
+      iterationCount="infinite"
       scaleNoise={isGlitchscaleNoise}
     >
       <div className={styles.carousel__item}>
