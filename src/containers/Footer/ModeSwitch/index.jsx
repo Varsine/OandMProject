@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 import { activeIndexSelector } from 'slices/mainSlice';
-// import { Clock } from 'components/index';
 
 import styles from './ModeSwitch.scss';
 
@@ -22,7 +21,6 @@ const ModeSwitch = ({ isOnePage }) => {
 
   return (
     <div className={styles.wrapper}>
-      {/* <Clock /> */}
       {!isOnePage && (
         <>
           <h3 className={styles.index}>{recastActiveIndex}</h3>
