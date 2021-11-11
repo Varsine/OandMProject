@@ -37,7 +37,7 @@ $wide: 1200px;
 
   &:disabled {
     cursor: default;
-    background: $btn-disabled;
+    background: rgba(207, 229, 255, 0.6);
   }
 }
 
@@ -64,7 +64,7 @@ $wide: 1200px;
 }
 
 %nextPrev {
-  fill: $logo-bottom-color;
+  fill: rgba(241, 242, 242, 1);
   position: absolute;
   z-index: 10;
   left: 48%;

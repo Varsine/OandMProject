@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import { menuLinks } from 'utils/index';
 import { FullPageContext } from 'context/index';
-import { activeIndexSelector, modeSelector } from 'slices/mainSlice';
+import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './SidebarMenu.scss';
 
@@ -13,8 +13,6 @@ const SidebarMenu = () => {
   const { Portal } = usePortal();
   const activeIndex = useSelector(activeIndexSelector);
   const { moveToSection } = useContext(FullPageContext);
-
-  const isDarkMode = useSelector(modeSelector);
 
   const mobeToSectionHandler = (index) => {
     moveToSection.moveTo(index);
@@ -53,7 +51,6 @@ const SidebarMenu = () => {
     const iconHover = <item.iconHover />;
     const isActive = activeIndex === item.sectionIndex;
     const isIconActive = isActive ? iconHover : <item.icon />;
-    const isIconLightActive = isActive ? iconHover : <item.iconLight />;
     const wrapperClasses = classNames(styles.wrapper__item, {
       [styles.wrapper__item_active]: isActive,
     });
@@ -65,7 +62,7 @@ const SidebarMenu = () => {
         className={wrapperClasses}
         onClick={() => mobeToSectionHandler(item.sectionIndex)}
       >
-        {!isDarkMode ? isIconActive : isIconLightActive}
+        {isIconActive}
       </div>
     );
   });

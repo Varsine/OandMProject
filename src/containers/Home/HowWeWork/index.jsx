@@ -1,15 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import classNames from 'classnames';
 
-import { modeSelector, activeIndexSelector } from 'slices/mainSlice';
+import { activeIndexSelector } from 'slices/mainSlice';
 
 import HowWeWorkAnimation from './HowWeWork';
 import HowWeWorkAnimationClosed from './HowWeWorkclosed';
+//
 import styles from './HowWeWork.scss';
 
 const HowWeWork = () => {
-  const isDarkMode = useSelector(modeSelector);
   const activeIndex = useSelector(activeIndexSelector);
   const isActiveAnimate = activeIndex === 3;
 
@@ -32,29 +31,13 @@ const HowWeWork = () => {
             <HowWeWorkAnimationClosed />
           )}
           <div className={styles.animation__text_one}>
-            <p
-              className={classNames(styles.text_color, {
-                [styles.text_color_light]: isDarkMode,
-              })}
-            >
-              {textOne}
-            </p>
+            <p className={styles.text_color}>{textOne}</p>
           </div>
           <div className={styles.animation__text_two}>
-            <p
-              className={classNames(styles.text_color, {
-                [styles.text_color_light]: isDarkMode,
-              })}
-            >
-              {textTwo}
-            </p>
+            <p className={styles.text_color}>{textTwo}</p>
           </div>
           <div className={styles.animation__text_tree}>
-            <p
-              className={classNames(styles.text_color, {
-                [styles.text_color_light]: isDarkMode,
-              })}
-            >
+            <p className={styles.text_color}>
               Somewhere, someone incredible is going to be known.
             </p>
           </div>

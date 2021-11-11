@@ -4,17 +4,17 @@
 
   &__change {
     width: 100%;
-    color: $text-color;
+    color: #f1f2f2;
     height: 50px;
     border: none;
     padding: 0 24px;
     position: relative;
-    background: $field-bg;
+    background: rgba(207, 229, 255, 0.6);
     border-radius: 50px;
     @extend %open-sans-16;
 
     &::placeholder {
-      color: $text-color;
+      color: #f1f2f2;
     }
   }
 }
@@ -45,14 +45,14 @@
     cursor: url('/images/Mouse.png'), auto;
     padding: 0 12px 0 24px;
     position: relative;
-    background: $field-bg;
+    background: rgba(207, 229, 255, 0.6);
     font-weight: normal;
     border-radius: 50px;
     @extend %open-sans-16;
     @extend %flex-between;
 
     &_active {
-      background: $field-bg-active;
+      background: rgba(207, 229, 255, 0.6)-active;
       border-radius: 32px 32px 0 0;
     }
 
@@ -72,7 +72,7 @@
     z-index: 10;
     position: absolute;
     max-width: 594px;
-    background: $field-bg-active;
+    background: rgba(207, 229, 255, 0.6)-active;
     border-radius: 0 0 32px 32px;
 
     &_item {
@@ -101,7 +101,7 @@
   height: 50px;
   cursor: url('/images/Mouse.png'), auto;
   padding: 0 24px;
-  background: $field-bg;
+  background: rgba(207, 229, 255, 0.6);
   border-radius: 50px;
   @extend %flex-between;
 

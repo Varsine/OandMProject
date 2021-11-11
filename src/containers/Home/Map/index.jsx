@@ -6,16 +6,13 @@ import {
   withScriptjs,
   withGoogleMap,
 } from 'react-google-maps';
-import { useSelector } from 'react-redux';
 
 import { MAP_KEY } from 'constants/index';
 import { mapStyles } from 'utils/index';
-import { modeSelector } from 'slices/mainSlice';
 
 import styles from './Map.scss';
 
 const InjectableGoogleMap = () => {
-  const isDarkMode = useSelector(modeSelector);
   const [selectedPark, setSelectedPark] = useState(false);
 
   useEffect(() => {
@@ -36,7 +33,7 @@ const InjectableGoogleMap = () => {
       defaultZoom={16}
       defaultCenter={{ lat: 40.167782, lng: 44.503009 }}
       options={{
-        styles: mapStyles[!isDarkMode ? 'dark' : 'light'],
+        styles: mapStyles[mapStyles && 'dark'],
       }}
     >
       <Marker

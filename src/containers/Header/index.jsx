@@ -4,7 +4,7 @@ import usePortal from 'react-useportal';
 import { useSelector } from 'react-redux';
 
 import { paths } from 'routes/index';
-import { NextLink } from 'components/index';
+import { Clock, NextLink } from 'components/index';
 import { FullPageContext } from 'context/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
@@ -84,6 +84,7 @@ const Header = ({ isOnePage }) => {
               <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
             )}
           </div>
+          <Clock />
 
           {!isOnePage ? (
             <div className={styles.icon}>{memoizedUpdateActiveIcon()}</div>

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { useInView } from 'react-intersection-observer';
 
-import { activeIndexSelector, modeSelector } from 'slices/mainSlice';
+import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './Main.scss';
 
@@ -15,7 +15,7 @@ const Main = () => {
   });
 
   const activeIndex = useSelector(activeIndexSelector);
-  const isDarkMode = useSelector(modeSelector);
+
   const isActive = activeIndex === 1;
 
   const [isAnimate, setIsAnimate] = useState(false);
@@ -33,16 +33,13 @@ const Main = () => {
         className={classNames(styles.wrapper__logo, {
           [styles.wrapper__logo_active]: activeClass,
         })}
-        stopColor={isDarkMode ? '#fff' : '#333'}
+        stopColor="#fff"
         isAnima
         fastAnima={activeClass}
       />
     </>
   ) : (
-    <LogoAnimaIcon
-      className={styles.wrapper__logo_fixed}
-      stopColor={isDarkMode ? '#fff' : '#333'}
-    />
+    <LogoAnimaIcon className={styles.wrapper__logo_fixed} stopColor="#fff" />
   );
   const renderAnimation = isAnimate && showAnimation;
 
