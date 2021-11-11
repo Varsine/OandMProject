@@ -42,7 +42,7 @@
       background-size: contain;
 
       @include breakpoint(tablet-m) {
-        height: 70vh !important;
+        height: 50vh !important;
         width: 100%;
         margin: 0;
       }
@@ -56,6 +56,7 @@
     background-color: $our-works-bg;
     border-radius: 50%;
     fill: $arrowColor;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
     padding: 10px;
 
     @include breakpoint(desktop) {
@@ -78,6 +79,7 @@
     top: 100px;
     padding: 10px;
     fill: $arrowColor;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
     @extend %nextPrev;
     border-radius: 50%;
     background-color: $our-works-bg;
