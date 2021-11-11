@@ -3,9 +3,9 @@ import React from 'react';
 import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
 
-import SwiperCards from './Cards';
-import { infoText, subtitle, joinOurTeam } from './constants';
+import Cubes from './Cubes';
 import styles from './JoinOurTeam.scss';
+import { infoText, subtitle, joinOurTeam } from './constants';
 
 const JoinOurTeam = () => {
   return (
@@ -20,7 +20,7 @@ const JoinOurTeam = () => {
             {joinOurTeam}
           </NextLink>
         </div>
-        <SwiperCards />
+        <Cubes />
       </div>
     </section>
   );

@@ -1,3 +1,9 @@
+.work_section {
+  @include breakpoint(desktop) {
+    height: auto;
+  }
+}
+
 .wrapper {
   height: 100vh !important;
   padding: 0;
@@ -10,6 +16,7 @@
   &__container {
     height: 100%;
     position: relative;
+    overflow: hidden;
   }
 
   &__content {

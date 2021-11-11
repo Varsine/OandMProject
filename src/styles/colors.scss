@@ -24,7 +24,8 @@ $black-30: #1a1a1a;
 $black-40: rgba(0, 0, 0, 0.6);
 
 $gray: #c4c4c4;
-
+$gray-3: #333;
+$gray-8: #888;
 $white: #fff;
 $white-10: rgba(234, 241, 250, 0.6);
 $white-20: #f1f2f2;
@@ -44,3 +45,5 @@ $duoble-one: #20b2a3;
 $liner-red: linear-gradient(339.44deg, #da4638 5.68%, #ff3623 85.94%);
 $liner-blue: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
 $liner-blue-hover: linear-gradient(242deg, #311eb4 12%, #3d80d4 93%);
+$cubes-box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1),
+  0 0 50px rgba(0, 0, 0, 0.3);

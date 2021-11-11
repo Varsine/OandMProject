@@ -6,6 +6,13 @@ $tablet-l: 992px;
 $desktop: 1024px;
 $wide: 1200px;
 
+//cubes size
+
+$cubeSize: 400px;
+$cubeSizeSecond: 300px;
+$cubeSizeThree: 270px;
+$cubeSizeMobile: 230px;
+
 // @extend
 %flex-center {
   display: flex;

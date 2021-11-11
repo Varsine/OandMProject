@@ -70,7 +70,7 @@ const OurWorks = () => {
   );
 
   return (
-    <section className="section">
+    <section className={`section ${styles.work_section}`}>
       <div className="canvas__working" />
       <div className={styles.wrapper}>
         <DownArrow onClick={navigateUp} className={styles.wrapper__prev} />

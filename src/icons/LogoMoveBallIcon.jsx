@@ -23,6 +23,7 @@ const LogoMoveBallIcon = ({ setisanimate, ...props }) => {
           ref={animateElem}
           dur="3.5s"
           restart="whenNotActive"
+          begin="1s"
           path="M1 272C1 272 4.8211 252.761 62 215.5C238.666 100.373 226.284 596.012 437 604C630.136 611.321 820.466 312.263 1009.5 272C1186 234.406 1518.75 334.386 1467 604C1431.18 790.624 1266.06 866.444 1078.5 897C805.468 941.481 213.059 715.794 418.5 530.541C505 452.541 650 425.704 650 425.704L746 415.5"
         />
         <animate
@@ -30,12 +31,14 @@ const LogoMoveBallIcon = ({ setisanimate, ...props }) => {
           restart="whenNotActive"
           values="35px;77px;77px;35px;35px"
           dur="3.5s"
+          begin="1s"
         />
         <animate
           attributeName="height"
           restart="whenNotActive"
           values="35px;77px;77px;35px;35px"
           dur="3.5s"
+          begin="1s"
         />
       </rect>
       <defs>
