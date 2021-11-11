@@ -205,6 +205,7 @@
     }
 
     @include breakpoint(tablet-m) {
+      margin-bottom: 0;
       flex-direction: column;
     }
 

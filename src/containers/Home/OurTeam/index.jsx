@@ -50,7 +50,8 @@ const OurTeam = () => {
     swipeable: false,
     afterChange: false,
     beforeChange: false,
-    autoPlay: isAutoPlay,
+    // autoPlay: isAutoPlay,
+    autoPlay: false,
     sliderClass: styles.carousel__container,
     containerClass: styles.carousel__wrapper,
     customButtonGroup: (

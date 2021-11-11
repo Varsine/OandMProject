@@ -23,6 +23,10 @@
     @media (max-width: $wide) {
       @content;
     }
+  } @else if $devices == fr-double-package {
+    @media (max-width: $fr-double-package) {
+      @content;
+    }
   }
 }
 
