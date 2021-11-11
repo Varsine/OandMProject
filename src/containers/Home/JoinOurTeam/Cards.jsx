@@ -1,11 +1,8 @@
-import React, { useMemo } from 'react';
-import classNames from 'classnames';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, EffectCube, Pagination } from 'swiper';
 
 import { swipeData } from 'utils/index';
-import { modeSelector } from 'slices/mainSlice';
 
 import styles from './JoinOurTeam.scss';
 
@@ -14,20 +11,10 @@ import './styles.css';
 const Cards = () => {
   SwiperCore.use([Autoplay, EffectCube, Pagination]);
 
-  const isDarkMode = useSelector(modeSelector);
-
-  const cube = useMemo(
-    () =>
-      classNames({
-        text: isDarkMode,
-        light_text: !isDarkMode,
-      }),
-    [isDarkMode],
-  );
   const renderSwipe = swipeData.map(({ id, text }) => (
     <SwiperSlide key={id}>
       <div className="swiper_image" />
-      <p className={cube}>{text}</p>
+      <p className="text">{text}</p>
     </SwiperSlide>
   ));
 

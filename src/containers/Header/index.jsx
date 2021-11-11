@@ -84,7 +84,6 @@ const Header = ({ isOnePage }) => {
               <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
             )}
           </div>
-
           {!isOnePage ? (
             <div className={styles.icon}>{memoizedUpdateActiveIcon()}</div>
           ) : null}

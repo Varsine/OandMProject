@@ -84,7 +84,7 @@
     }
 
     &_active {
-      background-color: $btn-disabled;
+      background-color: rgba(207, 229, 255, 0.6);
     }
 
     @include breakpoint(mobile) {

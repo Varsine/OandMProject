@@ -22,7 +22,7 @@
       cursor: url('/images/Mouse.png'), auto;
       position: relative;
       align-items: center;
-      background: $text-color;
+      background: #f1f2f2;
       justify-content: center;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
@@ -34,7 +34,7 @@
         height: 3px;
         content: '';
         position: absolute;
-        background: $text-color;
+        background: #f1f2f2;
       }
 
       &:before {
@@ -62,7 +62,7 @@
       display: flex;
       cursor: url('/images/Mouse.png'), auto;
       position: relative;
-      background: $text-color;
+      background: #f1f2f2;
       align-items: center;
       justify-content: center;
       border-top-left-radius: 15px;
@@ -75,7 +75,7 @@
         height: 3px;
         content: '';
         position: absolute;
-        background: $text-color;
+        background: #f1f2f2;
       }
 
       &:before {

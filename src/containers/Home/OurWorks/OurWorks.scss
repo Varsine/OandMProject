@@ -55,7 +55,7 @@
     animation: bounceAlpha 1s infinite linear;
     background-color: $our-works-bg;
     border-radius: 50%;
-    fill: $arrowColor;
+    fill: #fff;
     padding: 10px;
 
     @include breakpoint(desktop) {
@@ -77,7 +77,7 @@
   &__prev {
     top: 100px;
     padding: 10px;
-    fill: $arrowColor;
+    fill: #fff;
     @extend %nextPrev;
     border-radius: 50%;
     background-color: $our-works-bg;

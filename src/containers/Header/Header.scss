@@ -4,7 +4,7 @@
   height: 80px;
   z-index: 100;
   position: fixed;
-  background: $header-bg;
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(20px);
 
   @include breakpoint(tablet-m) {

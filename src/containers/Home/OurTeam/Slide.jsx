@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { modeSelector, activeIndexSelector } from 'slices/mainSlice';
+import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './OurTeam.scss';
 
@@ -20,7 +20,6 @@ const GlitchSquiggly = dynamic(
 const Slide = ({ slide }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
-  const isDarkMode = useSelector(modeSelector);
   const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState('25');
 
   useEffect(() => {
@@ -64,20 +63,8 @@ const Slide = ({ slide }) => {
     subtitle,
   } = slide;
 
-  const darkModeImageClasses = useMemo(
-    () =>
-      classNames(styles.carousel__item_imges_img, 'glitch', {
-        [styles.carousel__item_imges_img_active]: isDarkMode,
-      }),
-    [isDarkMode],
-  );
-
-  const lightImageClasses = useMemo(
-    () =>
-      classNames(styles.carousel__item_imges_img, 'glitch', {
-        [styles.carousel__item_imges_img_active]: !isDarkMode,
-      }),
-    [isDarkMode],
+  const imageClasses = useMemo(() =>
+    classNames(styles.carousel__item_imges_img, 'glitch'),
   );
 
   const baseTimme = 0.07;
@@ -92,7 +79,7 @@ const Slide = ({ slide }) => {
     >
       <div className={styles.carousel__item}>
         <div className={styles.carousel__item_imges}>
-          <div className={darkModeImageClasses}>
+          <div className={imageClasses}>
             <div
               style={{ background: `url(${imageLight1})` }}
               className="glitch-img"
@@ -110,7 +97,7 @@ const Slide = ({ slide }) => {
               style={{ background: `url(${imageLight4})` }}
             />
           </div>
-          <div className={lightImageClasses}>
+          <div className={imageClasses}>
             <div
               className="glitch-img"
               style={{ background: `url(${image1})` }}
