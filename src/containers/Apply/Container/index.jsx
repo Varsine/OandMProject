@@ -1,31 +1,12 @@
 import React from 'react';
-import ReactFullPage from '@fullpage/react-fullpage';
 
-import { applySections } from 'utils/index';
+import { JoinForm } from 'containers/Apply';
 import { FullPageLayout } from 'layouts/index';
 
-const ApplyContainer = () => {
-  const renderFullPages = applySections.map((fullPage) => (
-    <fullPage.component key={fullPage.id} />
-  ));
-
-  const renderFullPageContent = ({ fullpageApi }) => (
-    <ReactFullPage.Wrapper>
-      <FullPageLayout fullpageApi={fullpageApi} isOnePage>
-        {renderFullPages}
-      </FullPageLayout>
-    </ReactFullPage.Wrapper>
-  );
-
-  return (
-    <ReactFullPage
-      navigation={false}
-      scrollingSpeed={1300}
-      keyboardScrolling={false}
-      fitToSection={false}
-      render={renderFullPageContent}
-    />
-  );
-};
+const ApplyContainer = () => (
+  <FullPageLayout isOnePage>
+    <JoinForm />
+  </FullPageLayout>
+);
 
 export default ApplyContainer;

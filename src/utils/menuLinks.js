@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-import shortid from 'shortid';
-
 import {
   Section4DarkIcon,
   Section5DarkIcon,
@@ -28,7 +25,7 @@ import {
   Section11LigthIcon,
   SectionOneLigthIcon,
   SectionTwoLigthIcon,
-  Section10ActiveIcon,
+  // Section10ActiveIcon,
   Section11ActiveIcon,
   SectionOneActiveIcon,
   SectionTwoActiveIcon,
@@ -39,63 +36,54 @@ import {
 
 const menuLinks = [
   {
-    id: shortid.generate(),
     icon: SectionOneDarkIcon,
     iconLight: SectionOneLigthIcon,
     iconHover: SectionOneActiveIcon,
     sectionIndex: 1,
   },
   {
-    id: shortid.generate(),
     icon: SectionTwoDarkIcon,
     iconLight: SectionTwoLigthIcon,
     iconHover: SectionTwoActiveIcon,
     sectionIndex: 2,
   },
   {
-    id: shortid.generate(),
     icon: SectionThreeDarkIcon,
     iconLight: SectionThreeLigthIcon,
     iconHover: SectionThreeActiveIcon,
     sectionIndex: 3,
   },
   {
-    id: shortid.generate(),
     icon: Section4DarkIcon,
     iconLight: Section4LigthIcon,
     iconHover: Section4ActiveIcon,
     sectionIndex: 4,
   },
   {
-    id: shortid.generate(),
     icon: Section5DarkIcon,
     iconLight: Section5LigthIcon,
     iconHover: Section5ActiveIcon,
     sectionIndex: 5,
   },
   {
-    id: shortid.generate(),
     icon: Section6DarkIcon,
     iconLight: Section6LigthIcon,
     iconHover: Section6ActiveIcon,
     sectionIndex: 6,
   },
   {
-    id: shortid.generate(),
     icon: Section7DarkIcon,
     iconLight: Section7LigthIcon,
     iconHover: Section7ActiveIcon,
     sectionIndex: 7,
   },
   {
-    id: shortid.generate(),
     icon: Section8DarkIcon,
     iconLight: Section8LigthIcon,
     iconHover: Section8ActiveIcon,
     sectionIndex: 8,
   },
   {
-    id: shortid.generate(),
     icon: Section11DarkIcon,
     iconLight: Section11LigthIcon,
     iconHover: Section11ActiveIcon,

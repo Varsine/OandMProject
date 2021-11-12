@@ -15,6 +15,7 @@
   flex-direction: column;
   @extend %flex-center;
   position: relative;
+  z-index: 9;
 
   @include breakpoint(tablet) {
     padding-top: 66px;

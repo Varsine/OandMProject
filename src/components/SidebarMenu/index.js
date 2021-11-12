@@ -58,7 +58,7 @@ const SidebarMenu = () => {
     return (
       <div
         role="button"
-        key={item.id}
+        key={item.sectionIndex}
         className={wrapperClasses}
         onClick={() => mobeToSectionHandler(item.sectionIndex)}
       >
