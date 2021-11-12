@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
 
 const useLockBodyScroll = (isOpen) => {
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
 
     document.body.style.overflow = isOpen ? 'visible' : 'hidden';

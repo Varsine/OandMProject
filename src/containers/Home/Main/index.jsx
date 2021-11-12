@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { useInView } from 'react-intersection-observer';
@@ -41,7 +41,11 @@ const Main = () => {
   ) : (
     <LogoAnimaIcon className={styles.wrapper__logo_fixed} stopColor="#fff" />
   );
-  const renderAnimation = isAnimate && showAnimation;
+
+  const renderAnimation = useMemo(
+    () => (isAnimate ? showAnimation : null),
+    [isAnimate, showAnimation],
+  );
 
   const containerClasses = classNames(`container ${styles.wrapper}`, {
     [styles.wrapper__animation]: !inView,

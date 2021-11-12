@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import ReactFullPage from '@fullpage/react-fullpage';
+import { useDispatch } from 'react-redux';
 
 import { IS_SERVER } from 'constants/index';
-import { changeIndex } from 'slices/mainSlice';
 import { mainSections } from 'utils/index';
 import { useWindowSize } from 'hooks/index';
+import { changeIndex } from 'slices/mainSlice';
 import { FullPageLayout } from 'layouts/index';
 
 const HomeContainer = () => {
@@ -23,28 +23,36 @@ const HomeContainer = () => {
   }, [isLaptop]);
 
   const changeActiveStep = (section, destination) => {
+    if (!isLaptop) {
+      window.splatStack.push(Math.random() * 1 + 4);
+    }
     dispatch(changeIndex(destination.index + 1));
   };
 
-  const renderFullPages = mainSections.map((fullPage) => (
-    <fullPage.component key={fullPage.id} />
-  ));
+  const renderFullPages = useMemo(
+    () =>
+      mainSections.map((fullPage) => <fullPage.component key={fullPage.id} />),
+    [],
+  );
 
-  const renderFullPageContent = ({ fullpageApi }) => (
-    <ReactFullPage.Wrapper>
-      <FullPageLayout fullpageApi={fullpageApi}>
-        {renderFullPages}
-      </FullPageLayout>
-    </ReactFullPage.Wrapper>
+  const renderFullPageContent = useCallback(
+    ({ fullpageApi }) => (
+      <ReactFullPage.Wrapper>
+        <FullPageLayout fullpageApi={fullpageApi}>
+          {renderFullPages}
+        </FullPageLayout>
+      </ReactFullPage.Wrapper>
+    ),
+    [renderFullPages],
   );
 
   return (
     <ReactFullPage
       navigation={false}
+      fitToSection={false}
       scrollingSpeed={1300}
       keyboardScrolling={false}
       onLeave={changeActiveStep}
-      fitToSection={false}
       render={renderFullPageContent}
     />
   );

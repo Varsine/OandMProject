@@ -1,12 +1,14 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-import { HelmetLayout } from 'layouts/index';
-import { ErrorContainer } from 'containers/index';
+const ErrorPage = () => {
+  const router = useRouter();
 
-const ErrorPage = (props) => (
-  <HelmetLayout title="404 - Page not found" metaDescription="Page not found">
-    <ErrorContainer {...props} />
-  </HelmetLayout>
-);
+  useEffect(() => {
+    router.replace('/');
+  });
+
+  return null;
+};
 
 export default ErrorPage;
