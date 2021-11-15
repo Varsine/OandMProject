@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import { useWindowSize } from 'hooks/index';
 
@@ -6,6 +7,7 @@ import styles from './HowWeWork.scss';
 
 const HowWeWorkAnimation = () => {
   const { isDesktop, isMobile } = useWindowSize();
+
   const viewBoxWeb = isDesktop ? '0 0 1536 504' : '100 0 1336 504';
   const svgViewBox = isMobile ? '0 0 288 693' : viewBoxWeb;
 
@@ -222,8 +224,7 @@ const HowWeWorkAnimation = () => {
           <g filter="#3D80D4">
             <path
               d="M0 98.7031C0 71.0889 22.3858 48.7031 50 48.7031C77.6142 48.7031 100 71.0889 100 98.7031C100 126.317 77.6142 148.703 50 148.703C22.3858 148.703 0 126.317 0 98.7031Z"
-              fill="#3D80D4"
-              //
+              fill="#3d80d4"
             />
           </g>
           <g className={styles.rocketAnimated}>
@@ -941,6 +942,14 @@ const HowWeWorkAnimation = () => {
       </defs>
     </svg>
   );
+};
+
+HowWeWorkAnimation.propTypes = {
+  isActiveAnimate: PropTypes.bool,
+};
+
+HowWeWorkAnimation.defaultProps = {
+  isActiveAnimate: false,
 };
 
 export default HowWeWorkAnimation;

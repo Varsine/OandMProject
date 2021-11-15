@@ -26,9 +26,9 @@ const HowWeWork = () => {
 
         <div className={styles.animation}>
           {isActiveAnimate ? (
-            <HowWeWorkAnimation />
+            <HowWeWorkAnimation isActiveAnimate={isActiveAnimate} />
           ) : (
-            <HowWeWorkAnimationClosed />
+            <HowWeWorkAnimationClosed isActiveAnimate={isActiveAnimate} />
           )}
           <div className={styles.animation__text_one}>
             <p className={styles.text_color}>{textOne}</p>

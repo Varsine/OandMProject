@@ -2,12 +2,23 @@
   overflow: hidden;
 
   &__layout {
+    z-index: 10;
     width: 100vw;
     height: 100vh;
-    display: flex;
+    position: relative;
     padding: 80px 0 60px;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+
+    @include breakpoint(desktop) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 64px 0 50px;
+    }
 
     &_container {
       height: 91%;
@@ -19,7 +30,10 @@
 
     &_info {
       display: flex;
-      padding-bottom: 8px;
+
+      @include breakpoint(desktop) {
+        padding: 5px 0;
+      }
 
       @include breakpoint(tablet-m) {
         gap: 40px;

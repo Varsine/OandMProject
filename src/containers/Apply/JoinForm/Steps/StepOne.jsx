@@ -70,8 +70,10 @@ StepOne.propTypes = {
   editActiveStep: PropTypes.func,
   setApplicationForm: PropTypes.func,
 };
+
 StepOne.defaultProps = {
   editActiveStep: () => {},
   setApplicationForm: () => {},
 };
+
 export default StepOne;

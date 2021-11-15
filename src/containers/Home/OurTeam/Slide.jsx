@@ -20,24 +20,24 @@ const GlitchSquiggly = dynamic(
 const Slide = ({ slide }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
-  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState('25');
+  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState(25);
 
   useEffect(() => {
     if (activeIndex === 6) {
       const firstTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('10');
+        setIsGlitchscaleNoise(10);
       }, 800);
       const secondTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('8');
+        setIsGlitchscaleNoise(8);
       }, 1500);
       const thirdTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('6');
+        setIsGlitchscaleNoise(6);
       }, 2000);
       const fourthTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('4');
+        setIsGlitchscaleNoise(4);
       }, 2300);
       const fifthTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('1.3');
+        setIsGlitchscaleNoise(1.3);
       }, 3000);
 
       return () => {
