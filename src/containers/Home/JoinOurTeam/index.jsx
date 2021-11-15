@@ -3,12 +3,12 @@ import React from 'react';
 import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
 
-import SwiperCards from './Cards';
+import Cubes from './Cubes';
 import styles from './JoinOurTeam.scss';
 import { infoText, subtitle, joinOurTeam } from './constants';
 
 const JoinOurTeam = () => (
-  <section className={`${styles.height_reponce} section`}>
+  <section className={`${styles.height_responce} section`}>
     <div className="canvas__working" />
     <div className={`container ${styles.wrapper}`}>
       <div className={styles.wrapper__info}>
@@ -19,7 +19,7 @@ const JoinOurTeam = () => (
           {joinOurTeam}
         </NextLink>
       </div>
-      <SwiperCards />
+      <Cubes />
     </div>
   </section>
 );

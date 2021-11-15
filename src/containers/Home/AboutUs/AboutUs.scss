@@ -4,9 +4,6 @@
   @include breakpoint(desktop) {
     height: auto !important;
   }
-  @include breakpoint(tablet) {
-    margin-bottom: 50px;
-  }
 }
 
 .wrapper {
@@ -40,6 +37,10 @@
 
     &__title {
       display: none;
+
+      &__text {
+        padding-bottom: 24px;
+      }
 
       &_show {
         @extend %open-sans-48;
@@ -253,13 +254,15 @@
 
 .aboute_img_one {
   margin-top: 30vh;
-  animation: bounceOne 3s alternate linear;
+  animation: bounce 4.5s alternate ease;
+  transform-origin: center bottom;
+  animation-fill-mode: both;
 
   &__rope {
     top: -60vh;
     height: 60vh;
     animation: leftRight 15s alternate linear infinite;
-    animation-delay: 6s;
+    animation-delay: 4.5s;
 
     @include breakpoint(desktop) {
       &::after {
@@ -275,51 +278,55 @@
 
     & + div {
       animation: imageMovingLeftRight 15s alternate linear infinite;
-      animation-delay: 6s;
+      animation-delay: 4.5s;
     }
   }
 
   &__image {
     &::after,
     &::before {
-      animation-delay: 6s;
+      animation-delay: 4.5s;
     }
   }
 }
 
 .aboute_img_two {
   margin-top: 50vh;
-  animation: bounceTwo 3.5s alternate linear;
+  animation: bounce 5.5s alternate ease;
+  transform-origin: center bottom;
+  animation-fill-mode: both;
 
   &__rope {
     height: 100vh;
     top: -100vh;
     animation: leftRight 15s alternate linear infinite;
-    animation-delay: 5s;
+    animation-delay: 5.5s;
 
     & + div {
       animation: imageMovingLeftRightMedium 15s alternate linear infinite;
-      animation-delay: 5s;
+      animation-delay: 5.5s;
     }
   }
 
   &__image {
     &::after,
     &::before {
-      animation-delay: 5s;
+      animation-delay: 5.5s;
     }
   }
 }
 
 .aboute_img_three {
   margin-top: 25vh;
-  animation: bounceThree 2.8s alternate linear;
+  animation: bounce 4.2s alternate ease;
+  transform-origin: center bottom;
+  animation-fill-mode: both;
 
   &__rope {
     height: 50vh;
     top: -50vh;
     animation: leftRight 15s alternate linear infinite;
-    animation-delay: 4s;
+    animation-delay: 4.2s;
 
     @include breakpoint(desktop) {
       &::after {
@@ -335,51 +342,55 @@
 
     & + div {
       animation: imageMovingLeftRight 15s alternate linear infinite;
-      animation-delay: 4s;
+      animation-delay: 4.2s;
     }
   }
 
   &__image {
     &::after,
     &::before {
-      animation-delay: 4s;
+      animation-delay: 4.2s;
     }
   }
 }
 
 .aboute_img_four {
   margin-top: 55vh;
-  animation: bounceFour 3.7s alternate linear;
+  animation: bounce 6s alternate ease;
+  transform-origin: center bottom;
+  animation-fill-mode: both;
 
   &__rope {
     height: 110vh;
     top: -110vh;
     animation: leftRight 15s alternate linear infinite;
-    animation-delay: 7s;
+    animation-delay: 6s;
 
     & + div {
       animation: imageMovingLeftRightBig 15s alternate linear infinite;
-      animation-delay: 7s;
+      animation-delay: 6s;
     }
   }
 
   &__image {
     &::after,
     &::before {
-      animation-delay: 7s;
+      animation-delay: 6s;
     }
   }
 }
 
 .aboute_img_five {
   margin-top: 35vh;
-  animation: bounceFive 3s alternate linear;
+  animation: bounce 5.7s alternate ease;
+  transform-origin: center bottom;
+  animation-fill-mode: both;
 
   &__rope {
     height: 70vh;
     top: -70vh;
     animation: leftRight 15s alternate linear infinite;
-    animation-delay: 6.5s;
+    animation-delay: 5.7s;
 
     @include breakpoint(desktop) {
       &::after {
@@ -395,14 +406,14 @@
 
     & + div {
       animation: imageMovingLeftRight 15s alternate linear infinite;
-      animation-delay: 6.5s;
+      animation-delay: 5.7s;
     }
   }
 
   &__image {
     &::after,
     &::before {
-      animation-delay: 6.5s;
+      animation-delay: 5.7s;
     }
   }
 }
@@ -563,178 +574,23 @@
   }
 }
 
-@keyframes bounceOne {
+@keyframes bounce {
   0% {
-    margin-top: 0;
-    animation-timing-function: ease-in;
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -50vh, 0);
   }
-  15% {
-    margin-top: 30vh;
-    animation-timing-function: ease-out;
-  }
-  30% {
-    margin-top: 10vh;
-    animation-timing-function: ease-in;
-  }
-  45% {
-    margin-top: 30vh;
-    animation-timing-function: ease-out;
-  }
-  60% {
-    margin-top: 20vh;
-    animation-timing-function: ease-in;
-  }
-  75% {
-    margin-top: 30vh;
-    animation-timing-function: ease-out;
-  }
-  90% {
-    margin-top: 28vh;
-    animation-timing-function: ease-in;
-  }
+  15%,
+  60%,
   100% {
-    margin-top: 30vh;
-    animation-timing-function: ease-out;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
   }
-}
-
-@keyframes bounceTwo {
-  0% {
-    margin-top: 0;
-    animation-timing-function: ease-in;
+  35% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -10vh, 0);
   }
-  15% {
-    margin-top: 50vh;
-    animation-timing-function: ease-out;
-  }
-  30% {
-    margin-top: 20vh;
-    animation-timing-function: ease-in;
-  }
-  45% {
-    margin-top: 50vh;
-    animation-timing-function: ease-out;
-  }
-  60% {
-    margin-top: 40vh;
-    animation-timing-function: ease-in;
-  }
-  75% {
-    margin-top: 50vh;
-    animation-timing-function: ease-out;
-  }
-  90% {
-    margin-top: 48vh;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    margin-top: 50vh;
-    animation-timing-function: ease-out;
-  }
-}
-
-@keyframes bounceThree {
-  0% {
-    margin-top: 0;
-    animation-timing-function: ease-in;
-  }
-  15% {
-    margin-top: 25vh;
-    animation-timing-function: ease-out;
-  }
-  30% {
-    margin-top: 7vh;
-    animation-timing-function: ease-in;
-  }
-  45% {
-    margin-top: 25vh;
-    animation-timing-function: ease-out;
-  }
-  60% {
-    margin-top: 15vh;
-    animation-timing-function: ease-in;
-  }
-  75% {
-    margin-top: 25vh;
-    animation-timing-function: ease-out;
-  }
-  90% {
-    margin-top: 23vh;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    margin-top: 25vh;
-    animation-timing-function: ease-out;
-  }
-}
-
-@keyframes bounceFour {
-  0% {
-    margin-top: 0;
-    animation-timing-function: ease-in;
-  }
-  15% {
-    margin-top: 57vh;
-    animation-timing-function: ease-out;
-  }
-  30% {
-    margin-top: 30vh;
-    animation-timing-function: ease-in;
-  }
-  45% {
-    margin-top: 55vh;
-    animation-timing-function: ease-out;
-  }
-  60% {
-    margin-top: 45vh;
-    animation-timing-function: ease-in;
-  }
-  75% {
-    margin-top: 55vh;
-    animation-timing-function: ease-out;
-  }
-  90% {
-    margin-top: 53vh;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    margin-top: 55vh;
-    animation-timing-function: ease-out;
-  }
-}
-
-@keyframes bounceFive {
-  0% {
-    margin-top: 0;
-    animation-timing-function: ease-in;
-  }
-  15% {
-    margin-top: 35vh;
-    animation-timing-function: ease-out;
-  }
-  30% {
-    margin-top: 17vh;
-    animation-timing-function: ease-in;
-  }
-  45% {
-    margin-top: 35vh;
-    animation-timing-function: ease-out;
-  }
-  60% {
-    margin-top: 27vh;
-    animation-timing-function: ease-in;
-  }
-  75% {
-    margin-top: 35vh;
-    animation-timing-function: ease-out;
-  }
-  90% {
-    margin-top: 33vh;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    margin-top: 35vh;
-    animation-timing-function: ease-out;
+  80% {
+    transform: translate3d(0, -3vh, 0);
   }
 }
 

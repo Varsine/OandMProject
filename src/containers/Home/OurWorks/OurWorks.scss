@@ -16,6 +16,7 @@
   &__container {
     height: 100%;
     position: relative;
+    overflow: hidden;
 
     @include breakpoint(tablet-m) {
       height: auto;
@@ -42,7 +43,7 @@
       background-size: contain;
 
       @include breakpoint(tablet-m) {
-        height: 70vh !important;
+        height: 50vh !important;
         width: 100%;
         margin: 0;
       }

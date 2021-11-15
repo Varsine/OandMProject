@@ -58,3 +58,35 @@
     }
   }
 }
+
+@mixin cubTranslateY($indexY) {
+  transform: rotateY($indexY) translate3d(0, 0, $cubeSize / 2);
+
+  @media (max-height: 800px) {
+    transform: rotateY($indexY) translate3d(0, 0, $cubeSizeSecond / 2);
+  }
+
+  @media (max-width: 1280px) {
+    transform: rotateY($indexY) translate3d(0, 0, $cubeSizeThree / 2);
+  }
+
+  @include breakpoint(tablet-m) {
+    transform: rotateY($indexY) translate3d(0, 0, $cubeSizeMobile / 2);
+  }
+}
+
+@mixin cubTranslateX($indexX) {
+  transform: rotateX($indexX) translate3d(0, 0, $cubeSize / 2);
+
+  @media (max-height: 800px) {
+    transform: rotateX($indexX) translate3d(0, 0, $cubeSizeSecond / 2);
+  }
+
+  @media (max-width: 1280px) {
+    transform: rotateX($indexX) translate3d(0, 0, $cubeSizeThree / 2);
+  }
+
+  @include breakpoint(tablet-m) {
+    transform: rotateX($indexX) translate3d(0, 0, $cubeSizeMobile / 2);
+  }
+}
