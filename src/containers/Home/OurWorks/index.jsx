@@ -78,7 +78,7 @@ const OurWorks = () => {
   );
 
   return (
-    <section className={`${styles.height_responce} section`}>
+    <section className={`${styles.height_response} section`}>
       <div className="canvas__working" />
       <div className={styles.wrapper}>
         <DownArrow onClick={navigateUp} className={styles.wrapper__prev} />

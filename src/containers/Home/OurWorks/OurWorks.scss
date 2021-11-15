@@ -1,4 +1,4 @@
-.height_responce {
+.height_response {
   @include breakpoint(tablet-m) {
     height: auto !important;
   }
@@ -71,7 +71,7 @@
 
     @include breakpoint(tablet-m) {
       top: 50%;
-      animation: bounceAlphaResponceKeyframeNext 1s infinite linear;
+      animation: bounceAlphaResponseKeyframeNext 1s infinite linear;
       transform: rotate(-90deg) translate(0, -50%);
       bottom: unset;
       left: unset;
@@ -101,7 +101,7 @@
       width: 40px;
       height: 40px;
       transform: rotate(90deg) translate(0, -50%) !important;
-      animation: bounceAlphaResponceKeyframePrev 1s infinite linear;
+      animation: bounceAlphaResponseKeyframePrev 1s infinite linear;
     }
   }
 }
@@ -508,7 +508,7 @@
   }
 }
 
-@keyframes bounceAlphaResponceKeyframeNext {
+@keyframes bounceAlphaResponseKeyframeNext {
   0% {
     opacity: 0.7;
     transform: rotate(-90deg) translateY(0px) scale(0.9);
@@ -523,7 +523,7 @@
   }
 }
 
-@keyframes bounceAlphaResponceKeyframePrev {
+@keyframes bounceAlphaResponseKeyframePrev {
   0% {
     opacity: 0.7;
     transform: rotate(90deg) translateY(0px) scale(0.9);
