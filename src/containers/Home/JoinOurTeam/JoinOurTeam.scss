@@ -16,16 +16,14 @@
     margin-right: 35px;
   }
 
-<<<<<<< HEAD
   @include breakpoint(tablet-m) {
     min-height: 456px;
     padding-top: 0;
-=======
+  }
   @include breakpoint(tablet) {
     flex-direction: column;
     margin-right: 0;
     padding-bottom: 0;
->>>>>>> a0eedf49142944a6bb37942b0c007a4c4c2c5b77
   }
 
   &__info {
