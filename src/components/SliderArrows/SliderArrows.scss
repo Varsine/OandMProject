@@ -22,7 +22,7 @@
       cursor: url('/images/Mouse.png'), auto;
       position: relative;
       align-items: center;
-      background: $text-color;
+      background: #f1f2f2;
       justify-content: center;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
@@ -35,16 +35,14 @@
         height: 3px;
         content: '';
         position: absolute;
-        background: $text-color;
-
         background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+        background: #f1f2f2;
       }
 
       &:before {
         top: -5px;
         left: -3px;
         transform: rotate(-45deg);
-
         background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
       }
 
@@ -69,7 +67,7 @@
       display: flex;
       cursor: url('/images/Mouse.png'), auto;
       position: relative;
-      background: $text-color;
+      background: #f1f2f2;
       align-items: center;
       justify-content: center;
       border-top-left-radius: 15px;
@@ -83,8 +81,8 @@
         height: 3px;
         content: '';
         position: absolute;
-        background: $text-color;
         background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+        background: #f1f2f2;
       }
 
       &:before {
@@ -98,7 +96,6 @@
       &:after {
         right: -3px;
         top: -5px;
-
         background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
         transform: rotate(45deg);
         border-top-left-radius: 15px;

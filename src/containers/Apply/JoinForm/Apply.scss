@@ -1,4 +1,4 @@
-.height_reponce {
+.height_responce {
   @include breakpoint(desktop) {
     height: 100vh !important;
   }
@@ -15,6 +15,7 @@
   flex-direction: column;
   @extend %flex-center;
   position: relative;
+  z-index: 9;
 
   @include breakpoint(tablet) {
     padding-top: 66px;
@@ -76,16 +77,16 @@
 
   &__line {
     path {
-      stroke: #1d1d1d;
+      stroke: #f1f2f2;
     }
   }
 
   &__item {
     width: 50px;
     height: 50px;
-    color: $applayText;
+    color: #f1f2f2;
     border-radius: 50%;
-    background: $bacgWhite;
+    background: rgba(234, 241, 250, 0.6);
 
     &_active {
       background: $liner-blue;
@@ -96,6 +97,7 @@
 .next {
   margin: 22px 0;
   @extend %button-gradient;
+  border-radius: 8px;
 }
 
 .success {

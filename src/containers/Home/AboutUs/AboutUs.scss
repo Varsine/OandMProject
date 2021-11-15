@@ -2,22 +2,19 @@
   position: relative;
 
   @include breakpoint(desktop) {
-    height: auto !important;
-  }
-  @include breakpoint(tablet) {
-    margin-bottom: 50px;
+    height: calc(100vh + 25px) !important;
   }
 }
 
 .wrapper {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  position: relative;
   height: 100vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
 
   @include breakpoint(desktop) {
-    height: auto;
+    height: 80vh;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
@@ -92,22 +89,23 @@
   }
 
   &__list {
+    left: 0;
+    right: 0;
+    top: 13%;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
     display: flex;
+    overflow: hidden;
+    position: absolute;
     justify-content: space-around;
 
     @include breakpoint(desktop) {
       width: 100vw;
-      height: 90vh;
+      height: calc(100% + 25px);
 
       &::before {
-        content: '';
-        position: absolute;
-        height: 3px;
-        width: 100vw;
-        background: $rope-bg;
+        width: 0px;
+        height: 0px;
       }
     }
 
@@ -122,69 +120,63 @@
   height: 100vh;
 
   canvas {
-    background: none !important;
     width: 100vw !important;
     height: 100vh !important;
+    background: none !important;
   }
 }
 
 .block {
+  width: 0;
+  height: 0;
+  z-index: 1;
   display: flex;
+  position: relative;
   align-items: center;
   flex-direction: column;
-  position: relative;
-  z-index: 1;
-  height: 0;
-  width: 0;
 
   &__rope {
-    position: absolute;
     width: 1px;
-    background: $rope-bg;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
 
     @include breakpoint(desktop) {
       &::before {
-        content: '';
-        position: absolute;
-        height: 6px;
-        width: 2px;
-        top: 50%;
-        transform: translate(0px, -50%);
-        border-left: 2px solid $rope-bg;
-        border-right: 2px solid $rope-bg;
+        width: 0px;
+        height: 0px;
       }
     }
   }
 
   &__image {
-    @extend %flex-center;
-    position: absolute;
     width: 125px;
     height: 125px;
+    position: absolute;
+    @extend %flex-center;
 
     &::before {
+      top: 50%;
+      width: 0;
+      height: 0;
       content: '';
       position: absolute;
-      height: 0;
-      width: 0;
       border-radius: 50%;
-      border: 2px solid $rope-bg;
-      top: 50%;
       transform: translate(0, -50%);
       animation: beforeAnima 1.5s linear infinite;
+      border: 2px solid rgba(255, 255, 255, 0.08);
     }
 
     &::after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      height: 0;
-      width: 0;
-      border-radius: 50%;
-      border: 2px solid $rope-bg;
       top: 50%;
+      width: 0;
+      height: 0;
+      content: '';
+      z-index: -1;
+      position: absolute;
+      border-radius: 50%;
       transform: translate(0, -50%);
       animation: afterAnima 1.5s linear infinite;
+      border: 2px solid rgba(255, 255, 255, 0.08);
     }
 
     @keyframes afterAnima {
@@ -263,13 +255,13 @@
 
     @include breakpoint(desktop) {
       &::after {
+        top: 50%;
+        width: 0px;
+        height: 0px;
         content: '';
         position: absolute;
-        height: 6px;
-        width: 3px;
-        top: 50%;
         transform: translate(-8px, -50%);
-        border-right: 2px solid $rope-bg;
+        border-right: 2px solid rgba(255, 255, 255, 0.08);
       }
     }
 
@@ -323,13 +315,13 @@
 
     @include breakpoint(desktop) {
       &::after {
+        top: 50%;
+        width: 0px;
+        height: 0px;
         content: '';
         position: absolute;
-        height: 6px;
-        width: 3px;
-        top: 50%;
         transform: translate(-8px, -50%);
-        border-right: 2px solid $rope-bg;
+        border-right: 2px solid rgba(255, 255, 255, 0.08);
       }
     }
 
@@ -383,13 +375,13 @@
 
     @include breakpoint(desktop) {
       &::after {
+        top: 50%;
+        width: 0px;
+        height: 0px;
         content: '';
         position: absolute;
-        height: 6px;
-        width: 3px;
-        top: 50%;
         transform: translate(-8px, -50%);
-        border-right: 2px solid $rope-bg;
+        border-right: 2px solid rgba(255, 255, 255, 0.08);
       }
     }
 

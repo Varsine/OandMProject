@@ -1,16 +1,11 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useSelector } from 'react-redux';
-
-import { modeSelector } from 'slices/mainSlice';
 
 import styles from './OurPartners.scss';
 
 const Slide = ({ slide, isActive }) => {
-  const isDarkMode = useSelector(modeSelector);
-
-  const { icon, iconLight } = slide;
+  const { icon } = slide;
 
   const sliderItemClasses = useMemo(
     () =>
@@ -20,9 +15,7 @@ const Slide = ({ slide, isActive }) => {
     [isActive],
   );
 
-  return (
-    <div className={sliderItemClasses}>{isDarkMode ? icon : iconLight}</div>
-  );
+  return <div className={sliderItemClasses}>{icon}</div>;
 };
 
 Slide.propTypes = {

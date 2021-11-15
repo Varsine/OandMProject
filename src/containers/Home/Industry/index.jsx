@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
@@ -47,7 +47,7 @@ const Industry = () => {
     [src],
   );
 
-  const renderIndustries = useCallback(
+  const renderIndustries = useMemo(
     () =>
       industry.map((industryItem, index) => {
         const stylesKey = `wrapper__menu${industryItem.class}`;
@@ -80,7 +80,7 @@ const Industry = () => {
     <section className={`${styles.height_responce} section`}>
       <div className="canvas__working" />
       <div className={`container ${industryStyles}`}>
-        <div className={styles.wrapper__menu}>{renderIndustries()}</div>
+        <div className={styles.wrapper__menu}>{renderIndustries}</div>
         <div className={styles.wrapper__active_item}>
           <div
             className={gifClass}

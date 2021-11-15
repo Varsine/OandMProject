@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import axios from 'axios';
 
 import { Button } from 'components/index';
-import { modeSelector } from 'slices/mainSlice';
 
 import Success from './Steps/Success';
 import StepOne from './Steps/StepOne';
@@ -15,8 +13,6 @@ import styles from './Apply.scss';
 import { StepIcon } from '../../../icons';
 
 const JoinForm = () => {
-  const isDarkMode = useSelector(modeSelector);
-
   const [applicationForm, setApplicationForm] = useState({});
   const [activeIndex, setIsActiveIndex] = useState(1);
   const [renderAnimation, setRenderAnimation] = useState(false);
@@ -46,7 +42,7 @@ const JoinForm = () => {
   };
 
   return (
-    <section className={`${styles.height_reponce} section`}>
+    <section className={`${styles.height_responce} section`}>
       <div className="canvas__working" />
       <div className={styles.container}>
         <PiecesAnimation
@@ -67,7 +63,7 @@ const JoinForm = () => {
                 >
                   1
                 </Button>
-                <StepIcon className={!isDarkMode ? styles.steps__line : ''} />
+                <StepIcon className={styles.steps__line} />
                 <Button
                   disabled={activeIndex === 1}
                   onClick={() => editActiveStep(2)}

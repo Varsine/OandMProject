@@ -1,7 +1,6 @@
 :global {
   .container {
     padding: 80px 150px 60px 50px;
-    // height: 88vh;
 
     @include breakpoint(desktop) {
       padding: 0;

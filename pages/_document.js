@@ -27,12 +27,7 @@ export default class extends Document {
           />
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="favicon.ico" />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            charSet="UTF-8"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-          />
+
           <link
             rel="apple-touch-icon"
             href="/static/icon/apple-touch-icon-192.png"
@@ -41,12 +36,12 @@ export default class extends Document {
           <meta property="og:type" content="website" />
           <meta
             name="keywords"
-            content="ShellLogix, website, mobile application, graphic design, web design, 
-            website design, website builder, web developer, web designer, webdesign, ecommerce website, 
+            content="ShellLogix, website, mobile application, graphic design, web design,
+            website design, website builder, web developer, web designer, webdesign, ecommerce website,
             web design company, website creator, website designer, responsive web design, web development company,
-            best website design, web design software, web page design, build a website, web developer salary, 
-            design website, web application development, web agency, software development company, web programming, 
-            web developer jobs, website developer, graphic design websites, web developers, web development tools, 
+            best website design, web design software, web page design, build a website, web developer salary,
+            design website, web application development, web agency, software development company, web programming,
+            web developer jobs, website developer, graphic design websites, web developers, web development tools,
             developpeur web, how to develop a website, top website designs, website company, website design and development
             web company, how to become a web developer, front end web developer, website making"
           />
@@ -55,7 +50,7 @@ export default class extends Document {
           <meta
             property="og:description"
             content="
-            ShellLogix LLC has been established in 2017 with a mission to 
+            ShellLogix LLC has been established in 2017 with a mission to
             offer creative solutions in the field of We believe that contemporary ideas and technologies are the key
             milestones for creating strategic solutions for traditions based
             businesses.Our team members are fully engaged in the process of

@@ -9,13 +9,17 @@
   height: 100vh;
   position: relative;
 
-  @include breakpoint(tablet-m) {
-    height: auto;
+  @include breakpoint(desktop) {
+    height: 100%;
   }
 
   &__container {
     height: 100%;
     position: relative;
+
+    @include breakpoint(desktop) {
+      height: 80vh;
+    }
 
     @include breakpoint(tablet-m) {
       height: auto;
@@ -50,14 +54,14 @@
   }
 
   &__next {
-    @extend %nextPrev;
+    fill: #fff;
     bottom: 80px;
-    animation: bounceAlpha 1s infinite linear;
-    background-color: $our-works-bg;
-    border-radius: 50%;
-    fill: $arrowColor;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
     padding: 10px;
+    @extend %nextPrev;
+    border-radius: 50%;
+    background-color: $our-works-bg;
+    animation: bounceAlpha 1s infinite linear;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
 
     @include breakpoint(desktop) {
       bottom: 140px;
@@ -67,7 +71,7 @@
 
     @include breakpoint(tablet-m) {
       top: 50%;
-      animation: none;
+      animation: bounceAlphaResponceKeyframeNext 1s infinite linear;
       transform: rotate(-90deg) translate(0, -50%);
       bottom: unset;
       left: unset;
@@ -77,13 +81,13 @@
 
   &__prev {
     top: 100px;
+    fill: #fff;
     padding: 10px;
-    fill: $arrowColor;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
     @extend %nextPrev;
     border-radius: 50%;
     background-color: $our-works-bg;
     animation: bouncePrew 1s infinite linear;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
 
     @include breakpoint(desktop) {
       top: 140px;
@@ -92,27 +96,27 @@
     }
 
     @include breakpoint(tablet-m) {
-      animation: none;
-      top: 50%;
       left: 0;
-      transform: rotate(90deg) translate(0, -50%) !important;
-      height: 40px;
+      top: 50%;
       width: 40px;
+      height: 40px;
+      transform: rotate(90deg) translate(0, -50%) !important;
+      animation: bounceAlphaResponceKeyframePrev 1s infinite linear;
     }
   }
+}
 
-  .block {
-    @extend %flex-center;
-    position: relative;
-    overflow: hidden;
-    height: 100vh !important;
-    width: 100vw !important;
+.block {
+  overflow: hidden;
+  position: relative;
+  @extend %flex-center;
+  height: 100vh !important;
+  width: 100vw !important;
 
-    @include breakpoint(tablet-m) {
-      height: 80vh !important;
-      flex-direction: column-reverse;
-      padding: 0 16px;
-    }
+  @include breakpoint(tablet-m) {
+    padding: 0 16px;
+    height: 80% !important;
+    flex-direction: column-reverse;
   }
 }
 
@@ -391,6 +395,7 @@
   flex-direction: column;
   word-break: break-word;
   color: $white-20;
+  backdrop-filter: blur(0px);
 
   @include breakpoint(wide) {
     max-width: 350px;
@@ -401,13 +406,12 @@
   }
 
   @include breakpoint(tablet-m) {
-    position: static;
-    max-width: 100%;
-    transform: none !important;
-    background: $our-works-bg;
-    backdrop-filter: blur(50px);
-    border-radius: 20px;
     padding: 16px;
+    max-width: 100%;
+    position: static;
+    border-radius: 20px;
+    background: $our-works-bg;
+    transform: none !important;
   }
 
   &__title {
@@ -501,5 +505,35 @@
   100% {
     opacity: 0.7;
     transform: rotate(180deg) translateY(0px) scale(0.9);
+  }
+}
+
+@keyframes bounceAlphaResponceKeyframeNext {
+  0% {
+    opacity: 0.7;
+    transform: rotate(-90deg) translateY(0px) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(-90deg) translateY(10px) scale(1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: rotate(-90deg) translateY(0px) scale(0.9);
+  }
+}
+
+@keyframes bounceAlphaResponceKeyframePrev {
+  0% {
+    opacity: 0.7;
+    transform: rotate(90deg) translateY(0px) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(90deg) translateY(10px) scale(1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: rotate(90deg) translateY(0px) scale(0.9);
   }
 }

@@ -1,73 +1,24 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import classNames from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  modeToggler,
-  modeSelector,
-  activeIndexSelector,
-} from 'slices/mainSlice';
-import { IconHover } from 'components/index';
+import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './ModeSwitch.scss';
 
 import Mouse from '../Mouse';
-import { SunIcon, MoonIcon, SunHoverIcon, MoonHoverIcon } from '../../../icons';
 
-const ModeSwitch = ({ isOnePage, isOpen }) => {
-  const dispatch = useDispatch();
-  const isDarkMode = useSelector(modeSelector);
+const ModeSwitch = ({ isOnePage }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
-  const modeToggleHandler = () => {
-    dispatch(modeToggler());
-  };
-
-  const recastActiveIndex = useMemo(() => {
-    if (activeIndex > 9) {
-      return activeIndex;
-    }
-
-    return `${activeIndex}`;
-  }, [activeIndex]);
-
-  const wrapperClassNames = useMemo(
-    () =>
-      classNames(styles.wrapper, {
-        [styles.wrapper__hide]: isOpen,
-      }),
-    [isOpen],
-  );
-
   return (
-    <div className={wrapperClassNames}>
-      {isDarkMode ? (
-        <IconHover
-          id="siteMode"
-          isLink={false}
-          icon={<SunIcon />}
-          iconHover={<SunHoverIcon />}
-          onClick={modeToggleHandler}
-          anchorProps={{
-            'aria-label': 'light mode',
-          }}
-        />
-      ) : (
-        <IconHover
-          id="siteMode"
-          isLink={false}
-          icon={<MoonIcon />}
-          iconHover={<MoonHoverIcon />}
-          onClick={modeToggleHandler}
-          anchorProps={{
-            'aria-label': 'dark mode',
-          }}
-        />
-      )}
+    <div className={styles.wrapper}>
       {!isOnePage && (
         <>
-          <h3 className={styles.index}>{recastActiveIndex}</h3>
+          <h3 className={classNames(styles.index, styles.page_idx)}>
+            {activeIndex}
+          </h3>
           <Mouse />
         </>
       )}

@@ -5,7 +5,6 @@ $tablet: 768px;
 $tablet-l: 992px;
 $desktop: 1024px;
 $wide: 1200px;
-$fr-double-package: 1304px;
 
 // @extend
 %flex-center {
@@ -38,7 +37,7 @@ $fr-double-package: 1304px;
 
   &:disabled {
     cursor: default;
-    background: $btn-disabled;
+    background: rgba(207, 229, 255, 0.6);
   }
 }
 
@@ -65,7 +64,7 @@ $fr-double-package: 1304px;
 }
 
 %nextPrev {
-  fill: $logo-bottom-color;
+  fill: rgba(241, 242, 242, 1);
   position: absolute;
   z-index: 10;
   left: 48%;

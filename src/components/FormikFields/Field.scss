@@ -4,17 +4,17 @@
 
   &__change {
     width: 100%;
-    color: $text-color;
+    color: #f1f2f2;
     height: 50px;
     border: none;
     padding: 0 24px;
     position: relative;
-    background: $field-bg;
-    border-radius: 50px;
+    background: rgba(207, 229, 255, 0.6);
+    border-radius: 8px;
     @extend %open-sans-16;
 
     &::placeholder {
-      color: $text-color;
+      color: #f1f2f2;
     }
   }
 }
@@ -29,15 +29,15 @@
     cursor: url('/images/Mouse.png'), auto;
     padding: 0 12px 0 24px;
     position: relative;
-    background: $field-bg;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
     font-weight: normal;
     border-radius: 50px;
     @extend %open-sans-16;
     @extend %flex-between;
 
     &_active {
-      background: $field-bg-active;
-      border-radius: 32px 32px 0 0;
+      background: rgba(207, 229, 255, 0.6);
+      border-radius: 8px 8px 0 0;
     }
 
     &_icon {
@@ -48,21 +48,27 @@
 
     svg {
       transition: all 0.3s;
+
+      path {
+        stroke: white;
+      }
     }
   }
 
   &__wrapper {
     position: relative;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    border-radius: 8px;
   }
 
   &__content {
+    top: 100%;
     width: 100%;
     z-index: 10;
-    position: absolute;
     max-width: 594px;
-    background: $field-bg-active;
-    border-radius: 0 0 32px 32px;
-    top: 100%;
+    position: absolute;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    border-radius: 0 0 8px 8px;
 
     &_item {
       cursor: url('/images/Mouse.png'), auto;
@@ -72,6 +78,7 @@
 
       &:hover {
         background: $white-10;
+        border-radius: 0 0 8px 8px;
       }
 
       &_active {
@@ -79,7 +86,7 @@
       }
 
       &:last-child {
-        border-radius: 0 0 32px 32px;
+        border-radius: 0 0 8px 8px;
       }
     }
   }

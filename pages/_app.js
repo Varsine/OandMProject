@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
-import App from 'next/app';
+import React, { useMemo } from 'react';
 import Router from 'next/router';
+import Script from 'next/script';
 import PropTypes from 'prop-types';
+import usePortal from 'react-useportal';
 import withError from 'next-with-error';
 import NextNprogress from 'nextjs-progressbar';
 
@@ -12,12 +13,13 @@ import 'react-multi-carousel/lib/styles.css';
 import 'swiper/swiper-bundle.min.css';
 
 import { wrapper } from 'libraries/index';
-import { IS_SERVER } from 'constants/globalConstants';
-import { useDarkMode } from 'hooks/index';
+import { useIsomorphicLayoutEffect } from 'hooks/index';
 
 import ErrorPage from './404';
 
 const MyApp = ({ Component, pageProps }) => {
+  const { Portal } = usePortal();
+
   const handleMouseUp = () => {
     window.document.body.classList.remove('mouse_animation');
   };
@@ -26,7 +28,9 @@ const MyApp = ({ Component, pageProps }) => {
     window.document.body.classList.add('mouse_animation');
   };
 
-  useEffect(() => {
+  const memoizedScript = useMemo(() => <Script src="/js/script.js" />, []);
+
+  useIsomorphicLayoutEffect(() => {
     Router.events.on('routeChangeComplete', () => {
       window.scroll({
         top: 0,
@@ -53,8 +57,6 @@ const MyApp = ({ Component, pageProps }) => {
     };
   }, []);
 
-  useDarkMode();
-
   return (
     <>
       <NextNprogress
@@ -63,15 +65,18 @@ const MyApp = ({ Component, pageProps }) => {
         options={{ showSpinner: false }}
       />
       <Component {...pageProps} />
-      {!IS_SERVER && <canvas id="canvas" />}
+      <Portal>
+        {memoizedScript}
+        <canvas id="canvas" width="100%" height="100%" />
+      </Portal>
     </>
   );
 };
 
-MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext);
-  return { ...appProps };
-};
+// MyApp.getInitialProps = async (appContext) => {
+//   const appProps = await App.getInitialProps(appContext);
+//   return { ...appProps };
+// };
 
 MyApp.propTypes = {
   pageProps: PropTypes.object.isRequired,

@@ -11,32 +11,23 @@
 
 .glitch_effect {
   width: 100%;
-  max-width: 570px;
-
-  @include breakpoint(fr-double-package) {
-    max-width: 710px;
-    //$fr-double-package: 1304px;
-  }
+  max-width: 650px;
 
   @include breakpoint(wide) {
-    //$wide: 1200px;
     max-width: 570px;
   }
 
   @include breakpoint(desktop) {
-    //$desktop: 1024px;
     height: auto;
     padding-top: 0;
     max-width: 400px;
   }
 
   @include breakpoint(tablet-l) {
-    //$tablet-l: 992px;
     max-width: 350px;
   }
 
   @include breakpoint(mobile) {
-    //$mobile-m: 375px; || mobile
     max-width: 300px;
   }
 }

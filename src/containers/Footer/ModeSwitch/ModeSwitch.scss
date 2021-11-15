@@ -5,8 +5,8 @@
   min-width: 168px;
   transition: opacity 0.1s;
 
-  @include breakpoint(tablet) {
-    min-width: unset;
+  @include breakpoint(desktop) {
+    display: none;
   }
 
   &__hide {
@@ -15,11 +15,24 @@
 }
 
 .index {
+  min-width: 28px;
   font-weight: 600;
-  margin-left: 16px;
   @extend %open-sans-24;
+}
 
-  @include breakpoint(tablet-m) {
-    display: none;
+.page_idx {
+  opacity: 1;
+  animation: pageReRender 1s infinite linear;
+}
+
+@keyframes pageReRender {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
