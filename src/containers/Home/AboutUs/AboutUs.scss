@@ -38,6 +38,10 @@
     &__title {
       display: none;
 
+      &__text {
+        padding-bottom: 24px;
+      }
+
       &_show {
         @extend %open-sans-48;
         @extend %flex-center;

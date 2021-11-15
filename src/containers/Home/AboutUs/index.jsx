@@ -63,7 +63,9 @@ const AboutUs = () => {
               [styles.wrapper__content__title_show]: isTitle,
             })}
           >
-            <span>About Us</span>
+            <span className={styles.wrapper__content__title__text}>
+              About Us
+            </span>
             <span>
               SHELLLOGIX LLC has been established in 2017 with a mission to
               offer creative solutions in the field of.

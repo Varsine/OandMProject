@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import classNames from 'classnames';
 
 import styles from './JoinOurTeam.scss';
@@ -23,14 +23,17 @@ const Cubes = () => {
     setIsDragging(false);
   };
 
-  const onMouseMove = (e) => {
-    if (isDragging) {
-      setIsDots(false);
-      setActiveDot(0);
-      setRotX(rotX - e.movementY);
-      setRotY(rotY + e.movementX);
-    }
-  };
+  const onMouseMove = useCallback(
+    (e) => {
+      if (isDragging) {
+        setIsDots(false);
+        setActiveDot(0);
+        setRotX(rotX - e.movementY);
+        setRotY(rotY + e.movementX);
+      }
+    },
+    [isDragging, rotX, rotY],
+  );
 
   const changeActiveDots = (id) => {
     setActiveDot(id);
