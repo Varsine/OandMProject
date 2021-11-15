@@ -16,6 +16,7 @@
   &__container {
     height: 100%;
     position: relative;
+    overflow: hidden;
 
     @include breakpoint(desktop) {
       height: 80vh;

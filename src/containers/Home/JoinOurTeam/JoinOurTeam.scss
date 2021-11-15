@@ -1,7 +1,6 @@
 .height_response {
   @include breakpoint(desktop) {
     height: auto !important;
-    margin-bottom: 50px !important;
   }
 }
 
@@ -9,32 +8,49 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 56px;
+  height: 100vh !important;
 
-  @include breakpoint(tablet) {
-    flex-direction: column-reverse;
-    min-height: 800px;
-    max-height: 800px;
+  @include breakpoint(desktop) {
+    height: auto !important;
+    margin-right: 35px;
   }
 
+<<<<<<< HEAD
   @include breakpoint(tablet-m) {
     min-height: 456px;
     padding-top: 0;
+=======
+  @include breakpoint(tablet) {
+    flex-direction: column;
+    margin-right: 0;
+    padding-bottom: 0;
+>>>>>>> a0eedf49142944a6bb37942b0c007a4c4c2c5b77
   }
 
   &__info {
     width: 100%;
     max-width: 768px;
 
+    @media screen and (max-width: 1660px) {
+      max-width: 50%;
+    }
+
+    @media (max-width: 1280px) {
+      max-width: 55%;
+    }
+
     @include breakpoint(desktop) {
       padding-left: 35px;
     }
 
     @include breakpoint(tablet) {
-      padding: 0 35px;
+      max-width: 100%;
+      padding: 0 35px 40px;
     }
 
     @include breakpoint(tablet-m) {
-      padding: 0;
+      padding: 0 16px 24px;
     }
 
     &_title {
@@ -96,145 +112,192 @@
         background: $liner-blue-hover;
       }
 
-      @include breakpoint(tablet-m) {
+      @include breakpoint(tablet) {
         max-width: 100%;
       }
     }
   }
+}
 
-  &__swiper {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    max-width: 330px;
-    justify-content: flex-end;
-    animation: cubeAnimationRotate 2.8s infinite;
+.cubes {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 500px;
+  height: 540px;
+  position: relative;
 
-    &:hover {
-      animation: cubeHoverAnimationRotate 3s infinite;
+  @media (max-height: 800px) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    width: 320px;
+    height: 370px;
+  }
+
+  @include breakpoint(desktop) {
+    width: 335px;
+    height: 360px;
+  }
+
+  @include breakpoint(tablet-m) {
+    width: 288px;
+    height: 320px;
+  }
+
+  &__space3d {
+    position: absolute;
+    top: 4vh;
+    right: 45px;
+    perspective: 1000px;
+    width: $cubeSize;
+    height: $cubeSize;
+    text-align: center;
+
+    @media (max-height: 800px) {
+      width: $cubeSizeSecond;
+      height: $cubeSizeSecond;
     }
 
-    @include breakpoint(tablet) {
-      margin-top: 140px;
+    @media (max-width: 1280px) {
+      width: $cubeSizeThree;
+      height: $cubeSizeThree;
+      right: 4vh;
     }
 
     @include breakpoint(tablet-m) {
-      display: none;
+      width: $cubeSizeMobile;
+      height: $cubeSizeMobile;
+      right: 28px;
+    }
+  }
+
+  &__boxes {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform-style: preserve-3d;
+    transform: rotateX(10deg) rotateY(-10deg);
+
+    &__transit {
+      transition: all 1s linear;
     }
 
-    & > div {
-      width: 100%;
-      display: flex;
-      max-width: 330px;
+    &__3dface {
+      overflow: hidden;
       position: absolute;
-      align-items: center;
-      will-change: transform;
-      justify-content: center;
-      transform: scale(1);
-      transition: transform 0.3s;
-
-      &:hover {
-        transform: scale(1.065);
-      }
-
-      @include breakpoint(tablet) {
-        max-width: 227px;
-        height: 343px;
-      }
-    }
-
-    & > div > .swiper-wrapper {
-      background-color: transparent;
+      border: 1px solid $gray-8;
+      background: $white;
+      box-shadow: $cubes-box-shadow;
+      opacity: 0.9;
+      background-repeat: no-repeat;
       background-size: cover;
-      will-change: transform;
-      border-radius: 10px;
-      max-width: 330px;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      transform: translate3d(0, 0, $cubeSize / 2);
+    }
+  }
 
-      @include breakpoint(tablet) {
-        max-width: 227px;
-        height: 343px;
+  &__face {
+    &__front {
+      background-image: url(../../../../public/images/join_our_team/join_our_team_2.jpg);
+      @include cubTranslateY(0deg);
+    }
+
+    &__back {
+      background-image: url(../../../../public/images/join_our_team/join_our_team_3.jpg);
+      @include cubTranslateY(180deg);
+    }
+
+    &__left {
+      background-image: url(../../../../public/images/join_our_team/join_our_team_4.jpg);
+      left: 50%;
+      margin-left: -$cubeSize / 2;
+      @include cubTranslateY(-90deg);
+
+      @media (max-height: 800px) {
+        margin-left: -$cubeSizeSecond / 2;
       }
+
+      @media (max-width: 1280px) {
+        margin-left: -$cubeSizeThree / 2;
+      }
+
+      @include breakpoint(tablet-m) {
+        margin-left: -$cubeSizeMobile / 2;
+      }
+    }
+
+    &__right {
+      background-image: url(../../../../public/images/join_our_team/join_our_team_5.jpg);
+      left: 50%;
+      margin-left: -$cubeSize / 2;
+      @include cubTranslateY(90deg);
+
+      @media (max-height: 800px) {
+        margin-left: -$cubeSizeSecond / 2;
+      }
+
+      @media (max-width: 1280px) {
+        margin-left: -$cubeSizeThree / 2;
+      }
+
+      @include breakpoint(tablet-m) {
+        margin-left: -$cubeSizeMobile / 2;
+      }
+    }
+
+    &__top {
+      background-image: url(../../../../public/images/join_our_team/join_our_team_6.jpg);
+      @include cubTranslateX(90deg);
+    }
+
+    &__bottom {
+      background-image: url(../../../../public/images/join_our_team/join_our_team_1.jpg);
+      @include cubTranslateX(-90deg);
+    }
+  }
+
+  &__dot {
+    appearance: none;
+    border-radius: 50%;
+    margin: 7px !important;
+    border: 12px solid transparent;
+    background: $white;
+    position: static !important;
+    transform: translateX(0px) !important;
+
+    @include breakpoint(desktop) {
+      border: 10px solid transparent;
     }
   }
 }
 
-@keyframes loadSwipe {
-  0% {
-    opacity: 0.51;
-  }
-  100% {
-    opacity: 0.51;
-  }
+.front:checked ~ .cubes__space3d .cubes__boxes {
+  transform: rotateY(0deg);
 }
 
-@keyframes cubeAnimationRotate {
-  0% {
-    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
-  }
-  10% {
-    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
-  }
-  20% {
-    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
-  }
-  30% {
-    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
-  }
-  40% {
-    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
-  }
-  50% {
-    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
-  }
-  60% {
-    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
-  }
-  70% {
-    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
-  }
-  80% {
-    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
-  }
-  90% {
-    transform: rotate3d(0.09, 6, 0.9, -0.025turn);
-  }
-  100% {
-    transform: rotate3d(0.09, 6, 0.9, 0.025turn);
-  }
+.left:checked ~ .cubes__space3d .cubes__boxes {
+  transform: rotateY(90deg);
 }
 
-@keyframes cubeHoverAnimationRotate {
-  0% {
-    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
-  }
-  10% {
-    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
-  }
-  20% {
-    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
-  }
-  30% {
-    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
-  }
-  40% {
-    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
-  }
-  50% {
-    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
-  }
-  60% {
-    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
-  }
-  70% {
-    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
-  }
-  80% {
-    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
-  }
-  90% {
-    transform: rotate3d(0.09, 6, 0.9, -0.02turn);
-  }
-  100% {
-    transform: rotate3d(0.09, 6, 0.9, 0.02turn);
-  }
+.right:checked ~ .cubes__space3d .cubes__boxes {
+  transform: rotateY(-90deg);
+}
+
+.bottom:checked ~ .cubes__space3d .cubes__boxes {
+  transform: rotateX(90deg);
+}
+
+.top:checked ~ .cubes__space3d .cubes__boxes {
+  transform: rotateX(-90deg);
+}
+
+.back:checked ~ .cubes__space3d .cubes__boxes {
+  transform: rotateY(180deg);
 }
