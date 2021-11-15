@@ -1,6 +1,6 @@
 .wrapper {
   overflow: hidden;
-  background: $map-bg;
+  background: '#000';
 
   &__layout {
     width: 100vw;
@@ -29,7 +29,7 @@
       }
 
       &_text {
-        color: $text-color;
+        color: #f1f2f2;
         font-weight: 600;
         @extend %open-sans-14;
       }

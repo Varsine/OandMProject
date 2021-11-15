@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import usePortal from 'react-useportal';
 import { useSelector } from 'react-redux';
@@ -30,7 +30,7 @@ const Header = ({ isOnePage }) => {
   const { moveToSection } = useContext(FullPageContext);
   const activeIndex = useSelector(activeIndexSelector);
 
-  const memoizedUpdateActiveIcon = useCallback(() => {
+  const memoizedUpdateActiveIcon = useMemo(() => {
     switch (activeIndex) {
       case 2: {
         return <SectionTwoActiveIcon />;
@@ -67,27 +67,37 @@ const Header = ({ isOnePage }) => {
     }
   }, [activeIndex]);
 
-  const moveToSectionTop = () => {
+  const moveToSectionTop = useCallback(() => {
     moveToSection.moveTo(1);
-  };
+  }, [moveToSection]);
+
+  const activeIcon = useMemo(
+    () =>
+      !isOnePage ? (
+        <div className={styles.icon}>{memoizedUpdateActiveIcon}</div>
+      ) : null,
+    [isOnePage, memoizedUpdateActiveIcon],
+  );
+
+  const logo = useMemo(
+    () =>
+      isOnePage ? (
+        <NextLink to={paths.home}>
+          <LogoIcon />
+        </NextLink>
+      ) : (
+        <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
+      ),
+    [isOnePage, moveToSectionTop],
+  );
 
   return (
     <Portal>
       <header className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.logo}>
-            {isOnePage ? (
-              <NextLink to={paths.home}>
-                <LogoIcon />
-              </NextLink>
-            ) : (
-              <LogoIcon aria-label="logo" onClick={moveToSectionTop} />
-            )}
-          </div>
+          <div className={styles.logo}>{logo}</div>
 
-          {!isOnePage ? (
-            <div className={styles.icon}>{memoizedUpdateActiveIcon()}</div>
-          ) : null}
+          {activeIcon}
         </div>
       </header>
     </Portal>

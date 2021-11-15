@@ -1,5 +1,3 @@
-import shortid from 'shortid';
-
 import {
   Map,
   Main,
@@ -11,58 +9,42 @@ import {
   JoinOurTeam,
   OurPartners,
 } from 'containers/Home';
-import { JoinForm } from 'containers/Apply';
-import { ErrorPage } from 'containers/Error';
 
 export const mainSections = [
   {
-    id: shortid.generate(),
+    id: 1,
     component: Main,
   },
   {
-    id: shortid.generate(),
+    id: 2,
     component: AboutUs,
   },
   {
-    id: shortid.generate(),
+    id: 3,
     component: HowWeWork,
   },
   {
-    id: shortid.generate(),
+    id: 4,
     component: Industry,
   },
   {
-    id: shortid.generate(),
+    id: 5,
     component: OurWorks,
   },
   {
-    id: shortid.generate(),
+    id: 6,
     component: OurTeam,
   },
   {
-    id: shortid.generate(),
+    id: 7,
     component: JoinOurTeam,
   },
   {
-    id: shortid.generate(),
+    id: 8,
     component: OurPartners,
   },
   {
-    id: shortid.generate(),
+    id: 9,
     component: Map,
-  },
-];
-
-export const applySections = [
-  {
-    id: shortid.generate(),
-    component: JoinForm,
-  },
-];
-
-export const errorSection = [
-  {
-    id: shortid.generate(),
-    component: ErrorPage,
   },
 ];

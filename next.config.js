@@ -54,28 +54,25 @@ const nextConfig = withPlugins(
             },
           ],
         },
-        experimental: {
-          async rewrites() {
-            return [
-              {
-                source: '/service-worker.js',
-                destination: '/_next/static/service-worker.js',
-              },
-            ];
-          },
-        },
       },
     ],
     withBundleAnalyzer,
     withOptimizedImages,
   ],
   {
+    rewrites: async () => [
+      {
+        source: '/service-worker.js',
+        destination: '/_next/static/service-worker.js',
+      },
+    ],
     publicRuntimeConfig: {
       localeSubpaths,
     },
     images: {
       domains: [],
     },
+    webpack5: false,
     webpack: (config, { dev }) => {
       config.resolve.alias['~'] = path.join(__dirname, '/');
       config.resolve.alias.utils = path.join(__dirname, 'src/utils');

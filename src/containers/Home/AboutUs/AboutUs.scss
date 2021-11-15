@@ -104,7 +104,7 @@
         position: absolute;
         height: 3px;
         width: 100vw;
-        background: $rope-bg;
+        background: rgba(255, 255, 255, 0.08);
       }
     }
 
@@ -137,7 +137,7 @@
   &__rope {
     position: absolute;
     width: 1px;
-    background: $rope-bg;
+    background: rgba(255, 255, 255, 0.08);
 
     @include breakpoint(desktop) {
       &::before {
@@ -147,8 +147,8 @@
         width: 2px;
         top: 50%;
         transform: translate(0px, -50%);
-        border-left: 2px solid $rope-bg;
-        border-right: 2px solid $rope-bg;
+        border-left: 2px solid rgba(255, 255, 255, 0.08);
+        border-right: 2px solid rgba(255, 255, 255, 0.08);
       }
     }
   }
@@ -165,7 +165,7 @@
       height: 0;
       width: 0;
       border-radius: 50%;
-      border: 2px solid $rope-bg;
+      border: 2px solid rgba(255, 255, 255, 0.08);
       top: 50%;
       transform: translate(0, -50%);
       animation: beforeAnima 1.5s linear infinite;
@@ -178,7 +178,7 @@
       height: 0;
       width: 0;
       border-radius: 50%;
-      border: 2px solid $rope-bg;
+      border: 2px solid rgba(255, 255, 255, 0.08);
       top: 50%;
       transform: translate(0, -50%);
       animation: afterAnima 1.5s linear infinite;
@@ -268,7 +268,7 @@
         width: 3px;
         top: 50%;
         transform: translate(-8px, -50%);
-        border-right: 2px solid $rope-bg;
+        border-right: 2px solid rgba(255, 255, 255, 0.08);
       }
     }
 
@@ -332,7 +332,7 @@
         width: 3px;
         top: 50%;
         transform: translate(-8px, -50%);
-        border-right: 2px solid $rope-bg;
+        border-right: 2px solid rgba(255, 255, 255, 0.08);
       }
     }
 
@@ -396,7 +396,7 @@
         width: 3px;
         top: 50%;
         transform: translate(-8px, -50%);
-        border-right: 2px solid $rope-bg;
+        border-right: 2px solid rgba(255, 255, 255, 0.08);
       }
     }
 

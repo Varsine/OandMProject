@@ -16,6 +16,7 @@
   &__container {
     height: 100%;
     position: relative;
+    overflow: hidden;
 
     @include breakpoint(tablet-m) {
       height: auto;
@@ -55,8 +56,7 @@
     animation: bounceAlpha 1s infinite linear;
     background-color: $our-works-bg;
     border-radius: 50%;
-    fill: $arrowColor;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    fill: #fff;
     padding: 10px;
 
     @include breakpoint(desktop) {
@@ -78,8 +78,7 @@
   &__prev {
     top: 100px;
     padding: 10px;
-    fill: $arrowColor;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    fill: #fff;
     @extend %nextPrev;
     border-radius: 50%;
     background-color: $our-works-bg;

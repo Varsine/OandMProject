@@ -5,9 +5,10 @@ import usePortal from 'react-useportal';
 import { useWindowSize } from 'hooks/index';
 
 import Chat from './Chat';
-import styles from './Footer.scss';
 import ModeSwitch from './ModeSwitch';
 import SocialLinks from './SocialLinks';
+//
+import styles from './Footer.scss';
 
 import { CrossIcon } from '../../icons';
 

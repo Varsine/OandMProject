@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
@@ -16,7 +16,11 @@ const AboutUs = () => {
   const [isShow, setIsShow] = useState(false);
   const [isTitle, setIsTitle] = useState(false);
   const [firstAnimation, setFirstAnimation] = useState(false);
-  const showFirstAnimate = !isDesktop ? firstAnimation : isShow;
+
+  const showFirstAnimate = useMemo(
+    () => (!isDesktop ? firstAnimation : isShow),
+    [isDesktop, firstAnimation, isShow],
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -33,15 +37,21 @@ const AboutUs = () => {
     }, 1300);
   }, [isOpen]);
 
-  const renderAboutBlock = images.map(({ src, imgClass, classRope }, idx) => (
-    <AboutUsBlock
-      key={src}
-      src={src}
-      className={imgClass}
-      classRope={classRope}
-      currentIndex={idx}
-    />
-  ));
+  const renderAboutBlock = useMemo(
+    () =>
+      showFirstAnimate
+        ? images.map(({ src, imgClass, classRope }, idx) => (
+            <AboutUsBlock
+              key={src}
+              src={src}
+              className={imgClass}
+              classRope={classRope}
+              currentIndex={idx}
+            />
+          ))
+        : null,
+    [showFirstAnimate],
+  );
 
   return (
     <section className={`${styles.height_responce} section`}>
@@ -60,9 +70,7 @@ const AboutUs = () => {
             </span>
           </h1>
         </div>
-        <div className={styles.wrapper__list}>
-          {showFirstAnimate && renderAboutBlock}
-        </div>
+        <div className={styles.wrapper__list}>{renderAboutBlock}</div>
       </div>
     </section>
   );

@@ -13,6 +13,7 @@
 
   @include breakpoint(desktop) {
     height: auto !important;
+    margin-right: 35px;
   }
 
   @include breakpoint(tablet) {
@@ -131,8 +132,8 @@
   }
 
   @include breakpoint(desktop) {
-    width: 380px;
-    height: 390px;
+    width: 335px;
+    height: 360px;
   }
 
   @include breakpoint(tablet-m) {
@@ -261,21 +262,12 @@
     border-radius: 50%;
     margin: 7px !important;
     border: 12px solid transparent;
-    background: $logo-bottom-color;
-    transition: 1s all linear;
+    background: $white;
     position: static !important;
     transform: translateX(0px) !important;
 
-    &:checked {
-      border: 12px solid $iconColor;
-    }
-
     @include breakpoint(desktop) {
       border: 10px solid transparent;
-
-      &:checked {
-        border: 10px solid $iconColor;
-      }
     }
   }
 }

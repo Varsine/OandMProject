@@ -7,11 +7,11 @@ import styles from '../Footer.scss';
 
 const SocialLinks = () => {
   const renderSocialLinks = linksInformation.map(
-    ({ id, url, icon, iconHover, ariaLabel }) => (
+    ({ url, icon, iconHover, ariaLabel }) => (
       <IconHover
-        key={id}
         url={url}
         icon={icon}
+        key={ariaLabel}
         iconHover={iconHover}
         className={styles.links__item}
         anchorProps={{

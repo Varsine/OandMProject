@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Marker,
   GoogleMap,
@@ -6,16 +6,13 @@ import {
   withScriptjs,
   withGoogleMap,
 } from 'react-google-maps';
-import { useSelector } from 'react-redux';
 
 import { MAP_KEY } from 'constants/index';
 import { mapStyles } from 'utils/index';
-import { modeSelector } from 'slices/mainSlice';
 
 import styles from './Map.scss';
 
 const InjectableGoogleMap = () => {
-  const isDarkMode = useSelector(modeSelector);
   const [selectedPark, setSelectedPark] = useState(false);
 
   useEffect(() => {
@@ -31,19 +28,25 @@ const InjectableGoogleMap = () => {
     };
   }, []);
 
+  const handleMarkerClick = useCallback(() => {
+    setSelectedPark(!selectedPark);
+  }, [selectedPark]);
+
+  const handleCloseClick = () => {
+    setSelectedPark(null);
+  };
+
   return (
     <GoogleMap
       defaultZoom={16}
       defaultCenter={{ lat: 40.167782, lng: 44.503009 }}
       options={{
-        styles: mapStyles[!isDarkMode ? 'dark' : 'light'],
+        styles: mapStyles[mapStyles && 'dark'],
       }}
     >
       <Marker
+        onClick={handleMarkerClick}
         position={{ lat: 40.167782, lng: 44.503009 }}
-        onClick={() => {
-          setSelectedPark(!selectedPark);
-        }}
         icon={{
           url: '',
           scaledSize: new window.google.maps.Size(50, 50),
@@ -51,9 +54,7 @@ const InjectableGoogleMap = () => {
       >
         {selectedPark && (
           <InfoWindow
-            onCloseClick={() => {
-              setSelectedPark(null);
-            }}
+            onCloseClick={handleCloseClick}
             position={{ lat: 40.167847, lng: 44.502914 }}
           >
             <div style={{ marginTop: -4 }}>
@@ -74,10 +75,10 @@ const Map = () => (
   <section className={`${styles.wrapper} section`}>
     <div className={styles.wrapper__layout}>
       <WrappedMap
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${MAP_KEY}`}
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div className={styles.wrapper__layout_container} />}
         mapElement={<div style={{ height: `100%` }} />}
+        loadingElement={<div style={{ height: `100%` }} />}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${MAP_KEY}`}
+        containerElement={<div className={styles.wrapper__layout_container} />}
       />
       <div className={styles.wrapper__layout_info}>
         <div className={styles.wrapper__layout_info_address}>
