@@ -1,27 +1,68 @@
-export const swiperSlides = [
-  {
-    id: 0,
-    text: 'Fun and creative staff',
-  },
+import styles from './JoinOurTeam.scss';
+
+export const dotsData = [
   {
     id: 1,
-    text: 'Friendship',
+    classFirst: styles.cubes__dot,
+    classSecond: styles.front,
   },
   {
     id: 2,
-    text: 'Music for everyone',
+    classFirst: styles.cubes__dot,
+    classSecond: styles.left,
   },
   {
     id: 3,
-    text: 'Best Coffee for work',
+    classFirst: styles.cubes__dot,
+    classSecond: styles.right,
   },
   {
     id: 4,
-    text: 'Work comfortably',
+    classFirst: styles.cubes__dot,
+    classSecond: styles.top,
   },
   {
     id: 5,
-    text: 'Happy working day',
+    classFirst: styles.cubes__dot,
+    classSecond: styles.bottom,
+  },
+  {
+    id: 6,
+    classFirst: styles.cubes__dot,
+    classSecond: styles.back,
+  },
+];
+
+export const boxFaceData = [
+  {
+    id: 1,
+    classFirst: styles.cubes__boxes__3dface,
+    classSecond: styles.cubes__face__front,
+  },
+  {
+    id: 2,
+    classFirst: styles.cubes__boxes__3dface,
+    classSecond: styles.cubes__face__back,
+  },
+  {
+    id: 3,
+    classFirst: styles.cubes__boxes__3dface,
+    classSecond: styles.cubes__face__left,
+  },
+  {
+    id: 4,
+    classFirst: styles.cubes__boxes__3dface,
+    classSecond: styles.cubes__face__right,
+  },
+  {
+    id: 5,
+    classFirst: styles.cubes__boxes__3dface,
+    classSecond: styles.cubes__face__top,
+  },
+  {
+    id: 6,
+    classFirst: styles.cubes__boxes__3dface,
+    classSecond: styles.cubes__face__bottom,
   },
 ];
 
