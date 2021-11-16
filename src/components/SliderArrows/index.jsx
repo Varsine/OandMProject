@@ -31,12 +31,14 @@ const SliderArrows = ({
     <div className={classNames(arrowStyles, styles.arrow_comp)}>
       <DownArrow
         type="submit"
+        role="button"
         onClick={prevSlideHandler}
         aria-label={ariaPrevLabel}
         className={styles.arrow_comp__slide__prev_arrows}
       />
       <DownArrow
         type="submit"
+        role="button"
         onClick={nextHandler}
         aria-label={ariaNextLabel}
         className={styles.arrow_comp__slide__next_arrows}
