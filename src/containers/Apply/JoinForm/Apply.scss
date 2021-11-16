@@ -16,6 +16,7 @@
   @extend %flex-center;
   position: relative;
   z-index: 9;
+  overflow: hidden;
 
   @include breakpoint(tablet) {
     padding-top: 66px;
@@ -85,7 +86,7 @@
     width: 50px;
     height: 50px;
     color: #f1f2f2;
-    border-radius: 50%;
+    border-radius: 15px;
     background: rgba(234, 241, 250, 0.6);
 
     &_active {

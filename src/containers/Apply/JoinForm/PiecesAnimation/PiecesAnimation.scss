@@ -1,868 +1,869 @@
 .cut_images {
   width: 480px;
-  height: 602px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   background-size: cover;
   background-repeat: no-repeat;
-
-  &_item {
-    width: 40px;
-    height: 43px;
-    background-image: url('/images/logo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    transform: translate(0, 0);
-    transition: transform 0.7s;
-  }
 
   &_active {
     animation: opacityNulling 0.95s forwards;
 
     .cut_images_item {
       transition: transform 0.7s;
+      position: relative;
 
       &:nth-child(1) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-110px, 790px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(2) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-140px, 760px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(3) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-160px, 718px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(4) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-245px, 738px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(5) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-304px, 702px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(6) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-365px, -5px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(7) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(255px, 818px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(8) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(237px, 700px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(9) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(278px, -5px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(10) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(215px, -32px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(11) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(155px, 670px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(12) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(96px, 780px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(13) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-294px, -55px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(14) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-210px, 725px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(15) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-394px, 85px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(16) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-354px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(17) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-354px, 620px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(18) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-370px, 660px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(19) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(394px, -90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(20) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(454px, 120px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(21) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(354px, 80px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(22) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(284px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(23) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(284px, 120px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(24) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(334px, 200px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(25) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-284px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(26) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-254px, 680px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(27) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-284px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(28) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-294px, 190px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(29) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-520px, -150px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(30) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-294px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(31) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(294px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(32) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(280px, 40px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(33) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(284px, 80px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(34) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(369px, -110px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(35) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(300px, -55px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(36) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(254px, -90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(37) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-304px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(38) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-290px, -65px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(39) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-320px, 50px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(40) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-330px, 80px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(41) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-320px, 30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(42) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-320px, 69px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(43) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(290px, -158px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(44) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(220px, -170px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(45) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(320px, -70px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(46) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(220px, -95px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(47) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(380px, -25px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(48) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(80px, -95px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(49) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-184px, -85px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(50) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-284px, -159px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(51) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-254px, 45px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(52) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(424px, -50px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(53) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(454px, 85px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(54) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(354px, 10px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(55) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(454px, 55px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(56) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-364px, -65px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(57) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-634px, 85px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(58) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-610px, -50px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(59) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-554px, 200px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(60) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-590px, -60px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(61) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(594px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(62) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(574px, -100px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(63) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(514px, 80px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(64) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(524px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(65) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(584px, 30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(66) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(484px, 50px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(67) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-384px, -190px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(68) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-424px, 600px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(69) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-424px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(70) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-604px, 80px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(71) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-620px, 150px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(72) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-654px, 90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(73) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(714px, -50px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(74) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(670px, 240px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(75) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(684px, 80px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(76) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(549px, 50px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(77) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(530px, 75px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(78) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(454px, -90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(79) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-354px, 30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(80) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(330px, 505px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(81) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-520px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(82) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(380px, -200px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(83) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(280px, -325px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(84) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-638px, 449px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(85) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-150px, 230px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(86) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-90px, 360px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(87) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-180px, 300px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(88) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-280px, 205px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(89) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-350px, 315px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(90) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-430px, 295px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(91) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(384px, 125px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(92) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(304px, 220px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(93) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(384px, 245px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(94) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(404px, 180px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(95) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(324px, 85px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(96) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(204px, 85px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(97) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-294px, 55px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(98) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-264px, 65px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(99) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-394px, 85px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(100) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-354px, 190px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(101) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-354px, -80px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(102) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-330px, 90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(103) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(366px, 270px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(104) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(354px, 150px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(105) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(354px, 80px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(106) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(384px, -30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(107) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(334px, 230px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(108) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(204px, 190px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(109) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-284px, 190px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(110) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-364px, 100px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(111) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-334px, 100px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(112) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-294px, 60px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(113) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-490px, 150px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(114) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-494px, -50px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(115) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(504px, 130px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(116) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(490px, 40px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(117) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(334px, 200px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(118) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(329px, 150px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(119) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(330px, -75px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(120) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(304px, 250px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(121) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-144px, 60px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(122) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-290px, 225px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(123) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-400px, 190px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(124) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-410px, 90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(125) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-320px, 175px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(126) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-520px, 139px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(127) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(320px, 30px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(128) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(325px, 50px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(129) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(380px, 20px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(130) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(280px, 95px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(131) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(350px, -25px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(132) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(220px, 205px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(133) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(134) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(135) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(136) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(137) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(138) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(139) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(140) {
-        transform: translate(1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
+        // animation: sizeNulling 0.95s forwards;
+
+        transform: translate(100px, 0px);
       }
       &:nth-child(141) {
-        transform: translate(1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
+        // animation: sizeNulling 0.95s forwards;
+
+        transform: translate(30px, 0px);
       }
       &:nth-child(142) {
-        transform: translate(1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
+        // animation: sizeNulling 0.95s forwards;
+
+        transform: translate(110px, 0px);
       }
       &:nth-child(143) {
-        transform: translate(1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
+        // animation: sizeNulling 0.95s forwards;
+
+        transform: translate(90px, 0px);
       }
       &:nth-child(144) {
-        transform: translate(1330px, 0px);
-        background: rebeccapurple;
-        border-radius: 15px;
+        // animation: sizeNulling 0.95s forwards;
+
+        transform: translate(20px, 0px);
       }
       &:nth-child(145) {
-        transform: translate(-254px, 50px);
-        background: rebeccapurple;
-        border-radius: 15px;
+        // animation: sizeNulling 0.95s forwards;
+
+        transform: translate(-24px, 50px);
       }
       &:nth-child(146) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(374px, 310px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(147) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-274px, 20px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(148) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-464px, -330px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(149) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-374px, -32px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(150) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-404px, -90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(151) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(454px, 90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(152) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-375px, -200px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(153) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(294px, -180px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(154) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(204px, 100px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(155) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(380px, -350px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(156) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(204px, 160px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(157) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-254px, -340px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(158) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-170px, -230px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(159) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(494px, -180px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(160) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(489px, -190px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(161) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(399px, -55px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(162) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(390px, 36px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(163) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-364px, 70px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(164) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(510px, 55px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(165) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(450px, -49px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(166) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(440px, 90px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(167) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(-20px, 208px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
       &:nth-child(168) {
+        // animation: sizeNulling 0.95s forwards;
+
         transform: translate(0px, 250px);
-        background: rebeccapurple;
-        border-radius: 15px;
       }
     }
+  }
+
+  &_item {
+    width: 40px;
+    height: 43px;
+    background-image: url('/images/team/Lyudvig.png');
+    // background-color: rebeccapurple;
+    background-size: 600px;
+    transform: translate(0, 0);
+    transition: transform 0.7s;
   }
 }
 
@@ -879,3 +880,15 @@
     border-radius: 6px;
   }
 }
+// @keyframes sizeNulling {
+//   0% {
+//     position: absolute;
+//     opacity: 1;
+//     border-radius: 1px;
+//   }
+
+//   100% {
+//     opacity: 0.2;
+//     border-radius: 6px;
+//   }
+// }

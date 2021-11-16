@@ -48,6 +48,12 @@
   @include breakpoint(tablet) {
     bottom: 30% !important;
   }
+
+  @include breakpoint(tablet-m) {
+    height: 0vh;
+    top: unset !important;
+    bottom: 15% !important;
+  }
 }
 
 .wrapper {

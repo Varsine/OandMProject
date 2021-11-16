@@ -9,6 +9,7 @@
     border: none;
     padding: 0 24px;
     position: relative;
+    user-select: all !important;
     background: rgba(207, 229, 255, 0.6);
     border-radius: 8px;
     @extend %open-sans-16;
