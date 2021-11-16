@@ -51,13 +51,13 @@
   }
 
   &__next {
-    fill: #fff;
+    fill: $white;
     bottom: 80px;
     padding: 10px;
     @extend %nextPrev;
     border-radius: 15px;
     animation: bounceAlpha 1s infinite linear;
-    background: linear-gradient(180deg, #5040b6, #3d80d4);
+    background: $button_components_style;
 
     @include breakpoint(desktop) {
       bottom: 140px;
@@ -77,11 +77,11 @@
   &__prev {
     top: 100px;
     padding: 10px;
-    fill: #fff;
+    fill: $white;
     @extend %nextPrev;
     border-radius: 15px;
     animation: bouncePrew 1s infinite linear;
-    background: linear-gradient(180deg, #5040b6, #3d80d4);
+    background: $button_components_style;
 
     @include breakpoint(desktop) {
       height: 40px;
@@ -129,7 +129,7 @@
       border-radius: 100%;
       bottom: 100%;
       right: 100%;
-      box-shadow: 2000vh 2000vh 0 0 $our-works-bg;
+      box-shadow: 2000vh 2000vh 0 0 $black-40;
     }
 
     &__active {
@@ -141,7 +141,7 @@
         border-radius: 100%;
         bottom: 0;
         right: 0;
-        box-shadow: 60vh 60vh 0 0 $our-works-bg;
+        box-shadow: 60vh 60vh 0 0 $black-40;
         transition: all 1.5s;
       }
 
@@ -170,7 +170,7 @@
     left: 0;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-color: $our-works-bg;
+    background-color: $black-40;
     transition: all 1.5s;
 
     &__active {
@@ -180,7 +180,7 @@
       right: 50vw;
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
-      background-color: $our-works-bg;
+      background-color: $black-40;
       transition: all 1.5s;
 
       & + div {
@@ -203,7 +203,7 @@
     bottom: 0;
     width: 0;
     height: 0;
-    border-bottom: 300vh solid $our-works-bg;
+    border-bottom: 300vh solid $black-40;
     border-right: 300vw solid transparent;
     transition: all 1.5s;
 
@@ -212,7 +212,7 @@
       bottom: 0;
       width: 0;
       height: 0;
-      border-bottom: 100vh solid $our-works-bg;
+      border-bottom: 100vh solid $black-40;
       border-right: 90vw solid transparent;
       transition: all 1.5s;
 
@@ -235,7 +235,7 @@
     right: 0;
     width: 0;
     height: 0;
-    border-top: 300vh solid $our-works-bg;
+    border-top: 300vh solid $black-40;
     border-left: 300vw solid transparent;
     transition: all 1.5s;
 
@@ -244,7 +244,7 @@
       right: 0;
       width: 0;
       height: 0;
-      border-top: 100vh solid $our-works-bg;
+      border-top: 100vh solid $black-40;
       border-left: 90vw solid transparent;
       transition: all 1.5s;
 
@@ -271,7 +271,7 @@
     height: 0;
     right: 0;
     border: 400vh solid transparent;
-    border-right: 100vw solid $our-works-bg;
+    border-right: 100vw solid $black-40;
     transition: all 1.5s;
 
     &__active {
@@ -279,7 +279,7 @@
       height: 0;
       right: 0;
       border: 200vh solid transparent;
-      border-right: 53vw solid $our-works-bg;
+      border-right: 53vw solid $black-40;
       transition: all 1.5s;
 
       & + div {
@@ -306,7 +306,7 @@
     width: 100vw;
     height: 100vh;
     transform: skew(0deg);
-    background: $our-works-bg;
+    background: $black-40;
     transition: all 1.5s;
 
     &__active {
@@ -314,7 +314,7 @@
       width: 100vw;
       height: 100vh;
       transform: skew(20deg);
-      background: $our-works-bg;
+      background: $black-40;
       transition: all 1.5s;
 
       & + div {
@@ -342,7 +342,7 @@
       border-radius: 100%;
       bottom: 100%;
       right: 100%;
-      box-shadow: 2000vh 2000vh 0 0 $our-works-bg;
+      box-shadow: 2000vh 2000vh 0 0 $black-40;
     }
 
     &__active {
@@ -355,7 +355,7 @@
         border-radius: 100%;
         bottom: 0;
         right: 0;
-        box-shadow: 60vh 60vh 0 0 $our-works-bg;
+        box-shadow: 60vh 60vh 0 0 $black-40;
         transition: all 1.5s;
       }
 
@@ -401,7 +401,7 @@
     position: static;
     max-width: 100%;
     transform: none !important;
-    background: $our-works-bg;
+    background: $black-40;
     backdrop-filter: blur(50px);
     border-radius: 20px;
     padding: 16px;

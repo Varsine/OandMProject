@@ -13,23 +13,23 @@
   &__slide__prev_arrows {
     width: 40px;
     height: 40px;
-    fill: #fff;
+    fill: $white;
     border-radius: 15px;
     background-color: transparent;
     cursor: url('/images/Mouse.png'), auto;
     animation: bounceAlphaRight 1s infinite linear;
-    background: linear-gradient(180deg, #5040b6, #3d80d4);
+    background: $button_components_style;
   }
 
   &__slide__next_arrows {
     width: 40px;
     height: 40px;
-    fill: #fff;
+    fill: $white;
     border-radius: 15px;
     background-color: transparent;
     cursor: url('/images/Mouse.png'), auto;
     animation: bounceAlphaLeft 1s infinite linear;
-    background: linear-gradient(180deg, #5040b6, #3d80d4);
+    background: $button_components_style;
   }
 }
 

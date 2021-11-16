@@ -12,20 +12,18 @@ const Input = ({
   name,
   placeholder,
   ...rest
-}) => {
-  return (
-    <input
-      type={type}
-      name={name}
-      value={value}
-      checked={checked}
-      onChange={onChange}
-      className={className}
-      placeholder={placeholder}
-      {...rest}
-    />
-  );
-};
+}) => (
+  <input
+    type={type}
+    name={name}
+    value={value}
+    checked={checked}
+    onChange={onChange}
+    className={className}
+    placeholder={placeholder}
+    {...rest}
+  />
+);
 
 Input.propTypes = {
   type: PropTypes.string,

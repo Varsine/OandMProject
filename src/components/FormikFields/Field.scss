@@ -30,7 +30,7 @@
     cursor: url('/images/Mouse.png'), auto;
     padding: 0 12px 0 24px;
     position: relative;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    background: $liner-blue;
     font-weight: normal;
     border-radius: 50px;
     @extend %open-sans-16;
@@ -58,7 +58,7 @@
 
   &__wrapper {
     position: relative;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    background: $liner-blue;
     border-radius: 8px;
   }
 
@@ -68,7 +68,7 @@
     z-index: 10;
     max-width: 594px;
     position: absolute;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    background: $liner-blue;
     border-radius: 0 0 8px 8px;
 
     &_item {

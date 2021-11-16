@@ -142,7 +142,7 @@
   &__rope {
     width: 1px;
     position: absolute;
-    background: rgba(255, 255, 255, 0.08);
+    background: $about_us_rops;
 
     @include breakpoint(desktop) {
       &::before {
@@ -167,7 +167,7 @@
       border-radius: 50%;
       transform: translate(0, -50%);
       animation: beforeAnima 1.5s linear infinite;
-      border: 2px solid rgba(255, 255, 255, 0.08);
+      border: 2px solid $about_us_rops;
     }
 
     &::after {
@@ -180,7 +180,7 @@
       border-radius: 50%;
       transform: translate(0, -50%);
       animation: afterAnima 1.5s linear infinite;
-      border: 2px solid rgba(255, 255, 255, 0.08);
+      border: 2px solid $about_us_rops;
     }
 
     @keyframes afterAnima {
@@ -267,7 +267,7 @@
         content: '';
         position: absolute;
         transform: translate(-8px, -50%);
-        border-right: 2px solid rgba(255, 255, 255, 0.08);
+        border-right: 2px solid $about_us_rops;
       }
     }
 
@@ -331,7 +331,7 @@
         content: '';
         position: absolute;
         transform: translate(-8px, -50%);
-        border-right: 2px solid rgba(255, 255, 255, 0.08);
+        border-right: 2px solid $about_us_rops;
       }
     }
 
@@ -395,7 +395,7 @@
         content: '';
         position: absolute;
         transform: translate(-8px, -50%);
-        border-right: 2px solid rgba(255, 255, 255, 0.08);
+        border-right: 2px solid $about_us_rops;
       }
     }
 
