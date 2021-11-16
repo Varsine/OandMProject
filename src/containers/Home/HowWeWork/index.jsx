@@ -19,7 +19,7 @@ const HowWeWork = () => {
     "There's on time for regrets. You've just got to keep moving forward.";
 
   return (
-    <section className={`${styles.height_responce} ${styles.we_work} section`}>
+    <section className={`${styles.height_response} ${styles.we_work} section`}>
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>How We Work</h2>

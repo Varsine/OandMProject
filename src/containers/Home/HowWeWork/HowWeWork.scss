@@ -1,4 +1,4 @@
-.height_responce {
+.height_response {
   overflow: unset !important;
 
   @include breakpoint(desktop) {
@@ -171,30 +171,30 @@
 
 @keyframes clockbg {
   from {
-    fill: #ffffff;
+    fill: $white;
   }
   to {
-    fill: #ffffff;
+    fill: $white;
     fill-opacity: 1;
   }
 }
 
 @-webkit-keyframes clockbg {
   from {
-    fill: #ffffff;
+    fill: $white;
   }
   to {
-    fill: #ffffff;
+    fill: $white;
     fill-opacity: 1;
   }
 }
 
 @-moz-keyframes clockbg {
   from {
-    fill: #ffffff;
+    fill: $white;
   }
   to {
-    fill: #ffffff;
+    fill: $white;
     fill-opacity: 1;
   }
 }
@@ -212,11 +212,11 @@
 
 @keyframes clockrotatelarg {
   0% {
-    fill: #ffffff;
+    fill: $white;
   }
   100% {
     transform: rotate(359deg);
-    fill: #ffffff;
+    fill: $white;
   }
 }
 

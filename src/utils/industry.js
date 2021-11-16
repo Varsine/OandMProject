@@ -1,4 +1,4 @@
-import { IndustyTwoIcon, IndustyThreeIcon, IndustyFirstIcon } from '../icons';
+import { IndustyFirstIcon, IndustyTwoIcon, IndustyThreeIcon } from '../icons';
 
 const industry = [
   {

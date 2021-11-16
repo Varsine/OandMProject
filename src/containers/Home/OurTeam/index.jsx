@@ -64,7 +64,7 @@ const OurTeam = () => {
 
   return (
     <section
-      className={`section ${styles.container} ${styles.height_responce}`}
+      className={`section ${styles.container} ${styles.height_response}`}
     >
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>

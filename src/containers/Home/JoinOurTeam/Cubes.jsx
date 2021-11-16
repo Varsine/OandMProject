@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import classNames from 'classnames';
 
-import styles from './JoinOurTeam.scss';
+import { Input } from 'components/index';
+
 import { dotsData, boxFaceData } from './constants';
+import styles from './JoinOurTeam.scss';
 
 const Cubes = () => {
   const [rotX, setRotX] = useState(0);
@@ -42,13 +44,13 @@ const Cubes = () => {
   };
 
   const renderDots = dotsData.map(({ id, classFirst, classSecond }) => (
-    <input
+    <Input
       key={id}
       type="radio"
-      onClick={() => changeActiveDots(id)}
-      checked={activeDot === id}
-      className={`${classFirst} ${classSecond}`}
       name="select-face"
+      checked={activeDot === id}
+      onChange={() => changeActiveDots(id)}
+      className={`${classFirst} ${classSecond}`}
     />
   ));
 

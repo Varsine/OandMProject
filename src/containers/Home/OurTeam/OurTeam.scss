@@ -1,4 +1,4 @@
-.height_responce {
+.height_response {
   @include breakpoint(desktop) {
     height: auto !important;
     margin-bottom: 50px !important;
@@ -11,7 +11,11 @@
 
 .glitch_effect {
   width: 100%;
-  max-width: 500px;
+  max-width: 650px;
+
+  @include breakpoint(wide) {
+    max-width: 570px;
+  }
 
   @include breakpoint(desktop) {
     height: auto;
@@ -43,6 +47,12 @@
 
   @include breakpoint(tablet) {
     bottom: 30% !important;
+  }
+
+  @include breakpoint(tablet-m) {
+    height: 0vh;
+    top: unset !important;
+    bottom: 15% !important;
   }
 }
 
@@ -119,9 +129,9 @@
     transition: height 0.2s;
     transition: max-width 0.2s;
     transition: margin-top 0.2s;
-    // box-shadow: -1px 12px 50px -8px #3d80d4;
 
     @include breakpoint(desktop) {
+      height: 500px;
       flex-direction: column;
     }
 

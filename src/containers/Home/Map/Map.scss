@@ -1,22 +1,39 @@
 .wrapper {
   overflow: hidden;
-  background: '#000';
 
   &__layout {
+    z-index: 10;
     width: 100vw;
     height: 100vh;
+    position: relative;
     padding: 80px 0 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: $black-40;
+    backdrop-filter: blur(20px);
+
+    @include breakpoint(desktop) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 64px 0 50px;
+    }
 
     &_container {
-      height: 80%;
+      height: 91%;
+
+      @include breakpoint(desktop) {
+        height: 100%;
+      }
     }
 
     &_info {
       display: flex;
-      padding-bottom: 8px;
+
+      @include breakpoint(desktop) {
+        padding: 5px 0;
+      }
 
       @include breakpoint(tablet-m) {
         gap: 40px;

@@ -7,23 +7,23 @@ import { TextError } from 'components/index';
 import styles from './Field.scss';
 
 const Input = ({
-  label,
   type,
-  placeholder,
+  label,
   className,
-  field: { onChange, name, value },
+  placeholder,
   form: { touched, errors },
+  field: { onChange, name, value },
 }) => {
   return (
     <div className={classNames(styles.text, className)}>
       <label htmlFor={name}>{label}</label>
       <input
-        className={styles.text__change}
-        onChange={onChange}
         type={type}
-        value={value}
         name={name}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
+        className={styles.text__change}
       />
       {touched[name] && errors[name] && (
         <TextError component={TextError} message={errors[name]} />
@@ -43,13 +43,13 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  label: '',
   name: '',
   type: '',
+  form: {},
+  label: '',
+  field: {},
   className: '',
   placeholder: '',
-  field: {},
-  form: {},
 };
 
 export default Input;
