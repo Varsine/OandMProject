@@ -32,13 +32,13 @@ const SliderArrows = ({
       <DownArrow
         type="submit"
         onClick={prevSlideHandler}
-        ariaLabel={ariaPrevLabel}
+        aria-label={ariaPrevLabel}
         className={styles.arrow_comp__slide__prev_arrows}
       />
       <DownArrow
         type="submit"
         onClick={nextHandler}
-        ariaLabel={ariaNextLabel}
+        aria-label={ariaNextLabel}
         className={styles.arrow_comp__slide__next_arrows}
       />
     </div>
