@@ -1,12 +1,12 @@
 import React, { useCallback, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import usePortal from 'react-useportal';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
 import { FullPageContext } from 'context/index';
-import { activeIndexSelector } from 'slices/mainSlice';
+import { activeIndexSelector, changeIndex } from 'slices/mainSlice';
 
 import styles from './Header.scss';
 
@@ -26,6 +26,8 @@ import {
 } from '../../icons';
 
 const Header = ({ isOnePage }) => {
+  const dispatch = useDispatch();
+
   const { Portal } = usePortal();
   const { moveToSection } = useContext(FullPageContext);
   const activeIndex = useSelector(activeIndexSelector);
@@ -79,6 +81,10 @@ const Header = ({ isOnePage }) => {
     [isOnePage, memoizedUpdateActiveIcon],
   );
 
+  const setInitialIndex = () => {
+    dispatch(changeIndex(1));
+  };
+
   const logo = useMemo(
     () =>
       isOnePage ? (
@@ -95,7 +101,9 @@ const Header = ({ isOnePage }) => {
     <Portal>
       <header className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.logo}>{logo}</div>
+          <div role="button" onClick={setInitialIndex} className={styles.logo}>
+            {logo}
+          </div>
 
           {activeIcon}
         </div>

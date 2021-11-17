@@ -59,7 +59,7 @@
   &__wrapper {
     position: relative;
     background: $liner-blue;
-    border-radius: 8px;
+    border-radius: 8px 8px 0 0;
   }
 
   &__content {
@@ -79,7 +79,6 @@
 
       &:hover {
         background: $white-10;
-        border-radius: 0 0 8px 8px;
       }
 
       &_active {

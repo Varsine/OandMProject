@@ -379,15 +379,15 @@
 }
 
 .info {
-  @extend %flex-center;
+  opacity: 0;
+  width: 100%;
+  color: $white-20;
+  max-width: 400px;
   user-select: none;
   position: absolute;
-  opacity: 0;
-  max-width: 400px;
-  width: 100%;
-  flex-direction: column;
+  @extend %flex-center;
   word-break: break-word;
-  color: $white-20;
+  flex-direction: column;
 
   @include breakpoint(wide) {
     max-width: 350px;
@@ -398,13 +398,13 @@
   }
 
   @include breakpoint(tablet-m) {
-    position: static;
-    max-width: 100%;
-    transform: none !important;
-    background: $black-40;
-    backdrop-filter: blur(50px);
-    border-radius: 20px;
     padding: 16px;
+    max-width: 100%;
+    position: static;
+    border-radius: 20px;
+    background: $black-40;
+    transform: none !important;
+    backdrop-filter: blur(50px);
   }
 
   &__title {

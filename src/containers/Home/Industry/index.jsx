@@ -51,7 +51,6 @@ const Industry = () => {
     () =>
       industry.map((industryItem, index) => {
         const stylesKey = `wrapper__menu${industryItem.class}`;
-
         const classes = classNames(styles.wrapper__menu__item, {
           [styles[stylesKey]]: isShow,
           [styles.wrapper__menu__active]: activeIndex === index,
