@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import ReactFullPage from '@fullpage/react-fullpage';
 import { useDispatch } from 'react-redux';
 
@@ -23,27 +23,20 @@ const HomeContainer = () => {
   }, [isLaptop]);
 
   const changeActiveStep = (section, destination) => {
-    if (!isLaptop) {
+    if (!isLaptop && window.splatStack) {
       window.splatStack.push(Math.random() * 1 + 4);
     }
     dispatch(changeIndex(destination.index + 1));
   };
 
-  const renderFullPages = useMemo(
-    () =>
-      mainSections.map((fullPage) => <fullPage.component key={fullPage.id} />),
-    [],
-  );
-
-  const renderFullPageContent = useCallback(
-    ({ fullpageApi }) => (
-      <ReactFullPage.Wrapper>
-        <FullPageLayout fullpageApi={fullpageApi}>
-          {renderFullPages}
-        </FullPageLayout>
-      </ReactFullPage.Wrapper>
-    ),
-    [renderFullPages],
+  const renderFullPageContent = ({ fullpageApi }) => (
+    <ReactFullPage.Wrapper>
+      <FullPageLayout fullpageApi={fullpageApi}>
+        {mainSections.map((fullPage) => (
+          <fullPage.component key={fullPage.id} />
+        ))}
+      </FullPageLayout>
+    </ReactFullPage.Wrapper>
   );
 
   return (
