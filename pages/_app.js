@@ -70,11 +70,6 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-// MyApp.getInitialProps = async (appContext) => {
-//   const appProps = await App.getInitialProps(appContext);
-//   return { ...appProps };
-// };
-
 MyApp.propTypes = {
   pageProps: PropTypes.object.isRequired,
   Component: PropTypes.elementType.isRequired,
