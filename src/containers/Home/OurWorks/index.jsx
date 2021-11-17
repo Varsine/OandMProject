@@ -41,7 +41,16 @@ const OurWorks = () => {
     () =>
       ourSliderData.map(
         (
-          { bg, link, title, subTitle, textInfo, className, activeClassName },
+          {
+            bg,
+            link,
+            title,
+            subTitle,
+            textInfo,
+            className,
+            projectPage,
+            activeClassName,
+          },
           idx,
         ) => (
           <div className={styles.block} key={link}>
@@ -63,7 +72,7 @@ const OurWorks = () => {
                   'aria-label': title,
                 }}
               >
-                {link}
+                {projectPage}
               </NextLink>
             </div>
 

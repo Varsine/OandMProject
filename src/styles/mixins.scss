@@ -57,6 +57,22 @@
       opacity: 1;
     }
   }
+
+  @include breakpoint(tablet-m) {
+    animation: showText 1.5s infinite linear;
+  }
+
+  @keyframes showText {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.4;
+    }
+  }
 }
 
 @mixin cubTranslateY($indexY) {
