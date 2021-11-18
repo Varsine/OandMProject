@@ -20,24 +20,24 @@ const GlitchSquiggly = dynamic(
 const Slide = ({ slide }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
-  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState('25');
+  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState(25);
 
   useEffect(() => {
     if (activeIndex === 6) {
       const firstTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('10');
+        setIsGlitchscaleNoise(10);
       }, 800);
       const secondTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('8');
+        setIsGlitchscaleNoise(8);
       }, 1500);
       const thirdTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('6');
+        setIsGlitchscaleNoise(6);
       }, 2000);
       const fourthTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('4');
+        setIsGlitchscaleNoise(4);
       }, 2300);
       const fifthTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise('1.3');
+        setIsGlitchscaleNoise(1.3);
       }, 3000);
 
       return () => {
@@ -50,18 +50,7 @@ const Slide = ({ slide }) => {
     }
   }, [activeIndex]);
 
-  const {
-    image1,
-    image2,
-    image3,
-    image4,
-    imageLight1,
-    imageLight2,
-    imageLight3,
-    imageLight4,
-    title,
-    subtitle,
-  } = slide;
+  const { image1, image2, image3, image4, title, subtitle } = slide;
 
   const imageClasses = useMemo(() =>
     classNames(styles.carousel__item_imges_img, 'glitch'),
@@ -79,24 +68,6 @@ const Slide = ({ slide }) => {
     >
       <div className={styles.carousel__item}>
         <div className={styles.carousel__item_imges}>
-          <div className={imageClasses}>
-            <div
-              style={{ background: `url(${imageLight1})` }}
-              className="glitch-img"
-            />
-            <div
-              style={{ background: `url(${imageLight2})` }}
-              className="glitch-img"
-            />
-            <div
-              className="glitch-img"
-              style={{ background: `url(${imageLight3})` }}
-            />
-            <div
-              className="glitch-img"
-              style={{ background: `url(${imageLight4})` }}
-            />
-          </div>
           <div className={imageClasses}>
             <div
               className="glitch-img"

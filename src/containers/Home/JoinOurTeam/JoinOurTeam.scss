@@ -1,4 +1,4 @@
-.height_responce {
+.height_response {
   @include breakpoint(desktop) {
     height: auto !important;
   }
@@ -16,6 +16,10 @@
     margin-right: 35px;
   }
 
+  @include breakpoint(tablet-m) {
+    min-height: 456px;
+    padding-top: 0;
+  }
   @include breakpoint(tablet) {
     flex-direction: column;
     margin-right: 0;

@@ -1,4 +1,4 @@
-.height_responce {
+.height_response {
   @include breakpoint(desktop) {
     height: auto !important;
   }
@@ -63,8 +63,21 @@
       display: flex;
       align-items: center;
       cursor: url('/images/Mouse.png'), auto;
+      animation: textScaleRotate 0.5s infinite linear !important;
+
+      @include breakpoint(tablet-m) {
+        animation: textScaleRotateResponce 0.5s infinite linear !important;
+      }
 
       svg {
+        animation: unActiveIconAnima 0.6s forwards;
+
+        @include breakpoint(tablet-m) {
+          animation: unset;
+        }
+      }
+
+      img {
         animation: unActiveIconAnima 0.6s forwards;
 
         @include breakpoint(tablet-m) {
@@ -96,6 +109,13 @@
     &__active {
       display: flex;
       align-items: center;
+      animation: unset;
+      color: $white;
+      animation: unset !important;
+
+      p {
+        animation: none;
+      }
 
       svg {
         animation: activeIconAnima 0.6s forwards;
@@ -127,6 +147,7 @@
       @extend %open-sans-48;
       color: $white40;
       margin-left: 12px;
+      animation: textScale 0.3s infinite linear;
 
       @include breakpoint(desktop) {
         font-size: 24px;
@@ -139,10 +160,6 @@
         font-weight: 500;
         margin-left: 6px;
       }
-    }
-
-    &__active {
-      color: #fff !important;
     }
 
     &__oneIcon {
@@ -205,6 +222,7 @@
     }
 
     @include breakpoint(tablet-m) {
+      margin-bottom: 0;
       flex-direction: column;
     }
 
@@ -382,9 +400,56 @@
   0% {
     width: 56px;
     height: 56px;
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
   }
   100% {
     width: 37px;
     height: 37px;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes textScale {
+  0% {
+    transform: scale(0.96);
+  }
+  50% {
+    transform: scale(0.94);
+  }
+  100% {
+    transform: scale(0.96);
+  }
+}
+
+@keyframes textScaleRotate {
+  0% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes textScaleRotateResponce {
+  0% {
+    transform: rotate(5deg) scale(0.95);
+  }
+  25% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-5deg) scale(0.95);
+  }
+  75% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(5deg) scale(0.95);
   }
 }

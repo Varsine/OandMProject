@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { noop } from 'utils/index';
-import { Button } from 'components/index';
 
 import styles from './SliderArrows.scss';
+
+import { DownArrow } from '../../icons/ourWork';
 
 const SliderArrows = ({
   next,
@@ -28,21 +29,20 @@ const SliderArrows = ({
 
   return (
     <div className={classNames(arrowStyles, styles.arrow_comp)}>
-      <Button
+      <DownArrow
+        type="submit"
+        role="button"
         onClick={prevSlideHandler}
-        ariaLabel={ariaPrevLabel}
+        aria-label={ariaPrevLabel}
         className={styles.arrow_comp__slide__prev_arrows}
-      >
-        <div className={styles.arrow_comp__slide__prev_arrows__left_content} />
-      </Button>
-
-      <Button
+      />
+      <DownArrow
+        type="submit"
+        role="button"
         onClick={nextHandler}
-        ariaLabel={ariaNextLabel}
+        aria-label={ariaNextLabel}
         className={styles.arrow_comp__slide__next_arrows}
-      >
-        <div className={styles.arrow_comp__slide__next_arrows__right_content} />
-      </Button>
+      />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 .wrapper {
   @extend %flex-center;
-  margin-left: 16px;
+  margin-left: 10px;
 
   @include breakpoint(desktop) {
     display: none;

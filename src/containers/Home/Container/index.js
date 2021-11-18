@@ -50,7 +50,7 @@ const HomeContainer = () => {
     <ReactFullPage
       navigation={false}
       fitToSection={false}
-      scrollingSpeed={1300}
+      scrollingSpeed={1000}
       keyboardScrolling={false}
       onLeave={changeActiveStep}
       render={renderFullPageContent}

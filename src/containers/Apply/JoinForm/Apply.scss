@@ -1,4 +1,4 @@
-.height_reponce {
+.height_response {
   @include breakpoint(desktop) {
     height: 100vh !important;
   }
@@ -16,6 +16,7 @@
   @extend %flex-center;
   position: relative;
   z-index: 9;
+  overflow: hidden;
 
   @include breakpoint(tablet) {
     padding-top: 66px;
@@ -77,7 +78,7 @@
 
   &__line {
     path {
-      stroke: #1d1d1d;
+      stroke: #f1f2f2;
     }
   }
 
@@ -85,7 +86,7 @@
     width: 50px;
     height: 50px;
     color: #f1f2f2;
-    border-radius: 50%;
+    border-radius: 15px;
     background: rgba(234, 241, 250, 0.6);
 
     &_active {
@@ -97,6 +98,7 @@
 .next {
   margin: 22px 0;
   @extend %button-gradient;
+  border-radius: 8px;
 }
 
 .success {

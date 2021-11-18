@@ -25,10 +25,7 @@ const MyApp = ({ Component, pageProps }) => {
     window.document.body.classList.add('mouse_animation');
   };
 
-  const memoizedScript = useMemo(
-    () => <Script strategy="lazyOnload" src="/js/script.js" />,
-    [],
-  );
+  const canvasScript = useMemo(() => <Script src="/js/script.js" />, []);
 
   useIsomorphicLayoutEffect(() => {
     Router.events.on('routeChangeComplete', () => {
@@ -66,17 +63,12 @@ const MyApp = ({ Component, pageProps }) => {
       />
       <Component {...pageProps} />
       <Portal>
-        {memoizedScript}
+        {canvasScript}
         <canvas id="canvas" width="100%" height="100%" />
       </Portal>
     </>
   );
 };
-
-// MyApp.getInitialProps = async (appContext) => {
-//   const appProps = await App.getInitialProps(appContext);
-//   return { ...appProps };
-// };
 
 MyApp.propTypes = {
   pageProps: PropTypes.object.isRequired,

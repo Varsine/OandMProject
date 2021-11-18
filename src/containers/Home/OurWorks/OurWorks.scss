@@ -1,4 +1,4 @@
-.height_responce {
+.height_response {
   @include breakpoint(tablet-m) {
     height: auto !important;
   }
@@ -51,13 +51,13 @@
   }
 
   &__next {
-    @extend %nextPrev;
+    fill: $white;
     bottom: 80px;
-    animation: bounceAlpha 1s infinite linear;
-    background-color: $our-works-bg;
-    border-radius: 50%;
-    fill: #fff;
     padding: 10px;
+    @extend %nextPrev;
+    border-radius: 15px;
+    animation: bounceAlpha 1s infinite linear;
+    background: $button_components_style;
 
     @include breakpoint(desktop) {
       bottom: 140px;
@@ -67,36 +67,34 @@
 
     @include breakpoint(tablet-m) {
       top: 50%;
-      animation: none;
-      transform: rotate(-90deg) translate(0, -50%);
-      bottom: unset;
-      left: unset;
       right: 0;
+      left: unset;
+      bottom: unset;
+      animation: bounceNextResponce 1s infinite linear;
     }
   }
 
   &__prev {
     top: 100px;
     padding: 10px;
-    fill: #fff;
+    fill: $white;
     @extend %nextPrev;
-    border-radius: 50%;
-    background-color: $our-works-bg;
+    border-radius: 15px;
     animation: bouncePrew 1s infinite linear;
+    background: $button_components_style;
 
     @include breakpoint(desktop) {
-      top: 140px;
       height: 40px;
       width: 40px;
+      top: 140px;
     }
 
     @include breakpoint(tablet-m) {
-      animation: none;
-      top: 50%;
       left: 0;
-      transform: rotate(90deg) translate(0, -50%) !important;
-      height: 40px;
+      top: 50%;
       width: 40px;
+      height: 40px;
+      animation: bouncePrewResponce 1s infinite linear;
     }
   }
 
@@ -131,7 +129,7 @@
       border-radius: 100%;
       bottom: 100%;
       right: 100%;
-      box-shadow: 2000vh 2000vh 0 0 $our-works-bg;
+      box-shadow: 2000vh 2000vh 0 0 $black-40;
     }
 
     &__active {
@@ -143,7 +141,7 @@
         border-radius: 100%;
         bottom: 0;
         right: 0;
-        box-shadow: 60vh 60vh 0 0 $our-works-bg;
+        box-shadow: 60vh 60vh 0 0 $black-40;
         transition: all 1.5s;
       }
 
@@ -172,7 +170,7 @@
     left: 0;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-color: $our-works-bg;
+    background-color: $black-40;
     transition: all 1.5s;
 
     &__active {
@@ -182,7 +180,7 @@
       right: 50vw;
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
-      background-color: $our-works-bg;
+      background-color: $black-40;
       transition: all 1.5s;
 
       & + div {
@@ -205,7 +203,7 @@
     bottom: 0;
     width: 0;
     height: 0;
-    border-bottom: 300vh solid $our-works-bg;
+    border-bottom: 300vh solid $black-40;
     border-right: 300vw solid transparent;
     transition: all 1.5s;
 
@@ -214,7 +212,7 @@
       bottom: 0;
       width: 0;
       height: 0;
-      border-bottom: 100vh solid $our-works-bg;
+      border-bottom: 100vh solid $black-40;
       border-right: 90vw solid transparent;
       transition: all 1.5s;
 
@@ -237,7 +235,7 @@
     right: 0;
     width: 0;
     height: 0;
-    border-top: 300vh solid $our-works-bg;
+    border-top: 300vh solid $black-40;
     border-left: 300vw solid transparent;
     transition: all 1.5s;
 
@@ -246,7 +244,7 @@
       right: 0;
       width: 0;
       height: 0;
-      border-top: 100vh solid $our-works-bg;
+      border-top: 100vh solid $black-40;
       border-left: 90vw solid transparent;
       transition: all 1.5s;
 
@@ -273,7 +271,7 @@
     height: 0;
     right: 0;
     border: 400vh solid transparent;
-    border-right: 100vw solid $our-works-bg;
+    border-right: 100vw solid $black-40;
     transition: all 1.5s;
 
     &__active {
@@ -281,7 +279,7 @@
       height: 0;
       right: 0;
       border: 200vh solid transparent;
-      border-right: 53vw solid $our-works-bg;
+      border-right: 53vw solid $black-40;
       transition: all 1.5s;
 
       & + div {
@@ -308,7 +306,7 @@
     width: 100vw;
     height: 100vh;
     transform: skew(0deg);
-    background: $our-works-bg;
+    background: $black-40;
     transition: all 1.5s;
 
     &__active {
@@ -316,7 +314,7 @@
       width: 100vw;
       height: 100vh;
       transform: skew(20deg);
-      background: $our-works-bg;
+      background: $black-40;
       transition: all 1.5s;
 
       & + div {
@@ -344,7 +342,7 @@
       border-radius: 100%;
       bottom: 100%;
       right: 100%;
-      box-shadow: 2000vh 2000vh 0 0 $our-works-bg;
+      box-shadow: 2000vh 2000vh 0 0 $black-40;
     }
 
     &__active {
@@ -357,7 +355,7 @@
         border-radius: 100%;
         bottom: 0;
         right: 0;
-        box-shadow: 60vh 60vh 0 0 $our-works-bg;
+        box-shadow: 60vh 60vh 0 0 $black-40;
         transition: all 1.5s;
       }
 
@@ -381,15 +379,15 @@
 }
 
 .info {
-  @extend %flex-center;
+  opacity: 0;
+  width: 100%;
+  color: $white-20;
+  max-width: 400px;
   user-select: none;
   position: absolute;
-  opacity: 0;
-  max-width: 400px;
-  width: 100%;
-  flex-direction: column;
+  @extend %flex-center;
   word-break: break-word;
-  color: $white-20;
+  flex-direction: column;
 
   @include breakpoint(wide) {
     max-width: 350px;
@@ -400,13 +398,13 @@
   }
 
   @include breakpoint(tablet-m) {
-    position: static;
-    max-width: 100%;
-    transform: none !important;
-    background: $our-works-bg;
-    backdrop-filter: blur(50px);
-    border-radius: 20px;
     padding: 16px;
+    max-width: 100%;
+    position: static;
+    border-radius: 20px;
+    background: $black-40;
+    transform: none !important;
+    backdrop-filter: blur(50px);
   }
 
   &__title {
@@ -457,15 +455,15 @@
 
     @include breakpoint(wide) {
       font-size: 14px;
-      line-height: 19px;
       margin: 0 0 16px;
+      line-height: 19px;
     }
   }
 
   &__link {
-    @extend %open-sans-18;
     font-weight: 500;
     color: $liner-blue;
+    @extend %open-sans-18;
 
     &:hover {
       text-decoration: underline !important;
@@ -475,30 +473,90 @@
 
 @keyframes bounceAlpha {
   0% {
-    opacity: 0.7;
-    transform: translateY(0px) scale(0.9);
+    opacity: 0.6;
+    padding: 15px;
+    transform: translateY(0px) scale(0.8);
+
+    @include breakpoint(tablet-m) {
+      opacity: 0.6;
+      padding: 15px;
+      transform: rotate(-90deg) translateY(0px) scale(0.8);
+    }
   }
   50% {
     opacity: 1;
+    padding: 10px;
     transform: translateY(10px) scale(1);
+
+    @include breakpoint(tablet-m) {
+      opacity: 1;
+      padding: 10px;
+      transform: rotate(-90deg) translateY(-10px) scale(1);
+    }
   }
   100% {
-    opacity: 0.7;
-    transform: translateY(0px) scale(0.9);
+    opacity: 0.6;
+    padding: 15px;
+    transform: translateY(0px) scale(0.8);
+
+    @include breakpoint(tablet-m) {
+      opacity: 0.6;
+      padding: 15px;
+      transform: rotate(-90deg) translateY(0px) scale(0.8);
+    }
   }
 }
 
 @keyframes bouncePrew {
   0% {
-    opacity: 0.7;
-    transform: rotate(180deg) translateY(0px) scale(0.9);
+    opacity: 0.6;
+    padding: 15px;
+    transform: rotate(180deg) translateY(0px) scale(0.8);
   }
   50% {
     opacity: 1;
+    padding: 10px;
     transform: rotate(180deg) translateY(10px) scale(1);
   }
   100% {
-    opacity: 0.7;
-    transform: rotate(180deg) translateY(0px) scale(0.9);
+    opacity: 0.6;
+    padding: 15px;
+    transform: rotate(180deg) translateY(0px) scale(0.8);
+  }
+}
+
+@keyframes bouncePrewResponce {
+  0% {
+    opacity: 0.6;
+    padding: 15px;
+    transform: rotate(90deg) translateY(0px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    padding: 10px;
+    transform: rotate(90deg) translateY(-10px) scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    padding: 15px;
+    transform: rotate(90deg) translateY(0px) scale(0.8);
+  }
+}
+
+@keyframes bounceNextResponce {
+  0% {
+    opacity: 0.6;
+    padding: 15px;
+    transform: rotate(-90deg) translateY(0px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    padding: 10px;
+    transform: rotate(-90deg) translateY(-10px) scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    padding: 15px;
+    transform: rotate(-90deg) translateY(0px) scale(0.8);
   }
 }
