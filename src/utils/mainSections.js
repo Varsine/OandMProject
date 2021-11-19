@@ -7,7 +7,6 @@ import {
   Industry,
   HowWeWork,
   JoinOurTeam,
-  OurPartners,
 } from 'containers/Home';
 
 export const mainSections = [
@@ -38,10 +37,6 @@ export const mainSections = [
   {
     id: 7,
     component: JoinOurTeam,
-  },
-  {
-    id: 8,
-    component: OurPartners,
   },
   {
     id: 9,

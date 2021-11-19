@@ -51,18 +51,14 @@
   }
 
   &__next {
-    fill: $white;
+    @include arrowIcon(0deg);
     bottom: 80px;
-    padding: 10px;
-    @extend %nextPrev;
-    border-radius: 15px;
-    animation: bounceAlpha 1s infinite linear;
-    background: $button_components_style;
+    z-index: 10;
+    left: 48%;
+    position: absolute;
 
     @include breakpoint(desktop) {
       bottom: 140px;
-      height: 40px;
-      width: 40px;
     }
 
     @include breakpoint(tablet-m) {
@@ -70,22 +66,17 @@
       right: 0;
       left: unset;
       bottom: unset;
-      animation: bounceNextResponce 1s infinite linear;
     }
   }
 
   &__prev {
+    @include arrowIcon(180deg);
     top: 100px;
-    padding: 10px;
-    fill: $white;
-    @extend %nextPrev;
-    border-radius: 15px;
-    animation: bouncePrew 1s infinite linear;
-    background: $button_components_style;
+    z-index: 10;
+    left: 48%;
+    position: absolute;
 
     @include breakpoint(desktop) {
-      height: 40px;
-      width: 40px;
       top: 140px;
     }
 
@@ -94,7 +85,6 @@
       top: 50%;
       width: 40px;
       height: 40px;
-      animation: bouncePrewResponce 1s infinite linear;
     }
   }
 

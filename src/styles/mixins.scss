@@ -106,3 +106,19 @@
     transform: rotateX($indexX) translate3d(0, 0, $cubeSizeMobile / 2);
   }
 }
+
+@mixin arrowIcon($transform) {
+  fill: $white;
+  width: 50px;
+  height: 50px;
+  cursor: url('/images/Mouse.png'), auto;
+  padding: 12px;
+  transform: rotate($transform);
+  background: $arrowBg;
+  border-radius: 50%;
+
+  @include breakpoint(wide) {
+    width: 40px;
+    height: 40px;
+  }
+}
