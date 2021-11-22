@@ -157,4 +157,8 @@ body {
   background: #000000;
   font-family: 'Open Sans', sans-serif;
   cursor: url('/images/Mouse.png'), auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

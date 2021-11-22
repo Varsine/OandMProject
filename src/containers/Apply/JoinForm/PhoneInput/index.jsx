@@ -14,7 +14,6 @@ const PhoneInputComponent = (props) => {
     field: { name, value },
     form: { errors, setFieldValue, touched },
     country,
-    onChange,
     disabled,
   } = props;
 
@@ -22,12 +21,8 @@ const PhoneInputComponent = (props) => {
   const errorStyle = isError ? 'error' : '';
   const disabledStyle = disabled ? 'disabled' : '';
 
-  const onValueChange = (phoneNumber) => {
+  const telNumChange = (phoneNumber) => {
     setFieldValue(name, phoneNumber);
-
-    if (onChange !== null) {
-      onChange(phoneNumber);
-    }
   };
 
   return (
@@ -39,12 +34,18 @@ const PhoneInputComponent = (props) => {
         name={name}
         value={value}
         disableDropdown={false}
-        onChange={onValueChange}
+        onChange={telNumChange}
         country={country}
       />
       <div className={styles.phone__number_error_phone}>
         {touched[name] && errors[name] && (
-          <TextError component={TextError} message={errors[name]} />
+          <TextError
+            message={
+              errors[name].length === 10
+                ? errors[name]
+                : 'Phone number not valid'
+            }
+          />
         )}
       </div>
     </div>
@@ -55,17 +56,15 @@ PhoneInputComponent.propTypes = {
   className: PropTypes.string,
   form: PropTypes.any.isRequired,
   field: PropTypes.any.isRequired,
-  onChange: PropTypes.func,
   label: PropTypes.string,
   country: PropTypes.string,
   disabled: PropTypes.bool,
 };
 
 PhoneInputComponent.defaultProps = {
-  className: '',
   label: '',
-  onChange: null,
   country: 'am',
+  className: '',
   disabled: false,
 };
 

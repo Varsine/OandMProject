@@ -199,7 +199,20 @@
   }
 
   ////  APPLAY NOW -_- Phone number, add country code && flag
+  .flag-dropdown {
+    position: relative;
 
+    &::before {
+      content: '';
+      background: $white-30;
+      width: 38px;
+      height: 51px;
+      left: 0;
+      top: 22px;
+      position: absolute;
+      border-radius: 8px 0 0 8px;
+    }
+  }
   .react-tel-input {
     width: 100%;
     display: flex;
@@ -219,7 +232,7 @@
     user-select: all !important;
     position: relative !important;
     cursor: url(/images/Mouse.png), auto;
-    padding: 0px 10px 0px 5px !important;
+    padding: 0px 10px 0px 14px !important;
     border-radius: 0px 8px 8px 0px !important;
     background: $white-30 !important;
 
@@ -246,46 +259,49 @@
     height: 51px !important;
     cursor: url(/images/Mouse.png), auto;
     border-radius: 8px 0px 0px 8px !important;
-    background: $white-30 !important;
+    background: transparent !important;
   }
 
   .react-tel-input .flag-dropdown.open {
     cursor: url(/images/Mouse.png), auto;
+    background-color: transparent !important;
     border-radius: 8px 0px 0px 8px !important;
   }
 
   .react-tel-input .selected-flag:hover {
-    background: $white-30 !important;
+    background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
     border-radius: 8px 0px 0px 8px !important;
   }
+
   .react-tel-input .selected-flag:focus {
-    background: $white-30 !important;
+    background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
     border-radius: 8px 0px 0px 8px !important;
   }
 
   .react-tel-input .flag-dropdown:hover,
   .react-tel-input .flag-dropdown:focus {
-    background: $white-30 !important;
+    background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
     border-radius: 8px 0px 0px 8px !important;
   }
 
   .react-tel-input .flag-dropdown {
     position: unset !important;
-    background: $white-30 !important;
+    background: transparent !important;
     border-radius: 8px 0px 0px 8px !important;
     cursor: url(/images/Mouse.png), auto !important;
   }
 
   .react-tel-input .selected-flag {
+    padding-left: 24px !important;
     cursor: url(/images/Mouse.png), auto;
     border-radius: 8px 0px 0px 8px !important;
   }
 
   .react-tel-input .flag-dropdown.open .selected-flag {
-    background: $white-30 !important;
+    background: transparent !important;
   }
 
   .react-tel-input .country-list {
