@@ -179,11 +179,7 @@
     height: 100%;
     pointer-events: none;
     transform-style: preserve-3d;
-    transform: rotateX(10deg) rotateY(-10deg);
-
-    &__transit {
-      transition: all 1s linear;
-    }
+    transition: all 1s linear;
 
     &__3dface {
       overflow: hidden;
