@@ -10,6 +10,7 @@ import {
   stepOneValidationSchema,
 } from './JoinFormConstants';
 
+import PhoneInput from '../PhoneInput';
 import styles from '../Apply.scss';
 
 const StepOne = ({ editActiveStep, setApplicationForm }) => {
@@ -49,13 +50,7 @@ const StepOne = ({ editActiveStep, setApplicationForm }) => {
               placeholder="Email"
               component={FormikInput}
             />
-            <Field
-              type="tel"
-              name="phoneNumber"
-              label="Phone number"
-              placeholder="Phone number"
-              component={FormikInput}
-            />
+            <Field name="phoneNumber" component={PhoneInput} />
             <Button className={styles.next} type="submit">
               Next
             </Button>

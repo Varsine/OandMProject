@@ -4,22 +4,32 @@
   }
 }
 
+.phone__number {
+  position: relative;
+
+  &_error_phone {
+    position: absolute;
+    top: 73px;
+    right: 2px;
+  }
+}
+
 .form_style {
   margin: 0 auto;
   max-width: 594px;
 }
 
 .container {
-  height: 100vh;
-  padding: 80px 20px 60px;
-  flex-direction: column;
-  @extend %flex-center;
-  position: relative;
   z-index: 9;
-  overflow: hidden;
+  height: 100vh;
+  overflow: hidden !important;
+  position: relative;
+  flex-direction: column;
+  padding: 80px 20px 60px;
+  @extend %flex-center;
 
   @include breakpoint(tablet) {
-    padding-top: 66px;
+    padding: 65px 20px 50px;
   }
 }
 
@@ -57,7 +67,6 @@
   @include breakpoint(tablet-m) {
     font-size: 32px;
     font-weight: 600;
-    padding: 24px 0 0;
     line-height: 44px;
   }
 }

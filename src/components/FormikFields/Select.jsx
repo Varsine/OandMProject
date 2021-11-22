@@ -41,7 +41,11 @@ const Select = ({
   return (
     <div className={styles.dropdown} ref={dropdownRef}>
       <span className={styles.label}>{label}</span>
-      <div className={styles.dropdown__wrapper}>
+      <div
+        className={classNames(styles.dropdown__wrapper, {
+          [styles.dropdown__wrapper_active]: isOpen,
+        })}
+      >
         <div
           role="button"
           onClick={openModalToggleer}

@@ -198,79 +198,134 @@
     }
   }
 
-  /* Active Slide */
-  #s1:checked ~ #slideWe1,
-  #s2:checked ~ #slideWe2,
-  #s3:checked ~ #slideWe3,
-  #s4:checked ~ #slideWe4,
-  #s5:checked ~ #slideWe5,
-  #s6:checked ~ #slideWe6,
-  #s7:checked ~ #slideWe7 {
-    transform: translate3d(0%, 0, 0px);
+  ////  APPLAY NOW -_- Phone number, add country code && flag
+
+  .react-tel-input {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 105px !important;
+    cursor: url(/images/Mouse.png), auto;
+    padding: 21.6px 0px 0px 0px !important;
   }
 
-  /* Next Slide */
-  #s1:checked ~ #slideWe2,
-  #s2:checked ~ #slideWe3,
-  #s3:checked ~ #slideWe4,
-  #s4:checked ~ #slideWe5,
-  #s5:checked ~ #slideWe6,
-  #s6:checked ~ #slideWe7,
-  #s7:checked ~ #slideWe1 {
-    transform: translate3d(30%, 0, -100px);
+  .react-tel-input .form-control {
+    @extend %open-sans-16;
+    width: 100% !important;
+    height: 51px !important;
+    border: none !important;
+    font-size: 16px !important;
+    color: #f1f2f2 !important;
+    user-select: all !important;
+    position: relative !important;
+    cursor: url(/images/Mouse.png), auto;
+    padding: 0px 10px 0px 5px !important;
+    border-radius: 0px 8px 8px 0px !important;
+    background: $white-30 !important;
+
+    &::placeholder {
+      color: #f1f2f2 !important;
+      cursor: url(/images/Mouse.png), auto;
+    }
   }
 
-  /* Next to Next Slide */
-  #s1:checked ~ #slideWe3,
-  #s2:checked ~ #slideWe4,
-  #s3:checked ~ #slideWe5,
-  #s4:checked ~ #slideWe6,
-  #s5:checked ~ #slideWe7,
-  #s6:checked ~ #slideWe1,
-  #s7:checked ~ #slideWe2 {
-    transform: translate3d(60%, 0, -200px);
+  .react-tel-input .special-label {
+    line-height: 25px !important;
+    left: 0 !important;
+    top: 0px !important;
+    font: inherit !important;
+    padding: unset !important;
+    display: unset !important;
+    font-size: 17px !important;
+    font-weight: normal !important;
+    background-color: unset !important;
+    font-family: Open Sans, sans-serif !important;
   }
 
-  ///
-  #s1:checked ~ #slideWe4,
-  #s2:checked ~ #slideWe5,
-  #s3:checked ~ #slideWe6,
-  #s4:checked ~ #slideWe7,
-  #s5:checked ~ #slideWe1,
-  #s6:checked ~ #slideWe2,
-  #s7:checked ~ #slideWe3 {
-    transform: translate3d(80%, 0, -300px);
+  .react-tel-input .flag-dropdown {
+    height: 51px !important;
+    cursor: url(/images/Mouse.png), auto;
+    border-radius: 8px 0px 0px 8px !important;
+    background: $white-30 !important;
   }
 
-  /* Previous to Previous Slide */
-  #s1:checked ~ #slideWe5,
-  #s2:checked ~ #slideWe6,
-  #s3:checked ~ #slideWe7,
-  #s4:checked ~ #slideWe1,
-  #s5:checked ~ #slideWe2,
-  #s6:checked ~ #slideWe3,
-  #s7:checked ~ #slideWe4 {
-    transform: translate3d(-80%, 0, -300px);
+  .react-tel-input .flag-dropdown.open {
+    cursor: url(/images/Mouse.png), auto;
+    border-radius: 8px 0px 0px 8px !important;
   }
 
-  /* Previous Slide */
-  #s1:checked ~ #slideWe6,
-  #s2:checked ~ #slideWe7,
-  #s3:checked ~ #slideWe1,
-  #s4:checked ~ #slideWe2,
-  #s5:checked ~ #slideWe3,
-  #s6:checked ~ #slideWe4,
-  #s7:checked ~ #slideWe5 {
-    transform: translate3d(-60%, 0, -200px);
+  .react-tel-input .selected-flag:hover {
+    background: $white-30 !important;
+    cursor: url(/images/Mouse.png), auto;
+    border-radius: 8px 0px 0px 8px !important;
   }
-  /////////////////
-  #s1:checked ~ #slideWe7,
-  #s2:checked ~ #slideWe1,
-  #s3:checked ~ #slideWe2,
-  #s4:checked ~ #slideWe3,
-  #s5:checked ~ #slideWe4,
-  #s6:checked ~ #slideWe5,
-  #s7:checked ~ #slideWe6 {
-    transform: translate3d(-30%, 0, -100px);
+  .react-tel-input .selected-flag:focus {
+    background: $white-30 !important;
+    cursor: url(/images/Mouse.png), auto;
+    border-radius: 8px 0px 0px 8px !important;
+  }
+
+  .react-tel-input .flag-dropdown:hover,
+  .react-tel-input .flag-dropdown:focus {
+    background: $white-30 !important;
+    cursor: url(/images/Mouse.png), auto;
+    border-radius: 8px 0px 0px 8px !important;
+  }
+
+  .react-tel-input .flag-dropdown {
+    position: unset !important;
+    background: $white-30 !important;
+    border-radius: 8px 0px 0px 8px !important;
+    cursor: url(/images/Mouse.png), auto !important;
+  }
+
+  .react-tel-input .selected-flag {
+    cursor: url(/images/Mouse.png), auto;
+    border-radius: 8px 0px 0px 8px !important;
+  }
+
+  .react-tel-input .flag-dropdown.open .selected-flag {
+    background: $white-30 !important;
+  }
+
+  .react-tel-input .country-list {
+    display: none;
+  }
+  .flag_no_10 {
+    display: none !important;
+  }
+
+  .react-tel-input .flag-dropdown {
+    border: none !important;
+  }
+
+  .react-tel-input .country-list .country-name {
+    display: none;
+  }
+
+  .country-list::-webkit-scrollbar {
+    width: 10px !important;
+  }
+
+  .react-tel-input .selected-flag .arrow {
+    display: none !important;
+  }
+
+  /* Track */
+  .country-list::-webkit-scrollbar-track {
+    box-shadow: inset 0px 15px 5px grey !important;
+    border-radius: 10px !important;
+  }
+  .country-list::-webkit-scrollbar-thumb {
+    background: #dce1f4 !important;
+    border-radius: 10px !important;
+  }
+
+  .country-list::-webkit-scrollbar-thumb:hover {
+    background: #b30000 !important;
+  }
+
+  .react-tel-input .country-list .country .dial-code {
+    color: red !important;
   }
 }
