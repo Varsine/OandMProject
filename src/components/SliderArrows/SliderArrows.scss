@@ -11,60 +11,10 @@
   justify-content: space-between;
 
   &__slide__prev_arrows {
-    width: 40px;
-    height: 40px;
-    fill: $white;
-    border-radius: 15px;
-    background-color: transparent;
-    cursor: url('/images/Mouse.png'), auto;
-    animation: bounceAlphaRight 1s infinite linear;
-    background: $button_components_style;
+    @include arrowIcon(90deg);
   }
 
   &__slide__next_arrows {
-    width: 40px;
-    height: 40px;
-    fill: $white;
-    border-radius: 15px;
-    background-color: transparent;
-    cursor: url('/images/Mouse.png'), auto;
-    animation: bounceAlphaLeft 1s infinite linear;
-    background: $button_components_style;
-  }
-}
-
-@keyframes bounceAlphaRight {
-  0% {
-    opacity: 0.6;
-    padding: 15px;
-    transform: rotate(90deg) translateY(0px) scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    padding: 10px;
-    transform: rotate(90deg) translateY(-10px) scale(1);
-  }
-  100% {
-    opacity: 0.6;
-    padding: 15px;
-    transform: rotate(90deg) translateY(0px) scale(0.8);
-  }
-}
-
-@keyframes bounceAlphaLeft {
-  0% {
-    opacity: 0.6;
-    padding: 15px;
-    transform: rotate(-90deg) translateY(0px) scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    padding: 10px;
-    transform: rotate(-90deg) translateY(-10px) scale(1);
-  }
-  100% {
-    opacity: 0.6;
-    padding: 15px;
-    transform: rotate(-90deg) translateY(0px) scale(0.8);
+    @include arrowIcon(-90deg);
   }
 }

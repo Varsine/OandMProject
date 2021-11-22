@@ -42,18 +42,8 @@
 }
 
 .arrow_style {
-  height: 60vh;
-  top: 0% !important;
-
-  @include breakpoint(tablet) {
-    bottom: 30% !important;
-  }
-
-  @include breakpoint(tablet-m) {
-    height: 0vh;
-    top: unset !important;
-    bottom: 15% !important;
-  }
+  top: 50% !important;
+  transform: translate(0, -50%);
 }
 
 .wrapper {
@@ -207,8 +197,7 @@
         height: 100%;
         border-radius: 20px;
         transition: height 0.2s;
-        background-size: 100% 100% !important;
-        background-repeat: no-repeat !important;
+        background: $black-28;
 
         &_active {
           opacity: 0;
