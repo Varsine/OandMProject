@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { TextError } from 'components/index';
-
+import TextError from './TextError';
 import styles from './Field.scss';
 
 const Input = ({

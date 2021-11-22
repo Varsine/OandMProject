@@ -29,10 +29,14 @@ const AboutUsBlock = ({ src, currentIndex, className, classRope }) => {
     <>
       <div className={classNames(styles.block, className)}>
         <div className={classNames(styles.block__rope, classRope)} />
-        <div role="button" onClick={handlerOpenPopup}>
+        <div
+          role="button"
+          onClick={handlerOpenPopup}
+          className={styles.block__img}
+        >
           <NextImage
             src={src}
-            className={styles.block__image}
+            className={styles.block__img__image}
             loading="eager"
           />
         </div>
