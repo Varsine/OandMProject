@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, Formik, Field } from 'formik';
 
 import { Button, FormikInput, FileUpload } from 'components/index';
-
-import {
-  stepTwoInitialValues,
-  stepTwoValidationSchema,
-} from './JoinFormConstants';
+import { stepTwoInitialValues, stepTwoValidationSchema } from 'utils/index';
 
 import styles from '../Apply.scss';
 

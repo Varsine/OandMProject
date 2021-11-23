@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { Field, Form, Formik } from 'formik';
 
 import { FormikInput, FormikSelect, Button } from 'components/index';
-
 import {
   dropdownOptions,
   stepOneInitialValues,
   stepOneValidationSchema,
-} from './JoinFormConstants';
+} from 'utils/index';
 
 import PhoneInput from '../PhoneInput';
 import styles from '../Apply.scss';

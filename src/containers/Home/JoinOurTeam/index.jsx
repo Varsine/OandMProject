@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { paths } from 'routes/index';
@@ -12,9 +12,13 @@ import { infoText, subtitle, joinOurTeam } from './constants';
 const JoinOurTeam = () => {
   const dispatch = useDispatch();
 
-  const setInitialIndex = () => {
-    dispatch(changeIndex(1));
-  };
+  const setInitialIndex = useCallback(() => {
+    const changeActiveStepIndex = setTimeout(() => {
+      dispatch(changeIndex(1));
+    }, 1000);
+
+    clearTimeout(changeActiveStepIndex);
+  }, []);
 
   return (
     <section className={`${styles.height_response} section`}>
