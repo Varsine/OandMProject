@@ -153,6 +153,35 @@
   }
 
   &__img {
+    $root: &;
+    position: relative;
+
+    &:hover #{$root}_wrapper {
+      height: 100%;
+
+      opacity: 1;
+      backdrop-filter: blur(12px) saturate(150%) brightness(0.7);
+    }
+
+    &_wrapper {
+      top: 0;
+      left: 0;
+      height: 0;
+      opacity: 0;
+      z-index: 2;
+      width: 100%;
+      position: absolute;
+      border-radius: 50%;
+      transition: 0.5s all ease-in;
+      background-color: transparent;
+      @extend %flex-center;
+
+      &_icon {
+        width: 70%;
+        height: 70%;
+      }
+    }
+
     &__image {
       width: 125px;
       height: 125px;
