@@ -79,6 +79,7 @@ const JoinForm = () => {
           {activeIndex === 1 && (
             <StepOne
               setApplicationForm={setApplicationForm}
+              applicationForm={applicationForm}
               editActiveStep={editActiveStep}
             />
           )}

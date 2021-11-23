@@ -11,15 +11,23 @@ const Input = ({
   label,
   className,
   placeholder,
+  defaultValue,
   form: { touched, errors },
   field: { onChange, name, value },
 }) => {
+  //
   const formattedValue = () => {
     if (name === 'email') {
       return value.toLowerCase();
     }
     return value;
   };
+
+  // const changeInpHandler = (e) => {
+  //   onChange();
+  //   return e.target.value;
+  // };
+
   return (
     <div className={classNames(styles.text, className)}>
       <label className={styles.label_style} htmlFor={name}>
@@ -29,7 +37,7 @@ const Input = ({
         type={type}
         name={name}
         onChange={onChange}
-        value={formattedValue()}
+        value={defaultValue || formattedValue()}
         placeholder={placeholder}
         className={styles.text__change}
       />
@@ -41,13 +49,14 @@ const Input = ({
 };
 
 Input.propTypes = {
-  label: PropTypes.string,
   name: PropTypes.string,
-  placeholder: PropTypes.string,
   type: PropTypes.string,
-  className: PropTypes.string,
-  field: PropTypes.object,
   form: PropTypes.object,
+  label: PropTypes.string,
+  field: PropTypes.object,
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  defaultValue: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -58,6 +67,7 @@ Input.defaultProps = {
   field: {},
   className: '',
   placeholder: '',
+  defaultValue: '',
 };
 
 export default Input;

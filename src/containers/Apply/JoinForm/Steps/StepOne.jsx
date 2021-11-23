@@ -12,7 +12,7 @@ import {
 import PhoneInput from '../PhoneInput';
 import styles from '../Apply.scss';
 
-const StepOne = ({ editActiveStep, setApplicationForm }) => {
+const StepOne = ({ editActiveStep, setApplicationForm, applicationForm }) => {
   return (
     <>
       <Formik
@@ -24,32 +24,40 @@ const StepOne = ({ editActiveStep, setApplicationForm }) => {
         }}
       >
         {() => (
-          <Form className={styles.form_style} autoComplete="off">
+          <Form autoComplete="off" className={styles.form_style}>
             <Field
               name="jobType"
               label="Job type"
               component={FormikSelect}
               options={dropdownOptions}
+              defaultValue={applicationForm.jobType}
             />
             <Field
               name="firstName"
               label="First name"
               placeholder="First name"
               component={FormikInput}
+              defaultValue={applicationForm.firstName}
             />
             <Field
               name="lastName"
               label="Last name"
               placeholder="Last name"
               component={FormikInput}
+              defaultValue={applicationForm.lastName}
             />
             <Field
               name="email"
               label="Email"
               placeholder="Email"
               component={FormikInput}
+              defaultValue={applicationForm.email}
             />
-            <Field name="phoneNumber" component={PhoneInput} />
+            <Field
+              name="phoneNumber"
+              component={PhoneInput}
+              defaultValue={applicationForm.phoneNumber}
+            />
             <Button className={styles.next} type="submit">
               Next
             </Button>
@@ -62,10 +70,12 @@ const StepOne = ({ editActiveStep, setApplicationForm }) => {
 
 StepOne.propTypes = {
   editActiveStep: PropTypes.func,
+  applicationForm: PropTypes.object,
   setApplicationForm: PropTypes.func,
 };
 
 StepOne.defaultProps = {
+  applicationForm: {},
   editActiveStep: () => {},
   setApplicationForm: () => {},
 };

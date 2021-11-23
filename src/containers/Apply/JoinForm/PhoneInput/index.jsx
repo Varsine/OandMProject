@@ -12,6 +12,7 @@ const PhoneInputComponent = (props) => {
   const {
     className,
     field: { name, value },
+    defaultValue,
     form: { errors, setFieldValue, touched },
     country,
     disabled,
@@ -32,7 +33,7 @@ const PhoneInputComponent = (props) => {
       <PhoneInput
         placeholder="Enter phone number"
         name={name}
-        value={value}
+        value={defaultValue || value}
         disableDropdown={false}
         onChange={telNumChange}
         country={country}
@@ -53,12 +54,13 @@ const PhoneInputComponent = (props) => {
 };
 
 PhoneInputComponent.propTypes = {
+  label: PropTypes.string,
+  disabled: PropTypes.bool,
+  country: PropTypes.string,
   className: PropTypes.string,
   form: PropTypes.any.isRequired,
+  defaultValue: PropTypes.string,
   field: PropTypes.any.isRequired,
-  label: PropTypes.string,
-  country: PropTypes.string,
-  disabled: PropTypes.bool,
 };
 
 PhoneInputComponent.defaultProps = {
@@ -66,6 +68,7 @@ PhoneInputComponent.defaultProps = {
   country: 'am',
   className: '',
   disabled: false,
+  defaultValue: '',
 };
 
 export default PhoneInputComponent;
