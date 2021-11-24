@@ -1,6 +1,7 @@
 import React from 'react';
 import { getIn } from 'formik';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import 'react-phone-input-2/lib/style.css';
 import PhoneInput from 'react-phone-input-2';
 
@@ -25,10 +26,16 @@ const PhoneInputComponent = (props) => {
     setFieldValue(name, phoneNumber);
   };
 
+  const phoneInpContainer = classNames(
+    styles.phone__number,
+    className,
+    errorStyle,
+    disabledStyle,
+    'text-input-group',
+  );
+
   return (
-    <div
-      className={`${styles.phone__number} ${className} ${errorStyle} ${disabledStyle} text-input-group`}
-    >
+    <div className={phoneInpContainer}>
       <PhoneInput
         name={name}
         value={value}

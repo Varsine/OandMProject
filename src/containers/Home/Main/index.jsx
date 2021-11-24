@@ -51,12 +51,14 @@ const Main = () => {
     [styles.wrapper__animation]: !inView,
   });
 
+  const mainContainerClasses = classNames(
+    'section',
+    'fp-auto-height',
+    styles.container,
+  );
+
   return (
-    <section
-      ref={ref}
-      id="header"
-      className={`section fp-auto-height ${styles.container}`}
-    >
+    <section ref={ref} id="header" className={mainContainerClasses}>
       <div className="canvas__working" />
       <div className={containerClasses}>
         <LogoMoveBallIcon

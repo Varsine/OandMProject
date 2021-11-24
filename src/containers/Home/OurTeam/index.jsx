@@ -1,6 +1,7 @@
 import React, { useMemo, useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import { useSelector } from 'react-redux';
+import classNames from 'classnames';
 
 import { teamCards } from 'utils/index';
 import { SliderArrows } from 'components/index';
@@ -62,10 +63,14 @@ const OurTeam = () => {
     ),
   };
 
+  const mainContainerClasses = classNames(
+    'section',
+    styles.container,
+    styles.height_response,
+  );
+
   return (
-    <section
-      className={`section ${styles.container} ${styles.height_response}`}
-    >
+    <section className={mainContainerClasses}>
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>Our Team</h2>

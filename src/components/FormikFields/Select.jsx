@@ -38,25 +38,31 @@ const Select = ({
     </div>
   ));
 
+  const dropdownContainer = classNames(styles.dropdown__wrapper, {
+    [styles.dropdown__wrapper_active]: isOpen,
+  });
+
+  const dropdownHeader = classNames(styles.dropdown__header, {
+    [styles.dropdown__header_active]: isOpen,
+  });
+
+  const selectAnimation = classNames({
+    [styles.dropdown__header_icon]: isOpen,
+  });
+
   return (
     <div className={styles.dropdown} ref={dropdownRef}>
       <span className={styles.label}>{label}</span>
-      <div
-        className={classNames(styles.dropdown__wrapper, {
-          [styles.dropdown__wrapper_active]: isOpen,
-        })}
-      >
+      <div className={dropdownContainer}>
         <div
           role="button"
           onClick={openModalToggleer}
-          className={classNames(styles.dropdown__header, {
-            [styles.dropdown__header_active]: isOpen,
-          })}
+          className={dropdownHeader}
         >
           <p>{value}</p>
           <ArrowGdtIcon
             style={{ transform: `rotate(${isOpen ? -90 : 90}deg)` }}
-            className={classNames({ [styles.dropdown__header_icon]: isOpen })}
+            className={selectAnimation}
           />
         </div>
         {isOpen && (
@@ -68,20 +74,20 @@ const Select = ({
 };
 
 Select.propTypes = {
-  label: PropTypes.string,
   name: PropTypes.string,
-  placeholder: PropTypes.string,
-  field: PropTypes.object,
   form: PropTypes.object,
+  field: PropTypes.object,
+  label: PropTypes.string,
   options: PropTypes.array,
+  placeholder: PropTypes.string,
 };
 
 Select.defaultProps = {
-  label: '',
-  name: '',
-  placeholder: '',
-  field: {},
   form: {},
+  name: '',
+  label: '',
+  field: {},
   options: [],
+  placeholder: '',
 };
 export default Select;

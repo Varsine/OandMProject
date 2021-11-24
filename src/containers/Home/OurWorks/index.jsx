@@ -86,8 +86,13 @@ const OurWorks = () => {
     [curSlide],
   );
 
+  const ourWorksContainerClasses = classNames(
+    styles.height_response,
+    'section',
+  );
+
   return (
-    <section className={`${styles.height_response} section`}>
+    <section className={ourWorksContainerClasses}>
       <div className="canvas__working" />
       <div className={styles.wrapper}>
         <DownArrow onClick={navigateUp} className={styles.wrapper__prev} />

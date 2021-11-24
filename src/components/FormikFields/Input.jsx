@@ -14,16 +14,10 @@ const Input = ({
   form: { touched, errors },
   field: { onChange, name, value },
 }) => {
-  //
-  const formattedValue = () => {
-    if (name === 'email') {
-      return value.toLowerCase();
-    }
-    return value;
-  };
+  const formContainerClasses = classNames(styles.text, className);
 
   return (
-    <div className={classNames(styles.text, className)}>
+    <div className={formContainerClasses}>
       <label className={styles.label_style} htmlFor={name}>
         {label}
       </label>
@@ -31,7 +25,8 @@ const Input = ({
         type={type}
         name={name}
         onChange={onChange}
-        value={formattedValue()}
+        value={value}
+        autoCapitalize="off"
         placeholder={placeholder}
         className={styles.text__change}
       />

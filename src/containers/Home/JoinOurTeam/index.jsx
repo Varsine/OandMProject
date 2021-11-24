@@ -1,5 +1,7 @@
-import React, { useCallback } from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
+import classNames from 'classnames';
 
 import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
@@ -10,18 +12,27 @@ import styles from './JoinOurTeam.scss';
 import { infoText, subtitle, joinOurTeam } from './constants';
 
 const JoinOurTeam = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
 
-  const setInitialIndex = useCallback(() => {
-    const changeActiveStepIndex = setTimeout(() => {
+  useEffect(() => {
+    const handleStop = () => {
       dispatch(changeIndex(1));
-    }, 1000);
+    };
 
-    clearTimeout(changeActiveStepIndex);
-  }, []);
+    router.events.on('routeChangeComplete', handleStop);
+    router.events.on('routeChangeError', handleStop);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleStop);
+      router.events.off('routeChangeError', handleStop);
+    };
+  }, [dispatch, router]);
+
+  const joinContainerClasses = classNames(styles.height_response, 'section');
 
   return (
-    <section className={`${styles.height_response} section`}>
+    <section className={joinContainerClasses}>
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <div className={styles.wrapper__info}>
@@ -31,7 +42,6 @@ const JoinOurTeam = () => {
           <NextLink
             role="button"
             to={paths.apply}
-            onClick={setInitialIndex}
             className={styles.wrapper__info_join}
           >
             {joinOurTeam}

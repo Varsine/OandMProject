@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import classNames from 'classnames';
 
 import { activeIndexSelector } from 'slices/mainSlice';
 
@@ -18,8 +19,14 @@ const HowWeWork = () => {
   const textTwo =
     "There's on time for regrets. You've just got to keep moving forward.";
 
+  const rocketContainerClasses = classNames(
+    styles.height_response,
+    styles.we_work,
+    'section',
+  );
+
   return (
-    <section className={`${styles.height_response} ${styles.we_work} section`}>
+    <section className={rocketContainerClasses}>
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>How We Work</h2>
