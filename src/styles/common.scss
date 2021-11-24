@@ -228,7 +228,7 @@
     height: 51px !important;
     border: none !important;
     font-size: 16px !important;
-    color: #f1f2f2 !important;
+    color: $white-20 !important;
     user-select: all !important;
     position: relative !important;
     cursor: url(/images/Mouse.png), auto;
@@ -237,7 +237,7 @@
     background: $white-30 !important;
 
     &::placeholder {
-      color: #f1f2f2 !important;
+      color: $white-20 !important;
       cursor: url(/images/Mouse.png), auto;
     }
   }
@@ -335,13 +335,5 @@
   .country-list::-webkit-scrollbar-thumb {
     background: #dce1f4 !important;
     border-radius: 10px !important;
-  }
-
-  .country-list::-webkit-scrollbar-thumb:hover {
-    background: #b30000 !important;
-  }
-
-  .react-tel-input .country-list .country .dial-code {
-    color: red !important;
   }
 }
