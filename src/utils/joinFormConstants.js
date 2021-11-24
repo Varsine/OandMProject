@@ -17,7 +17,6 @@ export const stepOneValidationSchema = Yup.object({
   email: Yup.string().email('Invalid email format').required('* required'),
   phoneNumber: Yup.string()
     .min(8)
-    .max(12, 'Maximum 12 charachters')
     .required('* required')
     .matches(phoneRegExp, 'Phone number is not valid'),
 });
