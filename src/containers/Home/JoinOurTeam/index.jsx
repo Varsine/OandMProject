@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 
 import { paths } from 'routes/index';
@@ -10,11 +11,22 @@ import styles from './JoinOurTeam.scss';
 import { infoText, subtitle, joinOurTeam } from './constants';
 
 const JoinOurTeam = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
 
-  const setInitialIndex = () => {
-    dispatch(changeIndex(1));
-  };
+  useEffect(() => {
+    const handleStop = () => {
+      dispatch(changeIndex(1));
+    };
+
+    router.events.on('routeChangeComplete', handleStop);
+    router.events.on('routeChangeError', handleStop);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleStop);
+      router.events.off('routeChangeError', handleStop);
+    };
+  }, [dispatch, router]);
 
   return (
     <section className={`${styles.height_response} section`}>
@@ -27,7 +39,6 @@ const JoinOurTeam = () => {
           <NextLink
             role="button"
             to={paths.apply}
-            onClick={setInitialIndex}
             className={styles.wrapper__info_join}
           >
             {joinOurTeam}

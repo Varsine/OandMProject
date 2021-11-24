@@ -13,14 +13,19 @@ const Input = ({
   form: { touched, errors },
   field: { onChange, name, value },
 }) => {
+  const formContainerClasses = classNames(styles.text, className);
+
   return (
-    <div className={classNames(styles.text, className)}>
-      <label htmlFor={name}>{label}</label>
+    <div className={formContainerClasses}>
+      <label className={styles.label_style} htmlFor={name}>
+        {label}
+      </label>
       <input
         type={type}
         name={name}
-        value={value}
         onChange={onChange}
+        value={value}
+        autoCapitalize="off"
         placeholder={placeholder}
         className={styles.text__change}
       />
@@ -32,13 +37,13 @@ const Input = ({
 };
 
 Input.propTypes = {
-  label: PropTypes.string,
   name: PropTypes.string,
-  placeholder: PropTypes.string,
   type: PropTypes.string,
-  className: PropTypes.string,
-  field: PropTypes.object,
   form: PropTypes.object,
+  label: PropTypes.string,
+  field: PropTypes.object,
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 Input.defaultProps = {

@@ -39,7 +39,7 @@ const linksInformation = [
     ariaLabel: 'telegram',
   },
   {
-    url: 'https://instagram.com/shelllogix?utm_medium=copy_link',
+    url: 'https://www.instagram.com/shelllogix',
     icon: <Instagram />,
     iconHover: <InstagramHover />,
     ariaLabel: 'instagram',

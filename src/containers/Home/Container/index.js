@@ -23,7 +23,7 @@ const HomeContainer = () => {
   }, [isLaptop]);
 
   const changeActiveStep = (section, destination) => {
-    if (!isLaptop) {
+    if (!isLaptop && window.splatStack) {
       window.splatStack.push(Math.random() * 1 + 4);
     }
     dispatch(changeIndex(destination.index + 1));
@@ -50,7 +50,7 @@ const HomeContainer = () => {
     <ReactFullPage
       navigation={false}
       fitToSection={false}
-      scrollingSpeed={1000}
+      scrollingSpeed={1300}
       keyboardScrolling={false}
       onLeave={changeActiveStep}
       render={renderFullPageContent}
