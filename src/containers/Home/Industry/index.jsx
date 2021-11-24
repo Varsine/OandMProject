@@ -75,13 +75,8 @@ const Industry = () => {
     [styles.d_none]: activeSelector !== 4 && isDesktop,
   });
 
-  const industryContainerClasses = classNames(
-    styles.height_response,
-    'section',
-  );
-
   return (
-    <section className={industryContainerClasses}>
+    <section className={`${styles.height_response} section`}>
       <div className="canvas__working" />
       <div className={`container ${industryStyles}`}>
         <div className={styles.wrapper__menu}>{renderIndustries}</div>

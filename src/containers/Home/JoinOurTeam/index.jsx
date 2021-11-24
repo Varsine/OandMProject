@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import classNames from 'classnames';
 
 import { paths } from 'routes/index';
 import { NextLink } from 'components/index';
@@ -29,10 +28,8 @@ const JoinOurTeam = () => {
     };
   }, [dispatch, router]);
 
-  const joinContainerClasses = classNames(styles.height_response, 'section');
-
   return (
-    <section className={joinContainerClasses}>
+    <section className={`${styles.height_response} section`}>
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <div className={styles.wrapper__info}>
