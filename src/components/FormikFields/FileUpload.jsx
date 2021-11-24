@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { TextError } from 'components/index';
 import styles from 'components/Field/Field.scss';
+
+import TextError from './TextError';
 
 import { FileIcon } from '~/src/icons';
 
