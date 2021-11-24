@@ -3,7 +3,7 @@
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  background-size: cover;
+  background-size: 480px 602px;
   background-repeat: no-repeat;
 
   &_active {
@@ -523,8 +523,9 @@
   &_item {
     width: 40px;
     height: 43px;
-    background-image: url('/images/team/Lyudvig.png');
-    background-size: 600px;
+    background-image: url('/images/logo.png');
+    // background-size: cover;
+    // background-repeat: no-repeat;
     transform: translate(0, 0);
     transition: transform 0.7s;
   }

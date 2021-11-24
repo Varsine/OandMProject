@@ -1,8 +1,8 @@
 import React from 'react';
-import PhoneInput from 'react-phone-input-2';
+import { getIn } from 'formik';
 import PropTypes from 'prop-types';
 import 'react-phone-input-2/lib/style.css';
-import { getIn } from 'formik';
+import PhoneInput from 'react-phone-input-2';
 
 import { TextError } from 'components/index';
 
@@ -11,11 +11,10 @@ import styles from '../Apply.scss';
 const PhoneInputComponent = (props) => {
   const {
     className,
-    field: { name, value },
-    defaultValue,
-    form: { errors, setFieldValue, touched },
     country,
     disabled,
+    field: { name, value },
+    form: { errors, setFieldValue, touched },
   } = props;
 
   const isError = getIn(touched, name) && getIn(errors, name);
@@ -31,12 +30,12 @@ const PhoneInputComponent = (props) => {
       className={`${styles.phone__number} ${className} ${errorStyle} ${disabledStyle} text-input-group`}
     >
       <PhoneInput
-        placeholder="Enter phone number"
         name={name}
-        value={defaultValue || value}
-        disableDropdown={false}
-        onChange={telNumChange}
+        value={value}
         country={country}
+        onChange={telNumChange}
+        disableDropdown={false}
+        placeholder="Enter phone number"
       />
       <div className={styles.phone__number_error_phone}>
         {touched[name] && errors[name] && (
@@ -59,7 +58,6 @@ PhoneInputComponent.propTypes = {
   country: PropTypes.string,
   className: PropTypes.string,
   form: PropTypes.any.isRequired,
-  defaultValue: PropTypes.string,
   field: PropTypes.any.isRequired,
 };
 
@@ -68,7 +66,6 @@ PhoneInputComponent.defaultProps = {
   country: 'am',
   className: '',
   disabled: false,
-  defaultValue: '',
 };
 
 export default PhoneInputComponent;

@@ -11,7 +11,6 @@ const Input = ({
   label,
   className,
   placeholder,
-  defaultValue,
   form: { touched, errors },
   field: { onChange, name, value },
 }) => {
@@ -23,11 +22,6 @@ const Input = ({
     return value;
   };
 
-  // const changeInpHandler = (e) => {
-  //   onChange();
-  //   return e.target.value;
-  // };
-
   return (
     <div className={classNames(styles.text, className)}>
       <label className={styles.label_style} htmlFor={name}>
@@ -37,7 +31,7 @@ const Input = ({
         type={type}
         name={name}
         onChange={onChange}
-        value={defaultValue || formattedValue()}
+        value={formattedValue()}
         placeholder={placeholder}
         className={styles.text__change}
       />
@@ -56,7 +50,6 @@ Input.propTypes = {
   field: PropTypes.object,
   className: PropTypes.string,
   placeholder: PropTypes.string,
-  defaultValue: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -67,7 +60,6 @@ Input.defaultProps = {
   field: {},
   className: '',
   placeholder: '',
-  defaultValue: '',
 };
 
 export default Input;

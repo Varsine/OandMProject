@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import classNames from 'classnames';
 import axios from 'axios';
 
 import { Button } from 'components/index';
+import { stepTwoInitialValues, stepOneInitialValues } from 'utils/index';
 
 import Success from './Steps/Success';
 import StepOne from './Steps/StepOne';
@@ -13,7 +14,12 @@ import styles from './Apply.scss';
 import { StepIcon } from '../../../icons';
 
 const JoinForm = () => {
-  const [applicationForm, setApplicationForm] = useState({});
+  const [applicationForm, setApplicationForm] = useState({
+    stepFirst: stepOneInitialValues,
+    stepSecond: stepTwoInitialValues,
+  });
+
+  const secondFormikRef = useRef(null);
   const [activeIndex, setIsActiveIndex] = useState(1);
   const [renderAnimation, setRenderAnimation] = useState(false);
 
@@ -41,6 +47,14 @@ const JoinForm = () => {
     setRenderAnimation(true);
   };
 
+  const handlePrevStep = () => {
+    editActiveStep(1);
+    setApplicationForm((prevForm) => ({
+      ...prevForm,
+      stepSecond: secondFormikRef.current.values,
+    }));
+  };
+
   return (
     <section className={`${styles.height_response} section`}>
       <div className="canvas__working" />
@@ -56,7 +70,7 @@ const JoinForm = () => {
               <p className={styles.subtitle}>Submit your information here!</p>
               <div className={styles.steps}>
                 <Button
-                  onClick={() => editActiveStep(1)}
+                  onClick={handlePrevStep}
                   className={classNames(styles.steps__item, {
                     [styles.steps__item_active]: activeIndex >= 1,
                   })}
@@ -85,6 +99,7 @@ const JoinForm = () => {
           )}
           {activeIndex === 2 && (
             <StepTwo
+              formikRef={secondFormikRef}
               sendApplicationHandler={sendApplicationHandler}
               applicationForm={applicationForm}
               setApplicationForm={setApplicationForm}

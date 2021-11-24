@@ -12,7 +12,6 @@ const Select = ({
   label,
   field: { name, value },
   options,
-  defaultValue,
   form: { setFieldValue },
 }) => {
   const dropdownRef = useRef(null);
@@ -54,7 +53,7 @@ const Select = ({
             [styles.dropdown__header_active]: isOpen,
           })}
         >
-          <p>{defaultValue || value}</p>
+          <p>{value}</p>
           <ArrowGdtIcon
             style={{ transform: `rotate(${isOpen ? -90 : 90}deg)` }}
             className={classNames({ [styles.dropdown__header_icon]: isOpen })}
@@ -75,7 +74,6 @@ Select.propTypes = {
   field: PropTypes.object,
   form: PropTypes.object,
   options: PropTypes.array,
-  defaultValue: PropTypes.string,
 };
 
 Select.defaultProps = {
@@ -85,6 +83,5 @@ Select.defaultProps = {
   field: {},
   form: {},
   options: [],
-  defaultValue: '',
 };
 export default Select;
