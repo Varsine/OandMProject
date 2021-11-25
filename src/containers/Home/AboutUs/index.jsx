@@ -40,7 +40,7 @@ const AboutUs = () => {
       } else {
         setIsShow(false);
       }
-    }, 1300);
+    }, 300);
   }, [isOpen]);
 
   const handlerChange = (idx) => {
