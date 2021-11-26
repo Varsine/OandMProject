@@ -48,11 +48,13 @@ const JoinForm = () => {
   };
 
   const handlePrevStep = () => {
-    editActiveStep(1);
-    setApplicationForm((prevForm) => ({
-      ...prevForm,
-      stepSecond: secondFormikRef.current.values,
-    }));
+    if (activeIndex !== 1) {
+      editActiveStep(1);
+      setApplicationForm((prevForm) => ({
+        ...prevForm,
+        stepSecond: secondFormikRef.current.values,
+      }));
+    }
   };
 
   return (
