@@ -32,7 +32,7 @@
     position: relative;
     background: $liner-blue;
     font-weight: normal;
-    border-radius: 50px;
+    border-radius: 8px;
     @extend %open-sans-16;
     @extend %flex-between;
 
@@ -57,6 +57,12 @@
   }
 
   &__wrapper {
+    position: relative;
+    border-radius: 8px;
+    background: $liner-blue;
+  }
+
+  &__wrapper_active {
     position: relative;
     background: $liner-blue;
     border-radius: 8px 8px 0 0;
@@ -95,15 +101,18 @@
 .label {
   display: block;
   font-weight: normal;
-  margin-bottom: 8px;
   @extend %open-sans-18;
 }
 
 .message {
-  background: $liner-red;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: right;
   font-weight: 600;
+  text-align: right;
   @extend %open-sans-16;
+  color: #ff3623;
+}
+
+.label_style {
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: normal;
 }

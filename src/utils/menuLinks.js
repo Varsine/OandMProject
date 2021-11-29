@@ -1,23 +1,15 @@
 import {
-  Section4DarkIcon,
   Section5DarkIcon,
   Section6DarkIcon,
   Section7DarkIcon,
   Section8DarkIcon,
-  // Section9DarkIcon,
-  // Section9LigthIcon,
-  // Section10DarkIcon,
   Section11DarkIcon,
   Section5ActiveIcon,
   SectionOneDarkIcon,
   SectionTwoDarkIcon,
-  Section4ActiveIcon,
   Section6ActiveIcon,
   Section7ActiveIcon,
   Section8ActiveIcon,
-  // Section9ActiveIcon,
-  // Section10LigthIcon,
-  // Section10ActiveIcon,
   Section11ActiveIcon,
   SectionOneActiveIcon,
   SectionTwoActiveIcon,
@@ -42,8 +34,8 @@ const menuLinks = [
     sectionIndex: 3,
   },
   {
-    icon: Section4DarkIcon,
-    iconHover: Section4ActiveIcon,
+    icon: Section8DarkIcon,
+    iconHover: Section8ActiveIcon,
     sectionIndex: 4,
   },
   {
@@ -62,14 +54,9 @@ const menuLinks = [
     sectionIndex: 7,
   },
   {
-    icon: Section8DarkIcon,
-    iconHover: Section8ActiveIcon,
-    sectionIndex: 8,
-  },
-  {
     icon: Section11DarkIcon,
     iconHover: Section11ActiveIcon,
-    sectionIndex: 9,
+    sectionIndex: 8,
   },
 ];
 

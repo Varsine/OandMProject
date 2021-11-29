@@ -1,6 +1,27 @@
 .height_response {
+  overflow-x: hidden !important;
+
   @include breakpoint(desktop) {
-    height: 100vh !important;
+    height: auto !important;
+    overflow-y: scroll !important;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.phone__number {
+  position: relative;
+
+  &_error_phone {
+    position: absolute;
+    top: 73px;
+    right: 2px;
   }
 }
 
@@ -10,21 +31,32 @@
 }
 
 .container {
-  height: 100vh;
-  padding: 80px 20px 60px;
-  flex-direction: column;
-  @extend %flex-center;
-  position: relative;
   z-index: 9;
-  overflow: hidden;
+  min-height: 100vh;
+  position: relative;
+  flex-direction: column;
+  padding: 80px 20px 60px;
+  @extend %flex-center;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @include breakpoint(tablet) {
-    padding-top: 66px;
+    padding: 65px 20px 50px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
 .wrapper {
   display: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .wrapper_anima {
@@ -45,8 +77,11 @@
     transform: scale(0);
   }
   100% {
-    overflow-y: auto;
     transform: scale(1);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -57,7 +92,6 @@
   @include breakpoint(tablet-m) {
     font-size: 32px;
     font-weight: 600;
-    padding: 24px 0 0;
     line-height: 44px;
   }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
+import { QuestionOctagon } from '@styled-icons/bootstrap/QuestionOctagon';
 
 import { NextImage } from 'components/index';
 import { aboutUsInfoList } from 'utils/index';
@@ -29,10 +30,17 @@ const AboutUsBlock = ({ src, currentIndex, className, classRope }) => {
     <>
       <div className={classNames(styles.block, className)}>
         <div className={classNames(styles.block__rope, classRope)} />
-        <div role="button" onClick={handlerOpenPopup}>
+        <div
+          className={styles.block__img}
+          role="button"
+          onClick={handlerOpenPopup}
+        >
+          <div className={styles.block__img_wrapper}>
+            <QuestionOctagon className={styles.block__img_wrapper_icon} />
+          </div>
           <NextImage
             src={src}
-            className={styles.block__image}
+            className={styles.block__img__image}
             loading="eager"
           />
         </div>

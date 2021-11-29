@@ -3,9 +3,9 @@ import ReactFullPage from '@fullpage/react-fullpage';
 import { useDispatch } from 'react-redux';
 
 import { IS_SERVER } from 'constants/index';
+import { changeIndex } from 'slices/mainSlice';
 import { mainSections } from 'utils/index';
 import { useWindowSize } from 'hooks/index';
-import { changeIndex } from 'slices/mainSlice';
 import { FullPageLayout } from 'layouts/index';
 
 const HomeContainer = () => {

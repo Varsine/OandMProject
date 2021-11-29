@@ -3,31 +3,43 @@ import styles from './JoinOurTeam.scss';
 export const dotsData = [
   {
     id: 1,
+    rotY: '0deg',
+    rotX: '0deg',
     classFirst: styles.cubes__dot,
     classSecond: styles.front,
   },
   {
     id: 2,
+    rotY: '0deg',
+    rotX: '-90deg',
     classFirst: styles.cubes__dot,
     classSecond: styles.left,
   },
   {
     id: 3,
+    rotY: '-90deg',
+    rotX: '0deg',
     classFirst: styles.cubes__dot,
     classSecond: styles.right,
   },
   {
     id: 4,
+    rotY: '0deg',
+    rotX: '90deg',
     classFirst: styles.cubes__dot,
     classSecond: styles.top,
   },
   {
     id: 5,
+    rotY: '90deg',
+    rotX: '0deg',
     classFirst: styles.cubes__dot,
     classSecond: styles.bottom,
   },
   {
     id: 6,
+    rotY: '180deg',
+    rotX: '0deg',
     classFirst: styles.cubes__dot,
     classSecond: styles.back,
   },

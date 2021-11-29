@@ -29,6 +29,6 @@ export { default as ArrowIconLight } from './arrowlight.svg';
 export { default as IndustyTwoIcon } from './Industries-2';
 export { default as AccountantIcon } from './accountantLight.svg';
 export { default as IndustyThreeIcon } from './Industries-3';
-export { default as IndustyFirstIcon } from './ecommerce.svg';
+export { default as IndustyFirstIcon } from './Ecommerce';
 export { default as LogoMoveBallIcon } from './LogoMoveBallIcon';
 export { default as AccountantLightIcon } from './accountant.svg';
