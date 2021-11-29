@@ -10,8 +10,8 @@ export const dotsData = [
   },
   {
     id: 2,
-    rotY: '90deg',
-    rotX: '0deg',
+    rotY: '0deg',
+    rotX: '-90deg',
     classFirst: styles.cubes__dot,
     classSecond: styles.left,
   },
@@ -31,8 +31,8 @@ export const dotsData = [
   },
   {
     id: 5,
-    rotY: '0deg',
-    rotX: '-90deg',
+    rotY: '90deg',
+    rotX: '0deg',
     classFirst: styles.cubes__dot,
     classSecond: styles.bottom,
   },
