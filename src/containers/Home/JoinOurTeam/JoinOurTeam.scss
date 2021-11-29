@@ -2,13 +2,13 @@
   position: relative;
 
   @include breakpoint(desktop) {
-    height: auto !important;
+    height: 100vh !important;
   }
 }
 
 .joinform_portal {
   opacity: 0;
-  max-width: 0%;
+  max-width: 100%;
   width: 100%;
   height: 0%;
   margin: 0 auto;
@@ -18,15 +18,15 @@
 }
 
 .joinform_portal__anima {
-  margin: 0 auto;
-  top: 45%;
-  bottom: 0;
-  position: absolute;
-  right: 0;
   left: 0;
+  top: 45%;
+  right: 0;
+  bottom: 0;
   z-index: 9;
-  height: calc(100% - 140px) !important;
-  animation: applayAnima 10s forwards linear;
+  margin: 0 auto;
+  position: absolute;
+  height: calc(100% - 139px) !important;
+  animation: applayAnima 1s forwards linear;
 }
 
 .wrapper {
@@ -324,16 +324,14 @@
 
 @keyframes applayAnima {
   0% {
-    top: 0;
-    bottom: 0;
-    height: 2%;
-    opacity: 1;
-    padding: 0;
+    transform: scale(0);
+    opacity: 0.3;
+    max-width: 100%;
+    top: 80px;
   }
   100% {
     top: 80px;
-    padding: 0;
+    transform: scale(1);
     opacity: 1;
-    max-width: 100%;
   }
 }

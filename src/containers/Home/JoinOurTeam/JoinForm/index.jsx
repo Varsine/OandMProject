@@ -8,7 +8,7 @@ import { stepTwoInitialValues, stepOneInitialValues } from 'utils/index';
 import Success from './Steps/Success';
 import StepOne from './Steps/StepOne';
 import StepTwo from './Steps/StepTwo';
-import PiecesAnimation from './PiecesAnimation';
+// import PiecesAnimation from './PiecesAnimation';
 import styles from './Apply.scss';
 
 import { StepIcon } from '../../../../icons';
@@ -21,7 +21,7 @@ const JoinForm = () => {
 
   const secondFormikRef = useRef(null);
   const [activeIndex, setIsActiveIndex] = useState(1);
-  const [renderAnimation, setRenderAnimation] = useState(false);
+  // const [renderAnimation, setRenderAnimation] = useState(false);
 
   const editActiveStep = (step) => {
     setIsActiveIndex(step);
@@ -39,13 +39,13 @@ const JoinForm = () => {
     );
   };
 
-  const formContainers = classNames(styles.wrapper, {
-    [styles.wrapper_anima]: renderAnimation,
-  });
+  // const formContainers = classNames(styles.wrapper, {
+  //   [styles.wrapper_anima]: renderAnimation,
+  // });
 
-  const animClickHanlder = () => {
-    setRenderAnimation(true);
-  };
+  // const animClickHanlder = () => {
+  //   setRenderAnimation(true);
+  // };
 
   const handlePrevStep = () => {
     if (activeIndex !== 1) {
@@ -59,11 +59,11 @@ const JoinForm = () => {
 
   return (
     <div className={styles.container}>
-      <PiecesAnimation
+      {/* <PiecesAnimation
         isAnimate={renderAnimation}
         animClickHanlder={animClickHanlder}
-      />
-      <div className={formContainers}>
+      /> */}
+      <div className={styles.wrapper_anima}>
         {activeIndex !== 3 && (
           <div>
             <div className={styles.steps}>
