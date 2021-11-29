@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
 import { Input } from 'components/index';
@@ -9,12 +10,14 @@ import styles from './JoinOurTeam.scss';
 
 const Cubes = () => {
   const activeIndex = useSelector(activeIndexSelector);
+  const cubeScaleRef = useRef(null);
   const cubeRotateRef = useRef(null);
   const isActiveSection = activeIndex === 7;
 
   const [rotateX, setRotateX] = useState('0deg');
   const [rotateY, setRotateY] = useState('0deg');
   const [activeDot, setActiveDot] = useState(1);
+  const [isActiveFace, setIsActiveFace] = useState(false);
 
   const nextCubFace = () => {
     if (activeDot === 6) {
@@ -22,6 +25,10 @@ const Cubes = () => {
     } else {
       setActiveDot(activeDot + 1);
     }
+    setIsActiveFace(true);
+    cubeScaleRef.current = setTimeout(() => {
+      setIsActiveFace(false);
+    }, 500);
   };
 
   const changeActiveDots = (id, x, y) => {
@@ -29,6 +36,10 @@ const Cubes = () => {
     setRotateX(x);
     setRotateY(y);
     clearTimeout(cubeRotateRef.current);
+    setIsActiveFace(true);
+    cubeScaleRef.current = setTimeout(() => {
+      setIsActiveFace(false);
+    }, 500);
   };
 
   useEffect(() => {
@@ -37,8 +48,16 @@ const Cubes = () => {
       setRotateX(rotX);
       setRotateY(rotY);
       cubeRotateRef.current = setTimeout(nextCubFace, 2000);
+    } else {
+      clearTimeout(cubeScaleRef.current);
     }
   }, [isActiveSection, activeDot]);
+
+  const mouseEnterCube = () => clearTimeout(cubeRotateRef.current);
+
+  const mouseLeaveCube = () => {
+    cubeRotateRef.current = setTimeout(nextCubFace, 2000);
+  };
 
   const renderDots = dotsData.map(
     ({ id, rotY, rotX, classFirst, classSecond }) => (
@@ -57,10 +76,25 @@ const Cubes = () => {
     <div key={id} className={`${classFirst} ${classSecond}`} />
   ));
 
+  const cubeClasses = useMemo(
+    () =>
+      classNames(styles.cubes__space3d, {
+        [styles.cubes__space3d__active]: isActiveFace,
+      }),
+    [isActiveFace],
+  );
+
   return (
     <div className={styles.cubes}>
       {renderDots}
-      <div role="button" className={styles.cubes__space3d}>
+      <div
+        role="button"
+        onMouseEnter={mouseEnterCube}
+        onMouseLeave={mouseLeaveCube}
+        onTouchStart={mouseEnterCube}
+        onTouchEnd={mouseLeaveCube}
+        className={cubeClasses}
+      >
         <div
           role="button"
           style={{ transform: `rotateX(${rotateX}) rotateY(${rotateY})` }}

@@ -138,6 +138,7 @@
 
       @include breakpoint(tablet) {
         max-width: 100%;
+        margin: 32px 0 24px;
       }
     }
   }
@@ -153,17 +154,17 @@
 
   @media (max-height: 800px) {
     width: 400px;
-    height: 400px;
+    height: 420px;
   }
 
   @media screen and (max-width: 1280px) {
     width: 320px;
-    height: 370px;
+    height: 380px;
   }
 
   @include breakpoint(desktop) {
     width: 335px;
-    height: 360px;
+    height: 380px;
   }
 
   @include breakpoint(tablet-m) {
@@ -179,6 +180,13 @@
     width: $cubeSize;
     height: $cubeSize;
     text-align: center;
+    transform: scale(1);
+    transition: all 0.5s;
+
+    &__active {
+      transform: scale(0.7);
+      transition: all 0.5s;
+    }
 
     @media (max-height: 800px) {
       width: $cubeSizeSecond;
@@ -213,7 +221,6 @@
       border: 1px solid $gray-8;
       background: $white;
       box-shadow: $cubes-box-shadow;
-      opacity: 0.9;
       background-repeat: no-repeat;
       background-size: cover;
       width: 100%;
@@ -231,7 +238,7 @@
 
     &__back {
       background-image: url(../../../../public/images/join_our_team/join_our_team_3.jpg);
-      @include cubTranslateY(180deg);
+      @include cubTranslateX(90deg);
     }
 
     &__left {
@@ -274,7 +281,7 @@
 
     &__top {
       background-image: url(../../../../public/images/join_our_team/join_our_team_6.jpg);
-      @include cubTranslateX(90deg);
+      @include cubTranslateY(180deg);
     }
 
     &__bottom {
@@ -287,13 +294,13 @@
     appearance: none;
     border-radius: 50%;
     margin: 7px !important;
-    border: 12px solid transparent;
+    border: 6px solid transparent;
     background: $white;
     position: static !important;
     transform: translateX(0px) !important;
 
     @include breakpoint(desktop) {
-      border: 10px solid transparent;
+      border: 8px solid transparent;
     }
   }
 }
