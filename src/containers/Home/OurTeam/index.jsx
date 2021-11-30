@@ -40,7 +40,8 @@ const OurTeam = () => {
   };
 
   const renderCarousel = useMemo(
-    () => activeIndex && <Carousel {...setting}>{renderSliderList}</Carousel>,
+    () =>
+      activeIndex === 6 && <Carousel {...setting}>{renderSliderList}</Carousel>,
     [activeIndex],
   );
 
