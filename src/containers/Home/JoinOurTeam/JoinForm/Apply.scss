@@ -26,32 +26,70 @@
 }
 
 .form_style {
+  width: 100%;
   margin: 0 auto;
   max-width: 594px;
+  padding: 0px 15px;
 }
 
-.container {
-  z-index: 9;
+.joinform_portal {
+  left: 0;
+  top: 80px;
+  height: 0;
+  opacity: 0;
   width: 100%;
-  height: 100%;
+  position: fixed;
   max-width: 100%;
-  position: relative;
-  flex-direction: column;
-  @extend %flex-center;
-  background: rgba(0, 0, 0, 0.9);
-  -webkit-backdrop-filter: blur(20px);
+  transform: scale(0);
+  backdrop-filter: blur(0);
+  transition: all 0.4s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  @include breakpoint(tablet-m) {
+    top: 64px;
+  }
+
+  &__back {
+    top: 0;
+    z-index: 1;
+    color: $white-20;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    animation: btnNone 4s alternate linear;
+  }
+}
+
+.joinform_portal__anima {
+  opacity: 1;
+  z-index: 556;
+  margin: 0 auto;
+  padding: 80px 15px;
+  overflow-x: hidden;
+  transform: scale(1);
+  height: calc(100vh - 129px);
   backdrop-filter: blur(20px);
+  transition: all 0.5s ease-in;
+  background-color: rgba(0, 0, 0, 0.6);
 
   &::-webkit-scrollbar {
     display: none;
   }
 
-  @include breakpoint(tablet) {
-    padding: 65px 20px 50px;
+  @include breakpoint(tablet-m) {
+    padding: 100px 15px;
+    height: calc(100vh - 113px);
+  }
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  &__back_anima {
+    top: 20px;
+    left: 30px;
+    z-index: 557;
+    position: fixed;
+    font-size: 22px;
+    color: $white-20;
+    padding: 5px 12px;
+    border-radius: 8px;
+    animation: btnAllowed 0.5s alternate linear;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
   }
 }
 
@@ -64,15 +102,28 @@
 }
 
 .wrapper_anima {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  display: block;
-  transform: scale(0);
-  position: absolute;
-  animation: formAnima 0.5s forwards;
+  height: 100vh;
   display: flex;
+  position: absolute;
+  transform: scale(0);
   flex-direction: column;
   justify-content: center;
+  padding: 0px 15px 50px;
+  animation: formAnima 0.5s forwards;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include breakpoint(tablet-m) {
+    padding: 240px 15px 50px;
+    height: calc(100vh - 114px);
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -80,7 +131,7 @@
 }
 
 .steps {
-  margin-bottom: 16px;
+  margin: 16px 0;
   @extend %flex-center;
 
   svg {
@@ -96,7 +147,9 @@
   &__item {
     width: 50px;
     height: 50px;
+    font-size: 29px;
     color: #f1f2f2;
+    font-weight: bolder;
     border-radius: 15px;
     background: rgba(234, 241, 250, 0.6);
 
@@ -114,10 +167,17 @@
 
 .success {
   width: 100%;
+  margin: 0 auto;
   max-width: 571px;
-  flex-direction: column;
-  margin: 50px auto;
+  overflow-x: hidden;
   @extend %flex-center;
+  flex-direction: column;
+  height: calc(100vh - 300px);
+
+  @include breakpoint(tablet-m) {
+    padding: 100px 15px;
+    height: calc(100vh - 323px);
+  }
 
   &__title {
     margin: 40px 0;
@@ -132,9 +192,9 @@
   }
 
   &__link {
-    background-color: silver;
     @extend %flex-center;
     @extend %button-gradient;
+    background-color: silver;
   }
 }
 
@@ -148,5 +208,50 @@
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+}
+
+@keyframes btnNone {
+  0% {
+    top: 20px;
+    left: 30px;
+    z-index: 557;
+    position: fixed;
+    font-size: 22px;
+    color: $white-20;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+  }
+  90% {
+    top: 20px;
+    left: 30px;
+    z-index: 557;
+    position: fixed;
+    font-size: 22px;
+    color: $white-20;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+  }
+  100% {
+    width: 0;
+    height: 0;
+    padding: 0;
+    font-size: 0;
+    color: transparent;
+    background: transparent;
+  }
+}
+
+@keyframes btnAllowed {
+  0% {
+    left: 250px;
+  }
+  50% {
+    left: 110px;
+  }
+  100% {
+    left: 30px !important;
   }
 }
