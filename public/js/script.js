@@ -1263,7 +1263,7 @@ window.addEventListener('mouseup', () => {
   updatePointerUpData(pointers[0]);
 });
 window.addEventListener('touchstart', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   const touches = e.targetTouches;
   while (touches.length >= pointers.length)
     pointers.push(new pointerPrototype());
@@ -1276,7 +1276,7 @@ window.addEventListener('touchstart', (e) => {
 window.addEventListener(
   'touchmove',
   (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const touches = e.targetTouches;
     for (let i = 0; i < touches.length; i++) {
       let pointer = pointers[i + 1];

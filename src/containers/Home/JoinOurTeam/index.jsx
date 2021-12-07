@@ -28,7 +28,6 @@ const JoinOurTeam = () => {
       </Portal>
       <section className={`${styles.height_response} section`}>
         <div className="canvas__working" />
-
         <div className={`container ${styles.wrapper}`}>
           <div className={styles.wrapper__info}>
             <h2 className={styles.wrapper__info_title}>{joinOurTeam}</h2>

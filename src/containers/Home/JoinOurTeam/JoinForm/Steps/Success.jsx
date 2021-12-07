@@ -11,7 +11,7 @@ const Success = ({ doneSummary }) => (
   <div className={styles.success}>
     <SuccessIcon />
     <h1 className={styles.success__title}>
-      Your applicatioin successfully submited!
+      Your application successfully submitted!
     </h1>
     <Button onClick={doneSummary} className={styles.success__link}>
       Done

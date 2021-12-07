@@ -7,23 +7,19 @@ import { Button } from 'components/index';
 import { useLockBodyScroll } from 'hooks/index';
 import { noop, stepTwoInitialValues, stepOneInitialValues } from 'utils/index';
 
-import Success from './Steps/Success';
-import StepOne from './Steps/StepOne';
-import StepTwo from './Steps/StepTwo';
+import { Success, StepOne, StepTwo } from './Steps/index';
 import styles from './Apply.scss';
-
-import { StepIcon } from '../../../../icons';
 
 const JoinForm = ({ isOpen, backHandler, joinForm }) => {
   const [applicationForm, setApplicationForm] = useState({
     stepFirst: stepOneInitialValues,
     stepSecond: stepTwoInitialValues,
   });
+  const [activeIndex, setIsActiveIndex] = useState(1);
 
   useLockBodyScroll(!isOpen);
 
   const secondFormikRef = useRef(null);
-  const [activeIndex, setIsActiveIndex] = useState(1);
 
   const editActiveStep = (step) => {
     setIsActiveIndex(step);
@@ -50,6 +46,7 @@ const JoinForm = ({ isOpen, backHandler, joinForm }) => {
       }));
     }
   };
+
   const btnClasses = classNames(styles.joinform_portal__back, {
     [styles.joinform_portal__anima__back_anima]: joinForm,
   });
@@ -58,49 +55,37 @@ const JoinForm = ({ isOpen, backHandler, joinForm }) => {
     [styles.joinform_portal__anima]: joinForm,
   });
 
+  const stepsClasses = classNames(styles.wrapper_anima, {
+    [styles.wrapper_anima_step_two]: activeIndex === 2,
+  });
+
   return (
     <div className={joinPortalClasses}>
       {activeIndex !== 3 && (
-        <Button className={btnClasses} onClick={backHandler}>
-          Back
-        </Button>
-      )}
-      {activeIndex !== 3 && (
-        <div className={styles.wrapper_anima}>
-          <div className={styles.steps}>
-            <Button
-              onClick={handlePrevStep}
-              className={classNames(styles.steps__item, {
-                [styles.steps__item_active]: activeIndex >= 1,
-              })}
-            >
-              1
-            </Button>
-            <StepIcon className={styles.steps__line} />
-            <Button
-              disabled={activeIndex === 1}
-              onClick={() => editActiveStep(2)}
-              className={classNames(styles.steps__item, {
-                [styles.steps__item_active]: activeIndex === 2,
-              })}
-            >
-              2
-            </Button>
-          </div>
+        <div className={stepsClasses}>
           {activeIndex === 1 && (
             <StepOne
-              setApplicationForm={setApplicationForm}
-              applicationForm={applicationForm}
+              handlePrevStep={handlePrevStep}
               editActiveStep={editActiveStep}
-            />
+              applicationForm={applicationForm}
+              setApplicationForm={setApplicationForm}
+            >
+              {activeIndex === 1 && (
+                <Button className={btnClasses} onClick={backHandler}>
+                  Cancel
+                </Button>
+              )}
+            </StepOne>
           )}
           {activeIndex === 2 && (
             <StepTwo
+              activeIndex={activeIndex}
               formikRef={secondFormikRef}
-              sendApplicationHandler={sendApplicationHandler}
+              handlePrevStep={handlePrevStep}
+              editActiveStep={editActiveStep}
               applicationForm={applicationForm}
               setApplicationForm={setApplicationForm}
-              editActiveStep={editActiveStep}
+              sendApplicationHandler={sendApplicationHandler}
             />
           )}
         </div>
@@ -117,11 +102,9 @@ JoinForm.propTypes = {
 };
 
 JoinForm.defaultProps = {
-  joinForm: false,
   isOpen: true,
+  joinForm: false,
   backHandler: noop,
 };
 
 export default JoinForm;
-
-/* <h1 className={styles.title} <p className={styles.subtitle} */

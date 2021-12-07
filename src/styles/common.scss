@@ -210,7 +210,7 @@
       left: 0;
       top: 22px;
       position: absolute;
-      border-radius: 8px 0 0 8px;
+      border-radius: 30px 0 0 30px;
     }
   }
   .react-tel-input {
@@ -245,11 +245,11 @@
     color: $white-20 !important;
     user-select: all !important;
     position: relative !important;
-    border-radius: 8px !important;
     cursor: url(/images/Mouse.png), auto;
     padding: 0px 10px 0px 50px !important;
     background: $white-30 !important;
     margin-top: 1px !important;
+    border-radius: 30px !important;
 
     &::placeholder {
       color: $white-20 !important;
@@ -276,39 +276,39 @@
     border: none !important;
     position: unset !important;
     background: transparent !important;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0 0 30px;
     cursor: url(/images/Mouse.png), auto !important;
   }
 
   .react-tel-input .flag-dropdown.open {
     cursor: url(/images/Mouse.png), auto;
     background-color: transparent !important;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .selected-flag:hover {
     background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .selected-flag:focus {
     background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .flag-dropdown:hover,
   .react-tel-input .flag-dropdown:focus {
     background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .selected-flag {
     padding-left: 24px !important;
     cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .flag-dropdown.open .selected-flag {

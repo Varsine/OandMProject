@@ -2,16 +2,25 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash.isequal';
 import { Form, Formik, Field } from 'formik';
+import classNames from 'classnames';
 
 import { Button, FormikInput, FileUpload } from 'components/index';
-import { stepTwoInitialValues, stepTwoValidationSchema } from 'utils/index';
+import {
+  noop,
+  stepTwoInitialValues,
+  stepTwoValidationSchema,
+} from 'utils/index';
 
+import { StepIcon } from '../../../../../icons';
+//
 import styles from '../Apply.scss';
 
 const StepTwo = ({
   formikRef,
   editActiveStep,
   applicationForm,
+  handlePrevStep,
+  activeIndex,
   sendApplicationHandler,
 }) => {
   const initialValues = useMemo(
@@ -36,6 +45,24 @@ const StepTwo = ({
       }}
     >
       <Form className={styles.form_style} autoComplete="off">
+        <div className={styles.steps}>
+          <Button
+            onClick={handlePrevStep}
+            className={classNames(styles.steps__item, {
+              [styles.steps__back]: activeIndex >= 1,
+            })}
+          >
+            Back
+          </Button>
+          <StepIcon className={styles.steps__line} />
+          <Button
+            className={classNames(styles.steps__item, {
+              [styles.steps__item_load]: activeIndex === 2,
+            })}
+          >
+            2
+          </Button>
+        </div>
         <Field
           name="resume"
           label="Attach resume"
@@ -70,6 +97,8 @@ const StepTwo = ({
 
 StepTwo.propTypes = {
   formikRef: PropTypes.any,
+  handlePrevStep: PropTypes.func,
+  activeIndex: PropTypes.number,
   editActiveStep: PropTypes.func,
   applicationForm: PropTypes.object,
   sendApplicationHandler: PropTypes.func,
@@ -77,9 +106,11 @@ StepTwo.propTypes = {
 
 StepTwo.defaultProps = {
   formikRef: {},
-  editActiveStep: () => {},
+  activeIndex: 2,
+  editActiveStep: noop,
+  handlePrevStep: noop,
   applicationForm: {},
-  sendApplicationHandler: () => {},
+  sendApplicationHandler: noop,
 };
 
 export default StepTwo;

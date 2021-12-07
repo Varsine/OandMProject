@@ -29,15 +29,15 @@
   width: 100%;
   margin: 0 auto;
   max-width: 594px;
-  padding: 0px 15px;
 }
 
 .joinform_portal {
   left: 0;
-  top: 80px;
+  top: 0px;
   height: 0;
   opacity: 0;
   width: 100%;
+  overflow: auto;
   position: fixed;
   max-width: 100%;
   transform: scale(0);
@@ -45,13 +45,11 @@
   transition: all 0.4s ease-in-out;
   background-color: rgba(0, 0, 0, 0.1);
 
-  @include breakpoint(tablet-m) {
-    top: 64px;
+  &::-webkit-scrollbar {
+    display: none;
   }
 
   &__back {
-    top: 0;
-    z-index: 1;
     color: $white-20;
     background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
     animation: btnNone 4s alternate linear;
@@ -61,11 +59,10 @@
 .joinform_portal__anima {
   opacity: 1;
   z-index: 556;
+  height: calc(100vh + 50px);
   margin: 0 auto;
   padding: 80px 15px;
-  overflow-x: hidden;
   transform: scale(1);
-  height: calc(100vh - 129px);
   backdrop-filter: blur(20px);
   transition: all 0.5s ease-in;
   background-color: rgba(0, 0, 0, 0.6);
@@ -76,20 +73,36 @@
 
   @include breakpoint(tablet-m) {
     padding: 100px 15px;
-    height: calc(100vh - 113px);
   }
 
   &__back_anima {
-    top: 20px;
-    left: 30px;
-    z-index: 557;
-    position: fixed;
-    font-size: 22px;
+    width: 100%;
+    font-size: 16px;
+    max-width: 100%;
     color: $white-20;
-    padding: 5px 12px;
-    border-radius: 8px;
+    padding: 19.5px 0;
+    border-radius: 30px;
+    font-weight: bolder;
     animation: btnAllowed 0.5s alternate linear;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
+    background-image: radial-gradient(
+      circle,
+      #f1f2f2,
+      #c0e4ed,
+      #90d4f2,
+      #68bffa,
+      #5aa7ff,
+      #5d95fc,
+      #6a81f5,
+      #7c6be9,
+      #7160dc,
+      #6655cf,
+      #5b4bc3,
+      #5040b6
+    );
+    color: black;
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -102,12 +115,12 @@
 }
 
 .wrapper_anima {
-  top: 0;
+  top: 65px;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(793px + 10vh);
   display: flex;
   position: absolute;
   transform: scale(0);
@@ -121,9 +134,24 @@
   }
 
   @include breakpoint(tablet-m) {
-    padding: 240px 15px 50px;
-    height: calc(100vh - 114px);
+    padding: 0px 15px 50px;
   }
+}
+
+.wrapper_anima_step_two {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 754px;
+  display: flex;
+  position: absolute;
+  transform: scale(0);
+  flex-direction: column;
+  justify-content: center;
+  padding: 65px 15px 70px;
+  animation: formAnima 0.5s forwards;
 
   &::-webkit-scrollbar {
     display: none;
@@ -144,6 +172,12 @@
     }
   }
 
+  &__back {
+    width: 80px !important;
+    text-align: center !important;
+    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%) !important;
+  }
+
   &__item {
     width: 50px;
     height: 50px;
@@ -151,7 +185,25 @@
     color: #f1f2f2;
     font-weight: bolder;
     border-radius: 15px;
-    background: rgba(234, 241, 250, 0.6);
+    background: rgba(231, 235, 240, 0.6);
+
+    &_load {
+      background-image: linear-gradient(
+        to right,
+        #5040b6,
+        #484ebe,
+        #415bc5,
+        #3c67ca,
+        #3a72cf,
+        #5780d4,
+        #6e8ed9,
+        #839cde,
+        #a8b3e6,
+        #c9cbee,
+        #e5e4f6,
+        #ffffff
+      );
+    }
 
     &_active {
       background: $liner-blue;
@@ -162,7 +214,8 @@
 .next {
   margin: 22px 0;
   @extend %button-gradient;
-  border-radius: 8px;
+  font-size: 20px;
+  border-radius: 30px;
 }
 
 .success {
@@ -204,34 +257,15 @@
   }
   100% {
     transform: scale(1);
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 }
 
 @keyframes btnNone {
   0% {
-    top: 20px;
-    left: 30px;
-    z-index: 557;
-    position: fixed;
     font-size: 22px;
     color: $white-20;
     padding: 5px 12px;
-    border-radius: 8px;
-    background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
-  }
-  90% {
-    top: 20px;
-    left: 30px;
-    z-index: 557;
-    position: fixed;
-    font-size: 22px;
-    color: $white-20;
-    padding: 5px 12px;
-    border-radius: 8px;
+    border-radius: 30px;
     background: linear-gradient(180deg, #5040b6 0%, #3d80d4 100%);
   }
   100% {
@@ -252,6 +286,6 @@
     left: 110px;
   }
   100% {
-    left: 30px !important;
+    left: 30px;
   }
 }
