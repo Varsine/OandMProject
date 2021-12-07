@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import Carousel from 'react-multi-carousel';
 import { useSelector } from 'react-redux';
 
@@ -12,23 +12,9 @@ import styles from './OurTeam.scss';
 const OurTeam = () => {
   const activeIndex = useSelector(activeIndexSelector);
 
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
-
-  const arrowHandler = () => {
-    setIsAutoPlay(false);
-  };
-
-  useEffect(() => {
-    if (activeIndex !== 6) {
-      setIsAutoPlay(false);
-    }
-    return setIsAutoPlay(true);
-  }, [isAutoPlay]);
-
-  const renderSliderList = useMemo(
-    () => teamCards.map((item) => <Slide key={item.id} slide={item} />),
-    [teamCards],
-  );
+  const renderSliderList = teamCards.map((item) => (
+    <Slide key={item.id} slide={item} />
+  ));
 
   const responsive = {
     desktop: {
@@ -41,26 +27,24 @@ const OurTeam = () => {
     },
   };
 
-  const setting = {
-    ssr: true,
-    responsive,
-    arrows: false,
-    infinite: true,
-    draggable: false,
-    swipeable: false,
-    afterChange: false,
-    beforeChange: false,
-    autoPlay: isAutoPlay,
-    sliderClass: styles.carousel__container,
-    containerClass: styles.carousel__wrapper,
-    customButtonGroup: (
-      <SliderArrows
-        nextProp={arrowHandler}
-        previousProp={arrowHandler}
-        arrowStyles={styles.arrow_style}
-      />
-    ),
-  };
+  const renderCarousel = useMemo(
+    () =>
+      activeIndex === 6 && (
+        <Carousel
+          ssr
+          infinite
+          autoPlay
+          responsive={responsive}
+          arrows={false}
+          sliderClass={styles.carousel__container}
+          containerClass={styles.carousel__wrapper}
+          customButtonGroup={<SliderArrows arrowStyles={styles.arrow_style} />}
+        >
+          {renderSliderList}
+        </Carousel>
+      ),
+    [activeIndex],
+  );
 
   return (
     <section
@@ -69,9 +53,7 @@ const OurTeam = () => {
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <h2 className={styles.title}>Our Team</h2>
-        <div className={styles.carousel}>
-          <Carousel {...setting}>{renderSliderList}</Carousel>
-        </div>
+        <div className={styles.carousel}>{renderCarousel} </div>
       </div>
     </section>
   );

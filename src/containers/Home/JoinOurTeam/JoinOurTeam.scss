@@ -268,13 +268,21 @@
     appearance: none;
     border-radius: 50%;
     margin: 7px !important;
-    border: 6px solid transparent;
-    background: $white;
+    height: 13px;
+    width: 13px;
+    background: $dots-bg;
     position: static !important;
     transform: translateX(0px) !important;
+    transition: all 0.3s;
 
     @include breakpoint(desktop) {
-      border: 8px solid transparent;
+      height: 14px;
+      width: 14px;
+    }
+
+    &__active {
+      background: $liner-blue-hover;
+      transition: all 0.3s;
     }
   }
 }

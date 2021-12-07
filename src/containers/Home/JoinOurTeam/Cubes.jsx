@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { Input } from 'components/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
 import { dotsData, boxFaceData } from './constants';
@@ -60,16 +59,22 @@ const Cubes = () => {
   };
 
   const renderDots = dotsData.map(
-    ({ id, rotY, rotX, classFirst, classSecond }) => (
-      <Input
-        key={id}
-        type="radio"
-        name="select-face"
-        checked={activeDot === id}
-        onChange={() => changeActiveDots(id, rotY, rotX)}
-        className={`${classFirst} ${classSecond}`}
-      />
-    ),
+    ({ id, rotY, rotX, classFirst, classSecond }) => {
+      const dotsClasses = classNames(classFirst, classSecond, {
+        [styles.cubes__dot__active]: activeDot === id,
+      });
+
+      return (
+        <div
+          key={id}
+          role="button"
+          aria-label="Dot"
+          checked={activeDot === id}
+          onClick={() => changeActiveDots(id, rotY, rotX)}
+          className={dotsClasses}
+        />
+      );
+    },
   );
 
   const renderFaceData = boxFaceData.map(({ id, classFirst, classSecond }) => (
