@@ -2,6 +2,7 @@ export * from './helpers';
 export * from './fieldsList';
 export * from './mainSections';
 export * from './aboutUsList';
+export * from './joinFormConstants';
 
 export { default as weLabel } from './weWork';
 export { default as industry } from './industry';

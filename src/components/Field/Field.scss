@@ -48,13 +48,13 @@
     position: relative;
     background: rgba(207, 229, 255, 0.6);
     font-weight: normal;
-    border-radius: 50px;
+    border-radius: 8px;
     @extend %open-sans-16;
     @extend %flex-between;
 
     &_active {
       background: rgba(207, 229, 255, 0.6);
-      border-radius: 32px 32px 0 0;
+      border-radius: 8px 8px 0 0;
     }
 
     &_icon {
