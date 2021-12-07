@@ -1,24 +1,45 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import usePortal from 'react-useportal';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { useOutsideClick, useLockBodyScroll } from 'hooks/index';
 
 import styles from './Modal.scss';
 
-const Modal = ({ data, setIsOpenModal }) => {
+const Modal = ({ data, setIsOpenModal, isOpenModal }) => {
   const { Portal } = usePortal();
-  const infoRef = useRef();
+  const infoRef = useRef(null);
   const { title, subTitle, paragraph } = data;
 
-  useOutsideClick(infoRef, () => setIsOpenModal(false));
+  useOutsideClick(infoRef, () => {
+    if (isOpenModal) {
+      setIsOpenModal(false);
+    }
+  });
 
   useLockBodyScroll();
 
+  const wrapperClasses = useMemo(
+    () =>
+      classNames(styles.wrapper, {
+        [styles.wrapper__open]: isOpenModal,
+      }),
+    [isOpenModal],
+  );
+
+  const innerInfoClasses = useMemo(
+    () =>
+      classNames(styles.info, {
+        [styles.info__open]: isOpenModal,
+      }),
+    [isOpenModal],
+  );
+
   return (
     <Portal>
-      <div className={styles.wrapper}>
-        <div ref={infoRef} className={styles.info}>
+      <div role="button" className={wrapperClasses}>
+        <div ref={infoRef} className={innerInfoClasses}>
           <h2 className={styles.info__title}>{title}</h2>
           <h4 className={styles.info__subtitle}>{subTitle}</h4>
           <p className={styles.info__text}>{paragraph}</p>
@@ -30,11 +51,13 @@ const Modal = ({ data, setIsOpenModal }) => {
 
 Modal.propTypes = {
   data: PropTypes.object,
+  isOpenModal: PropTypes.bool,
   setIsOpenModal: PropTypes.func,
 };
 
 Modal.defaultProps = {
   data: {},
+  isOpenModal: false,
   setIsOpenModal: () => {},
 };
 
