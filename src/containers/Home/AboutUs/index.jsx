@@ -2,10 +2,11 @@ import React, { useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { images } from 'utils/index';
 import { useWindowSize } from 'hooks/index';
 import { activeIndexSelector } from 'slices/mainSlice';
+import { images, aboutUsInfoList } from 'utils/index';
 
+import Modal from './Modal';
 import styles from './AboutUs.scss';
 import AboutUsBlock from './AboutUsBlock';
 
@@ -13,8 +14,11 @@ const AboutUs = () => {
   const { isDesktop } = useWindowSize();
   const activeIndex = useSelector(activeIndexSelector);
   const isOpen = activeIndex === 2;
+
   const [isShow, setIsShow] = useState(false);
   const [isTitle, setIsTitle] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [firstAnimation, setFirstAnimation] = useState(false);
 
   const showFirstAnimate = useMemo(
@@ -26,6 +30,8 @@ const AboutUs = () => {
     if (isOpen) {
       setIsTitle(true);
       setFirstAnimation(true);
+    } else {
+      setIsOpenModal(false);
     }
 
     setTimeout(() => {
@@ -37,6 +43,11 @@ const AboutUs = () => {
     }, 300);
   }, [isOpen]);
 
+  const handlerChange = (idx) => {
+    setIsOpenModal(true);
+    setCurrentIndex(idx);
+  };
+
   const renderAboutBlock = useMemo(
     () =>
       showFirstAnimate
@@ -46,11 +57,19 @@ const AboutUs = () => {
               src={src}
               className={imgClass}
               classRope={classRope}
-              currentIndex={idx}
+              handlerChange={() => handlerChange(idx)}
             />
           ))
         : null,
     [showFirstAnimate],
+  );
+
+  const titleClass = useMemo(
+    () =>
+      classNames(styles.wrapper__content__title, {
+        [styles.wrapper__content__title_show]: isTitle,
+      }),
+    [isTitle],
   );
 
   return (
@@ -58,11 +77,7 @@ const AboutUs = () => {
       <div className="canvas__working" />
       <div className={`container ${styles.wrapper}`}>
         <div className={styles.wrapper__content}>
-          <h1
-            className={classNames(styles.wrapper__content__title, {
-              [styles.wrapper__content__title_show]: isTitle,
-            })}
-          >
+          <h1 className={titleClass}>
             <span className={styles.wrapper__content__title__text}>
               About Us
             </span>
@@ -74,6 +89,11 @@ const AboutUs = () => {
         </div>
         <div className={styles.wrapper__list}>{renderAboutBlock}</div>
       </div>
+      <Modal
+        isOpenModal={isOpenModal}
+        setIsOpenModal={setIsOpenModal}
+        data={aboutUsInfoList[currentIndex]}
+      />
     </section>
   );
 };
