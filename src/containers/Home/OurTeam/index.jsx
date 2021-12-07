@@ -28,23 +28,19 @@ const OurTeam = () => {
     },
   };
 
-  const renderCarousel = useMemo(
-    () =>
-      activeIndex === 6 && (
-        <Carousel
-          ssr
-          infinite
-          autoPlay
-          responsive={responsive}
-          arrows={false}
-          sliderClass={styles.carousel__container}
-          containerClass={styles.carousel__wrapper}
-          customButtonGroup={<SliderArrows arrowStyles={styles.arrow_style} />}
-        >
-          {renderSliderList}
-        </Carousel>
-      ),
-    [activeIndex],
+  const renderCarousel = activeIndex === 6 && (
+    <Carousel
+      ssr
+      infinite
+      autoPlay
+      responsive={responsive}
+      arrows={false}
+      sliderClass={styles.carousel__container}
+      containerClass={styles.carousel__wrapper}
+      customButtonGroup={<SliderArrows arrowStyles={styles.arrow_style} />}
+    >
+      {renderSliderList}
+    </Carousel>
   );
 
   return (
