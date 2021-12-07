@@ -60,16 +60,9 @@ const Cubes = () => {
 
   const renderDots = dotsData.map(
     ({ id, rotY, rotX, classFirst, classSecond }) => {
-      const dotsClasses = useMemo(() =>
-        classNames(
-          classFirst,
-          classSecond,
-          {
-            [styles.cubes__dot__active]: activeDot === id,
-          },
-          [activeDot],
-        ),
-      );
+      const dotsClasses = classNames(classFirst, classSecond, {
+        [styles.cubes__dot__active]: activeDot === id,
+      });
 
       return (
         <div

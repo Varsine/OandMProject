@@ -28,20 +28,22 @@ const OurTeam = () => {
     },
   };
 
-  const setting = {
-    ssr: true,
-    responsive,
-    arrows: false,
-    infinite: true,
-    autoPlay: true,
-    sliderClass: styles.carousel__container,
-    containerClass: styles.carousel__wrapper,
-    customButtonGroup: <SliderArrows arrowStyles={styles.arrow_style} />,
-  };
-
   const renderCarousel = useMemo(
     () =>
-      activeIndex === 6 && <Carousel {...setting}>{renderSliderList}</Carousel>,
+      activeIndex === 6 && (
+        <Carousel
+          ssr
+          infinite
+          autoPlay
+          responsive={responsive}
+          arrows={false}
+          sliderClass={styles.carousel__container}
+          containerClass={styles.carousel__wrapper}
+          customButtonGroup={<SliderArrows arrowStyles={styles.arrow_style} />}
+        >
+          {renderSliderList}
+        </Carousel>
+      ),
     [activeIndex],
   );
 
