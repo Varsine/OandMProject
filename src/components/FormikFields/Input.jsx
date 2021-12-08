@@ -15,6 +15,13 @@ const Input = ({
 }) => {
   const formContainerClasses = classNames(styles.text, className);
 
+  const handleChange = (event) => {
+    // eslint-disable-next-line no-param-reassign
+    event.target.value = event.target.value.trim();
+
+    onChange(event);
+  };
+
   return (
     <div className={formContainerClasses}>
       <label className={styles.label_style} htmlFor={name}>
@@ -23,8 +30,8 @@ const Input = ({
       <input
         type={type}
         name={name}
-        onChange={onChange}
         value={value}
+        onChange={handleChange}
         autoCapitalize="off"
         placeholder={placeholder}
         className={styles.text__change}

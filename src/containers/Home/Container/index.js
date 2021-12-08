@@ -44,6 +44,7 @@ const HomeContainer = () => {
       navigation={false}
       fitToSection={false}
       scrollingSpeed={1300}
+      scrollHorizontally={false}
       keyboardScrolling={false}
       onLeave={changeActiveStep}
       render={renderFullPageContent}

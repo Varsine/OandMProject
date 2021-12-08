@@ -210,7 +210,7 @@
       left: 0;
       top: 22px;
       position: absolute;
-      border-radius: 8px 0 0 8px;
+      border-radius: 30px 0 0 30px;
     }
   }
   .react-tel-input {
@@ -220,6 +220,20 @@
     min-height: 105px !important;
     cursor: url(/images/Mouse.png), auto;
     padding: 21.6px 0px 0px 0px !important;
+    margin-top: 1px !important;
+
+    @media (width: 682px) {
+      margin-top: 0px !important;
+    }
+    @media (width: 681px) {
+      margin-top: 0px !important;
+    }
+  }
+
+  .flag-dropdown::before {
+    background-color: transparent;
+    width: 0;
+    height: 0;
   }
 
   .react-tel-input .form-control {
@@ -232,9 +246,10 @@
     user-select: all !important;
     position: relative !important;
     cursor: url(/images/Mouse.png), auto;
-    padding: 0px 10px 0px 14px !important;
-    border-radius: 0px 8px 8px 0px !important;
+    padding: 0px 10px 0px 50px !important;
     background: $white-30 !important;
+    margin-top: 1px !important;
+    border-radius: 30px !important;
 
     &::placeholder {
       color: $white-20 !important;
@@ -256,48 +271,44 @@
   }
 
   .react-tel-input .flag-dropdown {
+    width: 0 !important;
     height: 51px !important;
-    cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
+    border: none !important;
+    position: unset !important;
     background: transparent !important;
+    border-radius: 30px 0 0 30px;
+    cursor: url(/images/Mouse.png), auto !important;
   }
 
   .react-tel-input .flag-dropdown.open {
     cursor: url(/images/Mouse.png), auto;
     background-color: transparent !important;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .selected-flag:hover {
     background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .selected-flag:focus {
     background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .flag-dropdown:hover,
   .react-tel-input .flag-dropdown:focus {
     background: transparent !important;
     cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
-  }
-
-  .react-tel-input .flag-dropdown {
-    position: unset !important;
-    background: transparent !important;
-    border-radius: 8px 0px 0px 8px !important;
-    cursor: url(/images/Mouse.png), auto !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .selected-flag {
     padding-left: 24px !important;
     cursor: url(/images/Mouse.png), auto;
-    border-radius: 8px 0px 0px 8px !important;
+    border-radius: 30px 0px 0px 30px !important;
   }
 
   .react-tel-input .flag-dropdown.open .selected-flag {
@@ -309,10 +320,6 @@
   }
   .flag_no_10 {
     display: none !important;
-  }
-
-  .react-tel-input .flag-dropdown {
-    border: none !important;
   }
 
   .react-tel-input .country-list .country-name {

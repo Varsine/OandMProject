@@ -1,52 +1,46 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import usePortal from 'react-useportal';
 
-import { paths } from 'routes/index';
-import { NextLink } from 'components/index';
-import { changeIndex } from 'slices/mainSlice';
+import { Button } from 'components/index';
 
 import Cubes from './Cubes';
-import styles from './JoinOurTeam.scss';
+import JoinForm from './JoinForm/index';
 import { infoText, subtitle, joinOurTeam } from './constants';
+//
+import styles from './JoinOurTeam.scss';
 
 const JoinOurTeam = () => {
-  const router = useRouter();
-  const dispatch = useDispatch();
+  const { Portal } = usePortal();
+  const [joinForm, setJoinForm] = useState(false);
 
-  useEffect(() => {
-    const handleStop = () => {
-      dispatch(changeIndex(1));
-    };
-
-    router.events.on('routeChangeComplete', handleStop);
-    router.events.on('routeChangeError', handleStop);
-
-    return () => {
-      router.events.off('routeChangeComplete', handleStop);
-      router.events.off('routeChangeError', handleStop);
-    };
-  }, [dispatch, router]);
+  const joinPortal = () => {
+    setJoinForm(!joinForm);
+  };
 
   return (
-    <section className={`${styles.height_response} section`}>
-      <div className="canvas__working" />
-      <div className={`container ${styles.wrapper}`}>
-        <div className={styles.wrapper__info}>
-          <h2 className={styles.wrapper__info_title}>{joinOurTeam}</h2>
-          <h3 className={styles.wrapper__info_subtitle}>{subtitle}</h3>
-          <p className={styles.wrapper__info_text}>{infoText}</p>
-          <NextLink
-            role="button"
-            to={paths.apply}
-            className={styles.wrapper__info_join}
-          >
-            {joinOurTeam}
-          </NextLink>
+    <>
+      <Portal>
+        <JoinForm
+          isOpen={joinForm}
+          joinForm={joinForm}
+          backHandler={joinPortal}
+        />
+      </Portal>
+      <section className={`${styles.height_response} section`}>
+        <div className="canvas__working" />
+        <div className={`container ${styles.wrapper}`}>
+          <div className={styles.wrapper__info}>
+            <h2 className={styles.wrapper__info_title}>{joinOurTeam}</h2>
+            <h3 className={styles.wrapper__info_subtitle}>{subtitle}</h3>
+            <p className={styles.wrapper__info_text}>{infoText}</p>
+            <Button onClick={joinPortal} className={styles.wrapper__info_join}>
+              {joinOurTeam}
+            </Button>
+          </div>
+          <Cubes />
         </div>
-        <Cubes />
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

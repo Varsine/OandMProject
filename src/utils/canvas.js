@@ -1,7 +1,7 @@
 /* eslint-disable */
 const canvas = document.getElementById('canvas');
 
-const isMobile = /Mobi|Android/i.test(navigator.userAgent)
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 const config = {
   SIM_RESOLUTION: 128,
   DYE_RESOLUTION: 1024,
@@ -142,25 +142,6 @@ function supportRenderTextureFormat(gl, internalFormat, format, type) {
   );
   let status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
   return status == gl.FRAMEBUFFER_COMPLETE;
-}
-
-function textureToCanvas(texture, width, height) {
-  let ctx = canvas.getContext('2d');
-  canvas.width = width;
-  canvas.height = height;
-  let imageData = ctx.createImageData(width, height);
-  imageData.data.set(texture);
-  ctx.putImageData(imageData, 0, 0);
-  return canvas;
-}
-
-function downloadURI(filename, uri) {
-  let link = document.createElement('a');
-  link.download = filename;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
 }
 
 class Material {
@@ -718,14 +699,14 @@ const blit = (() => {
 })();
 
 let dye;
-let velocity;
-let divergence;
 let curl;
-let pressure;
 let bloom;
-let bloomFramebuffers = [];
 let sunrays;
+let velocity;
+let pressure;
+let divergence;
 let sunraysTemp;
+let bloomFramebuffers = [];
 const blurProgram = new Program(blurVertexShader, blurShader);
 const copyProgram = new Program(baseVertexShader, copyShader);
 const clearProgram = new Program(baseVertexShader, clearShader);
@@ -735,16 +716,16 @@ const bloomPrefilterProgram = new Program(
   baseVertexShader,
   bloomPrefilterShader,
 );
-const bloomBlurProgram = new Program(baseVertexShader, bloomBlurShader);
-const bloomFinalProgram = new Program(baseVertexShader, bloomFinalShader);
-const sunraysMaskProgram = new Program(baseVertexShader, sunraysMaskShader);
-const sunraysProgram = new Program(baseVertexShader, sunraysShader);
-const splatProgram = new Program(baseVertexShader, splatShader);
-const advectionProgram = new Program(baseVertexShader, advectionShader);
-const divergenceProgram = new Program(baseVertexShader, divergenceShader);
 const curlProgram = new Program(baseVertexShader, curlShader);
-const vorticityProgram = new Program(baseVertexShader, vorticityShader);
+const splatProgram = new Program(baseVertexShader, splatShader);
+const sunraysProgram = new Program(baseVertexShader, sunraysShader);
 const pressureProgram = new Program(baseVertexShader, pressureShader);
+const bloomBlurProgram = new Program(baseVertexShader, bloomBlurShader);
+const advectionProgram = new Program(baseVertexShader, advectionShader);
+const vorticityProgram = new Program(baseVertexShader, vorticityShader);
+const bloomFinalProgram = new Program(baseVertexShader, bloomFinalShader);
+const divergenceProgram = new Program(baseVertexShader, divergenceShader);
+const sunraysMaskProgram = new Program(baseVertexShader, sunraysMaskShader);
 const gradienSubtractProgram = new Program(
   baseVertexShader,
   gradientSubtractShader,
@@ -963,44 +944,6 @@ function resizeDoubleFBO(target, w, h, internalFormat, format, type, param) {
   target.texelSizeY = 1.0 / h;
   return target;
 }
-function createTextureAsync(url) {
-  let texture = gl.createTexture();
-  gl.bindTexture(gl.TEXTURE_2D, texture);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
-  gl.texImage2D(
-    gl.TEXTURE_2D,
-    0,
-    gl.RGB,
-    1,
-    1,
-    0,
-    gl.RGB,
-    gl.UNSIGNED_BYTE,
-    new Uint8Array([255, 255, 255]),
-  );
-  let obj = {
-    texture,
-    width: 1,
-    height: 1,
-    attach(id) {
-      gl.activeTexture(gl.TEXTURE0 + id);
-      gl.bindTexture(gl.TEXTURE_2D, texture);
-      return id;
-    },
-  };
-  let image = new Image();
-  image.onload = () => {
-    obj.width = image.width;
-    obj.height = image.height;
-    gl.bindTexture(gl.TEXTURE_2D, texture);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, image);
-  };
-  image.src = url;
-  return obj;
-}
 function updateKeywords() {
   let displayKeywords = [];
   if (config.SHADING) displayKeywords.push('SHADING');
@@ -1009,18 +952,14 @@ function updateKeywords() {
   displayMaterial.setKeywords(displayKeywords);
 }
 updateKeywords();
-// initFramebuffers();
-
 requestAnimationFrame(() => {
-  multipleSplats(parseInt(Math.random())  + 5);
+  multipleSplats(parseInt(Math.random()) + 5);
 });
-
 let lastUpdateTime = Date.now();
 let colorUpdateTimer = 0.0;
-
 function update() {
   const dt = calcDeltaTime();
-  const resizedCanvas = resizeCanvas()
+  const resizedCanvas = resizeCanvas();
   if (resizedCanvas) initFramebuffers();
   updateColors(dt);
   applyInputs();
@@ -1029,9 +968,7 @@ function update() {
 
   requestAnimationFrame(update);
 }
-
 update();
-
 setInterval(() => {
   requestAnimationFrame(() => {
     multipleSplats(parseInt(Math.random() * 1) + 4);
@@ -1074,7 +1011,6 @@ function applyInputs() {
     }
   });
 }
-
 function step(dt) {
   gl.disable(gl.BLEND);
   curlProgram.bind();
@@ -1176,47 +1112,10 @@ function step(dt) {
   dye.swap();
 }
 function render(target) {
-  // if (config.BLOOM) {
-  //   requestAnimationFrame(() => {
-  //     applyBloom(dye.read, bloom);
-  //   });
-  // }
-  // if (config.SUNRAYS) {
-  //   requestAnimationFrame(() => {
-  //     applySunrays(dye.read, dye.write, sunrays);
-  //     blur(sunrays, sunraysTemp, 1);
-  //   });
-  // }
-  // if (target == null || !config.TRANSPARENT) {
-  //   gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-  //   gl.enable(gl.BLEND);
-  // } else {
-  //   gl.disable(gl.BLEND);
-  // }
-  // if (!config.TRANSPARENT) drawColor(target, normalizeColor(config.BACK_COLOR));
-  // if (target == null && config.TRANSPARENT) {
-  //   requestAnimationFrame(() => {
-  //     drawCheckerboard(target);
-  //   });
-  // }
   requestAnimationFrame(() => {
     drawDisplay(target);
     applySunrays(dye.read, dye.write, sunrays);
-    blur(sunrays, sunraysTemp, 1);
   });
-}
-function drawColor(target, color) {
-  colorProgram.bind();
-  gl.uniform4f(colorProgram.uniforms.color, color.r, color.g, color.b, 1);
-  blit(target);
-}
-function drawCheckerboard(target) {
-  checkerboardProgram.bind();
-  gl.uniform1f(
-    checkerboardProgram.uniforms.aspectRatio,
-    canvas.width / canvas.height,
-  );
-  blit(target);
 }
 function drawDisplay(target) {
   let width = target == null ? gl.drawingBufferWidth : target.width;
@@ -1295,17 +1194,6 @@ function applySunrays(source, mask, destination) {
   gl.uniform1i(sunraysProgram.uniforms.uTexture, mask.attach(0));
   blit(destination);
 }
-function blur(target, temp, iterations) {
-  blurProgram.bind();
-  for (let i = 0; i < iterations; i++) {
-    gl.uniform2f(blurProgram.uniforms.texelSize, target.texelSizeX, 0.0);
-    gl.uniform1i(blurProgram.uniforms.uTexture, target.attach(0));
-    blit(temp);
-    gl.uniform2f(blurProgram.uniforms.texelSize, 0.0, target.texelSizeY);
-    gl.uniform1i(blurProgram.uniforms.uTexture, temp.attach(0));
-    blit(target);
-  }
-}
 function splatPointer(pointer) {
   let dx = pointer.deltaX * config.SPLAT_FORCE;
   let dy = pointer.deltaY * config.SPLAT_FORCE;
@@ -1346,7 +1234,6 @@ function correctRadius(radius) {
   if (aspectRatio > 1) radius *= aspectRatio;
   return radius;
 }
-
 window.addEventListener('mousedown', (e) => {
   let posX = scaleByPixelRatio(e.offsetX);
   let posY = scaleByPixelRatio(e.offsetY);
@@ -1476,14 +1363,6 @@ function HSVtoRGB(h, s, v) {
     b,
   };
 }
-function normalizeColor(input) {
-  let output = {
-    r: input.r / 255,
-    g: input.g / 255,
-    b: input.b / 255,
-  };
-  return output;
-}
 function wrap(value, min, max) {
   let range = max - min;
   if (range == 0) return min;
@@ -1497,12 +1376,6 @@ function getResolution(resolution) {
   if (gl.drawingBufferWidth > gl.drawingBufferHeight)
     return { width: max, height: min };
   else return { width: min, height: max };
-}
-function getTextureScale(texture, width, height) {
-  return {
-    x: width / texture.width,
-    y: height / texture.height,
-  };
 }
 function scaleByPixelRatio(input) {
   let pixelRatio = window.devicePixelRatio || 1;
