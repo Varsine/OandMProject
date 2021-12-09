@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { useWindowSize } from 'hooks/index';
 import { mainSections } from 'utils/index';
+import { useWindowSize } from 'hooks/index';
 import { FullPageContext } from 'context/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
@@ -12,8 +13,9 @@ import styles from './Mouse.scss';
 import { MouseIcon } from '../../../icons';
 
 const Item = ({ type, className }) => {
-  const { isSaleListTablet } = useWindowSize();
   const activeIndex = useSelector(activeIndexSelector);
+
+  const { isMaxTablet } = useWindowSize();
   const { moveToSection } = useContext(FullPageContext);
 
   const moveToSectionHandler = () => {
@@ -21,33 +23,38 @@ const Item = ({ type, className }) => {
     moveToSection.moveTo(moveToType);
   };
 
-  const mouseRight =
-    activeIndex > 1 ? (
-      <MouseIcon
-        onClick={moveToSectionHandler}
-        className={className}
-        aria-label={`scroll to ${type} `}
-      />
-    ) : null;
-  const mouseLeft =
-    activeIndex !== mainSections.length ? (
-      <MouseIcon
-        onClick={moveToSectionHandler}
-        className={className}
-        aria-label={`scroll to ${type} `}
-      />
-    ) : (
-      <div className={styles.bottom_skt} />
-    );
+  const rightMouseClasses = classNames(className, styles.mouse_right_dropping, {
+    [styles.right_mouse_none]: activeIndex === 1,
+  });
 
-  const paginationResponceRender = type === 'top' ? mouseRight : mouseLeft;
+  const leftMouseClasses = classNames(className, styles.mouse_left_dropping, {
+    [styles.left_mouse_none]: activeIndex === mainSections.length,
+  });
 
-  return isSaleListTablet && paginationResponceRender;
+  const mouseLeft = (
+    <MouseIcon
+      onClick={moveToSectionHandler}
+      className={leftMouseClasses}
+      aria-label={`scroll to ${type} `}
+    />
+  );
+
+  const mouseRight = (
+    <MouseIcon
+      onClick={moveToSectionHandler}
+      className={rightMouseClasses}
+      aria-label={`scroll to ${type} `}
+    />
+  );
+
+  const paginationResponseRender = type === 'top' ? mouseRight : mouseLeft;
+
+  return isMaxTablet && paginationResponseRender;
 };
 
 Item.propTypes = {
   type: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default Item;
