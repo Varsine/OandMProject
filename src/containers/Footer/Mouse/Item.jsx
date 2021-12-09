@@ -23,13 +23,21 @@ const Item = ({ type, className }) => {
     moveToSection.moveTo(moveToType);
   };
 
-  const rightMouseClasses = classNames(className, styles.mouse_right_dropping, {
-    [styles.right_mouse_none]: activeIndex === 1,
-  });
+  const rightMouseClasses = classNames(
+    className,
+    styles.wrapper__mouse_right_dropping,
+    {
+      [styles.wrapper__mouse_right_none]: activeIndex === 1,
+    },
+  );
 
-  const leftMouseClasses = classNames(className, styles.mouse_left_dropping, {
-    [styles.left_mouse_none]: activeIndex === mainSections.length,
-  });
+  const leftMouseClasses = classNames(
+    className,
+    styles.wrapper__mouse_left_dropping,
+    {
+      [styles.wrapper__mouse_left_none]: activeIndex === mainSections.length,
+    },
+  );
 
   const mouseLeft = (
     <MouseIcon

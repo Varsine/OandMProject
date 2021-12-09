@@ -1,63 +1,72 @@
 .wrapper {
   @extend %flex-center;
   margin-left: 10px;
+
   @include breakpoint(desktop) {
     display: none;
   }
+
   svg {
     width: 32px;
     height: 32px;
   }
-}
-.top {
-  margin-top: -4px;
-  margin-right: 8px;
-}
 
-.bottom {
-  &_skt {
-    width: 32px;
-    height: 32px;
+  &__top {
+    margin-top: -4px;
+    margin-right: 8px;
+  }
 
-    svg {
-      margin-bottom: 5px;
-      transform: rotate(180deg) !important;
+  &__bottom {
+    &_skt {
+      width: 32px;
+      height: 32px;
+
+      svg {
+        margin-bottom: 5px;
+        transform: rotate(180deg) !important;
+      }
     }
   }
-}
 
-.mouse_animation {
-  animation: mouseAnimIdentificator 1s forwards linear;
-}
+  &__mouse {
+    &_animation {
+      animation: mouseAnimIdentificator 1s forwards linear;
 
-.mouse_animation_left {
-  animation: mouseAnimIdentificatorLeft 1s forwards linear;
-}
+      &_left {
+        animation: mouseAnimIdentificatorLeft 1s forwards linear;
+      }
+    }
 
-.mouse_right_dropping {
-  animation: droppingAnimation 0.5s alternate linear !important;
+    &_right {
+      &_dropping {
+        animation: droppingAnimation 0.5s alternate linear !important;
 
-  &:hover {
-    animation: mouseHoverAnimaIdentific 1s infinite linear !important;
+        &:hover {
+          animation: mouseHoverAnimaIdentific 1s infinite linear !important;
+        }
+      }
+
+      &_none {
+        animation: mouseAnimIdentificator 1s forwards linear !important;
+      }
+    }
+
+    &_left {
+      &_dropping {
+        animation: droppingAnimationLeft 0.5s alternate linear !important;
+        transform: rotate(180deg);
+
+        &:hover {
+          animation: mouseHoverLeftAnimaIdentific 1s infinite linear !important;
+        }
+      }
+
+      &_none {
+        animation: leftMouseNone 1s forwards linear !important;
+        width: 32px;
+      }
+    }
   }
-}
-
-.mouse_left_dropping {
-  animation: droppingAnimationLeft 0.5s alternate linear !important;
-  transform: rotate(180deg);
-
-  &:hover {
-    animation: mouseHoverLeftAnimaIdentific 1s infinite linear !important;
-  }
-}
-
-.right_mouse_none {
-  animation: mouseAnimIdentificator 1s forwards linear !important;
-}
-
-.left_mouse_none {
-  animation: leftMouseNone 1s forwards linear !important;
-  width: 32px;
 }
 
 @keyframes leftMouseNone {
