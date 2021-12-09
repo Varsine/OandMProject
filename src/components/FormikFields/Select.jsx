@@ -18,18 +18,20 @@ const Select = ({
   const [isOpen, setIsOpen] = useState(false);
   useOutsideClick(dropdownRef, () => setIsOpen(false));
 
-  const openModalToggleer = () => {
+  const openModalToggler = () => {
     setIsOpen(!isOpen);
+  };
+
+  const whichDeveloper = (param, optionValue) => {
+    setFieldValue(param, optionValue);
+    openModalToggler();
   };
 
   const renderDropDownList = options.map(({ key, value: optionValue }) => (
     <div
       key={key}
       role="button"
-      onClick={() => {
-        setFieldValue(name, optionValue);
-        openModalToggleer();
-      }}
+      onClick={() => whichDeveloper(name, optionValue)}
       className={classNames(styles.dropdown__content_item, {
         [styles.dropdown__content_item_active]: optionValue === value,
       })}
@@ -56,7 +58,7 @@ const Select = ({
       <div className={dropdownContainer}>
         <div
           role="button"
-          onClick={openModalToggleer}
+          onClick={openModalToggler}
           className={dropdownHeader}
         >
           <p>{value}</p>
