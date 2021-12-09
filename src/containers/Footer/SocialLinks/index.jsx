@@ -16,6 +16,7 @@ const SocialLinks = () => {
         className={styles.links__item}
         anchorProps={{
           target: '_blank',
+          rel: 'noreferrer',
           'aria-label': ariaLabel,
         }}
       />
