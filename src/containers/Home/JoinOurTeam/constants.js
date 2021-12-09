@@ -48,32 +48,32 @@ export const dotsData = [
 export const boxFaceData = [
   {
     id: 1,
-    classFirst: styles.cubes__boxes__3dface,
+    classFirst: styles.cubes__boxes__3d_face,
     classSecond: styles.cubes__face__front,
   },
   {
     id: 2,
-    classFirst: styles.cubes__boxes__3dface,
+    classFirst: styles.cubes__boxes__3d_face,
     classSecond: styles.cubes__face__back,
   },
   {
     id: 3,
-    classFirst: styles.cubes__boxes__3dface,
+    classFirst: styles.cubes__boxes__3d_face,
     classSecond: styles.cubes__face__left,
   },
   {
     id: 4,
-    classFirst: styles.cubes__boxes__3dface,
+    classFirst: styles.cubes__boxes__3d_face,
     classSecond: styles.cubes__face__right,
   },
   {
     id: 5,
-    classFirst: styles.cubes__boxes__3dface,
+    classFirst: styles.cubes__boxes__3d_face,
     classSecond: styles.cubes__face__top,
   },
   {
     id: 6,
-    classFirst: styles.cubes__boxes__3dface,
+    classFirst: styles.cubes__boxes__3d_face,
     classSecond: styles.cubes__face__bottom,
   },
 ];

@@ -57,6 +57,7 @@ const Chat = ({ isOpenHandler, isOpen }) => {
         onClick={openChatHandler}
         iconHover={<ChatHoverIcon />}
         anchorProps={{
+          rel: 'noreferrer',
           'aria-label': 'messenger chat',
         }}
       />

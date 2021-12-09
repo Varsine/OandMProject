@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
@@ -69,9 +69,9 @@ const Cubes = () => {
           key={id}
           role="button"
           aria-label="Dot"
+          className={dotsClasses}
           checked={activeDot === id}
           onClick={() => changeActiveDots(id, rotY, rotX)}
-          className={dotsClasses}
         />
       );
     },
@@ -81,27 +81,22 @@ const Cubes = () => {
     <div key={id} className={`${classFirst} ${classSecond}`} />
   ));
 
-  const cubeClasses = useMemo(
-    () =>
-      classNames(styles.cubes__space3d, {
-        [styles.cubes__space3d__active]: isActiveFace,
-      }),
-    [isActiveFace],
-  );
+  const cubeClasses = classNames(styles.cubes__space3d, {
+    [styles.cubes__space3d__active]: isActiveFace,
+  });
 
   return (
     <div className={styles.cubes}>
       {renderDots}
       <div
         role="button"
+        className={cubeClasses}
+        onTouchEnd={mouseLeaveCube}
         onMouseEnter={mouseEnterCube}
         onMouseLeave={mouseLeaveCube}
         onTouchStart={mouseEnterCube}
-        onTouchEnd={mouseLeaveCube}
-        className={cubeClasses}
       >
         <div
-          role="button"
           style={{ transform: `rotateX(${rotateX}) rotateY(${rotateY})` }}
           className={styles.cubes__boxes}
         >

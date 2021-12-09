@@ -69,6 +69,7 @@ const OurWorks = () => {
                 to={link}
                 anchorProps={{
                   target: '_blank',
+                  rel: 'noreferrer',
                   'aria-label': title,
                 }}
               >

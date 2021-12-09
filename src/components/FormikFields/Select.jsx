@@ -18,7 +18,7 @@ const Select = ({
   const [isOpen, setIsOpen] = useState(false);
   useOutsideClick(dropdownRef, () => setIsOpen(false));
 
-  const openModalToggleer = () => {
+  const openModalToggler = () => {
     setIsOpen(!isOpen);
   };
 
@@ -28,7 +28,7 @@ const Select = ({
       role="button"
       onClick={() => {
         setFieldValue(name, optionValue);
-        openModalToggleer();
+        openModalToggler();
       }}
       className={classNames(styles.dropdown__content_item, {
         [styles.dropdown__content_item_active]: optionValue === value,
@@ -56,7 +56,7 @@ const Select = ({
       <div className={dropdownContainer}>
         <div
           role="button"
-          onClick={openModalToggleer}
+          onClick={openModalToggler}
           className={dropdownHeader}
         >
           <p>{value}</p>
