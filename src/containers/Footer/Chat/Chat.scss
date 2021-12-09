@@ -17,7 +17,7 @@
     transform: rotate(180deg);
 
     path {
-      stroke: #f1f2f2;
+      stroke: $white-20;
     }
 
     @include breakpoint(tablet) {

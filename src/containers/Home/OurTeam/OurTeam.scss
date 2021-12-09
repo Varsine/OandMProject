@@ -44,6 +44,10 @@
 .arrow_style {
   top: 50% !important;
   transform: translate(0, -50%);
+
+  @include breakpoint(tablet-m){
+    top: 85% !important;
+  }
 }
 
 .wrapper {
@@ -176,7 +180,7 @@
       }
     }
 
-    &_imges {
+    &_images {
       width: 100%;
       height: 100%;
       max-width: 60%;

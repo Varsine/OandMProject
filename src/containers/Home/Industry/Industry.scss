@@ -196,9 +196,9 @@
       left: 0;
       top: 160px;
       display: flex;
-      max-width: 100%;
       align-items: center;
       justify-content: space-between;
+      max-width: 100%;
     }
   }
 
@@ -267,7 +267,7 @@
       @extend %open-sans-18;
       user-select: none;
       word-wrap: break-word;
-      color: #f1f2f2;
+      color: $white-20;
 
       @include breakpoint(desktop) {
         width: 100%;

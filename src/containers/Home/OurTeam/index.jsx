@@ -1,17 +1,13 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Carousel from 'react-multi-carousel';
-import { useSelector } from 'react-redux';
 
 import { teamCards } from 'utils/index';
 import { SliderArrows } from 'components/index';
-import { activeIndexSelector } from 'slices/mainSlice';
 
 import Slide from './Slide';
 import styles from './OurTeam.scss';
 
 const OurTeam = () => {
-  const activeIndex = useSelector(activeIndexSelector);
-
   const renderSliderList = teamCards.map((item) => (
     <Slide key={item.id} slide={item} />
   ));
@@ -27,23 +23,19 @@ const OurTeam = () => {
     },
   };
 
-  const renderCarousel = useMemo(
-    () =>
-      activeIndex === 6 && (
-        <Carousel
-          ssr
-          infinite
-          autoPlay
-          responsive={responsive}
-          arrows={false}
-          sliderClass={styles.carousel__container}
-          containerClass={styles.carousel__wrapper}
-          customButtonGroup={<SliderArrows arrowStyles={styles.arrow_style} />}
-        >
-          {renderSliderList}
-        </Carousel>
-      ),
-    [activeIndex],
+  const renderCarousel = (
+    <Carousel
+      ssr
+      infinite
+      autoPlay
+      responsive={responsive}
+      arrows={false}
+      sliderClass={styles.carousel__container}
+      containerClass={styles.carousel__wrapper}
+      customButtonGroup={<SliderArrows arrowStyles={styles.arrow_style} />}
+    >
+      {renderSliderList}
+    </Carousel>
   );
 
   return (

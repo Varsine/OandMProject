@@ -15,8 +15,8 @@ const AboutUsBlock = ({ src, className, classRope, handlerChange }) => (
       </div>
       <NextImage
         src={src}
-        className={styles.block__img__image}
         loading="eager"
+        className={styles.block__img__image}
       />
     </div>
   </div>

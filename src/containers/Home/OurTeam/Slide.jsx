@@ -20,24 +20,24 @@ const GlitchSquiggly = dynamic(
 const Slide = ({ slide }) => {
   const activeIndex = useSelector(activeIndexSelector);
 
-  const [isGlitchscaleNoise, setIsGlitchscaleNoise] = useState(25);
+  const [isGlitchScaleNoise, setIsGlitchScaleNoise] = useState(25);
 
   useEffect(() => {
     if (activeIndex === 6) {
       const firstTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise(10);
+        setIsGlitchScaleNoise(10);
       }, 800);
       const secondTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise(8);
+        setIsGlitchScaleNoise(8);
       }, 1500);
       const thirdTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise(6);
+        setIsGlitchScaleNoise(6);
       }, 2000);
       const fourthTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise(4);
+        setIsGlitchScaleNoise(4);
       }, 2300);
       const fifthTimeoutId = setTimeout(() => {
-        setIsGlitchscaleNoise(1.3);
+        setIsGlitchScaleNoise(1.3);
       }, 3000);
 
       return () => {
@@ -48,26 +48,27 @@ const Slide = ({ slide }) => {
         clearTimeout(fifthTimeoutId);
       };
     }
+    return setIsGlitchScaleNoise(25);
   }, [activeIndex]);
 
   const { image1, image2, image3, image4, title, subtitle } = slide;
 
   const imageClasses = useMemo(() =>
-    classNames(styles.carousel__item_imges_img, 'glitch'),
+    classNames(styles.carousel__item_images_img, 'glitch'),
   );
 
-  const baseTimme = 0.07;
+  const baseTime = 0.07;
 
   return (
     <GlitchSquiggly
       disabled={false}
       className={styles.glitch_effect}
-      baseFrequency={baseTimme}
+      baseFrequency={baseTime}
       iterationCount="infinite"
-      scaleNoise={isGlitchscaleNoise}
+      scaleNoise={isGlitchScaleNoise}
     >
       <div className={styles.carousel__item}>
-        <div className={styles.carousel__item_imges}>
+        <div className={styles.carousel__item_images}>
           <div className={imageClasses}>
             <div
               className="glitch-img"

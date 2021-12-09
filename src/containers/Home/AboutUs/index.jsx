@@ -89,11 +89,13 @@ const AboutUs = () => {
         </div>
         <div className={styles.wrapper__list}>{renderAboutBlock}</div>
       </div>
-      <Modal
-        isOpenModal={isOpenModal}
-        setIsOpenModal={setIsOpenModal}
-        data={aboutUsInfoList[currentIndex]}
-      />
+      <div className={styles.modal_container}>
+        <Modal
+          isOpenModal={isOpenModal}
+          setIsOpenModal={setIsOpenModal}
+          data={aboutUsInfoList[currentIndex]}
+        />
+      </div>
     </section>
   );
 };

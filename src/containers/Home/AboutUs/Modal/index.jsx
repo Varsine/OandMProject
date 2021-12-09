@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useRef } from 'react';
 import usePortal from 'react-useportal';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -20,21 +20,13 @@ const Modal = ({ data, setIsOpenModal, isOpenModal }) => {
 
   useLockBodyScroll();
 
-  const wrapperClasses = useMemo(
-    () =>
-      classNames(styles.wrapper, {
-        [styles.wrapper__open]: isOpenModal,
-      }),
-    [isOpenModal],
-  );
+  const wrapperClasses = classNames(styles.wrapper, {
+    [styles.wrapper__open]: isOpenModal,
+  });
 
-  const innerInfoClasses = useMemo(
-    () =>
-      classNames(styles.info, {
-        [styles.info__open]: isOpenModal,
-      }),
-    [isOpenModal],
-  );
+  const innerInfoClasses = classNames(styles.info, {
+    [styles.info__open]: isOpenModal,
+  });
 
   return (
     <Portal>
