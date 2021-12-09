@@ -31,6 +31,12 @@ $cubeSizeMobile: 230px;
   align-items: center;
 }
 
+%align-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 %button-gradient {
   width: 100%;
   padding: 18px 0;

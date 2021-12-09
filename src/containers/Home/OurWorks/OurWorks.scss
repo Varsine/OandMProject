@@ -19,7 +19,7 @@
     overflow: hidden;
 
     @include breakpoint(tablet-m) {
-      height: calc(100vh - 64px - 50px + 5vh);
+      height: calc(100vh - 114px);
     }
   }
 

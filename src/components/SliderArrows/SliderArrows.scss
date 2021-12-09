@@ -3,12 +3,12 @@
   bottom: 0;
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 100%;
   padding: 0 2vh;
   position: absolute;
-  align-items: center;
-  justify-content: space-between;
 
   &__slide__prev_arrows {
     @include arrowIcon(90deg);

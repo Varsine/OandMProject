@@ -122,12 +122,10 @@
 }
 
 .cubes {
+  @extend %align-end;
   width: 500px;
   height: 540px;
-  display: flex;
   position: relative;
-  align-items: flex-end;
-  justify-content: center;
 
   @media (max-height: 800px) {
     width: 400px;
