@@ -5,8 +5,8 @@ import styles from './Mouse.scss';
 
 const Mouse = () => (
   <div className={styles.wrapper}>
-    <Item type="bottom" className={styles.bottom} />
-    <Item type="top" className={styles.top} />
+    <Item type="bottom" className={styles.wrapper__bottom} />
+    <Item type="top" className={styles.wrapper__top} />
   </div>
 );
 
