@@ -267,7 +267,7 @@
       @extend %open-sans-18;
       user-select: none;
       word-wrap: break-word;
-      color: #f1f2f2;
+      color: $white-20;
 
       @include breakpoint(desktop) {
         width: 100%;

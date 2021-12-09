@@ -4,7 +4,7 @@
 
   &__change {
     width: 100%;
-    color: #f1f2f2;
+    color: $white-20;
     height: 50px;
     border: none;
     padding: 0 24px;
@@ -15,7 +15,7 @@
     @extend %open-sans-16;
 
     &::placeholder {
-      color: #f1f2f2;
+      color: $white-20;
     }
   }
 }

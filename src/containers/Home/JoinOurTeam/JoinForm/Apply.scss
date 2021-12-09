@@ -168,7 +168,7 @@
 
   &__line {
     path {
-      stroke: #f1f2f2;
+      stroke: $white-20;
     }
   }
 
@@ -182,7 +182,7 @@
     width: 50px;
     height: 50px;
     font-size: 29px;
-    color: #f1f2f2;
+    color: $white-20;
     font-weight: bolder;
     border-radius: 15px;
     background: rgba(231, 235, 240, 0.6);

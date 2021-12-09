@@ -6,6 +6,10 @@
   }
 }
 
+.modal_container {
+  position: relative;
+}
+
 .wrapper {
   height: 100vh;
   display: flex;
@@ -161,6 +165,14 @@
 
       opacity: 1;
       backdrop-filter: blur(12px) saturate(150%) brightness(0.7);
+    }
+
+    @include breakpoint(tablet-m) {
+      &:hover #{$root}_wrapper {
+        height: 0%;
+        opacity: 0;
+        backdrop-filter: unset;
+      }
     }
 
     &_wrapper {

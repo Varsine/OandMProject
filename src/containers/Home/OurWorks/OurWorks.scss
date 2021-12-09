@@ -19,7 +19,7 @@
     overflow: hidden;
 
     @include breakpoint(tablet-m) {
-      height: auto;
+      height: calc(100vh - 64px - 50px + 5vh);
     }
   }
 
@@ -43,9 +43,10 @@
       background-size: contain;
 
       @include breakpoint(tablet-m) {
-        height: 50vh !important;
+        height: 40vh !important;
+        background-size: 100% 100%;
         width: 100%;
-        margin: 0;
+        margin: 0 0 10vh 0;
       }
     }
   }
@@ -81,19 +82,19 @@
       transform: rotate(90deg);
     }
   }
+}
 
-  .block {
-    @extend %flex-center;
-    position: relative;
-    overflow: hidden;
-    height: 100vh !important;
-    width: 100vw !important;
+.block {
+  @extend %flex-center;
+  position: relative;
+  overflow: hidden;
+  height: 100vh !important;
+  width: 100vw !important;
 
-    @include breakpoint(tablet-m) {
-      height: 80vh !important;
-      flex-direction: column-reverse;
-      padding: 0 16px;
-    }
+  @include breakpoint(tablet-m) {
+    height: 100% !important;
+    flex-direction: column-reverse;
+    padding: 0 16px;
   }
 }
 
