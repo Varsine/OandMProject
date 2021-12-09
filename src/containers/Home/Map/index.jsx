@@ -57,7 +57,7 @@ const InjectableGoogleMap = () => {
             onCloseClick={handleCloseClick}
             position={{ lat: 40.167847, lng: 44.502914 }}
           >
-            <div className={styles.map_styles}>
+            <div className={styles.map_global}>
               <h3 className={styles.map_global_style}>ShellLogix LLC</h3>
               <p className={styles.map_global_style}>
                 Software Development Company

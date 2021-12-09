@@ -22,14 +22,16 @@ const Select = ({
     setIsOpen(!isOpen);
   };
 
+  const whichDeveloper = (param, optionValue) => {
+    setFieldValue(param, optionValue);
+    openModalToggler();
+  };
+
   const renderDropDownList = options.map(({ key, value: optionValue }) => (
     <div
       key={key}
       role="button"
-      onClick={() => {
-        setFieldValue(name, optionValue);
-        openModalToggler();
-      }}
+      onClick={() => whichDeveloper(name, optionValue)}
       className={classNames(styles.dropdown__content_item, {
         [styles.dropdown__content_item_active]: optionValue === value,
       })}

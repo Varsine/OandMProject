@@ -58,27 +58,28 @@ const Cubes = () => {
     cubeRotateRef.current = setTimeout(nextCubFace, 2000);
   };
 
-  const renderDots = dotsData.map(
-    ({ id, rotY, rotX, classFirst, classSecond }) => {
-      const dotsClasses = classNames(classFirst, classSecond, {
-        [styles.cubes__dot__active]: activeDot === id,
-      });
+  const renderDots = dotsData.map(({ id, rotY, rotX, classSecond }) => {
+    const dotsClasses = classNames(styles.cubes__dot, classSecond, {
+      [styles.cubes__dot__active]: activeDot === id,
+    });
 
-      return (
-        <div
-          key={id}
-          role="button"
-          aria-label="Dot"
-          className={dotsClasses}
-          checked={activeDot === id}
-          onClick={() => changeActiveDots(id, rotY, rotX)}
-        />
-      );
-    },
-  );
+    return (
+      <div
+        key={id}
+        role="button"
+        aria-label="Dot"
+        className={dotsClasses}
+        checked={activeDot === id}
+        onClick={() => changeActiveDots(id, rotY, rotX)}
+      />
+    );
+  });
 
-  const renderFaceData = boxFaceData.map(({ id, classFirst, classSecond }) => (
-    <div key={id} className={`${classFirst} ${classSecond}`} />
+  const renderFaceData = boxFaceData.map(({ id, classSecond }) => (
+    <div
+      key={id}
+      className={`${styles.cubes__boxes__3d_face} ${classSecond}`}
+    />
   ));
 
   const cubeClasses = classNames(styles.cubes__space3d, {

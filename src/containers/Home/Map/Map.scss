@@ -29,8 +29,10 @@
     }
 
     &_info {
+      height: 12%;
       display: flex;
       padding: 11px 0;
+      align-items: center;
 
       @include breakpoint(desktop) {
         padding: 5px 0;
@@ -66,10 +68,10 @@
   }
 }
 
-.map_styles {
-  margin-top: -4px;
-}
-
-.map_global_style {
+.map_global {
   margin-top: 5px;
+
+  &_styles {
+    margin-top: -4px;
+  }
 }
