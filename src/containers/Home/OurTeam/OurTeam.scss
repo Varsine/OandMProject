@@ -39,13 +39,17 @@
     height: auto !important;
     margin: 50px auto;
   }
+
+  @include breakpoint(tablet-m) {
+    margin: 0 auto 50px;
+  }
 }
 
 .arrow_style {
   top: 50% !important;
   transform: translate(0, -50%);
 
-  @include breakpoint(tablet-m){
+  @include breakpoint(tablet-m) {
     top: 85% !important;
   }
 }
