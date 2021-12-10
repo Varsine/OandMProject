@@ -2,13 +2,11 @@
   top: 0;
   bottom: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 0 auto;
   max-width: 100%;
   padding: 0 2vh;
   position: absolute;
+  @extend %flex-between;
 
   &__slide__prev_arrows {
     @include arrowIcon(90deg);

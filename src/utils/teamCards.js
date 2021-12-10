@@ -12,7 +12,7 @@ const teamCard = [
     id: 2,
     image1: '/images/team/Lyudvig.png',
     image2: '/images/team/matrixLight.jpg',
-    image3: '/images/team/maLyudvig.png',
+    image3: '/images/team/Lyudvig.png',
     image4: '/images/team/matrixDark.jpg',
     title: 'Lyudvig Grigoryan',
     subtitle: 'FRONT-END DEVELOPER',

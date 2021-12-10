@@ -19,10 +19,10 @@
     position: absolute;
     transform: translateX(-100%);
     transition: all 0.3s;
-    align-items: center;
 
     @include breakpoint(tablet) {
       display: flex;
+      align-items: center;
     }
 
     &_active {

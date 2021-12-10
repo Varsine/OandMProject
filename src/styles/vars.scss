@@ -37,6 +37,23 @@ $cubeSizeMobile: 230px;
   align-items: flex-end;
 }
 
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-align-column{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+%flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 %button-gradient {
   width: 100%;
   padding: 18px 0;

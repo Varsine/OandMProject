@@ -92,7 +92,7 @@ const Industry = () => {
             <h1 className={styles.wrapper__active_item__info__title}>
               {title}
             </h1>
-            <p className={styles.wrapper__active_item__info_anima__textt}>
+            <p className={styles.wrapper__active_item__info_anima__text}>
               {text}
             </p>
           </div>
