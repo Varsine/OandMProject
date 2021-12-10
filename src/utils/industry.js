@@ -1,4 +1,8 @@
-import { IndustyFirstIcon, IndustyTwoIcon, IndustyThreeIcon } from '../icons';
+import {
+  IndustryTwoIcon,
+  IndustryFirstIcon,
+  IndustryThreeIcon,
+} from '../icons';
 
 const industry = [
   {
@@ -7,7 +11,7 @@ const industry = [
     text: 'E-commerce is the buying and selling of goods and services over the Internet. There are three main types of e-commerce: business-to-business, business-to-consumer, and consumer-to-consumer.',
     title: 'Ecommerce',
     class: '__oneIcon',
-    icon: IndustyFirstIcon,
+    icon: IndustryFirstIcon,
   },
   {
     id: 2,
@@ -15,7 +19,7 @@ const industry = [
     text: 'Cryptocurrency is a type of digital currency that generally only exists electronically. It can be exchanged online for goods and services.',
     title: 'Crypto',
     class: '__twoIcon',
-    icon: IndustyTwoIcon,
+    icon: IndustryTwoIcon,
   },
   {
     id: 3,
@@ -23,7 +27,7 @@ const industry = [
     text: "Business is the activity of making one's living or making money by producing or buying and selling products (such as goods and services). Simply put, it is 'any activity or enterprise entered into for profit.",
     title: 'Business',
     class: '__threeIcon',
-    icon: IndustyThreeIcon,
+    icon: IndustryThreeIcon,
   },
 ];
 

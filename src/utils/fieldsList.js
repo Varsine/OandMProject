@@ -1,5 +1,3 @@
-import shortid from 'shortid';
-
 import inputValidation from './inputValidation';
 
 const { firstName, email, phone, resume, github, linkedin, lastName } =
@@ -7,45 +5,45 @@ const { firstName, email, phone, resume, github, linkedin, lastName } =
 
 export const dropdownList = [
   {
-    id: shortid.generate(),
+    id: 1,
     text: 'Front-End Developer',
   },
   {
-    id: shortid.generate(),
+    id: 2,
     text: 'Back-End Developer',
   },
   {
-    id: shortid.generate(),
+    id: 3,
     text: 'UI/UX Designer',
   },
   {
-    id: shortid.generate(),
+    id: 4,
     text: 'Project Manager',
   },
   {
-    id: shortid.generate(),
+    id: 5,
     text: 'Full-Stack Developer',
   },
   {
-    id: shortid.generate(),
+    id: 6,
     text: 'Mobile Developer',
   },
   {
-    id: shortid.generate(),
+    id: 7,
     text: 'SEO Engineer',
   },
 ];
 
 export const fieldsList = [
   {
-    id: shortid.generate(),
+    id: 1,
     type: 'dropdown',
     name: 'jobType',
     // validation: firstName,
     label: 'Job type',
   },
   {
-    id: shortid.generate(),
+    id: 2,
     type: '',
     name: 'firstName',
     label: 'First name',
@@ -54,7 +52,7 @@ export const fieldsList = [
     placeholder: 'First name',
   },
   {
-    id: shortid.generate(),
+    id: 3,
     type: '',
     name: 'lastName',
     label: 'Last name',
@@ -63,7 +61,7 @@ export const fieldsList = [
     placeholder: 'Last name',
   },
   {
-    id: shortid.generate(),
+    id: 4,
     type: '',
     name: 'email',
     label: 'E-mail address',
@@ -72,7 +70,7 @@ export const fieldsList = [
     placeholder: 'example@gmail.com',
   },
   {
-    id: shortid.generate(),
+    id: 5,
     type: '',
     name: 'phone',
     label: 'Phone number',
@@ -81,20 +79,20 @@ export const fieldsList = [
     placeholder: '+374',
   },
   {
-    id: shortid.generate(),
+    id: 6,
     name: 'resume',
     type: 'file',
     label: 'CVResume',
     validation: resume,
   },
   {
-    id: shortid.generate(),
+    id: 7,
     type: 'file',
     name: 'coverLetter',
     label: 'Cover letter',
   },
   {
-    id: shortid.generate(),
+    id: 8,
     type: '',
     name: 'github',
     label: 'Github link',
@@ -103,7 +101,7 @@ export const fieldsList = [
     placeholder: 'Github link',
   },
   {
-    id: shortid.generate(),
+    id: 9,
     type: '',
     name: 'linkedin',
     label: 'Linkedin link',
@@ -112,7 +110,7 @@ export const fieldsList = [
     placeholder: 'Linkedin link',
   },
   {
-    id: shortid.generate(),
+    id: 10,
     type: 'file',
     name: 'otherFile',
     label: 'Other File',
