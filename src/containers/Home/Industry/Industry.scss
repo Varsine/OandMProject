@@ -14,8 +14,8 @@
   @extend %flex-center;
   position: relative;
   overflow: hidden;
-  height: 90vh;
   padding-top: 0;
+  height: 90vh;
 
   @include breakpoint(desktop) {
     height: auto;
@@ -27,11 +27,10 @@
     left: 0;
     width: 100%;
     z-index: 10;
-    display: flex;
     position: static;
     max-width: 339px;
     user-select: none;
-    flex-direction: column;
+    @extend %flex-column;
 
     @include breakpoint(desktop) {
       padding: 0 15px;
@@ -60,8 +59,7 @@
     }
 
     &__item {
-      display: flex;
-      align-items: center;
+      @extend %flex-align;
       cursor: url('/images/Mouse.png'), auto;
       animation: textScaleRotate 0.5s infinite linear !important;
 
@@ -107,10 +105,8 @@
     }
 
     &__active {
-      display: flex;
-      align-items: center;
-      animation: unset;
       color: $white;
+      @extend %flex-align;
       animation: unset !important;
 
       p {
@@ -118,8 +114,8 @@
       }
 
       svg {
-        animation: activeIconAnima 0.6s forwards;
         display: block;
+        animation: activeIconAnima 0.6s forwards;
 
         @include breakpoint(tablet-m) {
           animation: unset;
@@ -144,9 +140,9 @@
     }
 
     &__text {
-      @extend %open-sans-48;
       color: $white40;
       margin-left: 12px;
+      @extend %open-sans-48;
       animation: textScale 0.3s infinite linear;
 
       @include breakpoint(desktop) {
@@ -163,8 +159,7 @@
     }
 
     &__oneIcon {
-      display: flex;
-      align-items: center;
+      @extend %flex-align;
       animation: moveToLeft 1s alternate;
 
       @include breakpoint(desktop) {
@@ -173,8 +168,7 @@
     }
 
     &__twoIcon {
-      display: flex;
-      align-items: center;
+      @extend %flex-align;
       animation: moveToLeft 2s alternate;
 
       @include breakpoint(desktop) {
@@ -183,8 +177,7 @@
     }
 
     &__threeIcon {
-      display: flex;
-      align-items: center;
+      @extend %flex-align;
       animation: moveToLeft 3s alternate;
 
       @include breakpoint(desktop) {
@@ -195,10 +188,10 @@
     @include breakpoint(desktop) {
       left: 0;
       top: 160px;
+      max-width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 100%;
     }
   }
 
@@ -289,7 +282,7 @@
         @include breakpoint(desktop) {
           animation: none;
 
-          &__textt {
+          &__text {
             height: auto;
           }
         }
@@ -297,7 +290,7 @@
         @include breakpoint(tablet-m) {
           height: auto;
 
-          &__textt {
+          &__text {
             margin: 0;
           }
         }

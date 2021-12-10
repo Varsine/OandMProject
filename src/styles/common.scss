@@ -81,9 +81,7 @@
   //our works slider
 
   .react-multi-carousel-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-center;
 
     @include breakpoint(desktop) {
       height: max-content !important;
@@ -101,13 +99,12 @@
   .carousel-3d {
     width: 100%;
     height: 300px;
-    display: flex;
     margin: 0 auto;
     max-width: 600px;
     padding-top: 70px;
     position: relative;
+    @extend %flex-center;
     align-items: flex-start;
-    justify-content: center;
 
     .carousel-item {
       width: 200px;

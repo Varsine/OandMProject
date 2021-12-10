@@ -7,11 +7,9 @@
 }
 
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 56px;
   position: relative;
+  margin-right: 56px;
+  @extend %flex-between;
   height: 100vh !important;
 
   @include breakpoint(desktop) {

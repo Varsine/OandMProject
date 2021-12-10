@@ -12,9 +12,8 @@
 
 .wrapper {
   height: 100vh;
-  display: flex;
   position: relative;
-  flex-direction: column;
+  @extend %flex-column;
   justify-content: space-around;
 
   @include breakpoint(desktop) {
@@ -50,7 +49,6 @@
         @extend %open-sans-48;
         @extend %flex-center;
         user-select: none;
-        display: flex !important;
         flex-direction: column;
 
         span {
@@ -138,10 +136,8 @@
   width: 0;
   height: 0;
   z-index: 1;
-  display: flex;
   position: relative;
-  align-items: center;
-  flex-direction: column;
+  @extend %flex-align-column;
 
   &__rope {
     width: 1px;
