@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import usePortal from 'react-useportal';
 
 import { Button } from 'components/index';
+import { IS_SERVER } from 'constants/index';
 
 import Cubes from './Cubes';
 import JoinForm from './JoinForm/index';
@@ -14,6 +15,9 @@ const JoinOurTeam = () => {
   const [joinForm, setJoinForm] = useState(false);
 
   const joinPortal = () => {
+    if (!IS_SERVER) {
+      window.fullpage_api.setAllowScrolling(!!joinForm);
+    }
     setJoinForm(!joinForm);
   };
 
