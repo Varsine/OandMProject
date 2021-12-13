@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import axios from 'axios';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { Button } from 'components/index';
 import { useLockBodyScroll } from 'hooks/index';
@@ -10,7 +10,7 @@ import { noop, stepTwoInitialValues, stepOneInitialValues } from 'utils/index';
 import { Success, StepOne, StepTwo } from './Steps/index';
 import styles from './Apply.scss';
 
-const JoinForm = ({ isOpen, backHandler, joinForm }) => {
+const JoinForm = ({ isOpen, backHandler }) => {
   const [applicationForm, setApplicationForm] = useState({
     stepFirst: stepOneInitialValues,
     stepSecond: stepTwoInitialValues,
@@ -25,16 +25,25 @@ const JoinForm = ({ isOpen, backHandler, joinForm }) => {
     setIsActiveIndex(step);
   };
 
-  const sendApplicationHandler = async (values) => {
-    const formData = Object.keys(values).reduce((data, key) => {
-      data.append(key, values[key]);
-      return data;
-    }, new FormData());
-    formData.append('otherFile', undefined);
-    await axios.post(
-      'https://shelllogix-mail.herokuapp.com/messages',
-      formData,
-    );
+  const sendApplicationHandler = async () => {
+    const formData = new FormData();
+
+    const mergedObjects = {
+      ...applicationForm.stepFirst,
+      ...applicationForm.stepSecond,
+    };
+
+    formData.append('email', mergedObjects.email);
+    formData.append('firstName', mergedObjects.firstName);
+    formData.append('lastName', mergedObjects.lastName);
+    formData.append('jobType', mergedObjects.jobType);
+    formData.append('phoneNumber', mergedObjects.phoneNumber);
+    formData.append('resume', mergedObjects.resume);
+    formData.append('coverLetter', mergedObjects.coverLetter);
+    formData.append('githubLink', mergedObjects.githubLink);
+    formData.append('linkedInLink', mergedObjects.linkedInLink);
+
+    await axios.post(`http://192.168.31.151:5000/api/email`, formData);
   };
 
   const handlePrevStep = () => {
@@ -48,47 +57,39 @@ const JoinForm = ({ isOpen, backHandler, joinForm }) => {
   };
 
   const btnClasses = classNames(styles.joinform_portal__back, {
-    [styles.joinform_portal__anima__back_anima]: joinForm,
+    [styles.joinform_portal__anima__back_anima]: isOpen,
   });
 
   const joinPortalClasses = classNames(styles.joinform_portal, {
-    [styles.joinform_portal__anima]: joinForm,
-  });
-
-  const stepsClasses = classNames(styles.wrapper_anima, {
-    [styles.wrapper_anima_step_two]: activeIndex === 2,
+    [styles.joinform_portal__anima]: isOpen,
   });
 
   return (
     <div className={joinPortalClasses}>
-      {activeIndex !== 3 && (
-        <div className={stepsClasses}>
+      {activeIndex === 1 && (
+        <StepOne
+          editActiveStep={editActiveStep}
+          applicationForm={applicationForm}
+          setApplicationForm={setApplicationForm}
+        >
           {activeIndex === 1 && (
-            <StepOne
-              handlePrevStep={handlePrevStep}
-              editActiveStep={editActiveStep}
-              applicationForm={applicationForm}
-              setApplicationForm={setApplicationForm}
-            >
-              {activeIndex === 1 && (
-                <Button className={btnClasses} onClick={backHandler}>
-                  Cancel
-                </Button>
-              )}
-            </StepOne>
+            <Button className={btnClasses} onClick={backHandler}>
+              Cancel
+            </Button>
           )}
-          {activeIndex === 2 && (
-            <StepTwo
-              activeIndex={activeIndex}
-              formikRef={secondFormikRef}
-              handlePrevStep={handlePrevStep}
-              editActiveStep={editActiveStep}
-              applicationForm={applicationForm}
-              setApplicationForm={setApplicationForm}
-              sendApplicationHandler={sendApplicationHandler}
-            />
-          )}
-        </div>
+        </StepOne>
+      )}
+      {activeIndex === 2 && (
+        <StepTwo
+          activeIndex={activeIndex}
+          formikRef={secondFormikRef}
+          handlePrevStep={handlePrevStep}
+          editActiveStep={editActiveStep}
+          applicationForm={applicationForm}
+          setApplicationForm={setApplicationForm}
+          sendApplicationHandler={sendApplicationHandler}
+          stepTwoValidationSchema={applicationForm.stepFirst}
+        />
       )}
       {activeIndex === 3 && <Success doneSummary={backHandler} />}
     </div>

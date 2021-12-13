@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import isEqual from 'lodash.isequal';
 import { Form, Formik, Field } from 'formik';
-import classNames from 'classnames';
 
 import { Button, FormikInput, FileUpload } from 'components/index';
 import {
@@ -21,6 +21,7 @@ const StepTwo = ({
   applicationForm,
   handlePrevStep,
   activeIndex,
+  setApplicationForm,
   sendApplicationHandler,
 }) => {
   const initialValues = useMemo(
@@ -37,10 +38,11 @@ const StepTwo = ({
       initialValues={initialValues}
       validationSchema={stepTwoValidationSchema}
       onSubmit={(values) => {
-        sendApplicationHandler((prevForm) => ({
+        setApplicationForm((prevForm) => ({
           ...prevForm,
           stepSecond: values,
         }));
+        sendApplicationHandler();
         editActiveStep(3);
       }}
     >
@@ -64,12 +66,14 @@ const StepTwo = ({
           </Button>
         </div>
         <Field
+          type="file"
           name="resume"
           label="Attach resume"
           placeholder="Attach file"
           component={FileUpload}
         />
         <Field
+          type="file"
           name="coverLetter"
           label="Attach cover letter"
           placeholder="Cover letter"
@@ -99,6 +103,7 @@ StepTwo.propTypes = {
   formikRef: PropTypes.any,
   handlePrevStep: PropTypes.func,
   activeIndex: PropTypes.number,
+  setApplicationForm: PropTypes.any.isRequired,
   editActiveStep: PropTypes.func,
   applicationForm: PropTypes.object,
   sendApplicationHandler: PropTypes.func,
