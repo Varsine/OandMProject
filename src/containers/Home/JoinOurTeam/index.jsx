@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import usePortal from 'react-useportal';
 
 import { Button } from 'components/index';
 import { IS_SERVER } from 'constants/index';
+import { useWindowSize } from 'hooks/index';
+import { FullPageContext } from 'context/index';
 
 import Cubes from './Cubes';
 import JoinForm from './JoinForm/index';
@@ -12,23 +14,29 @@ import styles from './JoinOurTeam.scss';
 
 const JoinOurTeam = () => {
   const { Portal } = usePortal();
+  const { isDesktop } = useWindowSize();
   const [joinForm, setJoinForm] = useState(false);
+  const { moveToSection } = useContext(FullPageContext);
 
   const joinPortal = () => {
-    if (!IS_SERVER) {
-      window.fullpage_api.setAllowScrolling(!!joinForm);
-    }
+    const innerHeight = !IS_SERVER && window.innerHeight;
+    const doc = document.documentElement;
+
+    const fullPage = document.querySelector('#fullpage');
+    fullPage.classList.toggle('join-form');
+    doc.style.setProperty('--app-height', `-${innerHeight * 6}px`);
+
     setJoinForm(!joinForm);
+
+    if (joinForm && isDesktop) {
+      moveToSection.moveTo(7);
+    }
   };
 
   return (
     <>
       <Portal>
-        <JoinForm
-          isOpen={joinForm}
-          joinForm={joinForm}
-          backHandler={joinPortal}
-        />
+        <JoinForm isOpen={joinForm} backHandler={joinPortal} />
       </Portal>
       <section className={`${styles.height_response} section`}>
         <div className="canvas__working" />

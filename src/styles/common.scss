@@ -340,4 +340,8 @@
     background: #dce1f4 !important;
     border-radius: 10px !important;
   }
+
+  .join-form {
+    transform: translate3d(0px, $appHeight, 0px) !important;
+  }
 }

@@ -30,7 +30,7 @@ const FileUpload = ({
           onChange={handleUploadFile}
           className={styles.file__checked}
           placeholder={placeholder}
-          accept="application/pdf, image/jpeg, image/png, image/jpg, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          accept="application/pdf"
         />
         <FileIcon />
       </label>
