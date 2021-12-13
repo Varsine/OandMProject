@@ -25,15 +25,25 @@ const JoinForm = ({ isOpen, backHandler }) => {
     setIsActiveIndex(step);
   };
 
-  const mergedObjects = {
-    ...applicationForm.stepFirst,
-    ...applicationForm.stepSecond,
-  };
-
   const sendApplicationHandler = async () => {
-    await axios.post(`http://192.168.31.151:5000/api/email`, mergedObjects);
-    // .then((data) => console.log(data))
-    // .catch((err) => console.log(err));
+    const formData = new FormData();
+
+    const mergedObjects = {
+      ...applicationForm.stepFirst,
+      ...applicationForm.stepSecond,
+    };
+
+    formData.append('email', mergedObjects.email);
+    formData.append('firstName', mergedObjects.firstName);
+    formData.append('lastName', mergedObjects.lastName);
+    formData.append('jobType', mergedObjects.jobType);
+    formData.append('phoneNumber', mergedObjects.phoneNumber);
+    formData.append('resume', mergedObjects.resume);
+    formData.append('coverLetter', mergedObjects.coverLetter);
+    formData.append('githubLink', mergedObjects.githubLink);
+    formData.append('linkedInLink', mergedObjects.linkedInLink);
+
+    await axios.post(`http://192.168.31.151:5000/api/email`, formData);
   };
 
   const handlePrevStep = () => {

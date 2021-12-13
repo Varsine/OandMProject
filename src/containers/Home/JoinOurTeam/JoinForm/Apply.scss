@@ -77,32 +77,17 @@
 
   &__back_anima {
     width: 100%;
-    font-size: 16px;
+    display: flex;
+    color: white;
+    font-size: 17px;
     max-width: 100%;
     color: $white-20;
-    padding: 19.5px 0;
+    padding: 18.5px 0;
     border-radius: 30px;
-    font-weight: bolder;
-    animation: btnAllowed 0.5s alternate linear;
-    background-image: radial-gradient(
-      circle,
-      #f1f2f2,
-      #c0e4ed,
-      #90d4f2,
-      #68bffa,
-      #5aa7ff,
-      #5d95fc,
-      #6a81f5,
-      #7c6be9,
-      #7160dc,
-      #6655cf,
-      #5b4bc3,
-      #5040b6
-    );
-    color: black;
     margin: 0 auto 25px;
-    display: flex;
+    font-weight: bolder;
     justify-content: center;
+    animation: btnAllowed 0.5s alternate linear;
   }
 }
 
