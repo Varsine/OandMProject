@@ -136,7 +136,7 @@
     &__text_block {
       width: 100%;
       height: auto;
-      max-width: 45%;
+      max-width: 80%;
 
       @include breakpoint(desktop) {
         height: 90px;

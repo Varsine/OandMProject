@@ -22,7 +22,6 @@ const StepTwo = ({
   handlePrevStep,
   activeIndex,
   setApplicationForm,
-  sendApplicationHandler,
 }) => {
   const initialValues = useMemo(
     () =>
@@ -42,7 +41,6 @@ const StepTwo = ({
           ...prevForm,
           stepSecond: values,
         }));
-        sendApplicationHandler();
         editActiveStep(3);
       }}
     >
@@ -106,7 +104,6 @@ StepTwo.propTypes = {
   setApplicationForm: PropTypes.any.isRequired,
   editActiveStep: PropTypes.func,
   applicationForm: PropTypes.object,
-  sendApplicationHandler: PropTypes.func,
 };
 
 StepTwo.defaultProps = {
@@ -115,7 +112,6 @@ StepTwo.defaultProps = {
   editActiveStep: noop,
   handlePrevStep: noop,
   applicationForm: {},
-  sendApplicationHandler: noop,
 };
 
 export default StepTwo;

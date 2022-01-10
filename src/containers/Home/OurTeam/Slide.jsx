@@ -37,7 +37,7 @@ const Slide = ({ slide }) => {
         setIsGlitchScaleNoise(4);
       }, 2300);
       const fifthTimeoutId = setTimeout(() => {
-        setIsGlitchScaleNoise(1.3);
+        setIsGlitchScaleNoise(0.3);
       }, 3000);
 
       return () => {
