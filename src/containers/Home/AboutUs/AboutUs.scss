@@ -196,6 +196,7 @@
       height: 125px;
       position: absolute;
       @extend %flex-center;
+      border-radius: 50%;
 
       &::before {
         top: 50%;
@@ -292,8 +293,10 @@
   animation: bounce 4.5s alternate ease;
   transform-origin: center bottom;
   animation-fill-mode: both;
+  border-radius: 50%;
 
   &__rope {
+    border-radius: 50%;
     top: -60vh;
     border-radius: 50%;
     height: 60vh;
@@ -331,8 +334,10 @@
   animation: bounce 5.5s alternate ease;
   transform-origin: center bottom;
   animation-fill-mode: both;
+  border-radius: 50%;
 
   &__rope {
+    border-radius: 50%;
     height: 100vh;
     top: -100vh;
     animation: leftRight 15s alternate linear infinite;
@@ -357,8 +362,10 @@
   animation: bounce 4.2s alternate ease;
   transform-origin: center bottom;
   animation-fill-mode: both;
+  border-radius: 50%;
 
   &__rope {
+    border-radius: 50%;
     height: 50vh;
     top: -50vh;
     animation: leftRight 15s alternate linear infinite;
@@ -395,8 +402,10 @@
   animation: bounce 6s alternate ease;
   transform-origin: center bottom;
   animation-fill-mode: both;
+  border-radius: 50%;
 
   &__rope {
+    border-radius: 50%;
     height: 110vh;
     top: -110vh;
     animation: leftRight 15s alternate linear infinite;
@@ -405,6 +414,7 @@
     & + div {
       animation: imageMovingLeftRightBig 15s alternate linear infinite;
       animation-delay: 6s;
+      border-radius: 50%;
     }
   }
 
@@ -421,8 +431,10 @@
   animation: bounce 5.7s alternate ease;
   transform-origin: center bottom;
   animation-fill-mode: both;
+  border-radius: 50%;
 
   &__rope {
+    border-radius: 50%;
     height: 70vh;
     top: -70vh;
     animation: leftRight 15s alternate linear infinite;
@@ -443,6 +455,7 @@
     & + div {
       animation: imageMovingLeftRight 15s alternate linear infinite;
       animation-delay: 5.7s;
+      border-radius: 50%;
     }
   }
 

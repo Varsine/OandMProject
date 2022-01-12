@@ -1,18 +1,18 @@
 import styles from 'containers/Home/OurWorks/OurWorks.scss';
 
 const ourSliderData = [
-  {
-    title: 'Moni',
-    subTitle:
-      'Moni is the easiest way to track your crypto portfolios and explore the market.',
-    textInfo:
-      'Moni brings a diverse set of tools and features all in one place, making us the best place to dive into the world of cryptocurrencies.',
-    link: 'https://getmoni.io',
-    projectPage: 'https:getmoni',
-    bg: '/images/works/moni.webp',
-    className: styles.text_block__one,
-    activeClassName: styles.text_block__one__active,
-  },
+  // {
+  //   title: 'Moni',
+  //   subTitle:
+  //     'Moni is the easiest way to track your crypto portfolios and explore the market.',
+  //   textInfo:
+  //     'Moni brings a diverse set of tools and features all in one place, making us the best place to dive into the world of cryptocurrencies.',
+  //   link: 'https://getmoni.io',
+  //   projectPage: 'https:getmoni',
+  //   bg: '/images/works/moni.webp',
+  //   className: styles.text_block__one,
+  //   activeClassName: styles.text_block__one__active,
+  // },
   {
     title: 'Masstips',
     subTitle:

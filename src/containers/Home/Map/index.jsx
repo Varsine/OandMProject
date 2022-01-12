@@ -48,7 +48,7 @@ const InjectableGoogleMap = () => {
         onClick={handleMarkerClick}
         position={{ lat: 40.167782, lng: 44.503009 }}
         icon={{
-          url: '/images/marker.svg',
+          url: '/images/logo.png',
           scaledSize: new window.google.maps.Size(50, 50),
         }}
       >

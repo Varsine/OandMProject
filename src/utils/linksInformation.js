@@ -3,14 +3,14 @@ import {
   GmailIcon,
   Instagram,
   FbHoverIcon,
-  TwitterIcon,
-  TelegramIcon,
-  LinkedinIcon,
+  // TwitterIcon,
+  // TelegramIcon,
+  // LinkedinIcon,
   GmailHoverIcon,
   InstagramHover,
-  TwitterHoverIcon,
-  TelegramHoverIcon,
-  LinkedinHoverIcon,
+  // TwitterHoverIcon,
+  // TelegramHoverIcon,
+  // LinkedinHoverIcon,
 } from '../icons';
 
 const linksInformation = [
@@ -20,24 +20,24 @@ const linksInformation = [
     iconHover: <FbHoverIcon />,
     ariaLabel: 'facebook',
   },
-  {
-    url: 'https://www.linkedin.com/company/shelllogixarm',
-    icon: <LinkedinIcon />,
-    iconHover: <LinkedinHoverIcon />,
-    ariaLabel: 'linkedin',
-  },
-  {
-    url: 'https://twitter.com/shelllogix',
-    icon: <TwitterIcon />,
-    iconHover: <TwitterHoverIcon />,
-    ariaLabel: 'twitter',
-  },
-  {
-    url: 'https://web.telegram.org/#/im?p=@ShellLogix',
-    icon: <TelegramIcon />,
-    iconHover: <TelegramHoverIcon />,
-    ariaLabel: 'telegram',
-  },
+  // {
+  //   url: 'https://www.linkedin.com/company/shelllogixarm',
+  //   icon: <LinkedinIcon />,
+  //   iconHover: <LinkedinHoverIcon />,
+  //   ariaLabel: 'linkedin',
+  // },
+  // {
+  //   url: 'https://twitter.com/shelllogix',
+  //   icon: <TwitterIcon />,
+  //   iconHover: <TwitterHoverIcon />,
+  //   ariaLabel: 'twitter',
+  // },
+  // {
+  //   url: 'https://web.telegram.org/#/im?p=@ShellLogix',
+  //   icon: <TelegramIcon />,
+  //   iconHover: <TelegramHoverIcon />,
+  //   ariaLabel: 'telegram',
+  // },
   {
     url: 'https://www.instagram.com/shelllogix',
     icon: <Instagram />,

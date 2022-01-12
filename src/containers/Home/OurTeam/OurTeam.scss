@@ -187,12 +187,15 @@
     &_images {
       width: 100%;
       height: 100%;
-      max-width: 60%;
+      max-width: 40%;
       position: relative;
       transition: height 0.2s;
 
+      @media (max-width: 1120px) {
+        max-width: 80%;
+      }
+
       @include breakpoint(desktop) {
-        width: 100%;
         max-width: 100%;
       }
 
