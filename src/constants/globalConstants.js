@@ -2,7 +2,7 @@ export const APP_BASE_NAME = 'SHELL';
 
 export const IS_SERVER = typeof window === 'undefined';
 
-export const MAP_KEY = '';
+export const MAP_KEY = 'AIzaSyCr_etG2_MVpj9Nr_ZPusCj0bCEIduA9sQ';
 
 export const CHAT_PAGE_ID = '559202877917881';
 

@@ -41,14 +41,14 @@ const InjectableGoogleMap = () => {
       defaultZoom={16}
       defaultCenter={{ lat: 40.167782, lng: 44.503009 }}
       options={{
-        styles: mapStyles[mapStyles && 'dark'],
+        styles: mapStyles,
       }}
     >
       <Marker
         onClick={handleMarkerClick}
         position={{ lat: 40.167782, lng: 44.503009 }}
         icon={{
-          url: '',
+          url: '/images/marker.svg',
           scaledSize: new window.google.maps.Size(50, 50),
         }}
       >
