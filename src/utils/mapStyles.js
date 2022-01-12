@@ -1,4 +1,4 @@
-const dark = [
+const mapStyles = [
   {
     featureType: 'all',
     elementType: 'geometry',
@@ -163,4 +163,4 @@ const dark = [
   },
 ];
 
-export default dark;
+export default mapStyles;
