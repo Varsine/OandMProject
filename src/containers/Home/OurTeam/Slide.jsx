@@ -28,16 +28,16 @@ const Slide = ({ slide }) => {
         setIsGlitchScaleNoise(10);
       }, 800);
       const secondTimeoutId = setTimeout(() => {
-        setIsGlitchScaleNoise(8);
+        setIsGlitchScaleNoise(7);
       }, 1500);
       const thirdTimeoutId = setTimeout(() => {
-        setIsGlitchScaleNoise(6);
+        setIsGlitchScaleNoise(5);
       }, 2000);
       const fourthTimeoutId = setTimeout(() => {
-        setIsGlitchScaleNoise(4);
+        setIsGlitchScaleNoise(3);
       }, 2300);
       const fifthTimeoutId = setTimeout(() => {
-        setIsGlitchScaleNoise(0.3);
+        setIsGlitchScaleNoise(0);
       }, 3000);
 
       return () => {
