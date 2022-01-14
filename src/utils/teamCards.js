@@ -33,7 +33,7 @@ const teamCard = [
     image3: '/images/team/4.png',
     image4: '/images/team/matrixDark.jpg',
     title: 'Shant Issa',
-    subtitle: 'FRONT-END DEVELOPER',
+    subtitle: 'Native DEVELOPER',
   },
   {
     id: 5,

@@ -14,7 +14,7 @@ const Main = () => {
   const [isAnimate, setIsAnimate] = useState(false);
   const [activeClass, setActiveClass] = useState(false);
 
-  const { ref, inView } = useInView({
+  const { ref } = useInView({
     threshold: 0.9,
   });
 
@@ -44,10 +44,6 @@ const Main = () => {
     [isAnimate, showAnimation],
   );
 
-  const containerClasses = classNames(`container ${styles.wrapper}`, {
-    [styles.wrapper__animation]: !inView,
-  });
-
   return (
     <section
       ref={ref}
@@ -55,7 +51,7 @@ const Main = () => {
       className={`section fp-auto-height ${styles.container}`}
     >
       <div className="canvas__working" />
-      <div className={containerClasses}>
+      <div className={`container ${styles.wrapper}`}>
         <LogoMoveBallIcon
           className={styles.wrapper__ball}
           setisanimate={setIsAnimate}

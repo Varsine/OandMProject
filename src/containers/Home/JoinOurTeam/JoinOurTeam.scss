@@ -106,6 +106,7 @@
       @extend %open-sans-16;
       background: $liner-blue;
       transition: ease-in 0.3s;
+      outline: none;
 
       &:hover {
         background: $liner-blue-hover;

@@ -100,6 +100,8 @@ const Header = ({ isOnePage }) => {
   return (
     <Portal>
       <header className={styles.wrapper}>
+        {/* Added <h1> for SEO optimization */}
+        <h1 className={styles.global_title}>ShellLogix</h1>
         <div className={styles.container}>
           <div role="button" onClick={setInitialIndex} className={styles.logo}>
             {logo}

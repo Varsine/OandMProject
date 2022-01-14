@@ -5,6 +5,7 @@ const useLockBodyScroll = (isOpen) => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
 
     document.body.style.overflow = isOpen ? 'visible' : 'hidden';
+    document.body.style.touchAction = isOpen ? 'unset' : 'none';
 
     return () => {
       document.body.style.overflow = originalStyle;

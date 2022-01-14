@@ -37,54 +37,54 @@ const OurWorks = () => {
     }
   }, [curSlide]);
 
-  const renderSliderItem = useMemo(
-    () =>
-      ourSliderData.map(
-        (
-          {
-            bg,
-            link,
-            title,
-            subTitle,
-            textInfo,
-            className,
-            projectPage,
-            activeClassName,
-          },
-          idx,
-        ) => (
-          <div className={styles.block} key={link}>
-            <div
-              className={classNames(
-                styles.text_block,
-                curSlide !== idx ? className : activeClassName,
-              )}
-            />
-            <div className={styles.info}>
-              <h1 className={styles.info__title}>{title}</h1>
-              <h2 className={styles.info__subtitle}>{subTitle}</h2>
-              <p className={styles.info__text}>{textInfo}</p>
-              <NextLink
-                className={styles.info__link}
-                to={link}
-                anchorProps={{
-                  target: '_blank',
-                  rel: 'noreferrer',
-                  'aria-label': title,
-                }}
-              >
-                {projectPage}
-              </NextLink>
-            </div>
+  const renderSliderItem = ourSliderData.map(
+    (
+      {
+        bg,
+        link,
+        title,
+        subTitle,
+        textInfo,
+        className,
+        projectPage,
+        activeClassName,
+      },
+      idx,
+    ) => (
+      <div className={styles.block} key={title}>
+        <div
+          className={classNames(
+            styles.text_block,
+            curSlide !== idx ? className : activeClassName,
+          )}
+        />
+        <div className={styles.info}>
+          <h1 className={styles.info__title}>{title}</h1>
+          <h2 className={styles.info__subtitle}>{subTitle}</h2>
+          <p className={styles.info__text}>{textInfo}</p>
+          {link ? (
+            <NextLink
+              className={styles.info__link}
+              to={link}
+              anchorProps={{
+                target: '_blank',
+                rel: 'noreferrer',
+                'aria-label': title,
+              }}
+            >
+              {projectPage}
+            </NextLink>
+          ) : (
+            <span className={styles.info__link}>{projectPage}</span>
+          )}
+        </div>
 
-            <div
-              style={{ backgroundImage: `url(${bg})` }}
-              className={styles.wrapper__content__item}
-            />
-          </div>
-        ),
-      ),
-    [curSlide],
+        <div
+          style={{ backgroundImage: `url(${bg})` }}
+          className={styles.wrapper__content__item}
+        />
+      </div>
+    ),
   );
 
   return (
