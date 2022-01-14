@@ -25,7 +25,7 @@ const Industry = () => {
 
   const isShow = activeSelector === 4;
 
-  const gifClass = classNames(styles.wrapper__active_item__gif, {
+  const giftClass = classNames(styles.wrapper__active_item__gif, {
     [styles.wrapper__active_item__gif_first]: activeIndex === 0,
     [styles.wrapper__active_item__gif_animation]: isShow,
   });
@@ -70,7 +70,7 @@ const Industry = () => {
         <div className={styles.wrapper__menu}>{renderIndustries}</div>
         <div className={styles.wrapper__active_item}>
           <div
-            className={gifClass}
+            className={giftClass}
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: lottieAnimation,
