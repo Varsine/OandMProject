@@ -28,6 +28,9 @@ const MyApp = ({ Component, pageProps }) => {
   const canvasScript = useMemo(() => <Script src="/js/script.js" />, []);
 
   useIsomorphicLayoutEffect(() => {
+    // eslint-disable-next-line no-console
+    console.clear();
+
     Router.events.on('routeChangeComplete', () => {
       window.scroll({
         top: 0,

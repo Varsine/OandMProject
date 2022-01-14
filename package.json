@@ -67,6 +67,8 @@
     "styled-components": "^5.3.1",
     "styled-icons": "^10.44.0",
     "swiper": "^6.8.4",
+    "use-mobile-detect-hook": "^1.0.4",
+    "vercel": "^23.1.2",
     "webpack": "4.46.0"
   },
   "devDependencies": {
@@ -93,5 +95,8 @@
     "svg-sprite-loader": "^4.3.0",
     "webpack-filter-warnings-plugin": "^1.2.1",
     "yup": "^0.32.9"
+  },
+  "resolutions": {
+    "resolve": "1.20.0"
   }
 }

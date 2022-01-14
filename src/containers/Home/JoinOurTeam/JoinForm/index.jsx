@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -45,6 +45,14 @@ const JoinForm = ({ isOpen, backHandler }) => {
 
     await axios.post(`http://192.168.31.151:5000/api/email`, formData);
   };
+
+  useEffect(() => {
+    const { resume, coverLetter } = applicationForm.stepSecond;
+
+    if ((resume, coverLetter)) {
+      sendApplicationHandler();
+    }
+  }, [applicationForm]);
 
   const handlePrevStep = () => {
     if (activeIndex !== 1) {

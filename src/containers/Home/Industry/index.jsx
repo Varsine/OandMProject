@@ -23,53 +23,41 @@ const Industry = () => {
     import('@lottiefiles/lottie-player');
   });
 
-  const isShow = useMemo(() => activeSelector === 4, [activeSelector]);
+  const isShow = activeSelector === 4;
 
-  const gifClass = useMemo(
-    () =>
-      classNames(styles.wrapper__active_item__gif, {
-        [styles.wrapper__active_item__gif_first]: activeIndex === 0,
-        [styles.wrapper__active_item__gif_animation]: isShow,
-      }),
-    [isShow, activeIndex],
-  );
+  const giftClass = classNames(styles.wrapper__active_item__gif, {
+    [styles.wrapper__active_item__gif_first]: activeIndex === 0,
+    [styles.wrapper__active_item__gif_animation]: isShow,
+  });
 
-  const infoClass = useMemo(
-    () =>
-      classNames(styles.wrapper__active_item__info, {
-        [styles.wrapper__active_item__info_anima]: isShow,
-      }),
-    [isShow],
-  );
+  const infoClass = classNames(styles.wrapper__active_item__info, {
+    [styles.wrapper__active_item__info_anima]: isShow,
+  });
 
   const lottieAnimation = useMemo(
     () => `<lottie-player src=${src} loop="true" autoplay="true" />`,
     [src],
   );
 
-  const renderIndustries = useMemo(
-    () =>
-      industry.map((industryItem, index) => {
-        const stylesKey = `wrapper__menu${industryItem.class}`;
-        const classes = classNames(styles.wrapper__menu__item, {
-          [styles[stylesKey]]: isShow,
-          [styles.wrapper__menu__active]: activeIndex === index,
-        });
+  const renderIndustries = industry.map((industryItem, index) => {
+    const stylesKey = `wrapper__menu${industryItem.class}`;
+    const classes = classNames(styles.wrapper__menu__item, {
+      [styles[stylesKey]]: isShow,
+      [styles.wrapper__menu__active]: activeIndex === index,
+    });
 
-        return (
-          <div
-            role="button"
-            className={classes}
-            key={industryItem.id}
-            onClick={() => setActiveIndex(index)}
-          >
-            <industryItem.icon />
-            <p className={styles.wrapper__menu__text}>{industryItem.title}</p>
-          </div>
-        );
-      }),
-    [activeIndex, isShow],
-  );
+    return (
+      <div
+        role="button"
+        className={classes}
+        key={industryItem.id}
+        onClick={() => setActiveIndex(index)}
+      >
+        <industryItem.icon />
+        <p className={styles.wrapper__menu__text}>{industryItem.title}</p>
+      </div>
+    );
+  });
 
   const industryStyles = classNames(styles.wrapper, {
     [styles.d_none]: activeSelector !== 4 && isDesktop,
@@ -82,7 +70,7 @@ const Industry = () => {
         <div className={styles.wrapper__menu}>{renderIndustries}</div>
         <div className={styles.wrapper__active_item}>
           <div
-            className={gifClass}
+            className={giftClass}
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: lottieAnimation,

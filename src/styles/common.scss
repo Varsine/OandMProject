@@ -19,6 +19,38 @@
     z-index: 2;
   }
 
+  //  Map
+
+  .gm-style {
+    .gm-style-iw {
+      &-d {
+        overflow: hidden !important;
+        background-color: rebeccapurple;
+        padding: 15px;
+      }
+
+      &-c {
+        padding: 0 !important;
+      }
+
+      &-t::after {
+        background: rebeccapurple;
+        background-color: rebeccapurple;
+        box-shadow: unset;
+      }
+    }
+  }
+  .gm-ui-hover-effect {
+    width: 35px !important;
+    height: 35px !important;
+    margin-right: 7px !important;
+
+    img {
+      width: 25px !important;
+      height: 25px !important;
+    }
+  }
+
   //canvas
 
   #canvas {

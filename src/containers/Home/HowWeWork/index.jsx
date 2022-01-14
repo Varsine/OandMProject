@@ -16,8 +16,9 @@ const HowWeWork = () => {
     "If you're offered to seat on a rocket ship, don't ask what, just seat!";
 
   const textTwo =
-    "There's on time for regrets. You've just got to keep moving forward.";
+    "There's no time for regrets. You've just gotta keep moving forward.";
 
+  const textThree = 'Somewhere, someone incredible is going to be known.';
   return (
     <section className={`${styles.height_response} ${styles.we_work} section`}>
       <div className="canvas__working" />
@@ -37,9 +38,7 @@ const HowWeWork = () => {
             <p className={styles.text_color}>{textTwo}</p>
           </div>
           <div className={styles.animation__text_tree}>
-            <p className={styles.text_color}>
-              Somewhere, someone incredible is going to be known.
-            </p>
+            <p className={styles.text_color}>{textThree}</p>
           </div>
         </div>
       </div>

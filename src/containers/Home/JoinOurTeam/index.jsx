@@ -26,6 +26,8 @@ const JoinOurTeam = () => {
     fullPage.classList.toggle('join-form');
     doc.style.setProperty('--app-height', `-${innerHeight * 6}px`);
 
+    document.activeElement.blur();
+
     setJoinForm(!joinForm);
 
     if (joinForm && isDesktop) {

@@ -136,16 +136,12 @@
     &__text_block {
       width: 100%;
       height: auto;
-      max-width: 45%;
+      max-width: 40%;
 
       @include breakpoint(desktop) {
         height: 90px;
         max-width: 100%;
         margin-bottom: 15px;
-      }
-
-      @include breakpoint(tablet-m) {
-        max-width: 300px;
       }
 
       &_title {
@@ -187,12 +183,15 @@
     &_images {
       width: 100%;
       height: 100%;
-      max-width: 60%;
+      max-width: 346px;
       position: relative;
       transition: height 0.2s;
 
+      @media (max-width: 1120px) {
+        max-width: 60%;
+      }
+
       @include breakpoint(desktop) {
-        width: 100%;
         max-width: 100%;
       }
 
@@ -200,12 +199,15 @@
         height: 390px;
       }
 
+      @include breakpoint(mobile) {
+        height: 300px;
+      }
+
       &_img {
         width: 100%;
         height: 100%;
         border-radius: 20px;
         transition: height 0.2s;
-        background: $black-28;
 
         &_active {
           opacity: 0;

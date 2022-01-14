@@ -68,6 +68,8 @@
       }
 
       svg {
+        width: 37px;
+        height: 37px;
         animation: unActiveIconAnima 0.6s forwards;
 
         @include breakpoint(tablet-m) {
