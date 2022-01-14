@@ -15,7 +15,7 @@ const ourSliderData = [
   // },
   {
     title: 'DuobleOne',
-    subTitle: 'DuobleOne is a European company founded in 2020. ',
+    subTitle: 'DuobleOne is a European company founded in 2020.',
     textInfo:
       'The general activity of the company affects a wide range of special services and solutions in the IT and financial sector.',
     link: 'https://doubleone.org',
@@ -52,7 +52,7 @@ const ourSliderData = [
     title: 'Kristobad',
     subTitle: 'Kristobad from elegant classic to sport chic.',
     textInfo:
-      'The company "KristoBad"  was established in 2013.Our company produces handmade shoes and accessories exclusively from the natural leathers especially  skin of a calf, snake, ostrich, crocodile, etc.',
+      'The company "KristoBad"  was established in 2013.Our company produces handmade shoes and accessories exclusively from the natural leathers especially  skin of a calf, snake, ostrich, crocodile, etc.',
     link: 'https://kristobad.com',
     projectPage: 'https:kristobad',
     bg: '/images/works/kristobad.webp',
@@ -64,7 +64,7 @@ const ourSliderData = [
     subTitle:
       'This service allows you to watch collective forecasts for Masstips from different forecasters.',
     textInfo:
-      'Masstips is a service that will help you choose a successful bet based on forecasts for football from a large number of authors. ',
+      'Masstips is a service that will help you choose a successful bet based on forecasts for football from a large number of authors.',
     // link: 'https://www.masstips.ru',
     projectPage: 'https:masstips',
     bg: '/images/works/masstips.webp',
@@ -76,9 +76,9 @@ const ourSliderData = [
     subTitle:
       'Eiev allow their clients to get live race updates, follow your favorite riders and etc.',
     textInfo:
-      'Eiev ​cater to enthusiasts and fans alike of the equestrian sport of endurance riding held at Emirates International Endurance Village in Al Wathba, Abu Dhabi',
+      'Eiev ​cater to enthusiasts and fans alike of the equestrian sport of endurance riding held at Emirates International Endurance Village in Al Wathba, Abu Dhabi.',
     // link: 'https://apps.apple.com/ae/app/eiev-timing-system/id1434150311',
-    projectPage: 'https:apps/eiev-timing-system',
+    projectPage: 'apps/eiev-timing-system',
     bg: '/images/works/eiev.webp',
     className: styles.text_block__three,
     activeClassName: styles.text_block__three__active,
