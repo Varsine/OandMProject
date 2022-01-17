@@ -59,18 +59,18 @@ const ourSliderData = [
     className: styles.text_block__six,
     activeClassName: styles.text_block__six__active,
   },
-  {
-    title: 'Masstips',
-    subTitle:
-      'This service allows you to watch collective forecasts for Masstips from different forecasters.',
-    textInfo:
-      'Masstips is a service that will help you choose a successful bet based on forecasts for football from a large number of authors.',
-    // link: 'https://www.masstips.ru',
-    projectPage: 'https:masstips',
-    bg: '/images/works/masstips.webp',
-    className: styles.text_block__two,
-    activeClassName: styles.text_block__two__active,
-  },
+  // {
+  //   title: 'Masstips',
+  //   subTitle:
+  //     'This service allows you to watch collective forecasts for Masstips from different forecasters.',
+  //   textInfo:
+  //     'Masstips is a service that will help you choose a successful bet based on forecasts for football from a large number of authors.',
+  //   // link: 'https://www.masstips.ru',
+  //   projectPage: 'https:masstips',
+  //   bg: '/images/works/masstips.webp',
+  //   className: styles.text_block__two,
+  //   activeClassName: styles.text_block__two__active,
+  // },
   {
     title: 'Eiev',
     subTitle:
@@ -78,11 +78,16 @@ const ourSliderData = [
     textInfo:
       'Eiev ​cater to enthusiasts and fans alike of the equestrian sport of endurance riding held at Emirates International Endurance Village in Al Wathba, Abu Dhabi.',
     // link: 'https://apps.apple.com/ae/app/eiev-timing-system/id1434150311',
+    link: 'https://apps.apple.com/by/app/eiev/id1529308218',
     projectPage: 'apps/eiev-timing-system',
     bg: '/images/works/eiev.webp',
     className: styles.text_block__three,
     activeClassName: styles.text_block__three__active,
   },
+
+  // https://dist.projshrkr.vercel.app/ AGIMA
+  // META ?????
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ];
 
 export default ourSliderData;

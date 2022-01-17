@@ -28,8 +28,9 @@ const OurTeam = () => {
       ssr
       infinite
       autoPlay
-      responsive={responsive}
       arrows={false}
+      keyBoardControl
+      responsive={responsive}
       sliderClass={styles.carousel__container}
       containerClass={styles.carousel__wrapper}
       customButtonGroup={<SliderArrows arrowStyles={styles.arrow_style} />}
