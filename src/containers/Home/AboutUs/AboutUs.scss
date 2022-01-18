@@ -198,6 +198,10 @@
       @extend %flex-center;
       border-radius: 50%;
 
+      img {
+        border-radius: 50%;
+      }
+
       &::before {
         top: 50%;
         width: 0;

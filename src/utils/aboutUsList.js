@@ -40,27 +40,27 @@ export const aboutUsInfoList = [
 
 export const images = [
   {
-    src: '/images/aboutUs/1.png',
+    src: '/images/aboutUs/1.webp',
     imgClass: styles.aboute_img_one,
     classRope: styles.aboute_img_one__rope,
   },
   {
-    src: '/images/aboutUs/2.png',
+    src: '/images/aboutUs/2.webp',
     imgClass: styles.aboute_img_two,
     classRope: styles.aboute_img_two__rope,
   },
   {
-    src: '/images/aboutUs/3.png',
+    src: '/images/aboutUs/3.webp',
     imgClass: styles.aboute_img_three,
     classRope: styles.aboute_img_three__rope,
   },
   {
-    src: '/images/aboutUs/4.png',
+    src: '/images/aboutUs/4.webp',
     imgClass: styles.aboute_img_four,
     classRope: styles.aboute_img_four__rope,
   },
   {
-    src: '/images/aboutUs/5.png',
+    src: '/images/aboutUs/5.webp',
     imgClass: styles.aboute_img_five,
     classRope: styles.aboute_img_five__rope,
   },
