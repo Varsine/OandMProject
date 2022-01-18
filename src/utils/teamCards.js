@@ -64,9 +64,9 @@ const teamCard = [
   },
   {
     id: 11,
-    image1: '/images/team/10.webp',
+    image1: '/images/team/11.webp',
     image2: '/images/team/matrixDark.webp',
-    image3: '/images/team/10.webp',
+    image3: '/images/team/11.webp',
     image4: '/images/team/matrixDark.webp',
     title: 'Garik Gharibyan',
     subtitle: 'QA ENGINNER',

@@ -205,17 +205,17 @@
 
   &__face {
     &__front {
-      background-image: url(../../../../public/images/join_our_team/join_our_team_2.jpg);
+      background-image: url(../../../../public/images/join_our_team/join_our_team_2.webp);
       @include cubTranslateY(0deg);
     }
 
     &__back {
-      background-image: url(../../../../public/images/join_our_team/join_our_team_3.jpg);
+      background-image: url(../../../../public/images/join_our_team/join_our_team_3.webp);
       @include cubTranslateX(90deg);
     }
 
     &__left {
-      background-image: url(../../../../public/images/join_our_team/join_our_team_4.jpg);
+      background-image: url(../../../../public/images/join_our_team/join_our_team_4.webp);
       left: 50%;
       margin-left: -$cubeSize / 2;
       @include cubTranslateY(-90deg);
@@ -234,7 +234,7 @@
     }
 
     &__right {
-      background-image: url(../../../../public/images/join_our_team/join_our_team_5.jpg);
+      background-image: url(../../../../public/images/join_our_team/join_our_team_5.webp);
       left: 50%;
       margin-left: -$cubeSize / 2;
       @include cubTranslateY(90deg);
@@ -253,12 +253,12 @@
     }
 
     &__top {
-      background-image: url(../../../../public/images/join_our_team/join_our_team_6.jpg);
+      background-image: url(../../../../public/images/join_our_team/join_our_team_6.webp);
       @include cubTranslateY(180deg);
     }
 
     &__bottom {
-      background-image: url(../../../../public/images/join_our_team/join_our_team_1.jpg);
+      background-image: url(../../../../public/images/join_our_team/join_our_team_1.webp);
       @include cubTranslateX(-90deg);
     }
   }
