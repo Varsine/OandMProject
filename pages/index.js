@@ -5,16 +5,10 @@ import { HomeContainer } from 'containers/index';
 
 const HomePage = () => (
   <HelmetLayout
-    title="ShellLogix LLC"
+    title="O&M Service LLC"
     metaDescription="
-  ShellLogix LLC has been established in 2017 with a mission to 
-  offer creative solutions in the field of We believe that contemporary ideas and technologies are the key
-          milestones for creating strategic solutions for traditions based
-          businesses.Our team members are fully engaged in the process of
-          content making and have got unique affection for their job. One of
-          the main advantages of our company is the productivity based working
-          structure which is our straight response to the time and spendings
-          of our clients as we highly estimate your choice and trust in us"
+    O&M Service LLC Utilizing expert technicians, we support ongoing service and maintenance, including 24/7 availability. Whether you require routine maintenance or consultation regarding a new area of concern, O&M LLC is readily available for the lifetime of your building.
+    Measurement & Verification. Our company has  started work since 2016 and has about 100 employees."
   >
     <HomeContainer />
   </HelmetLayout>

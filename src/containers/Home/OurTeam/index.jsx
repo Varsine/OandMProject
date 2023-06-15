@@ -1,52 +1,115 @@
-import React from 'react';
-import Carousel from 'react-multi-carousel';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import { teamCards } from 'utils/index';
-import { SliderArrows } from 'components/index';
+import { Text } from 'components/index';
+import { activeIndexSelector } from 'slices/mainSlice';
 
-import Slide from './Slide';
+import Modal from './Modal';
 import styles from './OurTeam.scss';
 
 const OurTeam = () => {
-  const renderSliderList = teamCards.map((item) => (
-    <Slide key={item.id} slide={item} />
-  ));
+  const activeIndex = useSelector(activeIndexSelector);
+  const [activeEmployee, setActiveEmployee] = useState(null);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 10000, min: 1024 },
-      items: 1,
+  const isOpen = activeIndex === 6;
+  const team = [
+    {
+      id: 1,
+      src: 'https://www.editsuits.com/wp-content/uploads/2019/12/Tailored-Wedding-Suit.jpg',
+      name: 'Smbat1',
+      left: '-10%',
+      delay: '0s',
+      profession: 'Engineer',
+      info: 'The ability to creatively solve problems is key in any profession, engineering is no different. When problems arise and the most obvious solution isn’t possible it’s crucial to be able to solve the task in front of you in whatever way you can.',
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 0 },
-      items: 1,
+    {
+      id: 2,
+      src: 'https://www.editsuits.com/wp-content/uploads/2019/12/Tailored-Wedding-Suit.jpg',
+      name: 'Smbat2',
+      left: '89%',
+      delay: '1s',
+      profession: 'Engineer',
+      info: 'The ability to creatively solve problems is key in any profession, engineering is no different. When problems arise and the most obvious solution isn’t possible it’s crucial to be able to solve the task in front of you in whatever way you can.',
     },
+    {
+      id: 3,
+      src: 'https://www.editsuits.com/wp-content/uploads/2019/12/Tailored-Wedding-Suit.jpg',
+      name: 'Smbat3',
+      left: '-10%',
+      delay: '2s',
+      profession: 'Engineer',
+      info: 'The ability to creatively solve problems is key in any profession, engineering is no different. When problems arise and the most obvious solution isn’t possible it’s crucial to be able to solve the task in front of you in whatever way you can.',
+    },
+    {
+      id: 4,
+      src: 'https://www.editsuits.com/wp-content/uploads/2019/12/Tailored-Wedding-Suit.jpg',
+      name: 'Smbat4',
+      left: '89%',
+      delay: '3s',
+      profession: 'Engineer',
+      info: 'The ability to creatively solve problems is key in any profession, engineering is no different. When problems arise and the most obvious solution isn’t possible it’s crucial to be able to solve the task in front of you in whatever way you can.',
+    },
+    {
+      id: 5,
+      src: 'https://www.editsuits.com/wp-content/uploads/2019/12/Tailored-Wedding-Suit.jpg',
+      name: 'Smbat5',
+      left: '-10%',
+      delay: '4s',
+      profession: 'Engineer',
+      info: 'The ability to creatively solve problems is key in any profession, engineering is no different. When problems arise and the most obvious solution isn’t possible it’s crucial to be able to solve the task in front of you in whatever way you can.',
+    },
+    {
+      id: 6,
+      src: 'https://www.editsuits.com/wp-content/uploads/2019/12/Tailored-Wedding-Suit.jpg',
+      name: 'Smbat6',
+      left: '89%',
+      delay: '5s',
+      profession: 'Engineer',
+      info: 'The ability to creatively solve problems is key in any profession, engineering is no different. When problems arise and the most obvious solution isn’t possible it’s crucial to be able to solve the task in front of you in whatever way you can.',
+    },
+  ];
+
+  const handlerModal = (id) => {
+    setActiveEmployee(id);
+    setIsOpenModal(true);
   };
 
-  const renderCarousel = (
-    <Carousel
-      ssr
-      infinite
-      autoPlay
-      arrows={false}
-      keyBoardControl
-      responsive={responsive}
-      sliderClass={styles.carousel__container}
-      containerClass={styles.carousel__wrapper}
-      customButtonGroup={<SliderArrows arrowStyles={styles.arrow_style} />}
+  const renderTeamItems = team.map((el) => (
+    <div
+      role="button"
+      onClick={() => handlerModal(el.id)}
+      className={styles.wrapper__container__item}
+      style={{
+        left: el.left,
+        animationDelay: el.delay,
+        animationPlayState: isOpenModal || !isOpen ? 'paused' : 'running',
+      }}
+      key={el.id}
     >
-      {renderSliderList}
-    </Carousel>
-  );
+      <img
+        className={styles.wrapper__container__item__img}
+        alt={el.name}
+        src={el.src}
+      />
+      <Text className={styles.wrapper__container__item__name}>{el.name}</Text>
+    </div>
+  ));
 
   return (
-    <section
-      className={`section ${styles.container} ${styles.height_response}`}
-    >
-      <div className="canvas__working" />
-      <div className={`container ${styles.wrapper}`}>
-        <h2 className={styles.title}>Our Team</h2>
-        <div className={styles.carousel}>{renderCarousel} </div>
+    <section className={`section ${styles.wrapper}`}>
+      <div className={`container  ${styles.wrapper__container}`}>
+        <h2 className={styles.wrapper__container__title}>Our Team</h2>
+        <div className={` ${styles.wrapper__container__content}`}>
+          {renderTeamItems}
+        </div>
+      </div>
+      <div className={styles.modal_container}>
+        <Modal
+          isOpenModal={isOpenModal}
+          setIsOpenModal={setIsOpenModal}
+          data={team[activeEmployee - 1]}
+        />
       </div>
     </section>
   );

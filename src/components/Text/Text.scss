@@ -1,0 +1,9 @@
+.wrapper__subtitle {
+  @extend %open-sans-24;
+  color: $gray-3;
+}
+
+.wrapper {
+  @extend %open-sans-18;
+  color: $black;
+}

@@ -1,62 +1,49 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React from 'react';
 import classNames from 'classnames';
-import { useInView } from 'react-intersection-observer';
 import { useSelector } from 'react-redux';
 
+import { Heading, Text } from 'components/index';
 import { activeIndexSelector } from 'slices/mainSlice';
 
 import styles from './Main.scss';
 
-import { LogoAnimaIcon, LogoMoveBallIcon } from '../../../icons';
-
 const Main = () => {
   const activeIndex = useSelector(activeIndexSelector);
-  const [isAnimate, setIsAnimate] = useState(false);
-  const [activeClass, setActiveClass] = useState(false);
-
-  const { ref } = useInView({
-    threshold: 0.9,
-  });
-
-  const isActive = activeIndex === 1;
-
-  useEffect(() => {
-    if (activeIndex !== 1) {
-      setActiveClass(true);
-    }
-  }, [isActive]);
-
-  const showAnimation = isActive ? (
-    <LogoAnimaIcon
-      className={classNames(styles.wrapper__logo, {
-        [styles.wrapper__logo_active]: activeClass,
-      })}
-      stopColor="#fff"
-      isAnima
-      fastAnima={activeClass}
-    />
-  ) : (
-    <LogoAnimaIcon className={styles.wrapper__logo_fixed} stopColor="#fff" />
-  );
-
-  const renderAnimation = useMemo(
-    () => (isAnimate ? showAnimation : null),
-    [isAnimate, showAnimation],
-  );
 
   return (
-    <section
-      ref={ref}
-      id="header"
-      className={`section fp-auto-height ${styles.container}`}
-    >
-      <div className="canvas__working" />
-      <div className={`container ${styles.wrapper}`}>
-        <LogoMoveBallIcon
-          className={styles.wrapper__ball}
-          setisanimate={setIsAnimate}
-        />
-        {renderAnimation}
+    <section id="header" className="section fp-auto-height container">
+      <div className={styles.video_container}>
+        <video autoPlay loop muted>
+          <source
+            src="https://storage.googleapis.com/rbstorage/homepage/rb_8.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div className={styles.wrapper}>
+        <div className={styles.wrapper__content}>
+          <div className={styles.wrapper__content__left_path}>
+            <Heading className={styles.wrapper__content__text}>
+              What Is
+              <span
+                className={classNames(styles.wrapper__content__title, {
+                  [styles.wrapper__content__title_anima]: activeIndex === 1,
+                })}
+              >
+                Operations and Maintenance?
+              </span>
+            </Heading>
+            <Text
+              isSubtitle
+              className={classNames(styles.wrapper__content__subtitle, {
+                [styles.wrapper__content__subtitle_anima]: activeIndex === 1,
+              })}
+            >
+              As a form of preventive maintenance, O&M can include any task
+              meant to upkeep equipment before an issue arises
+            </Text>
+          </div>
+        </div>
       </div>
     </section>
   );

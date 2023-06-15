@@ -36,12 +36,11 @@
 
     &__item {
       overflow: hidden;
-      margin: 80px 0 60px;
-      height: calc(100vh - 140px);
-      width: 100%;
+      height: 100vh;
+      width: 100vw;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
 
       @include breakpoint(tablet-m) {
         height: 40vh !important;
@@ -70,7 +69,7 @@
 
   &__prev {
     @include arrowIcon(180deg);
-    top: 100px;
+    top: 80px;
     z-index: 10;
     left: 48%;
     position: absolute;
@@ -141,10 +140,6 @@
         @include breakpoint(tablet) {
           right: 16px;
         }
-
-        a {
-          color: $moni;
-        }
       }
     }
   }
@@ -176,10 +171,6 @@
         @include breakpoint(tablet) {
           left: 16px;
         }
-
-        a {
-          color: $masstips;
-        }
       }
     }
   }
@@ -207,10 +198,6 @@
 
         @include breakpoint(tablet) {
           left: 16px;
-        }
-
-        a {
-          color: $eiev;
         }
       }
     }
@@ -244,10 +231,6 @@
         @include breakpoint(tablet) {
           right: 16px;
         }
-
-        a {
-          color: $statecert;
-        }
       }
     }
   }
@@ -279,10 +262,6 @@
         @include breakpoint(tablet) {
           right: 16px;
         }
-
-        a {
-          color: $white-20;
-        }
       }
     }
   }
@@ -309,10 +288,6 @@
 
         @include breakpoint(tablet) {
           left: 16px;
-        }
-
-        a {
-          color: $kristobad;
         }
       }
     }
@@ -349,15 +324,11 @@
         @include ourWorksText(96px, 30px, unset, unset);
 
         @include breakpoint(desktop) {
-          top: 16px;
+          top: 24px;
         }
 
         @include breakpoint(tablet) {
           left: 16px;
-        }
-
-        a {
-          color: $duoble-one;
         }
       }
     }

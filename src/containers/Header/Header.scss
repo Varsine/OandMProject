@@ -11,21 +11,32 @@
   height: 80px;
   z-index: 100;
   position: fixed;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(20px);
-
-  @include breakpoint(tablet-m) {
-    height: 64px;
-  }
+  background: transparent;
 }
 
 .container {
   height: 100%;
-  padding: 0 50px;
-  @extend %flex-between;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  @include breakpoint(tablet) {
-    padding: 0 16px;
+  &__navbar {
+    display: flex;
+    gap: 24px;
+
+    &__item {
+      @extend %open-sans-bold-16;
+      background-color: transparent;
+      color: $white;
+      opacity: 0.8;
+      transition: all 0.3s;
+
+      &:hover {
+        transition: all 0.3s;
+        color: $yellow-3;
+      }
+    }
   }
 }
 
@@ -34,25 +45,6 @@
 
   svg {
     width: 164px;
-    height: 64px;
-
-    @include breakpoint(tablet) {
-      width: 128px;
-      height: 50px;
-    }
-  }
-}
-.icon {
-  display: none;
-
-  @include breakpoint(desktop) {
-    display: flex;
-  }
-
-  svg {
-    width: 36px;
-    height: 36px;
-    background: $liner-blue;
-    border-radius: 50%;
+    height: 94px;
   }
 }

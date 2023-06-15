@@ -32,3 +32,6 @@ export { default as IndustryThreeIcon } from './Industries-3';
 export { default as IndustryFirstIcon } from './Ecommerce';
 export { default as LogoMoveBallIcon } from './LogoMoveBallIcon';
 export { default as AccountantLightIcon } from './accountant.svg';
+export { default as MainBgIcon } from './mainBg.svg';
+export { default as LongArrowIcon } from './longArrow.svg';
+export { default as LinerArrowIcon } from './liner.svg';

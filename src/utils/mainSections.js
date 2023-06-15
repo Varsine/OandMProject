@@ -1,12 +1,12 @@
 import {
-  Map,
   Main,
   AboutUs,
   OurTeam,
   OurWorks,
-  Industry,
-  HowWeWork,
-  JoinOurTeam,
+  Partners,
+  Goals,
+  // HowWeWork,
+  // JoinOurTeam,
 } from 'containers/Home';
 
 export const mainSections = [
@@ -20,26 +20,22 @@ export const mainSections = [
   },
   {
     id: 3,
-    component: HowWeWork,
+    component: Goals,
   },
   {
     id: 4,
-    component: Industry,
+    component: OurWorks,
   },
   {
     id: 5,
-    component: OurWorks,
+    component: Partners,
   },
   {
     id: 6,
     component: OurTeam,
   },
-  {
-    id: 7,
-    component: JoinOurTeam,
-  },
-  {
-    id: 9,
-    component: Map,
-  },
+  // {
+  //   id: 9,
+  //   component: Map,
+  // },
 ];

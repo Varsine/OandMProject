@@ -1,235 +1,82 @@
-.height_response {
-  @include breakpoint(desktop) {
-    height: auto !important;
-    margin-bottom: 50px !important;
-  }
-
-  @include breakpoint(tablet) {
-    margin-bottom: 0 !important;
-  }
-}
-
-.glitch_effect {
-  width: 100%;
-  max-width: 650px;
-
-  @include breakpoint(wide) {
-    max-width: 570px;
-  }
-
-  @include breakpoint(desktop) {
-    height: auto;
-    padding-top: 0;
-    max-width: 400px;
-  }
-
-  @include breakpoint(tablet-l) {
-    max-width: 350px;
-  }
-
-  @include breakpoint(mobile) {
-    max-width: 300px;
-  }
-}
-
-.container {
-  height: unset;
-
-  @include breakpoint(desktop) {
-    height: auto !important;
-    margin: 50px auto;
-  }
-
-  @include breakpoint(tablet-m) {
-    margin: 0 auto 50px;
-  }
-}
-
-.arrow_style {
-  top: 50% !important;
-  transform: translate(0, -50%);
-
-  @include breakpoint(tablet-m) {
-    top: 85% !important;
-  }
-}
-
 .wrapper {
-  height: 100%;
   @extend %flex-align;
   flex-direction: column;
-
-  @include breakpoint(desktop) {
-    padding: 40px 0 20px !important;
-  }
-
-  @include breakpoint(tablet) {
-    padding: 40px 0 20px !important;
-    min-height: 690px;
-    max-height: 780px;
-  }
-
-  @include breakpoint(tablet-m) {
-    min-height: 510px;
-  }
-}
-
-.title {
-  @extend %open-sans-48;
-  padding: 32px 0 10px;
-
-  @include breakpoint(desktop) {
-    padding: 10px 0 32px;
-  }
-
-  @include breakpoint(tablet-l) {
-    margin-top: 0vh;
-  }
-
-  @include breakpoint(tablet-m) {
-    font-size: 32px;
-    font-weight: 600;
-    padding: 24px 0 0;
-    line-height: 44px;
-  }
-}
-
-.carousel {
-  width: 100%;
-  height: auto;
-  position: relative;
+  background-image: linear-gradient($black-30, $yellow-1, $yellow-1);
+  height: 100vh;
+  overflow: hidden;
 
   &__container {
-    display: flex;
-    align-items: center;
+    overflow-y: auto;
+    height: 100vh;
 
-    @include breakpoint(desktop) {
-      height: unset;
-    }
-  }
-
-  &__wrapper {
-    display: flex;
-    align-items: flex-start !important;
-
-    @include breakpoint(desktop) {
-      height: auto;
-    }
-  }
-
-  &__item {
-    width: 100%;
-    height: 50vh;
-    max-width: 100%;
-    margin: 30px auto 0;
-    @extend %flex-align;
-    border-radius: 15px;
-    transition: height 0.2s;
-    transition: max-width 0.2s;
-    transition: margin-top 0.2s;
-
-    @include breakpoint(desktop) {
-      height: 500px;
-      flex-direction: column;
-    }
-
-    &__text_block {
-      width: 100%;
-      height: auto;
-      max-width: 50%;
+    &__title {
+      @extend %open-sans-48;
+      position: absolute;
+      top: 80px;
+      left: 50px;
+      color: $black-30;
 
       @include breakpoint(desktop) {
-        height: 90px;
-        max-width: 100%;
-        margin-bottom: 15px;
+        padding: 10px 0 32px;
       }
 
-      &_title {
-        width: 100%;
-        max-width: 326px;
-        font-weight: 600;
-        text-align: center;
-        margin: 16px auto 8px;
-        @extend %open-sans-32;
-
-        @include breakpoint(tablet) {
-          font-weight: 600;
-          font-size: 24px;
-          line-height: 33px;
-        }
-      }
-
-      &_subtitle {
-        width: 100%;
-        margin: 0 auto;
-        max-width: 326px;
-        text-align: center;
-        @extend %open-sans-18;
-
-        @include breakpoint(tablet) {
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 22px;
-          margin-bottom: 15px;
-        }
-
-        @media (min-width: 1024px) and (max-height: 970px) {
-          font-size: 16px;
-          line-height: 22px;
-        }
-      }
-    }
-
-    &_images {
-      width: 100%;
-      height: 100%;
-      max-width: 346px;
-      position: relative;
-      transition: height 0.2s;
-
-      @media (max-width: 1120px) {
-        max-width: 60%;
-      }
-
-      @include breakpoint(desktop) {
-        max-width: 100%;
+      @include breakpoint(tablet-l) {
+        margin-top: 0vh;
       }
 
       @include breakpoint(tablet-m) {
-        height: 390px;
+        font-size: 32px;
+        font-weight: 600;
+        padding: 24px 0 0;
+        line-height: 44px;
       }
+    }
 
-      @include breakpoint(mobile) {
-        height: 300px;
-      }
+    &__content {
+      height: calc(100vh - 100px);
+      margin-left: -50px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-      &_img {
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        transition: height 0.2s;
+    &__item {
+      overflow: visible;
+      opacity: 0;
+      position: absolute;
+      scale: 3;
+      animation: circleAnimation 6s linear infinite;
 
-        &_active {
-          opacity: 0;
-          z-index: 2;
-          transition: ease 0.3s;
+      &__img {
+        width: 150px;
+        transition: all 0.5s;
+
+        &:hover {
+          transition: all 0.5s;
+          transform: scale(1.1);
         }
+      }
+      &__name {
       }
     }
   }
+}
 
-  &__arrows {
-    @extend %flex-center;
-    position: relative;
-
-    &_item {
-      padding: 0;
-      height: 48px;
-      background: unset;
-    }
-
-    &_left {
-      transform: rotate(180deg);
-    }
+@keyframes circleAnimation {
+  0% {
+    z-index: 10;
+    opacity: 0;
+    bottom: -20%;
+    scale: 3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    z-index: 0;
+    left: 45%;
+    // transform: translateX(-50%);
+    bottom: 70%;
+    scale: 0;
+    opacity: 0;
   }
 }

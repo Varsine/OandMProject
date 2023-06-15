@@ -41,6 +41,8 @@ const HomeContainer = () => {
 
   return (
     <ReactFullPage
+      // scrollOverflow
+      // normalScrollElements=".section-our-team"
       navigation={false}
       fitToSection={false}
       scrollingSpeed={1300}

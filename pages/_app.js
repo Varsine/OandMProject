@@ -1,8 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Router from 'next/router';
-import Script from 'next/script';
 import PropTypes from 'prop-types';
-import usePortal from 'react-useportal';
 import withError from 'next-with-error';
 import NextNprogress from 'nextjs-progressbar';
 
@@ -15,8 +13,6 @@ import { useIsomorphicLayoutEffect } from 'hooks/index';
 import ErrorPage from './404';
 
 const MyApp = ({ Component, pageProps }) => {
-  const { Portal } = usePortal();
-
   const handleMouseUp = () => {
     window.document.body.classList.remove('mouse_animation');
   };
@@ -24,8 +20,6 @@ const MyApp = ({ Component, pageProps }) => {
   const handleMouseDown = () => {
     window.document.body.classList.add('mouse_animation');
   };
-
-  const canvasScript = useMemo(() => <Script src="/js/script.js" />, []);
 
   useIsomorphicLayoutEffect(() => {
     // eslint-disable-next-line no-console
@@ -65,10 +59,6 @@ const MyApp = ({ Component, pageProps }) => {
         options={{ showSpinner: false }}
       />
       <Component {...pageProps} />
-      <Portal>
-        {canvasScript}
-        <canvas id="canvas" width="100%" height="100%" />
-      </Portal>
     </>
   );
 };

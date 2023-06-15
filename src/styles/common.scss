@@ -1,6 +1,8 @@
 :global {
   .container {
-    padding: 80px 150px 60px 50px;
+    margin: 0 50px;
+    max-width: 1440px;
+    width: 100%;
 
     @include breakpoint(desktop) {
       padding: 0;
@@ -11,103 +13,8 @@
     }
   }
 
-  .mouse_animation {
-    cursor: url(/images/Mouse2.png), auto;
-  }
-
   #fullpage {
     z-index: 2;
-  }
-
-  //  Map
-
-  .gm-style {
-    .gm-style-iw {
-      &-d {
-        overflow: hidden !important;
-        background-color: rebeccapurple;
-        padding: 15px;
-      }
-
-      &-c {
-        padding: 0 !important;
-      }
-
-      &-t::after {
-        background: rebeccapurple;
-        background-color: rebeccapurple;
-        box-shadow: unset;
-      }
-    }
-  }
-  .gm-ui-hover-effect {
-    width: 35px !important;
-    height: 35px !important;
-    margin-right: 7px !important;
-
-    img {
-      width: 25px !important;
-      height: 25px !important;
-    }
-  }
-
-  //canvas
-
-  #canvas {
-    width: 100vw;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: var(--bgColor);
-  }
-
-  .canvas__working {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    user-select: none;
-  }
-
-  .fb_dialog_content {
-    display: none;
-  }
-
-  .fb-customerchat {
-    iframe {
-      right: 11px;
-      bottom: 81px;
-    }
-  }
-
-  // Our partners
-
-  .fix_size_kms {
-    width: 100%;
-  }
-
-  .logo_fix_size {
-    padding: 0;
-    height: 100% !important;
-    position: relative !important;
-    width: calc(100vw - 200px) !important;
-  }
-
-  .spp_lightMode {
-    path {
-      fill: #252525;
-    }
-  }
-
-  //map
-
-  #map {
-    height: 61vh;
-    position: relative;
-    z-index: 5;
   }
 
   //our works slider
@@ -128,70 +35,11 @@
 
   //////////////////////// Our Work Global styles
 
-  .carousel-3d {
-    width: 100%;
-    height: 300px;
-    margin: 0 auto;
-    max-width: 600px;
-    padding-top: 70px;
-    position: relative;
-    @extend %flex-center;
-    align-items: flex-start;
-
-    .carousel-item {
-      width: 200px;
-      height: 200px;
-      transition: 0.5s;
-      position: absolute;
-      border-radius: 50%;
-      -o-transition: 0.5s;
-      -ms-transition: 0.5s;
-      -moz-transition: 0.5s;
-      -o-border-radius: 50%;
-      background-size: cover;
-      -ms-border-radius: 50%;
-      filter: grayscale(100%);
-      -moz-border-radius: 50%;
-      -webkit-transition: 0.5s;
-      -webkit-border-radius: 50%;
-      -webkit-filter: grayscale(100%);
-
-      &:hover {
-        filter: grayscale(0%);
-        -webkit-filter: grayscale(0%);
-      }
-    }
-  }
-
-  input[type='radio'] {
-    top: 108%;
-    left: 50%;
-    width: 18px;
-    height: 18px;
-    opacity: 0.4;
-    margin: 0 15px 0 0;
-    position: relative;
-    transform: translateX(-83px);
-  }
-
-  input[type='radio']:nth-child(5) {
-    margin-right: 0px;
-  }
-
-  input[type='radio']:checked {
-    opacity: 1;
-  }
-
-  .carousel__inp {
-    display: none;
-  }
-
   .slider_we_work__item {
     line-height: 22px;
     text-align: center;
     letter-spacing: 0.02em;
     display: flex !important;
-    cursor: url('/images/Mouse.png'), auto;
     font-size: 20px !important;
     color: #1a1a1a !important;
     font-weight: bold !important;
@@ -210,154 +58,8 @@
       font-size: 14px !important;
     }
   }
+}
 
-  ////  APPLAY NOW -_- Phone number, add country code && flag
-  .flag-dropdown {
-    position: relative;
-
-    &::before {
-      content: '';
-      background: $white-30;
-      width: 38px;
-      height: 51px;
-      left: 0;
-      top: 22px;
-      position: absolute;
-      border-radius: 30px 0 0 30px;
-    }
-  }
-  .react-tel-input {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    min-height: 105px !important;
-    cursor: url(/images/Mouse.png), auto;
-    padding: 21.6px 0px 0px 0px !important;
-    margin-top: 1px !important;
-
-    @media (width: 682px) {
-      margin-top: 0px !important;
-    }
-    @media (width: 681px) {
-      margin-top: 0px !important;
-    }
-  }
-
-  .flag-dropdown::before {
-    background-color: transparent;
-    width: 0;
-    height: 0;
-  }
-
-  .react-tel-input .form-control {
-    @extend %open-sans-16;
-    width: 100% !important;
-    height: 51px !important;
-    border: none !important;
-    font-size: 16px !important;
-    color: $white-20 !important;
-    user-select: all !important;
-    position: relative !important;
-    cursor: url(/images/Mouse.png), auto;
-    padding: 0px 10px 0px 50px !important;
-    background: $white-30 !important;
-    margin-top: 1px !important;
-    border-radius: 30px !important;
-
-    &::placeholder {
-      color: $white-20 !important;
-      cursor: url(/images/Mouse.png), auto;
-    }
-  }
-
-  .react-tel-input .special-label {
-    line-height: 25px !important;
-    left: 0 !important;
-    top: 0px !important;
-    font: inherit !important;
-    padding: unset !important;
-    display: unset !important;
-    font-size: 17px !important;
-    font-weight: normal !important;
-    background-color: unset !important;
-    font-family: Open Sans, sans-serif !important;
-  }
-
-  .react-tel-input .flag-dropdown {
-    width: 0 !important;
-    height: 51px !important;
-    border: none !important;
-    position: unset !important;
-    background: transparent !important;
-    border-radius: 30px 0 0 30px;
-    cursor: url(/images/Mouse.png), auto !important;
-  }
-
-  .react-tel-input .flag-dropdown.open {
-    cursor: url(/images/Mouse.png), auto;
-    background-color: transparent !important;
-    border-radius: 30px 0px 0px 30px !important;
-  }
-
-  .react-tel-input .selected-flag:hover {
-    background: transparent !important;
-    cursor: url(/images/Mouse.png), auto;
-    border-radius: 30px 0px 0px 30px !important;
-  }
-
-  .react-tel-input .selected-flag:focus {
-    background: transparent !important;
-    cursor: url(/images/Mouse.png), auto;
-    border-radius: 30px 0px 0px 30px !important;
-  }
-
-  .react-tel-input .flag-dropdown:hover,
-  .react-tel-input .flag-dropdown:focus {
-    background: transparent !important;
-    cursor: url(/images/Mouse.png), auto;
-    border-radius: 30px 0px 0px 30px !important;
-  }
-
-  .react-tel-input .selected-flag {
-    padding-left: 24px !important;
-    cursor: url(/images/Mouse.png), auto;
-    border-radius: 30px 0px 0px 30px !important;
-  }
-
-  .react-tel-input .flag-dropdown.open .selected-flag {
-    background: transparent !important;
-  }
-
-  .react-tel-input .country-list {
-    display: none;
-  }
-  .flag_no_10 {
-    display: none !important;
-  }
-
-  .react-tel-input .country-list .country-name {
-    display: none;
-  }
-
-  .country-list::-webkit-scrollbar {
-    width: 10px !important;
-  }
-
-  .react-tel-input .selected-flag .arrow {
-    display: none !important;
-  }
-
-  /* Track */
-  .country-list::-webkit-scrollbar-track {
-    box-shadow: inset 0px 15px 5px grey !important;
-    border-radius: 10px !important;
-  }
-  .country-list::-webkit-scrollbar-thumb {
-    background: #dce1f4 !important;
-    border-radius: 10px !important;
-  }
-
-  .join-form {
-    transform: translate3d(0px, $appHeight, 0px) !important;
-  }
+.react-multiple-carousel__arrow--right::before {
+  content: '>>';
 }

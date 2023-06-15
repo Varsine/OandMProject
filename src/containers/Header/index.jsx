@@ -1,85 +1,26 @@
 import React, { useCallback, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import usePortal from 'react-useportal';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { paths } from 'routes/index';
-import { NextLink } from 'components/index';
+import { NextLink, Button } from 'components/index';
 import { FullPageContext } from 'context/index';
-import { activeIndexSelector, changeIndex } from 'slices/mainSlice';
+import { changeIndex } from 'slices/mainSlice';
 
 import styles from './Header.scss';
 
-import {
-  LogoIcon,
-  Section10ActiveIcon,
-  Section11ActiveIcon,
-  Section4ActiveIcon,
-  Section5ActiveIcon,
-  Section6ActiveIcon,
-  Section7ActiveIcon,
-  Section8ActiveIcon,
-  Section9ActiveIcon,
-  SectionOneActiveIcon,
-  SectionThreeActiveIcon,
-  SectionTwoActiveIcon,
-} from '../../icons';
+import { LogoIcon } from '../../icons';
 
 const Header = ({ isOnePage }) => {
   const dispatch = useDispatch();
 
   const { Portal } = usePortal();
   const { moveToSection } = useContext(FullPageContext);
-  const activeIndex = useSelector(activeIndexSelector);
-
-  const memoizedUpdateActiveIcon = useMemo(() => {
-    switch (activeIndex) {
-      case 2: {
-        return <SectionTwoActiveIcon />;
-      }
-      case 3: {
-        return <SectionThreeActiveIcon />;
-      }
-      case 4: {
-        return <Section4ActiveIcon />;
-      }
-      case 5: {
-        return <Section5ActiveIcon />;
-      }
-      case 6: {
-        return <Section6ActiveIcon />;
-      }
-      case 7: {
-        return <Section7ActiveIcon />;
-      }
-      case 8: {
-        return <Section8ActiveIcon />;
-      }
-      case 9: {
-        return <Section9ActiveIcon />;
-      }
-      case 10: {
-        return <Section10ActiveIcon />;
-      }
-      case 11: {
-        return <Section11ActiveIcon />;
-      }
-      default:
-        return <SectionOneActiveIcon />;
-    }
-  }, [activeIndex]);
 
   const moveToSectionTop = useCallback(() => {
     moveToSection.moveTo(1);
   }, [moveToSection]);
-
-  const activeIcon = useMemo(
-    () =>
-      !isOnePage ? (
-        <div className={styles.icon}>{memoizedUpdateActiveIcon}</div>
-      ) : null,
-    [isOnePage, memoizedUpdateActiveIcon],
-  );
 
   const setInitialIndex = () => {
     dispatch(changeIndex(1));
@@ -96,18 +37,44 @@ const Header = ({ isOnePage }) => {
       ),
     [isOnePage, moveToSectionTop],
   );
+  const menuItems = [
+    {
+      id: 1,
+      name: 'Home',
+    },
+    {
+      id: 2,
+      name: 'About Us',
+    },
+    {
+      id: 3,
+      name: 'Our work',
+    },
+    {
+      id: 4,
+      name: 'Partners',
+    },
+  ];
+
+  const renderNavbarItems = menuItems.map((el) => (
+    <Button
+      key={`menuItems${el.id}`}
+      className={styles.container__navbar__item}
+    >
+      {el.name}
+    </Button>
+  ));
 
   return (
     <Portal>
       <header className={styles.wrapper}>
         {/* Added <h1> for SEO optimization */}
-        <h1 className={styles.global_title}>ShellLogix</h1>
+        <h1 className={styles.global_title}>O&M</h1>
         <div className={styles.container}>
           <div role="button" onClick={setInitialIndex} className={styles.logo}>
             {logo}
           </div>
-
-          {activeIcon}
+          <nav className={styles.container__navbar}>{renderNavbarItems}</nav>
         </div>
       </header>
     </Portal>

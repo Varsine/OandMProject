@@ -30,9 +30,12 @@ const OurWorks = () => {
   }, [curSlide]);
 
   const navigateUp = useCallback(() => {
+    console.log(1);
     if (curSlide === 0) {
+      console.log(2);
       setCurSlide(ourSliderData.length - 1);
     } else {
+      console.log(3);
       setCurSlide(curSlide - 1);
     }
   }, [curSlide]);
